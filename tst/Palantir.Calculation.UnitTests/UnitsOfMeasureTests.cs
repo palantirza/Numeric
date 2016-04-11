@@ -95,6 +95,19 @@ namespace Palantir.Calculation.UnitTests
             result.Unit.Should().Be(g);
         }
         
+        [Fact]
+        public void MeasureAddition_WithReverseConvertibleUnit_ShouldProduceResult()
+        {
+            var kg = new Unit("kg");
+            var g = new Unit("g");
+            g.AddConversion(kg, x => x / 1000);
+            var weight1 = new Measure(110, kg);
+            var weight2 = new Measure(100, g);
+            var result = weight1 + weight2;
+            result.Value.Should().Be(110.1M);
+            result.Unit.Should().Be(kg);
+        }
+        
         private Measure Add(Measure lhs, Measure rhs)
         {
             return lhs + rhs;
@@ -152,6 +165,19 @@ namespace Palantir.Calculation.UnitTests
         }
 
         [Fact]
+        public void MeasureSubtraction_WithReverseConvertibleUnit_ShouldProduceResult()
+        {
+            var kg = new Unit("kg");
+            var g = new Unit("g");
+            g.AddConversion(kg, x => x / 1000);
+            var weight1 = new Measure(110, kg);
+            var weight2 = new Measure(100, g);
+            var result = weight1 - weight2;
+            result.Value.Should().Be(109.9M);
+            result.Unit.Should().Be(kg);
+        }
+
+        [Fact]
         public void MeasureDivision_WithSameUnit_ShouldProduceResult()
         {
             var kg = new Unit("kg");
@@ -188,6 +214,19 @@ namespace Palantir.Calculation.UnitTests
         }
 
         [Fact]
+        public void MeasureDivision_WithReverseConvertibleUnit_ShouldProduceResult()
+        {
+            var kg = new Unit("kg");
+            var g = new Unit("g");
+            g.AddConversion(kg, x => x / 1000);
+            var weight1 = new Measure(110, kg);
+            var weight2 = new Measure(100, g);
+            var result = weight1 / weight2;
+            result.Value.Should().Be(1100);
+            result.Unit.Should().Be(kg);
+        }
+
+        [Fact]
         public void MeasureMultiplication_WithSameUnit_ShouldProduceResult()
         {
             var kg = new Unit("kg");
@@ -195,7 +234,8 @@ namespace Palantir.Calculation.UnitTests
             var weight2 = new Measure(10, kg);
             var result = weight1 * weight2;
             result.Value.Should().Be(1100);
-            result.Unit.Should().Be(kg);        }
+            result.Unit.Should().Be(kg);
+        }
         
         [Fact]
         public void MeasureMultiplication_WithOrthogonalUnit_ShouldError()
@@ -220,6 +260,19 @@ namespace Palantir.Calculation.UnitTests
             var result = weight1 * weight2;
             result.Value.Should().Be(11000000);
             result.Unit.Should().Be(g);
+        }
+        
+        [Fact]
+        public void MeasureMultiplication_WithReverseConvertibleUnit_ShouldProduceResult()
+        {
+            var kg = new Unit("kg");
+            var g = new Unit("g");
+            g.AddConversion(kg, x => x / 1000);
+            var weight1 = new Measure(110, kg);
+            var weight2 = new Measure(100, g);
+            var result = weight1 * weight2;
+            result.Value.Should().Be(11);
+            result.Unit.Should().Be(kg);
         }
     }
 }
