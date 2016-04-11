@@ -1,5 +1,7 @@
 namespace Palantir.Calculation
 {
+    using System;
+    using System.Collections.Generic;
     using System.Diagnostics.Contracts;
     
     /// <summary>
@@ -9,6 +11,7 @@ namespace Palantir.Calculation
     {
         private readonly string abbreviation;
         private readonly string name;
+        private readonly Dictionary<Unit, Func<decimal, decimal>> conversions = new Dictionary<Unit, Func<decimal, decimal>>();
         
         /// <summary>
         /// Initializes a new instance of the <see cref="Unit" /> class.
@@ -32,5 +35,36 @@ namespace Palantir.Calculation
         /// The unit name.
         /// </summary>
         public string Name => name;
+        
+        /// <summary>
+        /// Indicates if the Unit can be converted to another unit type.
+        /// </summary>
+        /// <param name="unit">The unit type to convert to.</param>
+        /// <param name="conversion">The conversion function that returns the converted units.</param>
+        public void AddConversion(Unit unit, Func<decimal, decimal> conversion) 
+        {
+            Contract.Requires(unit != null);
+            Contract.Requires(conversion != null);
+            
+            conversions.Add(unit, conversion);
+        }
+        
+        /// <summary>
+        /// Indicates if the Unit can be converted to another unit type.
+        /// </summary>
+        /// <param name="unit">The unit type to convert to.</param>
+        /// <returns>true if the indicated unit type can be converted to.</returns>
+        public bool CanConvertTo(Unit unit) 
+        {
+            return (unit == this || conversions.ContainsKey(unit));
+        }
+        
+        internal Func<decimal, decimal> GetConversion(Unit unit) 
+        {
+            if (unit == this)
+                return x => x;
+            
+            return conversions[unit]; 
+        }
     }
 }

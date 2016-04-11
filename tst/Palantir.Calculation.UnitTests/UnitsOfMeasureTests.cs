@@ -18,12 +18,45 @@ namespace Palantir.Calculation.UnitTests
         }
         
         [Fact]
+        public void AddUnitConversion_ShouldEnableConversion() 
+        {
+            var kg = new Unit("kg", "Kilogram");
+            var g = new Unit("g", "Gram");
+            
+            kg.AddConversion(g, x => x * 1000);
+            kg.CanConvertTo(g).Should().BeTrue();
+        }
+        
+        [Fact]
         public void CreateSimpleMeasure_ShouldSetProperties()
         {
             var kg = new Unit("kg");
             var weight = new Measure(110, kg);
             weight.Value.Should().Be(110);
             weight.Unit.Should().Be(kg);
+        }
+        
+        [Fact]
+        public void MeasureConvertUnit_WhenConvertible_ShouldProduceResult()
+        {
+            var kg = new Unit("kg");
+            var g = new Unit("g");
+            kg.AddConversion(g, x => x * 1000);
+            
+            var weight = new Measure(110, kg);
+            var result = weight.ConvertTo(g);
+            result.Value.Should().Be(110000);
+            result.Unit.Should().Be(g);
+        }
+        
+        [Fact]
+        public void MeasureConvertUnit_WhenNotConvertible_ShouldError()
+        {
+            var kg = new Unit("kg");
+            var g = new Unit("g");
+            var weight = new Measure(110, kg);
+            Action action = () => weight.ConvertTo(g);
+            action.ShouldThrow<IncompatibleUnitException>();
         }
         
         [Fact]
@@ -47,6 +80,19 @@ namespace Palantir.Calculation.UnitTests
             Action action = () => Add(weight, speed);
             action.ShouldThrow<IncompatibleUnitException>()
                 .WithMessage("Cannot add 'kg' and 'kph' units");
+        }
+        
+        [Fact]
+        public void MeasureAddition_WithConvertibleUnit_ShouldProduceResult()
+        {
+            var kg = new Unit("kg");
+            var g = new Unit("g");
+            kg.AddConversion(g, x => x * 1000);
+            var weight1 = new Measure(110, kg);
+            var weight2 = new Measure(100, g);
+            var result = weight1 + weight2;
+            result.Value.Should().Be(110100);
+            result.Unit.Should().Be(g);
         }
         
         private Measure Add(Measure lhs, Measure rhs)
@@ -138,12 +184,6 @@ namespace Palantir.Calculation.UnitTests
         }
         
         /*
-        
-        [Fact]
-        public void MeasureAddition_WithConvertibleUnit_ShouldProduceResult()
-        {
-            throw new NotImplementedException();
-        }
         
         [Fact]
         public void MeasureSubtraction_WithConvertibleUnit_ShouldProduceResult()
