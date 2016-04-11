@@ -58,7 +58,7 @@ namespace Palantir.Calculation
             {
                 if (!lhs.Unit.CanConvertTo(rhs.Unit))
                     throw new IncompatibleUnitException($"Cannot add '{lhs.Unit.Abbreviation}' and '{rhs.Unit.Abbreviation}' units");
-                    
+
                 return new Measure(lhs.Unit.GetConversion(rhs.Unit)(lhs.Value), rhs.Unit) + rhs;        
             }
                 
@@ -73,9 +73,14 @@ namespace Palantir.Calculation
         /// <returns>The resultant measure.</returns>
         public static Measure operator-(Measure lhs, Measure rhs)
         {
-            if (lhs.Unit != rhs.Unit)
-                throw new IncompatibleUnitException($"Cannot subtract '{lhs.Unit.Abbreviation}' and '{rhs.Unit.Abbreviation}' units");
-                
+            if (lhs.Unit != rhs.Unit) 
+            {
+                if (!lhs.Unit.CanConvertTo(rhs.Unit))
+                    throw new IncompatibleUnitException($"Cannot subtract '{lhs.Unit.Abbreviation}' and '{rhs.Unit.Abbreviation}' units");
+
+                return new Measure(lhs.Unit.GetConversion(rhs.Unit)(lhs.Value), rhs.Unit) - rhs;        
+            }
+
             return new Measure(lhs.Value - rhs.Value, lhs.Unit);
         }
         
@@ -87,9 +92,14 @@ namespace Palantir.Calculation
         /// <returns>The resultant measure.</returns>
         public static Measure operator/(Measure lhs, Measure rhs)
         {
-            if (lhs.Unit != rhs.Unit)
-                throw new IncompatibleUnitException($"Cannot divide '{lhs.Unit.Abbreviation}' and '{rhs.Unit.Abbreviation}' units");
-                
+            if (lhs.Unit != rhs.Unit) 
+            {
+                if (!lhs.Unit.CanConvertTo(rhs.Unit))
+                    throw new IncompatibleUnitException($"Cannot divide '{lhs.Unit.Abbreviation}' and '{rhs.Unit.Abbreviation}' units");
+
+                return new Measure(lhs.Unit.GetConversion(rhs.Unit)(lhs.Value), rhs.Unit) / rhs;        
+            }
+
             return new Measure(lhs.Value / rhs.Value, lhs.Unit);
         }
         
@@ -101,13 +111,12 @@ namespace Palantir.Calculation
         /// <returns>The resultant measure.</returns>
         public static Measure operator*(Measure lhs, Measure rhs)
         {
-            if (lhs.Unit != rhs.Unit)
+            if (lhs.Unit != rhs.Unit) 
             {
-                if (lhs.Unit.CanConvertTo(rhs.Unit))
-                {
-                    //return lhs.ConvertTo(rhs.Unit) * rhs;
-                }
-                throw new IncompatibleUnitException($"Cannot multiply '{lhs.Unit.Abbreviation}' and '{rhs.Unit.Abbreviation}' units");
+                if (!lhs.Unit.CanConvertTo(rhs.Unit))
+                    throw new IncompatibleUnitException($"Cannot multiply '{lhs.Unit.Abbreviation}' and '{rhs.Unit.Abbreviation}' units");
+
+                return new Measure(lhs.Unit.GetConversion(rhs.Unit)(lhs.Value), rhs.Unit) * rhs;        
             }
                 
             return new Measure(lhs.Value * rhs.Value, lhs.Unit);

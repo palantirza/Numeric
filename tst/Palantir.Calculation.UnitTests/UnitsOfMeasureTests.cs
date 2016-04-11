@@ -137,7 +137,20 @@ namespace Palantir.Calculation.UnitTests
             action.ShouldThrow<IncompatibleUnitException>()
                 .WithMessage("Cannot subtract 'kg' and 'kph' units");
         }
-        
+
+        [Fact]
+        public void MeasureSubtraction_WithConvertibleUnit_ShouldProduceResult()
+        {
+            var kg = new Unit("kg");
+            var g = new Unit("g");
+            kg.AddConversion(g, x => x * 1000);
+            var weight1 = new Measure(110, kg);
+            var weight2 = new Measure(100, g);
+            var result = weight1 - weight2;
+            result.Value.Should().Be(109900);
+            result.Unit.Should().Be(g);
+        }
+
         [Fact]
         public void MeasureDivision_WithSameUnit_ShouldProduceResult()
         {
@@ -160,7 +173,20 @@ namespace Palantir.Calculation.UnitTests
             action.ShouldThrow<IncompatibleUnitException>()
                 .WithMessage("Cannot divide 'kg' and 'kph' units");
         }
-        
+
+        [Fact]
+        public void MeasureDivision_WithConvertibleUnit_ShouldProduceResult()
+        {
+            var kg = new Unit("kg");
+            var g = new Unit("g");
+            kg.AddConversion(g, x => x * 1000);
+            var weight1 = new Measure(110, kg);
+            var weight2 = new Measure(100, g);
+            var result = weight1 / weight2;
+            result.Value.Should().Be(1100);
+            result.Unit.Should().Be(g);
+        }
+
         [Fact]
         public void MeasureMultiplication_WithSameUnit_ShouldProduceResult()
         {
@@ -183,24 +209,17 @@ namespace Palantir.Calculation.UnitTests
                 .WithMessage("Cannot multiply 'kg' and 'kph' units");
         }
         
-        /*
-        
-        [Fact]
-        public void MeasureSubtraction_WithConvertibleUnit_ShouldProduceResult()
-        {
-            throw new NotImplementedException();
-        }
-        
-        [Fact]
-        public void MeasureDivision_WithConvertibleUnit_ShouldProduceResult()
-        {
-            throw new NotImplementedException();
-        }
-        
         [Fact]
         public void MeasureMultiplication_WithConvertibleUnit_ShouldProduceResult()
         {
-            throw new NotImplementedException();
-        }*/
+            var kg = new Unit("kg");
+            var g = new Unit("g");
+            kg.AddConversion(g, x => x * 1000);
+            var weight1 = new Measure(110, kg);
+            var weight2 = new Measure(100, g);
+            var result = weight1 * weight2;
+            result.Value.Should().Be(11000000);
+            result.Unit.Should().Be(g);
+        }
     }
 }
