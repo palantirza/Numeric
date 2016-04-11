@@ -1,25 +1,96 @@
-#Calculation Engine
+# Calculation Engine
+The Palantir Calculation Library consists of a set of useful types for performing various types of complex, primarily financial, calculations.
 
 ## Units of Measure
+A unit of measure is a value combined with a named unit, for example, ```100 kg```.
 
 ### Unit
-A unit contains:
-* a scaling factor
-* a string for the textual representation
-* a reference that the unit scales to
+Units are the "types" of a measure. Units consist of:
+
+* An abbreviation (e.g. "kg")
+* An optional name (e.g. "Kilogram")
+* Zero or more *conversions*
+
+A conversion relates one unit to another, along with a scaling factor, which is simply a lambda function.
+
+**Example**
+
+Create ```kilogram``` and ```gram``` units, and add a conversion from kilograms to grams.
+
+```
+var kg = new Unit("kg");
+var g = new Unit("g");
+
+kg.AddConversion(g, x => x * 1000);
+```
 
 ### Measure
+A measure is the unification of a value and the unit, in essence the value type.
+
 A measure contains:
-* a value
-* a reference to the unit
+
+* A value
+* A reference to the ```Unit```
+
+**Example**
+
+Create a measure of ```100 kg```.
+
+```
+var kg = new Unit("kg");
+var weight = new Measure(110, kg);
+
+```
 
 ### Calculations
-If addition/subtraction is performed on two Measures with the same unit, 
-it is performed directly. Otherwise both values are converted to their respective 
-base units and the added/subtracted. 
+Arithmetic operations can be performed between measures that share a ```Unit```. If not, a conversion will be looked for that converts from the one ```Unit``` to the other, and then the calculationwill be performed.
 
-## Currencies
+**Example**
+
+Create a measure of ```100 kg``` and add a measure of ```500 g```.
+
+```
+var kg = new Unit("kg");
+var g = new Unit("g");
+kg.AddConversion(g, x => x * 1000);
+
+var weight1 = new Measure(100, kg);
+var weight2 = new Measure(500, g);
+
+var result = weight1 + weight2; // 100500 g
+
+```
+
 ## Money
+```Money``` is quite similar to a Unit of Measure in many respects, with ```Currency``` taking the place of ```Unit```. However, unlike a unit of measure a ```Currency``` can also have a ```Scale``` which defines the number of digits in the ```Money``` instance.
+
+### Currency
+
+Currency is the "type" of Money transactions, and similar to Units. Currencies consist of:
+
+* A Code, e.g. "USD"
+* A Symbol, e.g. "$"
+* A Scale, e.g. "2"
+
+### Calculations
+Arithmetic operations can be performed between money that shares a ```Currency```. Unlike Units of Measure, no mechanism for performing conversions is built directly into the library.
+
+This is deliberate, currency conversions change rapidly, and require external data, and thus don't lend themselves well to a library of standard conversions.
+
+**Example**
+
+Add ```$ 100``` to ```$ 150```.
+
+```
+var usd = new Currency("USD", "$", 2);
+
+var value1 = new Money(100, usd);
+var value2 = new Money(150, usd);
+
+var result = value1 + value2; // $ 250
+
+```
+
 ## Stochastic
 ### Probability Distribution
 
