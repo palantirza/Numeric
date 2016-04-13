@@ -1,11 +1,11 @@
-namespace Palantir.Calculation.UnitTests
+namespace Palantir.Numeric.UnitTests
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using Xunit;
     using FluentAssertions;
-    using Palantir.Calculation;
+    using Palantir.Numeric;
 
     public class UnitsOfMeasureTests
     {

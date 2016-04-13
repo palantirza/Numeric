@@ -17,12 +17,12 @@ A conversion relates one unit to another, along with a scaling factor, which is 
 
 Create ```kilogram``` and ```gram``` units, and add a conversion from kilograms to grams.
 
-```
+~~~csharp
 var kg = new Unit("kg");
 var g = new Unit("g");
 
 kg.AddConversion(g, x => x * 1000);
-```
+~~~
 
 ### Measure
 A measure is the unification of a value and the unit, in essence the value type.
@@ -36,11 +36,10 @@ A measure contains:
 
 Create a measure of ```100 kg```.
 
-```
+~~~csharp
 var kg = new Unit("kg");
 var weight = new Measure(110, kg);
-
-```
+~~~
 
 ### Calculations
 Arithmetic operations can be performed between measures that share a ```Unit```. If not, a conversion will be looked for that converts from the one ```Unit``` to the other, and then the calculationwill be performed.
@@ -49,7 +48,7 @@ Arithmetic operations can be performed between measures that share a ```Unit```.
 
 Create a measure of ```100 kg``` and add a measure of ```500 g```.
 
-```
+~~~csharp
 var kg = new Unit("kg");
 var g = new Unit("g");
 kg.AddConversion(g, x => x * 1000);
@@ -58,8 +57,7 @@ var weight1 = new Measure(100, kg);
 var weight2 = new Measure(500, g);
 
 var result = weight1 + weight2; // 100500 g
-
-```
+~~~
 
 ## Money
 ```Money``` is quite similar to a Unit of Measure in many respects, with ```Currency``` taking the place of ```Unit```. However, unlike a unit of measure a ```Currency``` can also have a ```Scale``` which defines the number of digits in the ```Money``` instance.
@@ -81,15 +79,26 @@ This is deliberate, currency conversions change rapidly, and require external da
 
 Add ```$ 100``` to ```$ 150```.
 
-```
+~~~csharp
 var usd = new Currency("USD", "$", 2);
 
 var value1 = new Money(100, usd);
 var value2 = new Money(150, usd);
 
 var result = value1 + value2; // $ 250
+~~~
 
-```
+## Formulas
+
+The Palantir Calculation Library supports complex formulas. These can be parsed from text, and rendered for display.
+
+**Example**
+
+Parse the formula $$x = \frac{x^3}{\pi}$$
+
+~~~csharp
+Expression formula = Formula.Parse("x = x^3 \ [Pi]");
+~~~
 
 ## Stochastic
 ### Probability Distribution

@@ -1,4 +1,4 @@
-namespace Palantir.Calculation
+namespace Palantir.Numeric
 {
     using System.Globalization;
     using System.Diagnostics.Contracts;

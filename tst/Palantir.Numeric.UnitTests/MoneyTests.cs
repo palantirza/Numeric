@@ -1,4 +1,4 @@
-namespace Palantir.Calculation.UnitTests
+namespace Palantir.Numeric.UnitTests
 {
     using System;
     using FluentAssertions;

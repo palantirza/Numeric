@@ -1,12 +1,12 @@
 {
   "version": "1.0.0-*",
-  "description": "Palantir.Calculation Class Library",
+  "description": "Palantir.Numeric Class Library",
   "authors": [ "Class Library template" ],
   "tags": [""],
   "projectUrl": "",
   "licenseUrl": "",
   "tooling": {
-    "defaultNamespace": "Palantir.Calculation"
+    "defaultNamespace": "Palantir.Numeric"
   },
   "dependencies": {
       "System.Diagnostics.Contracts": "4.0.0",
