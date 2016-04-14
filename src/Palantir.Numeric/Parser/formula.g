@@ -55,7 +55,126 @@ CURRENCY
 	|	CURR_SYM ' '? DIGIT+
 	;
 
-/* From http://www.xe.com/symbols.php */
+UNIT 
+	:	FLOAT ' '? SI_UNIT
+    |	INTEGER SI_UNIT
+	;
+
+EXP	:	('E'|'e') ('+'|'-')? DIGIT+ 
+	;
+
+WHITESPACE : ( '\t' | ' ' | '\r' | '\n'| '\u000C' )+    { $channel = Hidden; } ;
+
+fragment SI_UNIT : (SI_METER|SI_KG|SI_SEC|SI_AMP|SI_KELVIN|SI_MOLE|SI_CANDELA
+        |SI_SQ_METER_1|SI_SQ_METER_2|SI_CU_METER_1|SI_CU_METER_2|SI_MPS
+        |SI_MPS_SQ_1|SI_MPS_SQ_2|SI_REC_METER_1|SI_REC_METER_2|SI_KG_CU_METER_1
+        |SI_KG_CU_METER_2|SI_CU_METER_KG_1|SI_CU_METER_KG_2|SI_AMP_SQ_METER_1
+        |SI_AMP_SQ_METER_2|SI_AMP_METER|SI_MOL_CU_METER_1|SI_MOL_CU_METER_2
+        |SI_CANDELA_SQ_METER_1|SI_CANDELA_SQ_METER_2|SI_RADIAN|SI_SOLID_ANGLE
+        |SI_HERTZ|SI_NEWTON|SI_PASCAL|SI_JOULE|SI_WATT|SI_COULOMB|SI_VOLT
+        |SI_FARAD|SI_OHM_1|SI_OHM_2|SI_SIEMENS|SI_WEBER|SI_TESLA|SI_HENRY
+        |SI_CELCIUS|SI_LUMEN|SI_LUX|SI_BECQUEREL|SI_GRAY|SI_SIEVERT|SI_KATAL
+        |SI_PASCAL_SEC|SI_NEWTON_METER|SI_NEWTON_PER_METER|SI_RADIAN_PER_SEC
+        |SI_RADIAN_PER_SEC_SQ_1|SI_RADIAN_PER_SEC_SQ_2|SI_WATT_PER_METER_SQ_1
+        |SI_WATT_PER_METER_SQ_2|SI_JOULE_PER_KELVIN|SI_JOULE_PER_KG_KELVIN
+        |SI_JOULE_PER_KG|SI_WATT_PER_METER_KELVIN|SI_JOULE_PER_CU_METER_1
+        |SI_JOULE_PER_CU_METER_2|SI_VOLT_PER_METER|SI_COULOMB_PER_CU_METER_1
+        |SI_COULOMB_PER_CU_METER_2|SI_COULOMB_PER_SQ_METER_1
+        |SI_COULOMB_PER_SQ_METER_2|SI_FARAD_PER_METER|SI_HENRY_PER_METER
+        |SI_JOULE_PER_MOLE|SI_JOULE_PER_MOLE_KELVIN|SI_COULOMB_PER_KG
+        |SI_GRAY_PER_SEC|SI_WATT_PER_STERADIAN|SI_WATT_PER_SQ_METER_STERADIAN_1
+        |SI_WATT_PER_SQ_METER_STERADIAN_2|SI_KATAL_PER_CU_METER_1
+        |SI_KATAL_PER_CU_METER_2
+        );
+
+// From http://physics.nist.gov/cuu/Units/units.html
+// Base Units
+fragment SI_METER: 'm';
+fragment SI_KG: 'kg';
+fragment SI_SEC: 's';
+fragment SI_AMP: 'A';
+fragment SI_KELVIN: 'K';
+fragment SI_MOLE: 'mol';
+fragment SI_CANDELA: 'cd';
+
+// Derived Units
+fragment SI_SQ_METER_1: 'm²';
+fragment SI_SQ_METER_2: 'm^2';
+fragment SI_CU_METER_1: 'm³';
+fragment SI_CU_METER_2: 'm^3';
+fragment SI_MPS: 'm/s';
+fragment SI_MPS_SQ_1: 'm/s²';
+fragment SI_MPS_SQ_2: 'm/s^2';
+fragment SI_REC_METER_1: 'm⁻¹';
+fragment SI_REC_METER_2: 'm^-1';
+fragment SI_KG_CU_METER_1: 'kg/m³';
+fragment SI_KG_CU_METER_2: 'kg/m^3';
+fragment SI_CU_METER_KG_1: 'm³/kg';
+fragment SI_CU_METER_KG_2: 'm^3/kg';
+fragment SI_AMP_SQ_METER_1: 'A/m²';
+fragment SI_AMP_SQ_METER_2: 'A/m^2';
+fragment SI_AMP_METER: 'A/m';
+fragment SI_MOL_CU_METER_1: 'mol/m³';
+fragment SI_MOL_CU_METER_2: 'mol/m^3';
+fragment SI_CANDELA_SQ_METER_1: 'cd/m²';
+fragment SI_CANDELA_SQ_METER_2: 'cd/m^2';
+
+fragment SI_RADIAN: 'rad';
+fragment SI_SOLID_ANGLE: 'sr(c)';
+fragment SI_HERTZ: 'Hz';
+fragment SI_NEWTON: 'N';
+fragment SI_PASCAL: 'Pa';
+fragment SI_JOULE: 'J';
+fragment SI_WATT: 'W';
+fragment SI_COULOMB: 'C';
+fragment SI_VOLT: 'V';
+fragment SI_FARAD: 'F';
+fragment SI_OHM_1: 'Ω';
+fragment SI_OHM_2: 'ohm';
+fragment SI_SIEMENS: 'S';
+fragment SI_WEBER: 'Wb';
+fragment SI_TESLA: 'T';
+fragment SI_HENRY: 'H';
+fragment SI_CELCIUS: '°C';
+fragment SI_LUMEN: 'lm';
+fragment SI_LUX: 'lx';
+fragment SI_BECQUEREL: 'Bq';
+fragment SI_GRAY: 'Gy';
+fragment SI_SIEVERT: 'Sv';
+fragment SI_KATAL: 'kat';
+fragment SI_PASCAL_SEC: 'Pa·s';
+fragment SI_NEWTON_METER: 'N·m';
+fragment SI_NEWTON_PER_METER: 'N/m';
+fragment SI_RADIAN_PER_SEC: 'rad/s';
+fragment SI_RADIAN_PER_SEC_SQ_1: 'rad/s²';
+fragment SI_RADIAN_PER_SEC_SQ_2: 'rad/s^2';
+fragment SI_WATT_PER_METER_SQ_1: 'W/m²';
+fragment SI_WATT_PER_METER_SQ_2: 'W/m^2';
+fragment SI_JOULE_PER_KELVIN: 'J/K';
+fragment SI_JOULE_PER_KG_KELVIN: 'J/(kg·K)';
+fragment SI_JOULE_PER_KG: 'J/kg';
+fragment SI_WATT_PER_METER_KELVIN: 'W/(m·K)';
+fragment SI_JOULE_PER_CU_METER_1: 'J/m³';
+fragment SI_JOULE_PER_CU_METER_2: 'J/m^3';
+fragment SI_VOLT_PER_METER: 'V/m';
+fragment SI_COULOMB_PER_CU_METER_1: 'C/m³';
+fragment SI_COULOMB_PER_CU_METER_2: 'C/m^3';
+fragment SI_COULOMB_PER_SQ_METER_1: 'C/m²';
+fragment SI_COULOMB_PER_SQ_METER_2: 'C/m^2';
+fragment SI_FARAD_PER_METER: 'F/m';
+fragment SI_HENRY_PER_METER: 'H/m';
+fragment SI_JOULE_PER_MOLE: 'J/mol';
+fragment SI_JOULE_PER_MOLE_KELVIN: 'J/(mol·K)';
+fragment SI_COULOMB_PER_KG: 'C/kg';
+fragment SI_GRAY_PER_SEC: 'Gy/s';
+fragment SI_WATT_PER_STERADIAN: 'W/sr';
+fragment SI_WATT_PER_SQ_METER_STERADIAN_1: 'W/(m²·sr)';
+fragment SI_WATT_PER_SQ_METER_STERADIAN_2: 'W/(m^2·sr)';
+fragment SI_KATAL_PER_CU_METER_1: 'kat/m³';
+fragment SI_KATAL_PER_CU_METER_2: 'kat/m^3';
+
+
+// From http://www.xe.com/symbols.php
 fragment CURR_SYM
     :   (CURR_ALL|CURR_AFN|CURR_USD|CURR_AWG|CURR_AZN|CURR_BYR|CURR_BZD
     |CURR_BOB|CURR_BAM|CURR_BWP|CURR_BGN|CURR_BRL|CURR_KHR|CURR_CRC
@@ -150,8 +269,3 @@ fragment CURR_XBT: '\u20bf';                // Bitcoin
 fragment DIGIT: '1'..'9' '0'..'9'*;
 fragment OCTAL_DIGIT: '0' '0'..'7'+;
 fragment HEX_DIGIT: '0x' ('0'..'9' | 'a'..'f' | 'A'..'F')+;
-
-EXP	:	('E'|'e') ('+'|'-')? DIGIT+ 
-	;
-	
-WHITESPACE : ( '\t' | ' ' | '\r' | '\n'| '\u000C' )+    { $channel = Hidden; } ;

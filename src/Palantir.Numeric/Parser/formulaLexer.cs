@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 formula.g 2016-04-14 11:46:14
+// $ANTLR 3.4 formula.g 2016-04-14 14:53:55
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -101,7 +101,89 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 	public const int MULT=71;
 	public const int OCTAL_DIGIT=72;
 	public const int PLUS=73;
-	public const int WHITESPACE=74;
+	public const int SI_AMP=74;
+	public const int SI_AMP_METER=75;
+	public const int SI_AMP_SQ_METER_1=76;
+	public const int SI_AMP_SQ_METER_2=77;
+	public const int SI_BECQUEREL=78;
+	public const int SI_CANDELA=79;
+	public const int SI_CANDELA_SQ_METER_1=80;
+	public const int SI_CANDELA_SQ_METER_2=81;
+	public const int SI_CELCIUS=82;
+	public const int SI_COULOMB=83;
+	public const int SI_COULOMB_PER_CU_METER_1=84;
+	public const int SI_COULOMB_PER_CU_METER_2=85;
+	public const int SI_COULOMB_PER_KG=86;
+	public const int SI_COULOMB_PER_SQ_METER_1=87;
+	public const int SI_COULOMB_PER_SQ_METER_2=88;
+	public const int SI_CU_METER_1=89;
+	public const int SI_CU_METER_2=90;
+	public const int SI_CU_METER_KG_1=91;
+	public const int SI_CU_METER_KG_2=92;
+	public const int SI_FARAD=93;
+	public const int SI_FARAD_PER_METER=94;
+	public const int SI_GRAY=95;
+	public const int SI_GRAY_PER_SEC=96;
+	public const int SI_HENRY=97;
+	public const int SI_HENRY_PER_METER=98;
+	public const int SI_HERTZ=99;
+	public const int SI_JOULE=100;
+	public const int SI_JOULE_PER_CU_METER_1=101;
+	public const int SI_JOULE_PER_CU_METER_2=102;
+	public const int SI_JOULE_PER_KELVIN=103;
+	public const int SI_JOULE_PER_KG=104;
+	public const int SI_JOULE_PER_KG_KELVIN=105;
+	public const int SI_JOULE_PER_MOLE=106;
+	public const int SI_JOULE_PER_MOLE_KELVIN=107;
+	public const int SI_KATAL=108;
+	public const int SI_KATAL_PER_CU_METER_1=109;
+	public const int SI_KATAL_PER_CU_METER_2=110;
+	public const int SI_KELVIN=111;
+	public const int SI_KG=112;
+	public const int SI_KG_CU_METER_1=113;
+	public const int SI_KG_CU_METER_2=114;
+	public const int SI_LUMEN=115;
+	public const int SI_LUX=116;
+	public const int SI_METER=117;
+	public const int SI_MOLE=118;
+	public const int SI_MOL_CU_METER_1=119;
+	public const int SI_MOL_CU_METER_2=120;
+	public const int SI_MPS=121;
+	public const int SI_MPS_SQ_1=122;
+	public const int SI_MPS_SQ_2=123;
+	public const int SI_NEWTON=124;
+	public const int SI_NEWTON_METER=125;
+	public const int SI_NEWTON_PER_METER=126;
+	public const int SI_OHM_1=127;
+	public const int SI_OHM_2=128;
+	public const int SI_PASCAL=129;
+	public const int SI_PASCAL_SEC=130;
+	public const int SI_RADIAN=131;
+	public const int SI_RADIAN_PER_SEC=132;
+	public const int SI_RADIAN_PER_SEC_SQ_1=133;
+	public const int SI_RADIAN_PER_SEC_SQ_2=134;
+	public const int SI_REC_METER_1=135;
+	public const int SI_REC_METER_2=136;
+	public const int SI_SEC=137;
+	public const int SI_SIEMENS=138;
+	public const int SI_SIEVERT=139;
+	public const int SI_SOLID_ANGLE=140;
+	public const int SI_SQ_METER_1=141;
+	public const int SI_SQ_METER_2=142;
+	public const int SI_TESLA=143;
+	public const int SI_UNIT=144;
+	public const int SI_VOLT=145;
+	public const int SI_VOLT_PER_METER=146;
+	public const int SI_WATT=147;
+	public const int SI_WATT_PER_METER_KELVIN=148;
+	public const int SI_WATT_PER_METER_SQ_1=149;
+	public const int SI_WATT_PER_METER_SQ_2=150;
+	public const int SI_WATT_PER_SQ_METER_STERADIAN_1=151;
+	public const int SI_WATT_PER_SQ_METER_STERADIAN_2=152;
+	public const int SI_WATT_PER_STERADIAN=153;
+	public const int SI_WEBER=154;
+	public const int UNIT=155;
+	public const int WHITESPACE=156;
 
     // delegates
     // delegators
@@ -803,2557 +885,159 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 	}
 	// $ANTLR end "CURRENCY"
 
-	partial void EnterRule_CURR_SYM();
-	partial void LeaveRule_CURR_SYM();
+	partial void EnterRule_UNIT();
+	partial void LeaveRule_UNIT();
 
-	// $ANTLR start "CURR_SYM"
-	[GrammarRule("CURR_SYM")]
-	private void mCURR_SYM()
+	// $ANTLR start "UNIT"
+	[GrammarRule("UNIT")]
+	private void mUNIT()
 	{
-		EnterRule_CURR_SYM();
-		EnterRule("CURR_SYM", 8);
-		TraceIn("CURR_SYM", 8);
+		EnterRule_UNIT();
+		EnterRule("UNIT", 8);
+		TraceIn("UNIT", 8);
 		try
 		{
-			// formula.g:60:5: ( ( CURR_ALL | CURR_AFN | CURR_USD | CURR_AWG | CURR_AZN | CURR_BYR | CURR_BZD | CURR_BOB | CURR_BAM | CURR_BWP | CURR_BGN | CURR_BRL | CURR_KHR | CURR_CRC | CURR_HRK | CURR_CUP | CURR_CZK | CURR_DKK | CURR_DOP | CURR_GBP | CURR_EUR | CURR_GHS | CURR_GTQ | CURR_HNL | CURR_HUF | CURR_IDR | CURR_IRR | CURR_ILS | CURR_JMD | CURR_JPY | CURR_LAK | CURR_MKD | CURR_MYR | CURR_MNT | CURR_MZN | CURR_NIO | CURR_NGN | CURR_PAB | CURR_PYG | CURR_PEN | CURR_PLN | CURR_RON | CURR_RUB | CURR_RSD | CURR_SOS | CURR_ZAR | CURR_CHF | CURR_TWD | CURR_THB | CURR_TTD | CURR_UAH | CURR_UYU | CURR_VEF | CURR_VND | CURR_ZWD | CURR_XBT ) )
-			DebugEnterAlt(1);
-			// formula.g:60:9: ( CURR_ALL | CURR_AFN | CURR_USD | CURR_AWG | CURR_AZN | CURR_BYR | CURR_BZD | CURR_BOB | CURR_BAM | CURR_BWP | CURR_BGN | CURR_BRL | CURR_KHR | CURR_CRC | CURR_HRK | CURR_CUP | CURR_CZK | CURR_DKK | CURR_DOP | CURR_GBP | CURR_EUR | CURR_GHS | CURR_GTQ | CURR_HNL | CURR_HUF | CURR_IDR | CURR_IRR | CURR_ILS | CURR_JMD | CURR_JPY | CURR_LAK | CURR_MKD | CURR_MYR | CURR_MNT | CURR_MZN | CURR_NIO | CURR_NGN | CURR_PAB | CURR_PYG | CURR_PEN | CURR_PLN | CURR_RON | CURR_RUB | CURR_RSD | CURR_SOS | CURR_ZAR | CURR_CHF | CURR_TWD | CURR_THB | CURR_TTD | CURR_UAH | CURR_UYU | CURR_VEF | CURR_VND | CURR_ZWD | CURR_XBT )
-			{
-			DebugLocation(60, 9);
-			// formula.g:60:9: ( CURR_ALL | CURR_AFN | CURR_USD | CURR_AWG | CURR_AZN | CURR_BYR | CURR_BZD | CURR_BOB | CURR_BAM | CURR_BWP | CURR_BGN | CURR_BRL | CURR_KHR | CURR_CRC | CURR_HRK | CURR_CUP | CURR_CZK | CURR_DKK | CURR_DOP | CURR_GBP | CURR_EUR | CURR_GHS | CURR_GTQ | CURR_HNL | CURR_HUF | CURR_IDR | CURR_IRR | CURR_ILS | CURR_JMD | CURR_JPY | CURR_LAK | CURR_MKD | CURR_MYR | CURR_MNT | CURR_MZN | CURR_NIO | CURR_NGN | CURR_PAB | CURR_PYG | CURR_PEN | CURR_PLN | CURR_RON | CURR_RUB | CURR_RSD | CURR_SOS | CURR_ZAR | CURR_CHF | CURR_TWD | CURR_THB | CURR_TTD | CURR_UAH | CURR_UYU | CURR_VEF | CURR_VND | CURR_ZWD | CURR_XBT )
-			int alt13=56;
-			try { DebugEnterSubRule(13);
-			try { DebugEnterDecision(13, false);
+			int _type = UNIT;
+			int _channel = DefaultTokenChannel;
+			// formula.g:59:2: ( FLOAT ( ' ' )? SI_UNIT | INTEGER SI_UNIT )
+			int alt14=2;
+			try { DebugEnterDecision(14, false);
 			try
 			{
-				alt13 = dfa13.Predict(input);
+				alt14 = dfa14.Predict(input);
 			}
 			catch (NoViableAltException nvae)
 			{
 				DebugRecognitionException(nvae);
 				throw;
 			}
-			} finally { DebugExitDecision(13); }
-			switch (alt13)
+			} finally { DebugExitDecision(14); }
+			switch (alt14)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// formula.g:60:10: CURR_ALL
+				// formula.g:59:4: FLOAT ( ' ' )? SI_UNIT
 				{
-				DebugLocation(60, 10);
-				mCURR_ALL(); 
+				DebugLocation(59, 4);
+				mFLOAT(); 
+				DebugLocation(59, 10);
+				// formula.g:59:10: ( ' ' )?
+				int alt13=2;
+				try { DebugEnterSubRule(13);
+				try { DebugEnterDecision(13, false);
+				int LA13_0 = input.LA(1);
+
+				if ((LA13_0==' '))
+				{
+					alt13 = 1;
+				}
+				} finally { DebugExitDecision(13); }
+				switch (alt13)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// formula.g:59:10: ' '
+					{
+					DebugLocation(59, 10);
+					Match(' '); 
+
+					}
+					break;
+
+				}
+				} finally { DebugExitSubRule(13); }
+
+				DebugLocation(59, 15);
+				mSI_UNIT(); 
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// formula.g:60:19: CURR_AFN
+				// formula.g:60:7: INTEGER SI_UNIT
 				{
-				DebugLocation(60, 19);
-				mCURR_AFN(); 
-
-				}
-				break;
-			case 3:
-				DebugEnterAlt(3);
-				// formula.g:60:28: CURR_USD
-				{
-				DebugLocation(60, 28);
-				mCURR_USD(); 
-
-				}
-				break;
-			case 4:
-				DebugEnterAlt(4);
-				// formula.g:60:37: CURR_AWG
-				{
-				DebugLocation(60, 37);
-				mCURR_AWG(); 
-
-				}
-				break;
-			case 5:
-				DebugEnterAlt(5);
-				// formula.g:60:46: CURR_AZN
-				{
-				DebugLocation(60, 46);
-				mCURR_AZN(); 
-
-				}
-				break;
-			case 6:
-				DebugEnterAlt(6);
-				// formula.g:60:55: CURR_BYR
-				{
-				DebugLocation(60, 55);
-				mCURR_BYR(); 
-
-				}
-				break;
-			case 7:
-				DebugEnterAlt(7);
-				// formula.g:60:64: CURR_BZD
-				{
-				DebugLocation(60, 64);
-				mCURR_BZD(); 
-
-				}
-				break;
-			case 8:
-				DebugEnterAlt(8);
-				// formula.g:61:6: CURR_BOB
-				{
-				DebugLocation(61, 6);
-				mCURR_BOB(); 
-
-				}
-				break;
-			case 9:
-				DebugEnterAlt(9);
-				// formula.g:61:15: CURR_BAM
-				{
-				DebugLocation(61, 15);
-				mCURR_BAM(); 
-
-				}
-				break;
-			case 10:
-				DebugEnterAlt(10);
-				// formula.g:61:24: CURR_BWP
-				{
-				DebugLocation(61, 24);
-				mCURR_BWP(); 
-
-				}
-				break;
-			case 11:
-				DebugEnterAlt(11);
-				// formula.g:61:33: CURR_BGN
-				{
-				DebugLocation(61, 33);
-				mCURR_BGN(); 
-
-				}
-				break;
-			case 12:
-				DebugEnterAlt(12);
-				// formula.g:61:42: CURR_BRL
-				{
-				DebugLocation(61, 42);
-				mCURR_BRL(); 
-
-				}
-				break;
-			case 13:
-				DebugEnterAlt(13);
-				// formula.g:61:51: CURR_KHR
-				{
-				DebugLocation(61, 51);
-				mCURR_KHR(); 
-
-				}
-				break;
-			case 14:
-				DebugEnterAlt(14);
-				// formula.g:61:60: CURR_CRC
-				{
-				DebugLocation(61, 60);
-				mCURR_CRC(); 
-
-				}
-				break;
-			case 15:
-				DebugEnterAlt(15);
-				// formula.g:62:6: CURR_HRK
-				{
-				DebugLocation(62, 6);
-				mCURR_HRK(); 
-
-				}
-				break;
-			case 16:
-				DebugEnterAlt(16);
-				// formula.g:62:15: CURR_CUP
-				{
-				DebugLocation(62, 15);
-				mCURR_CUP(); 
-
-				}
-				break;
-			case 17:
-				DebugEnterAlt(17);
-				// formula.g:62:24: CURR_CZK
-				{
-				DebugLocation(62, 24);
-				mCURR_CZK(); 
-
-				}
-				break;
-			case 18:
-				DebugEnterAlt(18);
-				// formula.g:62:33: CURR_DKK
-				{
-				DebugLocation(62, 33);
-				mCURR_DKK(); 
-
-				}
-				break;
-			case 19:
-				DebugEnterAlt(19);
-				// formula.g:62:42: CURR_DOP
-				{
-				DebugLocation(62, 42);
-				mCURR_DOP(); 
-
-				}
-				break;
-			case 20:
-				DebugEnterAlt(20);
-				// formula.g:62:51: CURR_GBP
-				{
-				DebugLocation(62, 51);
-				mCURR_GBP(); 
-
-				}
-				break;
-			case 21:
-				DebugEnterAlt(21);
-				// formula.g:62:60: CURR_EUR
-				{
-				DebugLocation(62, 60);
-				mCURR_EUR(); 
-
-				}
-				break;
-			case 22:
-				DebugEnterAlt(22);
-				// formula.g:62:69: CURR_GHS
-				{
-				DebugLocation(62, 69);
-				mCURR_GHS(); 
-
-				}
-				break;
-			case 23:
-				DebugEnterAlt(23);
-				// formula.g:63:6: CURR_GTQ
-				{
-				DebugLocation(63, 6);
-				mCURR_GTQ(); 
-
-				}
-				break;
-			case 24:
-				DebugEnterAlt(24);
-				// formula.g:63:15: CURR_HNL
-				{
-				DebugLocation(63, 15);
-				mCURR_HNL(); 
-
-				}
-				break;
-			case 25:
-				DebugEnterAlt(25);
-				// formula.g:63:24: CURR_HUF
-				{
-				DebugLocation(63, 24);
-				mCURR_HUF(); 
-
-				}
-				break;
-			case 26:
-				DebugEnterAlt(26);
-				// formula.g:63:33: CURR_IDR
-				{
-				DebugLocation(63, 33);
-				mCURR_IDR(); 
-
-				}
-				break;
-			case 27:
-				DebugEnterAlt(27);
-				// formula.g:63:42: CURR_IRR
-				{
-				DebugLocation(63, 42);
-				mCURR_IRR(); 
-
-				}
-				break;
-			case 28:
-				DebugEnterAlt(28);
-				// formula.g:63:51: CURR_ILS
-				{
-				DebugLocation(63, 51);
-				mCURR_ILS(); 
-
-				}
-				break;
-			case 29:
-				DebugEnterAlt(29);
-				// formula.g:63:60: CURR_JMD
-				{
-				DebugLocation(63, 60);
-				mCURR_JMD(); 
-
-				}
-				break;
-			case 30:
-				DebugEnterAlt(30);
-				// formula.g:63:69: CURR_JPY
-				{
-				DebugLocation(63, 69);
-				mCURR_JPY(); 
-
-				}
-				break;
-			case 31:
-				DebugEnterAlt(31);
-				// formula.g:64:6: CURR_LAK
-				{
-				DebugLocation(64, 6);
-				mCURR_LAK(); 
-
-				}
-				break;
-			case 32:
-				DebugEnterAlt(32);
-				// formula.g:64:15: CURR_MKD
-				{
-				DebugLocation(64, 15);
-				mCURR_MKD(); 
-
-				}
-				break;
-			case 33:
-				DebugEnterAlt(33);
-				// formula.g:64:24: CURR_MYR
-				{
-				DebugLocation(64, 24);
-				mCURR_MYR(); 
-
-				}
-				break;
-			case 34:
-				DebugEnterAlt(34);
-				// formula.g:64:33: CURR_MNT
-				{
-				DebugLocation(64, 33);
-				mCURR_MNT(); 
-
-				}
-				break;
-			case 35:
-				DebugEnterAlt(35);
-				// formula.g:64:42: CURR_MZN
-				{
-				DebugLocation(64, 42);
-				mCURR_MZN(); 
-
-				}
-				break;
-			case 36:
-				DebugEnterAlt(36);
-				// formula.g:64:51: CURR_NIO
-				{
-				DebugLocation(64, 51);
-				mCURR_NIO(); 
-
-				}
-				break;
-			case 37:
-				DebugEnterAlt(37);
-				// formula.g:64:60: CURR_NGN
-				{
-				DebugLocation(64, 60);
-				mCURR_NGN(); 
-
-				}
-				break;
-			case 38:
-				DebugEnterAlt(38);
-				// formula.g:64:69: CURR_PAB
-				{
-				DebugLocation(64, 69);
-				mCURR_PAB(); 
-
-				}
-				break;
-			case 39:
-				DebugEnterAlt(39);
-				// formula.g:65:6: CURR_PYG
-				{
-				DebugLocation(65, 6);
-				mCURR_PYG(); 
-
-				}
-				break;
-			case 40:
-				DebugEnterAlt(40);
-				// formula.g:65:15: CURR_PEN
-				{
-				DebugLocation(65, 15);
-				mCURR_PEN(); 
-
-				}
-				break;
-			case 41:
-				DebugEnterAlt(41);
-				// formula.g:65:24: CURR_PLN
-				{
-				DebugLocation(65, 24);
-				mCURR_PLN(); 
-
-				}
-				break;
-			case 42:
-				DebugEnterAlt(42);
-				// formula.g:65:33: CURR_RON
-				{
-				DebugLocation(65, 33);
-				mCURR_RON(); 
-
-				}
-				break;
-			case 43:
-				DebugEnterAlt(43);
-				// formula.g:65:42: CURR_RUB
-				{
-				DebugLocation(65, 42);
-				mCURR_RUB(); 
-
-				}
-				break;
-			case 44:
-				DebugEnterAlt(44);
-				// formula.g:65:51: CURR_RSD
-				{
-				DebugLocation(65, 51);
-				mCURR_RSD(); 
-
-				}
-				break;
-			case 45:
-				DebugEnterAlt(45);
-				// formula.g:65:60: CURR_SOS
-				{
-				DebugLocation(65, 60);
-				mCURR_SOS(); 
-
-				}
-				break;
-			case 46:
-				DebugEnterAlt(46);
-				// formula.g:65:69: CURR_ZAR
-				{
-				DebugLocation(65, 69);
-				mCURR_ZAR(); 
-
-				}
-				break;
-			case 47:
-				DebugEnterAlt(47);
-				// formula.g:66:6: CURR_CHF
-				{
-				DebugLocation(66, 6);
-				mCURR_CHF(); 
-
-				}
-				break;
-			case 48:
-				DebugEnterAlt(48);
-				// formula.g:66:15: CURR_TWD
-				{
-				DebugLocation(66, 15);
-				mCURR_TWD(); 
-
-				}
-				break;
-			case 49:
-				DebugEnterAlt(49);
-				// formula.g:66:24: CURR_THB
-				{
-				DebugLocation(66, 24);
-				mCURR_THB(); 
-
-				}
-				break;
-			case 50:
-				DebugEnterAlt(50);
-				// formula.g:66:33: CURR_TTD
-				{
-				DebugLocation(66, 33);
-				mCURR_TTD(); 
-
-				}
-				break;
-			case 51:
-				DebugEnterAlt(51);
-				// formula.g:66:42: CURR_UAH
-				{
-				DebugLocation(66, 42);
-				mCURR_UAH(); 
-
-				}
-				break;
-			case 52:
-				DebugEnterAlt(52);
-				// formula.g:66:51: CURR_UYU
-				{
-				DebugLocation(66, 51);
-				mCURR_UYU(); 
-
-				}
-				break;
-			case 53:
-				DebugEnterAlt(53);
-				// formula.g:66:60: CURR_VEF
-				{
-				DebugLocation(66, 60);
-				mCURR_VEF(); 
-
-				}
-				break;
-			case 54:
-				DebugEnterAlt(54);
-				// formula.g:66:69: CURR_VND
-				{
-				DebugLocation(66, 69);
-				mCURR_VND(); 
-
-				}
-				break;
-			case 55:
-				DebugEnterAlt(55);
-				// formula.g:67:6: CURR_ZWD
-				{
-				DebugLocation(67, 6);
-				mCURR_ZWD(); 
-
-				}
-				break;
-			case 56:
-				DebugEnterAlt(56);
-				// formula.g:67:15: CURR_XBT
-				{
-				DebugLocation(67, 15);
-				mCURR_XBT(); 
+				DebugLocation(60, 7);
+				mINTEGER(); 
+				DebugLocation(60, 15);
+				mSI_UNIT(); 
 
 				}
 				break;
 
 			}
-			} finally { DebugExitSubRule(13); }
-
-
-			}
-
+			state.type = _type;
+			state.channel = _channel;
 		}
 		finally
 		{
-			TraceOut("CURR_SYM", 8);
-			LeaveRule("CURR_SYM", 8);
-			LeaveRule_CURR_SYM();
+			TraceOut("UNIT", 8);
+			LeaveRule("UNIT", 8);
+			LeaveRule_UNIT();
 		}
 	}
-	// $ANTLR end "CURR_SYM"
+	// $ANTLR end "UNIT"
 
-	partial void EnterRule_CURR_ALL();
-	partial void LeaveRule_CURR_ALL();
+	partial void EnterRule_EXP();
+	partial void LeaveRule_EXP();
 
-	// $ANTLR start "CURR_ALL"
-	[GrammarRule("CURR_ALL")]
-	private void mCURR_ALL()
+	// $ANTLR start "EXP"
+	[GrammarRule("EXP")]
+	private void mEXP()
 	{
-		EnterRule_CURR_ALL();
-		EnterRule("CURR_ALL", 9);
-		TraceIn("CURR_ALL", 9);
+		EnterRule_EXP();
+		EnterRule("EXP", 9);
+		TraceIn("EXP", 9);
 		try
 		{
-			// formula.g:69:18: ( 'Lek' )
+			int _type = EXP;
+			int _channel = DefaultTokenChannel;
+			// formula.g:63:5: ( ( 'E' | 'e' ) ( '+' | '-' )? ( DIGIT )+ )
 			DebugEnterAlt(1);
-			// formula.g:69:20: 'Lek'
+			// formula.g:63:7: ( 'E' | 'e' ) ( '+' | '-' )? ( DIGIT )+
 			{
-			DebugLocation(69, 20);
-			Match("Lek"); 
-
-
+			DebugLocation(63, 7);
+			if (input.LA(1)=='E'||input.LA(1)=='e')
+			{
+				input.Consume();
+			}
+			else
+			{
+				MismatchedSetException mse = new MismatchedSetException(null,input);
+				DebugRecognitionException(mse);
+				Recover(mse);
+				throw mse;
 			}
 
-		}
-		finally
-		{
-			TraceOut("CURR_ALL", 9);
-			LeaveRule("CURR_ALL", 9);
-			LeaveRule_CURR_ALL();
-		}
-	}
-	// $ANTLR end "CURR_ALL"
-
-	partial void EnterRule_CURR_AFN();
-	partial void LeaveRule_CURR_AFN();
-
-	// $ANTLR start "CURR_AFN"
-	[GrammarRule("CURR_AFN")]
-	private void mCURR_AFN()
-	{
-		EnterRule_CURR_AFN();
-		EnterRule("CURR_AFN", 10);
-		TraceIn("CURR_AFN", 10);
-		try
-		{
-			// formula.g:70:18: ( '\\u060B' )
-			DebugEnterAlt(1);
-			// formula.g:70:20: '\\u060B'
-			{
-			DebugLocation(70, 20);
-			Match('\u060B'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_AFN", 10);
-			LeaveRule("CURR_AFN", 10);
-			LeaveRule_CURR_AFN();
-		}
-	}
-	// $ANTLR end "CURR_AFN"
-
-	partial void EnterRule_CURR_USD();
-	partial void LeaveRule_CURR_USD();
-
-	// $ANTLR start "CURR_USD"
-	[GrammarRule("CURR_USD")]
-	private void mCURR_USD()
-	{
-		EnterRule_CURR_USD();
-		EnterRule("CURR_USD", 11);
-		TraceIn("CURR_USD", 11);
-		try
-		{
-			// formula.g:71:18: ( '$' )
-			DebugEnterAlt(1);
-			// formula.g:71:20: '$'
-			{
-			DebugLocation(71, 20);
-			Match('$'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_USD", 11);
-			LeaveRule("CURR_USD", 11);
-			LeaveRule_CURR_USD();
-		}
-	}
-	// $ANTLR end "CURR_USD"
-
-	partial void EnterRule_CURR_AWG();
-	partial void LeaveRule_CURR_AWG();
-
-	// $ANTLR start "CURR_AWG"
-	[GrammarRule("CURR_AWG")]
-	private void mCURR_AWG()
-	{
-		EnterRule_CURR_AWG();
-		EnterRule("CURR_AWG", 12);
-		TraceIn("CURR_AWG", 12);
-		try
-		{
-			// formula.g:83:18: ( '\\u0192' )
-			DebugEnterAlt(1);
-			// formula.g:83:20: '\\u0192'
-			{
-			DebugLocation(83, 20);
-			Match('\u0192'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_AWG", 12);
-			LeaveRule("CURR_AWG", 12);
-			LeaveRule_CURR_AWG();
-		}
-	}
-	// $ANTLR end "CURR_AWG"
-
-	partial void EnterRule_CURR_AZN();
-	partial void LeaveRule_CURR_AZN();
-
-	// $ANTLR start "CURR_AZN"
-	[GrammarRule("CURR_AZN")]
-	private void mCURR_AZN()
-	{
-		EnterRule_CURR_AZN();
-		EnterRule("CURR_AZN", 13);
-		TraceIn("CURR_AZN", 13);
-		try
-		{
-			// formula.g:84:18: ( '\\u043c\\u0430\\u043d' )
-			DebugEnterAlt(1);
-			// formula.g:84:20: '\\u043c\\u0430\\u043d'
-			{
-			DebugLocation(84, 20);
-			Match("\u043c\u0430\u043d"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_AZN", 13);
-			LeaveRule("CURR_AZN", 13);
-			LeaveRule_CURR_AZN();
-		}
-	}
-	// $ANTLR end "CURR_AZN"
-
-	partial void EnterRule_CURR_BYR();
-	partial void LeaveRule_CURR_BYR();
-
-	// $ANTLR start "CURR_BYR"
-	[GrammarRule("CURR_BYR")]
-	private void mCURR_BYR()
-	{
-		EnterRule_CURR_BYR();
-		EnterRule("CURR_BYR", 14);
-		TraceIn("CURR_BYR", 14);
-		try
-		{
-			// formula.g:85:18: ( 'p.' )
-			DebugEnterAlt(1);
-			// formula.g:85:20: 'p.'
-			{
-			DebugLocation(85, 20);
-			Match("p."); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_BYR", 14);
-			LeaveRule("CURR_BYR", 14);
-			LeaveRule_CURR_BYR();
-		}
-	}
-	// $ANTLR end "CURR_BYR"
-
-	partial void EnterRule_CURR_BZD();
-	partial void LeaveRule_CURR_BZD();
-
-	// $ANTLR start "CURR_BZD"
-	[GrammarRule("CURR_BZD")]
-	private void mCURR_BZD()
-	{
-		EnterRule_CURR_BZD();
-		EnterRule("CURR_BZD", 15);
-		TraceIn("CURR_BZD", 15);
-		try
-		{
-			// formula.g:86:18: ( 'BZ$' )
-			DebugEnterAlt(1);
-			// formula.g:86:20: 'BZ$'
-			{
-			DebugLocation(86, 20);
-			Match("BZ$"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_BZD", 15);
-			LeaveRule("CURR_BZD", 15);
-			LeaveRule_CURR_BZD();
-		}
-	}
-	// $ANTLR end "CURR_BZD"
-
-	partial void EnterRule_CURR_BOB();
-	partial void LeaveRule_CURR_BOB();
-
-	// $ANTLR start "CURR_BOB"
-	[GrammarRule("CURR_BOB")]
-	private void mCURR_BOB()
-	{
-		EnterRule_CURR_BOB();
-		EnterRule("CURR_BOB", 16);
-		TraceIn("CURR_BOB", 16);
-		try
-		{
-			// formula.g:87:18: ( '$b' )
-			DebugEnterAlt(1);
-			// formula.g:87:20: '$b'
-			{
-			DebugLocation(87, 20);
-			Match("$b"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_BOB", 16);
-			LeaveRule("CURR_BOB", 16);
-			LeaveRule_CURR_BOB();
-		}
-	}
-	// $ANTLR end "CURR_BOB"
-
-	partial void EnterRule_CURR_BAM();
-	partial void LeaveRule_CURR_BAM();
-
-	// $ANTLR start "CURR_BAM"
-	[GrammarRule("CURR_BAM")]
-	private void mCURR_BAM()
-	{
-		EnterRule_CURR_BAM();
-		EnterRule("CURR_BAM", 17);
-		TraceIn("CURR_BAM", 17);
-		try
-		{
-			// formula.g:88:18: ( 'KM' )
-			DebugEnterAlt(1);
-			// formula.g:88:20: 'KM'
-			{
-			DebugLocation(88, 20);
-			Match("KM"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_BAM", 17);
-			LeaveRule("CURR_BAM", 17);
-			LeaveRule_CURR_BAM();
-		}
-	}
-	// $ANTLR end "CURR_BAM"
-
-	partial void EnterRule_CURR_BWP();
-	partial void LeaveRule_CURR_BWP();
-
-	// $ANTLR start "CURR_BWP"
-	[GrammarRule("CURR_BWP")]
-	private void mCURR_BWP()
-	{
-		EnterRule_CURR_BWP();
-		EnterRule("CURR_BWP", 18);
-		TraceIn("CURR_BWP", 18);
-		try
-		{
-			// formula.g:89:18: ( 'P' )
-			DebugEnterAlt(1);
-			// formula.g:89:20: 'P'
-			{
-			DebugLocation(89, 20);
-			Match('P'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_BWP", 18);
-			LeaveRule("CURR_BWP", 18);
-			LeaveRule_CURR_BWP();
-		}
-	}
-	// $ANTLR end "CURR_BWP"
-
-	partial void EnterRule_CURR_BGN();
-	partial void LeaveRule_CURR_BGN();
-
-	// $ANTLR start "CURR_BGN"
-	[GrammarRule("CURR_BGN")]
-	private void mCURR_BGN()
-	{
-		EnterRule_CURR_BGN();
-		EnterRule("CURR_BGN", 19);
-		TraceIn("CURR_BGN", 19);
-		try
-		{
-			// formula.g:90:18: ( '\\u043b\\u0432' )
-			DebugEnterAlt(1);
-			// formula.g:90:20: '\\u043b\\u0432'
-			{
-			DebugLocation(90, 20);
-			Match("\u043b\u0432"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_BGN", 19);
-			LeaveRule("CURR_BGN", 19);
-			LeaveRule_CURR_BGN();
-		}
-	}
-	// $ANTLR end "CURR_BGN"
-
-	partial void EnterRule_CURR_BRL();
-	partial void LeaveRule_CURR_BRL();
-
-	// $ANTLR start "CURR_BRL"
-	[GrammarRule("CURR_BRL")]
-	private void mCURR_BRL()
-	{
-		EnterRule_CURR_BRL();
-		EnterRule("CURR_BRL", 20);
-		TraceIn("CURR_BRL", 20);
-		try
-		{
-			// formula.g:92:18: ( 'R$' )
-			DebugEnterAlt(1);
-			// formula.g:92:20: 'R$'
-			{
-			DebugLocation(92, 20);
-			Match("R$"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_BRL", 20);
-			LeaveRule("CURR_BRL", 20);
-			LeaveRule_CURR_BRL();
-		}
-	}
-	// $ANTLR end "CURR_BRL"
-
-	partial void EnterRule_CURR_KHR();
-	partial void LeaveRule_CURR_KHR();
-
-	// $ANTLR start "CURR_KHR"
-	[GrammarRule("CURR_KHR")]
-	private void mCURR_KHR()
-	{
-		EnterRule_CURR_KHR();
-		EnterRule("CURR_KHR", 21);
-		TraceIn("CURR_KHR", 21);
-		try
-		{
-			// formula.g:93:18: ( '\\u17db' )
-			DebugEnterAlt(1);
-			// formula.g:93:20: '\\u17db'
-			{
-			DebugLocation(93, 20);
-			Match('\u17DB'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_KHR", 21);
-			LeaveRule("CURR_KHR", 21);
-			LeaveRule_CURR_KHR();
-		}
-	}
-	// $ANTLR end "CURR_KHR"
-
-	partial void EnterRule_CURR_JPY();
-	partial void LeaveRule_CURR_JPY();
-
-	// $ANTLR start "CURR_JPY"
-	[GrammarRule("CURR_JPY")]
-	private void mCURR_JPY()
-	{
-		EnterRule_CURR_JPY();
-		EnterRule("CURR_JPY", 22);
-		TraceIn("CURR_JPY", 22);
-		try
-		{
-			// formula.g:94:18: ( '¥' )
-			DebugEnterAlt(1);
-			// formula.g:94:20: '¥'
-			{
-			DebugLocation(94, 20);
-			Match('\u00A5'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_JPY", 22);
-			LeaveRule("CURR_JPY", 22);
-			LeaveRule_CURR_JPY();
-		}
-	}
-	// $ANTLR end "CURR_JPY"
-
-	partial void EnterRule_CURR_CRC();
-	partial void LeaveRule_CURR_CRC();
-
-	// $ANTLR start "CURR_CRC"
-	[GrammarRule("CURR_CRC")]
-	private void mCURR_CRC()
-	{
-		EnterRule_CURR_CRC();
-		EnterRule("CURR_CRC", 23);
-		TraceIn("CURR_CRC", 23);
-		try
-		{
-			// formula.g:95:18: ( '\\u20a1' )
-			DebugEnterAlt(1);
-			// formula.g:95:20: '\\u20a1'
-			{
-			DebugLocation(95, 20);
-			Match('\u20A1'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_CRC", 23);
-			LeaveRule("CURR_CRC", 23);
-			LeaveRule_CURR_CRC();
-		}
-	}
-	// $ANTLR end "CURR_CRC"
-
-	partial void EnterRule_CURR_HRK();
-	partial void LeaveRule_CURR_HRK();
-
-	// $ANTLR start "CURR_HRK"
-	[GrammarRule("CURR_HRK")]
-	private void mCURR_HRK()
-	{
-		EnterRule_CURR_HRK();
-		EnterRule("CURR_HRK", 24);
-		TraceIn("CURR_HRK", 24);
-		try
-		{
-			// formula.g:96:18: ( 'kn' )
-			DebugEnterAlt(1);
-			// formula.g:96:20: 'kn'
-			{
-			DebugLocation(96, 20);
-			Match("kn"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_HRK", 24);
-			LeaveRule("CURR_HRK", 24);
-			LeaveRule_CURR_HRK();
-		}
-	}
-	// $ANTLR end "CURR_HRK"
-
-	partial void EnterRule_CURR_CUP();
-	partial void LeaveRule_CURR_CUP();
-
-	// $ANTLR start "CURR_CUP"
-	[GrammarRule("CURR_CUP")]
-	private void mCURR_CUP()
-	{
-		EnterRule_CURR_CUP();
-		EnterRule("CURR_CUP", 25);
-		TraceIn("CURR_CUP", 25);
-		try
-		{
-			// formula.g:97:18: ( '\\u20b1' )
-			DebugEnterAlt(1);
-			// formula.g:97:20: '\\u20b1'
-			{
-			DebugLocation(97, 20);
-			Match('\u20B1'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_CUP", 25);
-			LeaveRule("CURR_CUP", 25);
-			LeaveRule_CURR_CUP();
-		}
-	}
-	// $ANTLR end "CURR_CUP"
-
-	partial void EnterRule_CURR_CZK();
-	partial void LeaveRule_CURR_CZK();
-
-	// $ANTLR start "CURR_CZK"
-	[GrammarRule("CURR_CZK")]
-	private void mCURR_CZK()
-	{
-		EnterRule_CURR_CZK();
-		EnterRule("CURR_CZK", 26);
-		TraceIn("CURR_CZK", 26);
-		try
-		{
-			// formula.g:98:18: ( 'K\\u010d' )
-			DebugEnterAlt(1);
-			// formula.g:98:20: 'K\\u010d'
-			{
-			DebugLocation(98, 20);
-			Match("K\u010d"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_CZK", 26);
-			LeaveRule("CURR_CZK", 26);
-			LeaveRule_CURR_CZK();
-		}
-	}
-	// $ANTLR end "CURR_CZK"
-
-	partial void EnterRule_CURR_DKK();
-	partial void LeaveRule_CURR_DKK();
-
-	// $ANTLR start "CURR_DKK"
-	[GrammarRule("CURR_DKK")]
-	private void mCURR_DKK()
-	{
-		EnterRule_CURR_DKK();
-		EnterRule("CURR_DKK", 27);
-		TraceIn("CURR_DKK", 27);
-		try
-		{
-			// formula.g:99:18: ( 'kr' )
-			DebugEnterAlt(1);
-			// formula.g:99:20: 'kr'
-			{
-			DebugLocation(99, 20);
-			Match("kr"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_DKK", 27);
-			LeaveRule("CURR_DKK", 27);
-			LeaveRule_CURR_DKK();
-		}
-	}
-	// $ANTLR end "CURR_DKK"
-
-	partial void EnterRule_CURR_DOP();
-	partial void LeaveRule_CURR_DOP();
-
-	// $ANTLR start "CURR_DOP"
-	[GrammarRule("CURR_DOP")]
-	private void mCURR_DOP()
-	{
-		EnterRule_CURR_DOP();
-		EnterRule("CURR_DOP", 28);
-		TraceIn("CURR_DOP", 28);
-		try
-		{
-			// formula.g:101:18: ( 'RD$' )
-			DebugEnterAlt(1);
-			// formula.g:101:20: 'RD$'
-			{
-			DebugLocation(101, 20);
-			Match("RD$"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_DOP", 28);
-			LeaveRule("CURR_DOP", 28);
-			LeaveRule_CURR_DOP();
-		}
-	}
-	// $ANTLR end "CURR_DOP"
-
-	partial void EnterRule_CURR_GBP();
-	partial void LeaveRule_CURR_GBP();
-
-	// $ANTLR start "CURR_GBP"
-	[GrammarRule("CURR_GBP")]
-	private void mCURR_GBP()
-	{
-		EnterRule_CURR_GBP();
-		EnterRule("CURR_GBP", 29);
-		TraceIn("CURR_GBP", 29);
-		try
-		{
-			// formula.g:102:18: ( '£' )
-			DebugEnterAlt(1);
-			// formula.g:102:20: '£'
-			{
-			DebugLocation(102, 20);
-			Match('\u00A3'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_GBP", 29);
-			LeaveRule("CURR_GBP", 29);
-			LeaveRule_CURR_GBP();
-		}
-	}
-	// $ANTLR end "CURR_GBP"
-
-	partial void EnterRule_CURR_EUR();
-	partial void LeaveRule_CURR_EUR();
-
-	// $ANTLR start "CURR_EUR"
-	[GrammarRule("CURR_EUR")]
-	private void mCURR_EUR()
-	{
-		EnterRule_CURR_EUR();
-		EnterRule("CURR_EUR", 30);
-		TraceIn("CURR_EUR", 30);
-		try
-		{
-			// formula.g:108:18: ( '€' )
-			DebugEnterAlt(1);
-			// formula.g:108:20: '€'
-			{
-			DebugLocation(108, 20);
-			Match('\u20AC'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_EUR", 30);
-			LeaveRule("CURR_EUR", 30);
-			LeaveRule_CURR_EUR();
-		}
-	}
-	// $ANTLR end "CURR_EUR"
-
-	partial void EnterRule_CURR_GHS();
-	partial void LeaveRule_CURR_GHS();
-
-	// $ANTLR start "CURR_GHS"
-	[GrammarRule("CURR_GHS")]
-	private void mCURR_GHS()
-	{
-		EnterRule_CURR_GHS();
-		EnterRule("CURR_GHS", 31);
-		TraceIn("CURR_GHS", 31);
-		try
-		{
-			// formula.g:109:18: ( '\\u00a2' )
-			DebugEnterAlt(1);
-			// formula.g:109:20: '\\u00a2'
-			{
-			DebugLocation(109, 20);
-			Match('\u00A2'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_GHS", 31);
-			LeaveRule("CURR_GHS", 31);
-			LeaveRule_CURR_GHS();
-		}
-	}
-	// $ANTLR end "CURR_GHS"
-
-	partial void EnterRule_CURR_GTQ();
-	partial void LeaveRule_CURR_GTQ();
-
-	// $ANTLR start "CURR_GTQ"
-	[GrammarRule("CURR_GTQ")]
-	private void mCURR_GTQ()
-	{
-		EnterRule_CURR_GTQ();
-		EnterRule("CURR_GTQ", 32);
-		TraceIn("CURR_GTQ", 32);
-		try
-		{
-			// formula.g:110:18: ( 'Q' )
-			DebugEnterAlt(1);
-			// formula.g:110:20: 'Q'
-			{
-			DebugLocation(110, 20);
-			Match('Q'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_GTQ", 32);
-			LeaveRule("CURR_GTQ", 32);
-			LeaveRule_CURR_GTQ();
-		}
-	}
-	// $ANTLR end "CURR_GTQ"
-
-	partial void EnterRule_CURR_HNL();
-	partial void LeaveRule_CURR_HNL();
-
-	// $ANTLR start "CURR_HNL"
-	[GrammarRule("CURR_HNL")]
-	private void mCURR_HNL()
-	{
-		EnterRule_CURR_HNL();
-		EnterRule("CURR_HNL", 33);
-		TraceIn("CURR_HNL", 33);
-		try
-		{
-			// formula.g:111:18: ( 'L' )
-			DebugEnterAlt(1);
-			// formula.g:111:20: 'L'
-			{
-			DebugLocation(111, 20);
-			Match('L'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_HNL", 33);
-			LeaveRule("CURR_HNL", 33);
-			LeaveRule_CURR_HNL();
-		}
-	}
-	// $ANTLR end "CURR_HNL"
-
-	partial void EnterRule_CURR_HUF();
-	partial void LeaveRule_CURR_HUF();
-
-	// $ANTLR start "CURR_HUF"
-	[GrammarRule("CURR_HUF")]
-	private void mCURR_HUF()
-	{
-		EnterRule_CURR_HUF();
-		EnterRule("CURR_HUF", 34);
-		TraceIn("CURR_HUF", 34);
-		try
-		{
-			// formula.g:112:18: ( 'Ft' )
-			DebugEnterAlt(1);
-			// formula.g:112:20: 'Ft'
-			{
-			DebugLocation(112, 20);
-			Match("Ft"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_HUF", 34);
-			LeaveRule("CURR_HUF", 34);
-			LeaveRule_CURR_HUF();
-		}
-	}
-	// $ANTLR end "CURR_HUF"
-
-	partial void EnterRule_CURR_IDR();
-	partial void LeaveRule_CURR_IDR();
-
-	// $ANTLR start "CURR_IDR"
-	[GrammarRule("CURR_IDR")]
-	private void mCURR_IDR()
-	{
-		EnterRule_CURR_IDR();
-		EnterRule("CURR_IDR", 35);
-		TraceIn("CURR_IDR", 35);
-		try
-		{
-			// formula.g:113:18: ( 'Rp' )
-			DebugEnterAlt(1);
-			// formula.g:113:20: 'Rp'
-			{
-			DebugLocation(113, 20);
-			Match("Rp"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_IDR", 35);
-			LeaveRule("CURR_IDR", 35);
-			LeaveRule_CURR_IDR();
-		}
-	}
-	// $ANTLR end "CURR_IDR"
-
-	partial void EnterRule_CURR_IRR();
-	partial void LeaveRule_CURR_IRR();
-
-	// $ANTLR start "CURR_IRR"
-	[GrammarRule("CURR_IRR")]
-	private void mCURR_IRR()
-	{
-		EnterRule_CURR_IRR();
-		EnterRule("CURR_IRR", 36);
-		TraceIn("CURR_IRR", 36);
-		try
-		{
-			// formula.g:114:18: ( '\\ufdfc' )
-			DebugEnterAlt(1);
-			// formula.g:114:20: '\\ufdfc'
-			{
-			DebugLocation(114, 20);
-			Match('\uFDFC'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_IRR", 36);
-			LeaveRule("CURR_IRR", 36);
-			LeaveRule_CURR_IRR();
-		}
-	}
-	// $ANTLR end "CURR_IRR"
-
-	partial void EnterRule_CURR_ILS();
-	partial void LeaveRule_CURR_ILS();
-
-	// $ANTLR start "CURR_ILS"
-	[GrammarRule("CURR_ILS")]
-	private void mCURR_ILS()
-	{
-		EnterRule_CURR_ILS();
-		EnterRule("CURR_ILS", 37);
-		TraceIn("CURR_ILS", 37);
-		try
-		{
-			// formula.g:116:18: ( '\\u20aa' )
-			DebugEnterAlt(1);
-			// formula.g:116:20: '\\u20aa'
-			{
-			DebugLocation(116, 20);
-			Match('\u20AA'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_ILS", 37);
-			LeaveRule("CURR_ILS", 37);
-			LeaveRule_CURR_ILS();
-		}
-	}
-	// $ANTLR end "CURR_ILS"
-
-	partial void EnterRule_CURR_JMD();
-	partial void LeaveRule_CURR_JMD();
-
-	// $ANTLR start "CURR_JMD"
-	[GrammarRule("CURR_JMD")]
-	private void mCURR_JMD()
-	{
-		EnterRule_CURR_JMD();
-		EnterRule("CURR_JMD", 38);
-		TraceIn("CURR_JMD", 38);
-		try
-		{
-			// formula.g:117:18: ( 'J$' )
-			DebugEnterAlt(1);
-			// formula.g:117:20: 'J$'
-			{
-			DebugLocation(117, 20);
-			Match("J$"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_JMD", 38);
-			LeaveRule("CURR_JMD", 38);
-			LeaveRule_CURR_JMD();
-		}
-	}
-	// $ANTLR end "CURR_JMD"
-
-	partial void EnterRule_CURR_KPW();
-	partial void LeaveRule_CURR_KPW();
-
-	// $ANTLR start "CURR_KPW"
-	[GrammarRule("CURR_KPW")]
-	private void mCURR_KPW()
-	{
-		EnterRule_CURR_KPW();
-		EnterRule("CURR_KPW", 39);
-		TraceIn("CURR_KPW", 39);
-		try
-		{
-			// formula.g:118:18: ( '\\u20a9' )
-			DebugEnterAlt(1);
-			// formula.g:118:20: '\\u20a9'
-			{
-			DebugLocation(118, 20);
-			Match('\u20A9'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_KPW", 39);
-			LeaveRule("CURR_KPW", 39);
-			LeaveRule_CURR_KPW();
-		}
-	}
-	// $ANTLR end "CURR_KPW"
-
-	partial void EnterRule_CURR_LAK();
-	partial void LeaveRule_CURR_LAK();
-
-	// $ANTLR start "CURR_LAK"
-	[GrammarRule("CURR_LAK")]
-	private void mCURR_LAK()
-	{
-		EnterRule_CURR_LAK();
-		EnterRule("CURR_LAK", 40);
-		TraceIn("CURR_LAK", 40);
-		try
-		{
-			// formula.g:119:18: ( '\\u20ad' )
-			DebugEnterAlt(1);
-			// formula.g:119:20: '\\u20ad'
-			{
-			DebugLocation(119, 20);
-			Match('\u20AD'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_LAK", 40);
-			LeaveRule("CURR_LAK", 40);
-			LeaveRule_CURR_LAK();
-		}
-	}
-	// $ANTLR end "CURR_LAK"
-
-	partial void EnterRule_CURR_MKD();
-	partial void LeaveRule_CURR_MKD();
-
-	// $ANTLR start "CURR_MKD"
-	[GrammarRule("CURR_MKD")]
-	private void mCURR_MKD()
-	{
-		EnterRule_CURR_MKD();
-		EnterRule("CURR_MKD", 41);
-		TraceIn("CURR_MKD", 41);
-		try
-		{
-			// formula.g:120:18: ( '\\u0434\\u0435\\u043d' )
-			DebugEnterAlt(1);
-			// formula.g:120:20: '\\u0434\\u0435\\u043d'
-			{
-			DebugLocation(120, 20);
-			Match("\u0434\u0435\u043d"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_MKD", 41);
-			LeaveRule("CURR_MKD", 41);
-			LeaveRule_CURR_MKD();
-		}
-	}
-	// $ANTLR end "CURR_MKD"
-
-	partial void EnterRule_CURR_MYR();
-	partial void LeaveRule_CURR_MYR();
-
-	// $ANTLR start "CURR_MYR"
-	[GrammarRule("CURR_MYR")]
-	private void mCURR_MYR()
-	{
-		EnterRule_CURR_MYR();
-		EnterRule("CURR_MYR", 42);
-		TraceIn("CURR_MYR", 42);
-		try
-		{
-			// formula.g:121:18: ( 'RM' )
-			DebugEnterAlt(1);
-			// formula.g:121:20: 'RM'
-			{
-			DebugLocation(121, 20);
-			Match("RM"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_MYR", 42);
-			LeaveRule("CURR_MYR", 42);
-			LeaveRule_CURR_MYR();
-		}
-	}
-	// $ANTLR end "CURR_MYR"
-
-	partial void EnterRule_CURR_MUR();
-	partial void LeaveRule_CURR_MUR();
-
-	// $ANTLR start "CURR_MUR"
-	[GrammarRule("CURR_MUR")]
-	private void mCURR_MUR()
-	{
-		EnterRule_CURR_MUR();
-		EnterRule("CURR_MUR", 43);
-		TraceIn("CURR_MUR", 43);
-		try
-		{
-			// formula.g:122:18: ( '\\u20a8' )
-			DebugEnterAlt(1);
-			// formula.g:122:20: '\\u20a8'
-			{
-			DebugLocation(122, 20);
-			Match('\u20A8'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_MUR", 43);
-			LeaveRule("CURR_MUR", 43);
-			LeaveRule_CURR_MUR();
-		}
-	}
-	// $ANTLR end "CURR_MUR"
-
-	partial void EnterRule_CURR_MNT();
-	partial void LeaveRule_CURR_MNT();
-
-	// $ANTLR start "CURR_MNT"
-	[GrammarRule("CURR_MNT")]
-	private void mCURR_MNT()
-	{
-		EnterRule_CURR_MNT();
-		EnterRule("CURR_MNT", 44);
-		TraceIn("CURR_MNT", 44);
-		try
-		{
-			// formula.g:125:18: ( '\\u20ae' )
-			DebugEnterAlt(1);
-			// formula.g:125:20: '\\u20ae'
-			{
-			DebugLocation(125, 20);
-			Match('\u20AE'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_MNT", 44);
-			LeaveRule("CURR_MNT", 44);
-			LeaveRule_CURR_MNT();
-		}
-	}
-	// $ANTLR end "CURR_MNT"
-
-	partial void EnterRule_CURR_MZN();
-	partial void LeaveRule_CURR_MZN();
-
-	// $ANTLR start "CURR_MZN"
-	[GrammarRule("CURR_MZN")]
-	private void mCURR_MZN()
-	{
-		EnterRule_CURR_MZN();
-		EnterRule("CURR_MZN", 45);
-		TraceIn("CURR_MZN", 45);
-		try
-		{
-			// formula.g:126:18: ( 'MT' )
-			DebugEnterAlt(1);
-			// formula.g:126:20: 'MT'
-			{
-			DebugLocation(126, 20);
-			Match("MT"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_MZN", 45);
-			LeaveRule("CURR_MZN", 45);
-			LeaveRule_CURR_MZN();
-		}
-	}
-	// $ANTLR end "CURR_MZN"
-
-	partial void EnterRule_CURR_NIO();
-	partial void LeaveRule_CURR_NIO();
-
-	// $ANTLR start "CURR_NIO"
-	[GrammarRule("CURR_NIO")]
-	private void mCURR_NIO()
-	{
-		EnterRule_CURR_NIO();
-		EnterRule("CURR_NIO", 46);
-		TraceIn("CURR_NIO", 46);
-		try
-		{
-			// formula.g:127:18: ( 'C$' )
-			DebugEnterAlt(1);
-			// formula.g:127:20: 'C$'
-			{
-			DebugLocation(127, 20);
-			Match("C$"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_NIO", 46);
-			LeaveRule("CURR_NIO", 46);
-			LeaveRule_CURR_NIO();
-		}
-	}
-	// $ANTLR end "CURR_NIO"
-
-	partial void EnterRule_CURR_NGN();
-	partial void LeaveRule_CURR_NGN();
-
-	// $ANTLR start "CURR_NGN"
-	[GrammarRule("CURR_NGN")]
-	private void mCURR_NGN()
-	{
-		EnterRule_CURR_NGN();
-		EnterRule("CURR_NGN", 47);
-		TraceIn("CURR_NGN", 47);
-		try
-		{
-			// formula.g:128:18: ( '\\u20a6' )
-			DebugEnterAlt(1);
-			// formula.g:128:20: '\\u20a6'
-			{
-			DebugLocation(128, 20);
-			Match('\u20A6'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_NGN", 47);
-			LeaveRule("CURR_NGN", 47);
-			LeaveRule_CURR_NGN();
-		}
-	}
-	// $ANTLR end "CURR_NGN"
-
-	partial void EnterRule_CURR_PAB();
-	partial void LeaveRule_CURR_PAB();
-
-	// $ANTLR start "CURR_PAB"
-	[GrammarRule("CURR_PAB")]
-	private void mCURR_PAB()
-	{
-		EnterRule_CURR_PAB();
-		EnterRule("CURR_PAB", 48);
-		TraceIn("CURR_PAB", 48);
-		try
-		{
-			// formula.g:129:18: ( 'B\\/\\.' )
-			DebugEnterAlt(1);
-			// formula.g:129:20: 'B\\/\\.'
-			{
-			DebugLocation(129, 20);
-			Match("B/."); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_PAB", 48);
-			LeaveRule("CURR_PAB", 48);
-			LeaveRule_CURR_PAB();
-		}
-	}
-	// $ANTLR end "CURR_PAB"
-
-	partial void EnterRule_CURR_PYG();
-	partial void LeaveRule_CURR_PYG();
-
-	// $ANTLR start "CURR_PYG"
-	[GrammarRule("CURR_PYG")]
-	private void mCURR_PYG()
-	{
-		EnterRule_CURR_PYG();
-		EnterRule("CURR_PYG", 49);
-		TraceIn("CURR_PYG", 49);
-		try
-		{
-			// formula.g:130:18: ( 'Gs' )
-			DebugEnterAlt(1);
-			// formula.g:130:20: 'Gs'
-			{
-			DebugLocation(130, 20);
-			Match("Gs"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_PYG", 49);
-			LeaveRule("CURR_PYG", 49);
-			LeaveRule_CURR_PYG();
-		}
-	}
-	// $ANTLR end "CURR_PYG"
-
-	partial void EnterRule_CURR_PEN();
-	partial void LeaveRule_CURR_PEN();
-
-	// $ANTLR start "CURR_PEN"
-	[GrammarRule("CURR_PEN")]
-	private void mCURR_PEN()
-	{
-		EnterRule_CURR_PEN();
-		EnterRule("CURR_PEN", 50);
-		TraceIn("CURR_PEN", 50);
-		try
-		{
-			// formula.g:131:18: ( 'S/.' )
-			DebugEnterAlt(1);
-			// formula.g:131:20: 'S/.'
-			{
-			DebugLocation(131, 20);
-			Match("S/."); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_PEN", 50);
-			LeaveRule("CURR_PEN", 50);
-			LeaveRule_CURR_PEN();
-		}
-	}
-	// $ANTLR end "CURR_PEN"
-
-	partial void EnterRule_CURR_PLN();
-	partial void LeaveRule_CURR_PLN();
-
-	// $ANTLR start "CURR_PLN"
-	[GrammarRule("CURR_PLN")]
-	private void mCURR_PLN()
-	{
-		EnterRule_CURR_PLN();
-		EnterRule("CURR_PLN", 51);
-		TraceIn("CURR_PLN", 51);
-		try
-		{
-			// formula.g:132:18: ( 'z\\u0142' )
-			DebugEnterAlt(1);
-			// formula.g:132:20: 'z\\u0142'
-			{
-			DebugLocation(132, 20);
-			Match("z\u0142"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_PLN", 51);
-			LeaveRule("CURR_PLN", 51);
-			LeaveRule_CURR_PLN();
-		}
-	}
-	// $ANTLR end "CURR_PLN"
-
-	partial void EnterRule_CURR_RON();
-	partial void LeaveRule_CURR_RON();
-
-	// $ANTLR start "CURR_RON"
-	[GrammarRule("CURR_RON")]
-	private void mCURR_RON()
-	{
-		EnterRule_CURR_RON();
-		EnterRule("CURR_RON", 52);
-		TraceIn("CURR_RON", 52);
-		try
-		{
-			// formula.g:133:18: ( 'lei' )
-			DebugEnterAlt(1);
-			// formula.g:133:20: 'lei'
-			{
-			DebugLocation(133, 20);
-			Match("lei"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_RON", 52);
-			LeaveRule("CURR_RON", 52);
-			LeaveRule_CURR_RON();
-		}
-	}
-	// $ANTLR end "CURR_RON"
-
-	partial void EnterRule_CURR_RUB();
-	partial void LeaveRule_CURR_RUB();
-
-	// $ANTLR start "CURR_RUB"
-	[GrammarRule("CURR_RUB")]
-	private void mCURR_RUB()
-	{
-		EnterRule_CURR_RUB();
-		EnterRule("CURR_RUB", 53);
-		TraceIn("CURR_RUB", 53);
-		try
-		{
-			// formula.g:134:18: ( '\\u0440\\u0443\\u0431' )
-			DebugEnterAlt(1);
-			// formula.g:134:20: '\\u0440\\u0443\\u0431'
-			{
-			DebugLocation(134, 20);
-			Match("\u0440\u0443\u0431"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_RUB", 53);
-			LeaveRule("CURR_RUB", 53);
-			LeaveRule_CURR_RUB();
-		}
-	}
-	// $ANTLR end "CURR_RUB"
-
-	partial void EnterRule_CURR_RSD();
-	partial void LeaveRule_CURR_RSD();
-
-	// $ANTLR start "CURR_RSD"
-	[GrammarRule("CURR_RSD")]
-	private void mCURR_RSD()
-	{
-		EnterRule_CURR_RSD();
-		EnterRule("CURR_RSD", 54);
-		TraceIn("CURR_RSD", 54);
-		try
-		{
-			// formula.g:135:18: ( '\\u0414\\u0438\\u043d\\.' )
-			DebugEnterAlt(1);
-			// formula.g:135:20: '\\u0414\\u0438\\u043d\\.'
-			{
-			DebugLocation(135, 20);
-			Match("\u0414\u0438\u043d."); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_RSD", 54);
-			LeaveRule("CURR_RSD", 54);
-			LeaveRule_CURR_RSD();
-		}
-	}
-	// $ANTLR end "CURR_RSD"
-
-	partial void EnterRule_CURR_SOS();
-	partial void LeaveRule_CURR_SOS();
-
-	// $ANTLR start "CURR_SOS"
-	[GrammarRule("CURR_SOS")]
-	private void mCURR_SOS()
-	{
-		EnterRule_CURR_SOS();
-		EnterRule("CURR_SOS", 55);
-		TraceIn("CURR_SOS", 55);
-		try
-		{
-			// formula.g:136:18: ( 'S' )
-			DebugEnterAlt(1);
-			// formula.g:136:20: 'S'
-			{
-			DebugLocation(136, 20);
-			Match('S'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_SOS", 55);
-			LeaveRule("CURR_SOS", 55);
-			LeaveRule_CURR_SOS();
-		}
-	}
-	// $ANTLR end "CURR_SOS"
-
-	partial void EnterRule_CURR_ZAR();
-	partial void LeaveRule_CURR_ZAR();
-
-	// $ANTLR start "CURR_ZAR"
-	[GrammarRule("CURR_ZAR")]
-	private void mCURR_ZAR()
-	{
-		EnterRule_CURR_ZAR();
-		EnterRule("CURR_ZAR", 56);
-		TraceIn("CURR_ZAR", 56);
-		try
-		{
-			// formula.g:137:18: ( 'R' )
-			DebugEnterAlt(1);
-			// formula.g:137:20: 'R'
-			{
-			DebugLocation(137, 20);
-			Match('R'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_ZAR", 56);
-			LeaveRule("CURR_ZAR", 56);
-			LeaveRule_CURR_ZAR();
-		}
-	}
-	// $ANTLR end "CURR_ZAR"
-
-	partial void EnterRule_CURR_CHF();
-	partial void LeaveRule_CURR_CHF();
-
-	// $ANTLR start "CURR_CHF"
-	[GrammarRule("CURR_CHF")]
-	private void mCURR_CHF()
-	{
-		EnterRule_CURR_CHF();
-		EnterRule("CURR_CHF", 57);
-		TraceIn("CURR_CHF", 57);
-		try
-		{
-			// formula.g:138:18: ( 'CHF' )
-			DebugEnterAlt(1);
-			// formula.g:138:20: 'CHF'
-			{
-			DebugLocation(138, 20);
-			Match("CHF"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_CHF", 57);
-			LeaveRule("CURR_CHF", 57);
-			LeaveRule_CURR_CHF();
-		}
-	}
-	// $ANTLR end "CURR_CHF"
-
-	partial void EnterRule_CURR_TWD();
-	partial void LeaveRule_CURR_TWD();
-
-	// $ANTLR start "CURR_TWD"
-	[GrammarRule("CURR_TWD")]
-	private void mCURR_TWD()
-	{
-		EnterRule_CURR_TWD();
-		EnterRule("CURR_TWD", 58);
-		TraceIn("CURR_TWD", 58);
-		try
-		{
-			// formula.g:139:18: ( 'NT$' )
-			DebugEnterAlt(1);
-			// formula.g:139:20: 'NT$'
-			{
-			DebugLocation(139, 20);
-			Match("NT$"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_TWD", 58);
-			LeaveRule("CURR_TWD", 58);
-			LeaveRule_CURR_TWD();
-		}
-	}
-	// $ANTLR end "CURR_TWD"
-
-	partial void EnterRule_CURR_THB();
-	partial void LeaveRule_CURR_THB();
-
-	// $ANTLR start "CURR_THB"
-	[GrammarRule("CURR_THB")]
-	private void mCURR_THB()
-	{
-		EnterRule_CURR_THB();
-		EnterRule("CURR_THB", 59);
-		TraceIn("CURR_THB", 59);
-		try
-		{
-			// formula.g:140:18: ( '\\u0e3f' )
-			DebugEnterAlt(1);
-			// formula.g:140:20: '\\u0e3f'
-			{
-			DebugLocation(140, 20);
-			Match('\u0E3F'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_THB", 59);
-			LeaveRule("CURR_THB", 59);
-			LeaveRule_CURR_THB();
-		}
-	}
-	// $ANTLR end "CURR_THB"
-
-	partial void EnterRule_CURR_TTD();
-	partial void LeaveRule_CURR_TTD();
-
-	// $ANTLR start "CURR_TTD"
-	[GrammarRule("CURR_TTD")]
-	private void mCURR_TTD()
-	{
-		EnterRule_CURR_TTD();
-		EnterRule("CURR_TTD", 60);
-		TraceIn("CURR_TTD", 60);
-		try
-		{
-			// formula.g:141:18: ( 'TT$' )
-			DebugEnterAlt(1);
-			// formula.g:141:20: 'TT$'
-			{
-			DebugLocation(141, 20);
-			Match("TT$"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_TTD", 60);
-			LeaveRule("CURR_TTD", 60);
-			LeaveRule_CURR_TTD();
-		}
-	}
-	// $ANTLR end "CURR_TTD"
-
-	partial void EnterRule_CURR_UAH();
-	partial void LeaveRule_CURR_UAH();
-
-	// $ANTLR start "CURR_UAH"
-	[GrammarRule("CURR_UAH")]
-	private void mCURR_UAH()
-	{
-		EnterRule_CURR_UAH();
-		EnterRule("CURR_UAH", 61);
-		TraceIn("CURR_UAH", 61);
-		try
-		{
-			// formula.g:142:18: ( '\\u20b4' )
-			DebugEnterAlt(1);
-			// formula.g:142:20: '\\u20b4'
-			{
-			DebugLocation(142, 20);
-			Match('\u20B4'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_UAH", 61);
-			LeaveRule("CURR_UAH", 61);
-			LeaveRule_CURR_UAH();
-		}
-	}
-	// $ANTLR end "CURR_UAH"
-
-	partial void EnterRule_CURR_UYU();
-	partial void LeaveRule_CURR_UYU();
-
-	// $ANTLR start "CURR_UYU"
-	[GrammarRule("CURR_UYU")]
-	private void mCURR_UYU()
-	{
-		EnterRule_CURR_UYU();
-		EnterRule("CURR_UYU", 62);
-		TraceIn("CURR_UYU", 62);
-		try
-		{
-			// formula.g:143:18: ( '$U' )
-			DebugEnterAlt(1);
-			// formula.g:143:20: '$U'
-			{
-			DebugLocation(143, 20);
-			Match("$U"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_UYU", 62);
-			LeaveRule("CURR_UYU", 62);
-			LeaveRule_CURR_UYU();
-		}
-	}
-	// $ANTLR end "CURR_UYU"
-
-	partial void EnterRule_CURR_VEF();
-	partial void LeaveRule_CURR_VEF();
-
-	// $ANTLR start "CURR_VEF"
-	[GrammarRule("CURR_VEF")]
-	private void mCURR_VEF()
-	{
-		EnterRule_CURR_VEF();
-		EnterRule("CURR_VEF", 63);
-		TraceIn("CURR_VEF", 63);
-		try
-		{
-			// formula.g:144:18: ( 'Bs' )
-			DebugEnterAlt(1);
-			// formula.g:144:20: 'Bs'
-			{
-			DebugLocation(144, 20);
-			Match("Bs"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_VEF", 63);
-			LeaveRule("CURR_VEF", 63);
-			LeaveRule_CURR_VEF();
-		}
-	}
-	// $ANTLR end "CURR_VEF"
-
-	partial void EnterRule_CURR_VND();
-	partial void LeaveRule_CURR_VND();
-
-	// $ANTLR start "CURR_VND"
-	[GrammarRule("CURR_VND")]
-	private void mCURR_VND()
-	{
-		EnterRule_CURR_VND();
-		EnterRule("CURR_VND", 64);
-		TraceIn("CURR_VND", 64);
-		try
-		{
-			// formula.g:145:18: ( '\\u20ab' )
-			DebugEnterAlt(1);
-			// formula.g:145:20: '\\u20ab'
-			{
-			DebugLocation(145, 20);
-			Match('\u20AB'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_VND", 64);
-			LeaveRule("CURR_VND", 64);
-			LeaveRule_CURR_VND();
-		}
-	}
-	// $ANTLR end "CURR_VND"
-
-	partial void EnterRule_CURR_ZWD();
-	partial void LeaveRule_CURR_ZWD();
-
-	// $ANTLR start "CURR_ZWD"
-	[GrammarRule("CURR_ZWD")]
-	private void mCURR_ZWD()
-	{
-		EnterRule_CURR_ZWD();
-		EnterRule("CURR_ZWD", 65);
-		TraceIn("CURR_ZWD", 65);
-		try
-		{
-			// formula.g:146:18: ( 'Z$' )
-			DebugEnterAlt(1);
-			// formula.g:146:20: 'Z$'
-			{
-			DebugLocation(146, 20);
-			Match("Z$"); 
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_ZWD", 65);
-			LeaveRule("CURR_ZWD", 65);
-			LeaveRule_CURR_ZWD();
-		}
-	}
-	// $ANTLR end "CURR_ZWD"
-
-	partial void EnterRule_CURR_XBT();
-	partial void LeaveRule_CURR_XBT();
-
-	// $ANTLR start "CURR_XBT"
-	[GrammarRule("CURR_XBT")]
-	private void mCURR_XBT()
-	{
-		EnterRule_CURR_XBT();
-		EnterRule("CURR_XBT", 66);
-		TraceIn("CURR_XBT", 66);
-		try
-		{
-			// formula.g:148:18: ( '\\u20bf' )
-			DebugEnterAlt(1);
-			// formula.g:148:20: '\\u20bf'
-			{
-			DebugLocation(148, 20);
-			Match('\u20BF'); 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("CURR_XBT", 66);
-			LeaveRule("CURR_XBT", 66);
-			LeaveRule_CURR_XBT();
-		}
-	}
-	// $ANTLR end "CURR_XBT"
-
-	partial void EnterRule_DIGIT();
-	partial void LeaveRule_DIGIT();
-
-	// $ANTLR start "DIGIT"
-	[GrammarRule("DIGIT")]
-	private void mDIGIT()
-	{
-		EnterRule_DIGIT();
-		EnterRule("DIGIT", 67);
-		TraceIn("DIGIT", 67);
-		try
-		{
-			// formula.g:150:15: ( '1' .. '9' ( '0' .. '9' )* )
-			DebugEnterAlt(1);
-			// formula.g:150:17: '1' .. '9' ( '0' .. '9' )*
-			{
-			DebugLocation(150, 17);
-			MatchRange('1','9'); 
-			DebugLocation(150, 26);
-			// formula.g:150:26: ( '0' .. '9' )*
-			try { DebugEnterSubRule(14);
-			while (true)
-			{
-				int alt14=2;
-				try { DebugEnterDecision(14, false);
-				int LA14_0 = input.LA(1);
-
-				if (((LA14_0>='0' && LA14_0<='9')))
-				{
-					alt14 = 1;
-				}
-
-
-				} finally { DebugExitDecision(14); }
-				switch ( alt14 )
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// formula.g:
-					{
-					DebugLocation(150, 26);
-					input.Consume();
-
-
-					}
-					break;
-
-				default:
-					goto loop14;
-				}
-			}
-
-			loop14:
-				;
-
-			} finally { DebugExitSubRule(14); }
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("DIGIT", 67);
-			LeaveRule("DIGIT", 67);
-			LeaveRule_DIGIT();
-		}
-	}
-	// $ANTLR end "DIGIT"
-
-	partial void EnterRule_OCTAL_DIGIT();
-	partial void LeaveRule_OCTAL_DIGIT();
-
-	// $ANTLR start "OCTAL_DIGIT"
-	[GrammarRule("OCTAL_DIGIT")]
-	private void mOCTAL_DIGIT()
-	{
-		EnterRule_OCTAL_DIGIT();
-		EnterRule("OCTAL_DIGIT", 68);
-		TraceIn("OCTAL_DIGIT", 68);
-		try
-		{
-			// formula.g:151:21: ( '0' ( '0' .. '7' )+ )
-			DebugEnterAlt(1);
-			// formula.g:151:23: '0' ( '0' .. '7' )+
-			{
-			DebugLocation(151, 23);
-			Match('0'); 
-			DebugLocation(151, 27);
-			// formula.g:151:27: ( '0' .. '7' )+
-			int cnt15=0;
+			DebugLocation(63, 17);
+			// formula.g:63:17: ( '+' | '-' )?
+			int alt15=2;
 			try { DebugEnterSubRule(15);
-			while (true)
+			try { DebugEnterDecision(15, false);
+			int LA15_0 = input.LA(1);
+
+			if ((LA15_0=='+'||LA15_0=='-'))
 			{
-				int alt15=2;
-				try { DebugEnterDecision(15, false);
-				int LA15_0 = input.LA(1);
-
-				if (((LA15_0>='0' && LA15_0<='7')))
-				{
-					alt15 = 1;
-				}
-
-
-				} finally { DebugExitDecision(15); }
-				switch (alt15)
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// formula.g:
-					{
-					DebugLocation(151, 27);
-					input.Consume();
-
-
-					}
-					break;
-
-				default:
-					if (cnt15 >= 1)
-						goto loop15;
-
-					EarlyExitException eee15 = new EarlyExitException( 15, input );
-					DebugRecognitionException(eee15);
-					throw eee15;
-				}
-				cnt15++;
+				alt15 = 1;
 			}
-			loop15:
-				;
+			} finally { DebugExitDecision(15); }
+			switch (alt15)
+			{
+			case 1:
+				DebugEnterAlt(1);
+				// formula.g:
+				{
+				DebugLocation(63, 17);
+				input.Consume();
 
+
+				}
+				break;
+
+			}
 			} finally { DebugExitSubRule(15); }
 
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("OCTAL_DIGIT", 68);
-			LeaveRule("OCTAL_DIGIT", 68);
-			LeaveRule_OCTAL_DIGIT();
-		}
-	}
-	// $ANTLR end "OCTAL_DIGIT"
-
-	partial void EnterRule_HEX_DIGIT();
-	partial void LeaveRule_HEX_DIGIT();
-
-	// $ANTLR start "HEX_DIGIT"
-	[GrammarRule("HEX_DIGIT")]
-	private void mHEX_DIGIT()
-	{
-		EnterRule_HEX_DIGIT();
-		EnterRule("HEX_DIGIT", 69);
-		TraceIn("HEX_DIGIT", 69);
-		try
-		{
-			// formula.g:152:19: ( '0x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ )
-			DebugEnterAlt(1);
-			// formula.g:152:21: '0x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
-			{
-			DebugLocation(152, 21);
-			Match("0x"); 
-
-			DebugLocation(152, 26);
-			// formula.g:152:26: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
+			DebugLocation(63, 28);
+			// formula.g:63:28: ( DIGIT )+
 			int cnt16=0;
 			try { DebugEnterSubRule(16);
 			while (true)
@@ -3362,7 +1046,7 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 				try { DebugEnterDecision(16, false);
 				int LA16_0 = input.LA(1);
 
-				if (((LA16_0>='0' && LA16_0<='9')||(LA16_0>='A' && LA16_0<='F')||(LA16_0>='a' && LA16_0<='f')))
+				if (((LA16_0>='1' && LA16_0<='9')))
 				{
 					alt16 = 1;
 				}
@@ -3373,11 +1057,10 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// formula.g:
+					// formula.g:63:28: DIGIT
 					{
-					DebugLocation(152, 26);
-					input.Consume();
-
+					DebugLocation(63, 28);
+					mDIGIT(); 
 
 					}
 					break;
@@ -3400,129 +1083,13 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 
 			}
 
-		}
-		finally
-		{
-			TraceOut("HEX_DIGIT", 69);
-			LeaveRule("HEX_DIGIT", 69);
-			LeaveRule_HEX_DIGIT();
-		}
-	}
-	// $ANTLR end "HEX_DIGIT"
-
-	partial void EnterRule_EXP();
-	partial void LeaveRule_EXP();
-
-	// $ANTLR start "EXP"
-	[GrammarRule("EXP")]
-	private void mEXP()
-	{
-		EnterRule_EXP();
-		EnterRule("EXP", 70);
-		TraceIn("EXP", 70);
-		try
-		{
-			int _type = EXP;
-			int _channel = DefaultTokenChannel;
-			// formula.g:154:5: ( ( 'E' | 'e' ) ( '+' | '-' )? ( DIGIT )+ )
-			DebugEnterAlt(1);
-			// formula.g:154:7: ( 'E' | 'e' ) ( '+' | '-' )? ( DIGIT )+
-			{
-			DebugLocation(154, 7);
-			if (input.LA(1)=='E'||input.LA(1)=='e')
-			{
-				input.Consume();
-			}
-			else
-			{
-				MismatchedSetException mse = new MismatchedSetException(null,input);
-				DebugRecognitionException(mse);
-				Recover(mse);
-				throw mse;
-			}
-
-			DebugLocation(154, 17);
-			// formula.g:154:17: ( '+' | '-' )?
-			int alt17=2;
-			try { DebugEnterSubRule(17);
-			try { DebugEnterDecision(17, false);
-			int LA17_0 = input.LA(1);
-
-			if ((LA17_0=='+'||LA17_0=='-'))
-			{
-				alt17 = 1;
-			}
-			} finally { DebugExitDecision(17); }
-			switch (alt17)
-			{
-			case 1:
-				DebugEnterAlt(1);
-				// formula.g:
-				{
-				DebugLocation(154, 17);
-				input.Consume();
-
-
-				}
-				break;
-
-			}
-			} finally { DebugExitSubRule(17); }
-
-			DebugLocation(154, 28);
-			// formula.g:154:28: ( DIGIT )+
-			int cnt18=0;
-			try { DebugEnterSubRule(18);
-			while (true)
-			{
-				int alt18=2;
-				try { DebugEnterDecision(18, false);
-				int LA18_0 = input.LA(1);
-
-				if (((LA18_0>='1' && LA18_0<='9')))
-				{
-					alt18 = 1;
-				}
-
-
-				} finally { DebugExitDecision(18); }
-				switch (alt18)
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// formula.g:154:28: DIGIT
-					{
-					DebugLocation(154, 28);
-					mDIGIT(); 
-
-					}
-					break;
-
-				default:
-					if (cnt18 >= 1)
-						goto loop18;
-
-					EarlyExitException eee18 = new EarlyExitException( 18, input );
-					DebugRecognitionException(eee18);
-					throw eee18;
-				}
-				cnt18++;
-			}
-			loop18:
-				;
-
-			} finally { DebugExitSubRule(18); }
-
-
-			}
-
 			state.type = _type;
 			state.channel = _channel;
 		}
 		finally
 		{
-			TraceOut("EXP", 70);
-			LeaveRule("EXP", 70);
+			TraceOut("EXP", 9);
+			LeaveRule("EXP", 9);
 			LeaveRule_EXP();
 		}
 	}
@@ -3536,40 +1103,40 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 	private void mWHITESPACE()
 	{
 		EnterRule_WHITESPACE();
-		EnterRule("WHITESPACE", 71);
-		TraceIn("WHITESPACE", 71);
+		EnterRule("WHITESPACE", 10);
+		TraceIn("WHITESPACE", 10);
 		try
 		{
 			int _type = WHITESPACE;
 			int _channel = DefaultTokenChannel;
-			// formula.g:157:12: ( ( '\\t' | ' ' | '\\r' | '\\n' | '\\u000C' )+ )
+			// formula.g:66:12: ( ( '\\t' | ' ' | '\\r' | '\\n' | '\\u000C' )+ )
 			DebugEnterAlt(1);
-			// formula.g:157:14: ( '\\t' | ' ' | '\\r' | '\\n' | '\\u000C' )+
+			// formula.g:66:14: ( '\\t' | ' ' | '\\r' | '\\n' | '\\u000C' )+
 			{
-			DebugLocation(157, 14);
-			// formula.g:157:14: ( '\\t' | ' ' | '\\r' | '\\n' | '\\u000C' )+
-			int cnt19=0;
-			try { DebugEnterSubRule(19);
+			DebugLocation(66, 14);
+			// formula.g:66:14: ( '\\t' | ' ' | '\\r' | '\\n' | '\\u000C' )+
+			int cnt17=0;
+			try { DebugEnterSubRule(17);
 			while (true)
 			{
-				int alt19=2;
-				try { DebugEnterDecision(19, false);
-				int LA19_0 = input.LA(1);
+				int alt17=2;
+				try { DebugEnterDecision(17, false);
+				int LA17_0 = input.LA(1);
 
-				if (((LA19_0>='\t' && LA19_0<='\n')||(LA19_0>='\f' && LA19_0<='\r')||LA19_0==' '))
+				if (((LA17_0>='\t' && LA17_0<='\n')||(LA17_0>='\f' && LA17_0<='\r')||LA17_0==' '))
 				{
-					alt19 = 1;
+					alt17 = 1;
 				}
 
 
-				} finally { DebugExitDecision(19); }
-				switch (alt19)
+				} finally { DebugExitDecision(17); }
+				switch (alt17)
 				{
 				case 1:
 					DebugEnterAlt(1);
 					// formula.g:
 					{
-					DebugLocation(157, 14);
+					DebugLocation(66, 14);
 					input.Consume();
 
 
@@ -3577,21 +1144,21 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 					break;
 
 				default:
-					if (cnt19 >= 1)
-						goto loop19;
+					if (cnt17 >= 1)
+						goto loop17;
 
-					EarlyExitException eee19 = new EarlyExitException( 19, input );
-					DebugRecognitionException(eee19);
-					throw eee19;
+					EarlyExitException eee17 = new EarlyExitException( 17, input );
+					DebugRecognitionException(eee17);
+					throw eee17;
 				}
-				cnt19++;
+				cnt17++;
 			}
-			loop19:
+			loop17:
 				;
 
-			} finally { DebugExitSubRule(19); }
+			} finally { DebugExitSubRule(17); }
 
-			DebugLocation(157, 57);
+			DebugLocation(66, 57);
 			 _channel = Hidden; 
 
 			}
@@ -3601,29 +1168,5952 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("WHITESPACE", 71);
-			LeaveRule("WHITESPACE", 71);
+			TraceOut("WHITESPACE", 10);
+			LeaveRule("WHITESPACE", 10);
 			LeaveRule_WHITESPACE();
 		}
 	}
 	// $ANTLR end "WHITESPACE"
 
-	public override void mTokens()
+	partial void EnterRule_SI_UNIT();
+	partial void LeaveRule_SI_UNIT();
+
+	// $ANTLR start "SI_UNIT"
+	[GrammarRule("SI_UNIT")]
+	private void mSI_UNIT()
 	{
-		// formula.g:1:8: ( DIV | MINUS | MULT | PLUS | INTEGER | FLOAT | CURRENCY | EXP | WHITESPACE )
-		int alt20=9;
-		try { DebugEnterDecision(20, false);
+		EnterRule_SI_UNIT();
+		EnterRule("SI_UNIT", 11);
+		TraceIn("SI_UNIT", 11);
 		try
 		{
-			alt20 = dfa20.Predict(input);
+			// formula.g:68:18: ( ( SI_METER | SI_KG | SI_SEC | SI_AMP | SI_KELVIN | SI_MOLE | SI_CANDELA | SI_SQ_METER_1 | SI_SQ_METER_2 | SI_CU_METER_1 | SI_CU_METER_2 | SI_MPS | SI_MPS_SQ_1 | SI_MPS_SQ_2 | SI_REC_METER_1 | SI_REC_METER_2 | SI_KG_CU_METER_1 | SI_KG_CU_METER_2 | SI_CU_METER_KG_1 | SI_CU_METER_KG_2 | SI_AMP_SQ_METER_1 | SI_AMP_SQ_METER_2 | SI_AMP_METER | SI_MOL_CU_METER_1 | SI_MOL_CU_METER_2 | SI_CANDELA_SQ_METER_1 | SI_CANDELA_SQ_METER_2 | SI_RADIAN | SI_SOLID_ANGLE | SI_HERTZ | SI_NEWTON | SI_PASCAL | SI_JOULE | SI_WATT | SI_COULOMB | SI_VOLT | SI_FARAD | SI_OHM_1 | SI_OHM_2 | SI_SIEMENS | SI_WEBER | SI_TESLA | SI_HENRY | SI_CELCIUS | SI_LUMEN | SI_LUX | SI_BECQUEREL | SI_GRAY | SI_SIEVERT | SI_KATAL | SI_PASCAL_SEC | SI_NEWTON_METER | SI_NEWTON_PER_METER | SI_RADIAN_PER_SEC | SI_RADIAN_PER_SEC_SQ_1 | SI_RADIAN_PER_SEC_SQ_2 | SI_WATT_PER_METER_SQ_1 | SI_WATT_PER_METER_SQ_2 | SI_JOULE_PER_KELVIN | SI_JOULE_PER_KG_KELVIN | SI_JOULE_PER_KG | SI_WATT_PER_METER_KELVIN | SI_JOULE_PER_CU_METER_1 | SI_JOULE_PER_CU_METER_2 | SI_VOLT_PER_METER | SI_COULOMB_PER_CU_METER_1 | SI_COULOMB_PER_CU_METER_2 | SI_COULOMB_PER_SQ_METER_1 | SI_COULOMB_PER_SQ_METER_2 | SI_FARAD_PER_METER | SI_HENRY_PER_METER | SI_JOULE_PER_MOLE | SI_JOULE_PER_MOLE_KELVIN | SI_COULOMB_PER_KG | SI_GRAY_PER_SEC | SI_WATT_PER_STERADIAN | SI_WATT_PER_SQ_METER_STERADIAN_1 | SI_WATT_PER_SQ_METER_STERADIAN_2 | SI_KATAL_PER_CU_METER_1 | SI_KATAL_PER_CU_METER_2 ) )
+			DebugEnterAlt(1);
+			// formula.g:68:20: ( SI_METER | SI_KG | SI_SEC | SI_AMP | SI_KELVIN | SI_MOLE | SI_CANDELA | SI_SQ_METER_1 | SI_SQ_METER_2 | SI_CU_METER_1 | SI_CU_METER_2 | SI_MPS | SI_MPS_SQ_1 | SI_MPS_SQ_2 | SI_REC_METER_1 | SI_REC_METER_2 | SI_KG_CU_METER_1 | SI_KG_CU_METER_2 | SI_CU_METER_KG_1 | SI_CU_METER_KG_2 | SI_AMP_SQ_METER_1 | SI_AMP_SQ_METER_2 | SI_AMP_METER | SI_MOL_CU_METER_1 | SI_MOL_CU_METER_2 | SI_CANDELA_SQ_METER_1 | SI_CANDELA_SQ_METER_2 | SI_RADIAN | SI_SOLID_ANGLE | SI_HERTZ | SI_NEWTON | SI_PASCAL | SI_JOULE | SI_WATT | SI_COULOMB | SI_VOLT | SI_FARAD | SI_OHM_1 | SI_OHM_2 | SI_SIEMENS | SI_WEBER | SI_TESLA | SI_HENRY | SI_CELCIUS | SI_LUMEN | SI_LUX | SI_BECQUEREL | SI_GRAY | SI_SIEVERT | SI_KATAL | SI_PASCAL_SEC | SI_NEWTON_METER | SI_NEWTON_PER_METER | SI_RADIAN_PER_SEC | SI_RADIAN_PER_SEC_SQ_1 | SI_RADIAN_PER_SEC_SQ_2 | SI_WATT_PER_METER_SQ_1 | SI_WATT_PER_METER_SQ_2 | SI_JOULE_PER_KELVIN | SI_JOULE_PER_KG_KELVIN | SI_JOULE_PER_KG | SI_WATT_PER_METER_KELVIN | SI_JOULE_PER_CU_METER_1 | SI_JOULE_PER_CU_METER_2 | SI_VOLT_PER_METER | SI_COULOMB_PER_CU_METER_1 | SI_COULOMB_PER_CU_METER_2 | SI_COULOMB_PER_SQ_METER_1 | SI_COULOMB_PER_SQ_METER_2 | SI_FARAD_PER_METER | SI_HENRY_PER_METER | SI_JOULE_PER_MOLE | SI_JOULE_PER_MOLE_KELVIN | SI_COULOMB_PER_KG | SI_GRAY_PER_SEC | SI_WATT_PER_STERADIAN | SI_WATT_PER_SQ_METER_STERADIAN_1 | SI_WATT_PER_SQ_METER_STERADIAN_2 | SI_KATAL_PER_CU_METER_1 | SI_KATAL_PER_CU_METER_2 )
+			{
+			DebugLocation(68, 20);
+			// formula.g:68:20: ( SI_METER | SI_KG | SI_SEC | SI_AMP | SI_KELVIN | SI_MOLE | SI_CANDELA | SI_SQ_METER_1 | SI_SQ_METER_2 | SI_CU_METER_1 | SI_CU_METER_2 | SI_MPS | SI_MPS_SQ_1 | SI_MPS_SQ_2 | SI_REC_METER_1 | SI_REC_METER_2 | SI_KG_CU_METER_1 | SI_KG_CU_METER_2 | SI_CU_METER_KG_1 | SI_CU_METER_KG_2 | SI_AMP_SQ_METER_1 | SI_AMP_SQ_METER_2 | SI_AMP_METER | SI_MOL_CU_METER_1 | SI_MOL_CU_METER_2 | SI_CANDELA_SQ_METER_1 | SI_CANDELA_SQ_METER_2 | SI_RADIAN | SI_SOLID_ANGLE | SI_HERTZ | SI_NEWTON | SI_PASCAL | SI_JOULE | SI_WATT | SI_COULOMB | SI_VOLT | SI_FARAD | SI_OHM_1 | SI_OHM_2 | SI_SIEMENS | SI_WEBER | SI_TESLA | SI_HENRY | SI_CELCIUS | SI_LUMEN | SI_LUX | SI_BECQUEREL | SI_GRAY | SI_SIEVERT | SI_KATAL | SI_PASCAL_SEC | SI_NEWTON_METER | SI_NEWTON_PER_METER | SI_RADIAN_PER_SEC | SI_RADIAN_PER_SEC_SQ_1 | SI_RADIAN_PER_SEC_SQ_2 | SI_WATT_PER_METER_SQ_1 | SI_WATT_PER_METER_SQ_2 | SI_JOULE_PER_KELVIN | SI_JOULE_PER_KG_KELVIN | SI_JOULE_PER_KG | SI_WATT_PER_METER_KELVIN | SI_JOULE_PER_CU_METER_1 | SI_JOULE_PER_CU_METER_2 | SI_VOLT_PER_METER | SI_COULOMB_PER_CU_METER_1 | SI_COULOMB_PER_CU_METER_2 | SI_COULOMB_PER_SQ_METER_1 | SI_COULOMB_PER_SQ_METER_2 | SI_FARAD_PER_METER | SI_HENRY_PER_METER | SI_JOULE_PER_MOLE | SI_JOULE_PER_MOLE_KELVIN | SI_COULOMB_PER_KG | SI_GRAY_PER_SEC | SI_WATT_PER_STERADIAN | SI_WATT_PER_SQ_METER_STERADIAN_1 | SI_WATT_PER_SQ_METER_STERADIAN_2 | SI_KATAL_PER_CU_METER_1 | SI_KATAL_PER_CU_METER_2 )
+			int alt18=80;
+			try { DebugEnterSubRule(18);
+			try { DebugEnterDecision(18, false);
+			try
+			{
+				alt18 = dfa18.Predict(input);
+			}
+			catch (NoViableAltException nvae)
+			{
+				DebugRecognitionException(nvae);
+				throw;
+			}
+			} finally { DebugExitDecision(18); }
+			switch (alt18)
+			{
+			case 1:
+				DebugEnterAlt(1);
+				// formula.g:68:21: SI_METER
+				{
+				DebugLocation(68, 21);
+				mSI_METER(); 
+
+				}
+				break;
+			case 2:
+				DebugEnterAlt(2);
+				// formula.g:68:30: SI_KG
+				{
+				DebugLocation(68, 30);
+				mSI_KG(); 
+
+				}
+				break;
+			case 3:
+				DebugEnterAlt(3);
+				// formula.g:68:36: SI_SEC
+				{
+				DebugLocation(68, 36);
+				mSI_SEC(); 
+
+				}
+				break;
+			case 4:
+				DebugEnterAlt(4);
+				// formula.g:68:43: SI_AMP
+				{
+				DebugLocation(68, 43);
+				mSI_AMP(); 
+
+				}
+				break;
+			case 5:
+				DebugEnterAlt(5);
+				// formula.g:68:50: SI_KELVIN
+				{
+				DebugLocation(68, 50);
+				mSI_KELVIN(); 
+
+				}
+				break;
+			case 6:
+				DebugEnterAlt(6);
+				// formula.g:68:60: SI_MOLE
+				{
+				DebugLocation(68, 60);
+				mSI_MOLE(); 
+
+				}
+				break;
+			case 7:
+				DebugEnterAlt(7);
+				// formula.g:68:68: SI_CANDELA
+				{
+				DebugLocation(68, 68);
+				mSI_CANDELA(); 
+
+				}
+				break;
+			case 8:
+				DebugEnterAlt(8);
+				// formula.g:69:10: SI_SQ_METER_1
+				{
+				DebugLocation(69, 10);
+				mSI_SQ_METER_1(); 
+
+				}
+				break;
+			case 9:
+				DebugEnterAlt(9);
+				// formula.g:69:24: SI_SQ_METER_2
+				{
+				DebugLocation(69, 24);
+				mSI_SQ_METER_2(); 
+
+				}
+				break;
+			case 10:
+				DebugEnterAlt(10);
+				// formula.g:69:38: SI_CU_METER_1
+				{
+				DebugLocation(69, 38);
+				mSI_CU_METER_1(); 
+
+				}
+				break;
+			case 11:
+				DebugEnterAlt(11);
+				// formula.g:69:52: SI_CU_METER_2
+				{
+				DebugLocation(69, 52);
+				mSI_CU_METER_2(); 
+
+				}
+				break;
+			case 12:
+				DebugEnterAlt(12);
+				// formula.g:69:66: SI_MPS
+				{
+				DebugLocation(69, 66);
+				mSI_MPS(); 
+
+				}
+				break;
+			case 13:
+				DebugEnterAlt(13);
+				// formula.g:70:10: SI_MPS_SQ_1
+				{
+				DebugLocation(70, 10);
+				mSI_MPS_SQ_1(); 
+
+				}
+				break;
+			case 14:
+				DebugEnterAlt(14);
+				// formula.g:70:22: SI_MPS_SQ_2
+				{
+				DebugLocation(70, 22);
+				mSI_MPS_SQ_2(); 
+
+				}
+				break;
+			case 15:
+				DebugEnterAlt(15);
+				// formula.g:70:34: SI_REC_METER_1
+				{
+				DebugLocation(70, 34);
+				mSI_REC_METER_1(); 
+
+				}
+				break;
+			case 16:
+				DebugEnterAlt(16);
+				// formula.g:70:49: SI_REC_METER_2
+				{
+				DebugLocation(70, 49);
+				mSI_REC_METER_2(); 
+
+				}
+				break;
+			case 17:
+				DebugEnterAlt(17);
+				// formula.g:70:64: SI_KG_CU_METER_1
+				{
+				DebugLocation(70, 64);
+				mSI_KG_CU_METER_1(); 
+
+				}
+				break;
+			case 18:
+				DebugEnterAlt(18);
+				// formula.g:71:10: SI_KG_CU_METER_2
+				{
+				DebugLocation(71, 10);
+				mSI_KG_CU_METER_2(); 
+
+				}
+				break;
+			case 19:
+				DebugEnterAlt(19);
+				// formula.g:71:27: SI_CU_METER_KG_1
+				{
+				DebugLocation(71, 27);
+				mSI_CU_METER_KG_1(); 
+
+				}
+				break;
+			case 20:
+				DebugEnterAlt(20);
+				// formula.g:71:44: SI_CU_METER_KG_2
+				{
+				DebugLocation(71, 44);
+				mSI_CU_METER_KG_2(); 
+
+				}
+				break;
+			case 21:
+				DebugEnterAlt(21);
+				// formula.g:71:61: SI_AMP_SQ_METER_1
+				{
+				DebugLocation(71, 61);
+				mSI_AMP_SQ_METER_1(); 
+
+				}
+				break;
+			case 22:
+				DebugEnterAlt(22);
+				// formula.g:72:10: SI_AMP_SQ_METER_2
+				{
+				DebugLocation(72, 10);
+				mSI_AMP_SQ_METER_2(); 
+
+				}
+				break;
+			case 23:
+				DebugEnterAlt(23);
+				// formula.g:72:28: SI_AMP_METER
+				{
+				DebugLocation(72, 28);
+				mSI_AMP_METER(); 
+
+				}
+				break;
+			case 24:
+				DebugEnterAlt(24);
+				// formula.g:72:41: SI_MOL_CU_METER_1
+				{
+				DebugLocation(72, 41);
+				mSI_MOL_CU_METER_1(); 
+
+				}
+				break;
+			case 25:
+				DebugEnterAlt(25);
+				// formula.g:72:59: SI_MOL_CU_METER_2
+				{
+				DebugLocation(72, 59);
+				mSI_MOL_CU_METER_2(); 
+
+				}
+				break;
+			case 26:
+				DebugEnterAlt(26);
+				// formula.g:73:10: SI_CANDELA_SQ_METER_1
+				{
+				DebugLocation(73, 10);
+				mSI_CANDELA_SQ_METER_1(); 
+
+				}
+				break;
+			case 27:
+				DebugEnterAlt(27);
+				// formula.g:73:32: SI_CANDELA_SQ_METER_2
+				{
+				DebugLocation(73, 32);
+				mSI_CANDELA_SQ_METER_2(); 
+
+				}
+				break;
+			case 28:
+				DebugEnterAlt(28);
+				// formula.g:73:54: SI_RADIAN
+				{
+				DebugLocation(73, 54);
+				mSI_RADIAN(); 
+
+				}
+				break;
+			case 29:
+				DebugEnterAlt(29);
+				// formula.g:73:64: SI_SOLID_ANGLE
+				{
+				DebugLocation(73, 64);
+				mSI_SOLID_ANGLE(); 
+
+				}
+				break;
+			case 30:
+				DebugEnterAlt(30);
+				// formula.g:74:10: SI_HERTZ
+				{
+				DebugLocation(74, 10);
+				mSI_HERTZ(); 
+
+				}
+				break;
+			case 31:
+				DebugEnterAlt(31);
+				// formula.g:74:19: SI_NEWTON
+				{
+				DebugLocation(74, 19);
+				mSI_NEWTON(); 
+
+				}
+				break;
+			case 32:
+				DebugEnterAlt(32);
+				// formula.g:74:29: SI_PASCAL
+				{
+				DebugLocation(74, 29);
+				mSI_PASCAL(); 
+
+				}
+				break;
+			case 33:
+				DebugEnterAlt(33);
+				// formula.g:74:39: SI_JOULE
+				{
+				DebugLocation(74, 39);
+				mSI_JOULE(); 
+
+				}
+				break;
+			case 34:
+				DebugEnterAlt(34);
+				// formula.g:74:48: SI_WATT
+				{
+				DebugLocation(74, 48);
+				mSI_WATT(); 
+
+				}
+				break;
+			case 35:
+				DebugEnterAlt(35);
+				// formula.g:74:56: SI_COULOMB
+				{
+				DebugLocation(74, 56);
+				mSI_COULOMB(); 
+
+				}
+				break;
+			case 36:
+				DebugEnterAlt(36);
+				// formula.g:74:67: SI_VOLT
+				{
+				DebugLocation(74, 67);
+				mSI_VOLT(); 
+
+				}
+				break;
+			case 37:
+				DebugEnterAlt(37);
+				// formula.g:75:10: SI_FARAD
+				{
+				DebugLocation(75, 10);
+				mSI_FARAD(); 
+
+				}
+				break;
+			case 38:
+				DebugEnterAlt(38);
+				// formula.g:75:19: SI_OHM_1
+				{
+				DebugLocation(75, 19);
+				mSI_OHM_1(); 
+
+				}
+				break;
+			case 39:
+				DebugEnterAlt(39);
+				// formula.g:75:28: SI_OHM_2
+				{
+				DebugLocation(75, 28);
+				mSI_OHM_2(); 
+
+				}
+				break;
+			case 40:
+				DebugEnterAlt(40);
+				// formula.g:75:37: SI_SIEMENS
+				{
+				DebugLocation(75, 37);
+				mSI_SIEMENS(); 
+
+				}
+				break;
+			case 41:
+				DebugEnterAlt(41);
+				// formula.g:75:48: SI_WEBER
+				{
+				DebugLocation(75, 48);
+				mSI_WEBER(); 
+
+				}
+				break;
+			case 42:
+				DebugEnterAlt(42);
+				// formula.g:75:57: SI_TESLA
+				{
+				DebugLocation(75, 57);
+				mSI_TESLA(); 
+
+				}
+				break;
+			case 43:
+				DebugEnterAlt(43);
+				// formula.g:75:66: SI_HENRY
+				{
+				DebugLocation(75, 66);
+				mSI_HENRY(); 
+
+				}
+				break;
+			case 44:
+				DebugEnterAlt(44);
+				// formula.g:76:10: SI_CELCIUS
+				{
+				DebugLocation(76, 10);
+				mSI_CELCIUS(); 
+
+				}
+				break;
+			case 45:
+				DebugEnterAlt(45);
+				// formula.g:76:21: SI_LUMEN
+				{
+				DebugLocation(76, 21);
+				mSI_LUMEN(); 
+
+				}
+				break;
+			case 46:
+				DebugEnterAlt(46);
+				// formula.g:76:30: SI_LUX
+				{
+				DebugLocation(76, 30);
+				mSI_LUX(); 
+
+				}
+				break;
+			case 47:
+				DebugEnterAlt(47);
+				// formula.g:76:37: SI_BECQUEREL
+				{
+				DebugLocation(76, 37);
+				mSI_BECQUEREL(); 
+
+				}
+				break;
+			case 48:
+				DebugEnterAlt(48);
+				// formula.g:76:50: SI_GRAY
+				{
+				DebugLocation(76, 50);
+				mSI_GRAY(); 
+
+				}
+				break;
+			case 49:
+				DebugEnterAlt(49);
+				// formula.g:76:58: SI_SIEVERT
+				{
+				DebugLocation(76, 58);
+				mSI_SIEVERT(); 
+
+				}
+				break;
+			case 50:
+				DebugEnterAlt(50);
+				// formula.g:76:69: SI_KATAL
+				{
+				DebugLocation(76, 69);
+				mSI_KATAL(); 
+
+				}
+				break;
+			case 51:
+				DebugEnterAlt(51);
+				// formula.g:77:10: SI_PASCAL_SEC
+				{
+				DebugLocation(77, 10);
+				mSI_PASCAL_SEC(); 
+
+				}
+				break;
+			case 52:
+				DebugEnterAlt(52);
+				// formula.g:77:24: SI_NEWTON_METER
+				{
+				DebugLocation(77, 24);
+				mSI_NEWTON_METER(); 
+
+				}
+				break;
+			case 53:
+				DebugEnterAlt(53);
+				// formula.g:77:40: SI_NEWTON_PER_METER
+				{
+				DebugLocation(77, 40);
+				mSI_NEWTON_PER_METER(); 
+
+				}
+				break;
+			case 54:
+				DebugEnterAlt(54);
+				// formula.g:77:60: SI_RADIAN_PER_SEC
+				{
+				DebugLocation(77, 60);
+				mSI_RADIAN_PER_SEC(); 
+
+				}
+				break;
+			case 55:
+				DebugEnterAlt(55);
+				// formula.g:78:10: SI_RADIAN_PER_SEC_SQ_1
+				{
+				DebugLocation(78, 10);
+				mSI_RADIAN_PER_SEC_SQ_1(); 
+
+				}
+				break;
+			case 56:
+				DebugEnterAlt(56);
+				// formula.g:78:33: SI_RADIAN_PER_SEC_SQ_2
+				{
+				DebugLocation(78, 33);
+				mSI_RADIAN_PER_SEC_SQ_2(); 
+
+				}
+				break;
+			case 57:
+				DebugEnterAlt(57);
+				// formula.g:78:56: SI_WATT_PER_METER_SQ_1
+				{
+				DebugLocation(78, 56);
+				mSI_WATT_PER_METER_SQ_1(); 
+
+				}
+				break;
+			case 58:
+				DebugEnterAlt(58);
+				// formula.g:79:10: SI_WATT_PER_METER_SQ_2
+				{
+				DebugLocation(79, 10);
+				mSI_WATT_PER_METER_SQ_2(); 
+
+				}
+				break;
+			case 59:
+				DebugEnterAlt(59);
+				// formula.g:79:33: SI_JOULE_PER_KELVIN
+				{
+				DebugLocation(79, 33);
+				mSI_JOULE_PER_KELVIN(); 
+
+				}
+				break;
+			case 60:
+				DebugEnterAlt(60);
+				// formula.g:79:53: SI_JOULE_PER_KG_KELVIN
+				{
+				DebugLocation(79, 53);
+				mSI_JOULE_PER_KG_KELVIN(); 
+
+				}
+				break;
+			case 61:
+				DebugEnterAlt(61);
+				// formula.g:80:10: SI_JOULE_PER_KG
+				{
+				DebugLocation(80, 10);
+				mSI_JOULE_PER_KG(); 
+
+				}
+				break;
+			case 62:
+				DebugEnterAlt(62);
+				// formula.g:80:26: SI_WATT_PER_METER_KELVIN
+				{
+				DebugLocation(80, 26);
+				mSI_WATT_PER_METER_KELVIN(); 
+
+				}
+				break;
+			case 63:
+				DebugEnterAlt(63);
+				// formula.g:80:51: SI_JOULE_PER_CU_METER_1
+				{
+				DebugLocation(80, 51);
+				mSI_JOULE_PER_CU_METER_1(); 
+
+				}
+				break;
+			case 64:
+				DebugEnterAlt(64);
+				// formula.g:81:10: SI_JOULE_PER_CU_METER_2
+				{
+				DebugLocation(81, 10);
+				mSI_JOULE_PER_CU_METER_2(); 
+
+				}
+				break;
+			case 65:
+				DebugEnterAlt(65);
+				// formula.g:81:34: SI_VOLT_PER_METER
+				{
+				DebugLocation(81, 34);
+				mSI_VOLT_PER_METER(); 
+
+				}
+				break;
+			case 66:
+				DebugEnterAlt(66);
+				// formula.g:81:52: SI_COULOMB_PER_CU_METER_1
+				{
+				DebugLocation(81, 52);
+				mSI_COULOMB_PER_CU_METER_1(); 
+
+				}
+				break;
+			case 67:
+				DebugEnterAlt(67);
+				// formula.g:82:10: SI_COULOMB_PER_CU_METER_2
+				{
+				DebugLocation(82, 10);
+				mSI_COULOMB_PER_CU_METER_2(); 
+
+				}
+				break;
+			case 68:
+				DebugEnterAlt(68);
+				// formula.g:82:36: SI_COULOMB_PER_SQ_METER_1
+				{
+				DebugLocation(82, 36);
+				mSI_COULOMB_PER_SQ_METER_1(); 
+
+				}
+				break;
+			case 69:
+				DebugEnterAlt(69);
+				// formula.g:83:10: SI_COULOMB_PER_SQ_METER_2
+				{
+				DebugLocation(83, 10);
+				mSI_COULOMB_PER_SQ_METER_2(); 
+
+				}
+				break;
+			case 70:
+				DebugEnterAlt(70);
+				// formula.g:83:36: SI_FARAD_PER_METER
+				{
+				DebugLocation(83, 36);
+				mSI_FARAD_PER_METER(); 
+
+				}
+				break;
+			case 71:
+				DebugEnterAlt(71);
+				// formula.g:83:55: SI_HENRY_PER_METER
+				{
+				DebugLocation(83, 55);
+				mSI_HENRY_PER_METER(); 
+
+				}
+				break;
+			case 72:
+				DebugEnterAlt(72);
+				// formula.g:84:10: SI_JOULE_PER_MOLE
+				{
+				DebugLocation(84, 10);
+				mSI_JOULE_PER_MOLE(); 
+
+				}
+				break;
+			case 73:
+				DebugEnterAlt(73);
+				// formula.g:84:28: SI_JOULE_PER_MOLE_KELVIN
+				{
+				DebugLocation(84, 28);
+				mSI_JOULE_PER_MOLE_KELVIN(); 
+
+				}
+				break;
+			case 74:
+				DebugEnterAlt(74);
+				// formula.g:84:53: SI_COULOMB_PER_KG
+				{
+				DebugLocation(84, 53);
+				mSI_COULOMB_PER_KG(); 
+
+				}
+				break;
+			case 75:
+				DebugEnterAlt(75);
+				// formula.g:85:10: SI_GRAY_PER_SEC
+				{
+				DebugLocation(85, 10);
+				mSI_GRAY_PER_SEC(); 
+
+				}
+				break;
+			case 76:
+				DebugEnterAlt(76);
+				// formula.g:85:26: SI_WATT_PER_STERADIAN
+				{
+				DebugLocation(85, 26);
+				mSI_WATT_PER_STERADIAN(); 
+
+				}
+				break;
+			case 77:
+				DebugEnterAlt(77);
+				// formula.g:85:48: SI_WATT_PER_SQ_METER_STERADIAN_1
+				{
+				DebugLocation(85, 48);
+				mSI_WATT_PER_SQ_METER_STERADIAN_1(); 
+
+				}
+				break;
+			case 78:
+				DebugEnterAlt(78);
+				// formula.g:86:10: SI_WATT_PER_SQ_METER_STERADIAN_2
+				{
+				DebugLocation(86, 10);
+				mSI_WATT_PER_SQ_METER_STERADIAN_2(); 
+
+				}
+				break;
+			case 79:
+				DebugEnterAlt(79);
+				// formula.g:86:43: SI_KATAL_PER_CU_METER_1
+				{
+				DebugLocation(86, 43);
+				mSI_KATAL_PER_CU_METER_1(); 
+
+				}
+				break;
+			case 80:
+				DebugEnterAlt(80);
+				// formula.g:87:10: SI_KATAL_PER_CU_METER_2
+				{
+				DebugLocation(87, 10);
+				mSI_KATAL_PER_CU_METER_2(); 
+
+				}
+				break;
+
+			}
+			} finally { DebugExitSubRule(18); }
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_UNIT", 11);
+			LeaveRule("SI_UNIT", 11);
+			LeaveRule_SI_UNIT();
+		}
+	}
+	// $ANTLR end "SI_UNIT"
+
+	partial void EnterRule_SI_METER();
+	partial void LeaveRule_SI_METER();
+
+	// $ANTLR start "SI_METER"
+	[GrammarRule("SI_METER")]
+	private void mSI_METER()
+	{
+		EnterRule_SI_METER();
+		EnterRule("SI_METER", 12);
+		TraceIn("SI_METER", 12);
+		try
+		{
+			// formula.g:92:18: ( 'm' )
+			DebugEnterAlt(1);
+			// formula.g:92:20: 'm'
+			{
+			DebugLocation(92, 20);
+			Match('m'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_METER", 12);
+			LeaveRule("SI_METER", 12);
+			LeaveRule_SI_METER();
+		}
+	}
+	// $ANTLR end "SI_METER"
+
+	partial void EnterRule_SI_KG();
+	partial void LeaveRule_SI_KG();
+
+	// $ANTLR start "SI_KG"
+	[GrammarRule("SI_KG")]
+	private void mSI_KG()
+	{
+		EnterRule_SI_KG();
+		EnterRule("SI_KG", 13);
+		TraceIn("SI_KG", 13);
+		try
+		{
+			// formula.g:93:15: ( 'kg' )
+			DebugEnterAlt(1);
+			// formula.g:93:17: 'kg'
+			{
+			DebugLocation(93, 17);
+			Match("kg"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_KG", 13);
+			LeaveRule("SI_KG", 13);
+			LeaveRule_SI_KG();
+		}
+	}
+	// $ANTLR end "SI_KG"
+
+	partial void EnterRule_SI_SEC();
+	partial void LeaveRule_SI_SEC();
+
+	// $ANTLR start "SI_SEC"
+	[GrammarRule("SI_SEC")]
+	private void mSI_SEC()
+	{
+		EnterRule_SI_SEC();
+		EnterRule("SI_SEC", 14);
+		TraceIn("SI_SEC", 14);
+		try
+		{
+			// formula.g:94:16: ( 's' )
+			DebugEnterAlt(1);
+			// formula.g:94:18: 's'
+			{
+			DebugLocation(94, 18);
+			Match('s'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_SEC", 14);
+			LeaveRule("SI_SEC", 14);
+			LeaveRule_SI_SEC();
+		}
+	}
+	// $ANTLR end "SI_SEC"
+
+	partial void EnterRule_SI_AMP();
+	partial void LeaveRule_SI_AMP();
+
+	// $ANTLR start "SI_AMP"
+	[GrammarRule("SI_AMP")]
+	private void mSI_AMP()
+	{
+		EnterRule_SI_AMP();
+		EnterRule("SI_AMP", 15);
+		TraceIn("SI_AMP", 15);
+		try
+		{
+			// formula.g:95:16: ( 'A' )
+			DebugEnterAlt(1);
+			// formula.g:95:18: 'A'
+			{
+			DebugLocation(95, 18);
+			Match('A'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_AMP", 15);
+			LeaveRule("SI_AMP", 15);
+			LeaveRule_SI_AMP();
+		}
+	}
+	// $ANTLR end "SI_AMP"
+
+	partial void EnterRule_SI_KELVIN();
+	partial void LeaveRule_SI_KELVIN();
+
+	// $ANTLR start "SI_KELVIN"
+	[GrammarRule("SI_KELVIN")]
+	private void mSI_KELVIN()
+	{
+		EnterRule_SI_KELVIN();
+		EnterRule("SI_KELVIN", 16);
+		TraceIn("SI_KELVIN", 16);
+		try
+		{
+			// formula.g:96:19: ( 'K' )
+			DebugEnterAlt(1);
+			// formula.g:96:21: 'K'
+			{
+			DebugLocation(96, 21);
+			Match('K'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_KELVIN", 16);
+			LeaveRule("SI_KELVIN", 16);
+			LeaveRule_SI_KELVIN();
+		}
+	}
+	// $ANTLR end "SI_KELVIN"
+
+	partial void EnterRule_SI_MOLE();
+	partial void LeaveRule_SI_MOLE();
+
+	// $ANTLR start "SI_MOLE"
+	[GrammarRule("SI_MOLE")]
+	private void mSI_MOLE()
+	{
+		EnterRule_SI_MOLE();
+		EnterRule("SI_MOLE", 17);
+		TraceIn("SI_MOLE", 17);
+		try
+		{
+			// formula.g:97:17: ( 'mol' )
+			DebugEnterAlt(1);
+			// formula.g:97:19: 'mol'
+			{
+			DebugLocation(97, 19);
+			Match("mol"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_MOLE", 17);
+			LeaveRule("SI_MOLE", 17);
+			LeaveRule_SI_MOLE();
+		}
+	}
+	// $ANTLR end "SI_MOLE"
+
+	partial void EnterRule_SI_CANDELA();
+	partial void LeaveRule_SI_CANDELA();
+
+	// $ANTLR start "SI_CANDELA"
+	[GrammarRule("SI_CANDELA")]
+	private void mSI_CANDELA()
+	{
+		EnterRule_SI_CANDELA();
+		EnterRule("SI_CANDELA", 18);
+		TraceIn("SI_CANDELA", 18);
+		try
+		{
+			// formula.g:98:20: ( 'cd' )
+			DebugEnterAlt(1);
+			// formula.g:98:22: 'cd'
+			{
+			DebugLocation(98, 22);
+			Match("cd"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_CANDELA", 18);
+			LeaveRule("SI_CANDELA", 18);
+			LeaveRule_SI_CANDELA();
+		}
+	}
+	// $ANTLR end "SI_CANDELA"
+
+	partial void EnterRule_SI_SQ_METER_1();
+	partial void LeaveRule_SI_SQ_METER_1();
+
+	// $ANTLR start "SI_SQ_METER_1"
+	[GrammarRule("SI_SQ_METER_1")]
+	private void mSI_SQ_METER_1()
+	{
+		EnterRule_SI_SQ_METER_1();
+		EnterRule("SI_SQ_METER_1", 19);
+		TraceIn("SI_SQ_METER_1", 19);
+		try
+		{
+			// formula.g:101:23: ( 'm²' )
+			DebugEnterAlt(1);
+			// formula.g:101:25: 'm²'
+			{
+			DebugLocation(101, 25);
+			Match("m²"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_SQ_METER_1", 19);
+			LeaveRule("SI_SQ_METER_1", 19);
+			LeaveRule_SI_SQ_METER_1();
+		}
+	}
+	// $ANTLR end "SI_SQ_METER_1"
+
+	partial void EnterRule_SI_SQ_METER_2();
+	partial void LeaveRule_SI_SQ_METER_2();
+
+	// $ANTLR start "SI_SQ_METER_2"
+	[GrammarRule("SI_SQ_METER_2")]
+	private void mSI_SQ_METER_2()
+	{
+		EnterRule_SI_SQ_METER_2();
+		EnterRule("SI_SQ_METER_2", 20);
+		TraceIn("SI_SQ_METER_2", 20);
+		try
+		{
+			// formula.g:102:23: ( 'm^2' )
+			DebugEnterAlt(1);
+			// formula.g:102:25: 'm^2'
+			{
+			DebugLocation(102, 25);
+			Match("m^2"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_SQ_METER_2", 20);
+			LeaveRule("SI_SQ_METER_2", 20);
+			LeaveRule_SI_SQ_METER_2();
+		}
+	}
+	// $ANTLR end "SI_SQ_METER_2"
+
+	partial void EnterRule_SI_CU_METER_1();
+	partial void LeaveRule_SI_CU_METER_1();
+
+	// $ANTLR start "SI_CU_METER_1"
+	[GrammarRule("SI_CU_METER_1")]
+	private void mSI_CU_METER_1()
+	{
+		EnterRule_SI_CU_METER_1();
+		EnterRule("SI_CU_METER_1", 21);
+		TraceIn("SI_CU_METER_1", 21);
+		try
+		{
+			// formula.g:103:23: ( 'm³' )
+			DebugEnterAlt(1);
+			// formula.g:103:25: 'm³'
+			{
+			DebugLocation(103, 25);
+			Match("m³"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_CU_METER_1", 21);
+			LeaveRule("SI_CU_METER_1", 21);
+			LeaveRule_SI_CU_METER_1();
+		}
+	}
+	// $ANTLR end "SI_CU_METER_1"
+
+	partial void EnterRule_SI_CU_METER_2();
+	partial void LeaveRule_SI_CU_METER_2();
+
+	// $ANTLR start "SI_CU_METER_2"
+	[GrammarRule("SI_CU_METER_2")]
+	private void mSI_CU_METER_2()
+	{
+		EnterRule_SI_CU_METER_2();
+		EnterRule("SI_CU_METER_2", 22);
+		TraceIn("SI_CU_METER_2", 22);
+		try
+		{
+			// formula.g:104:23: ( 'm^3' )
+			DebugEnterAlt(1);
+			// formula.g:104:25: 'm^3'
+			{
+			DebugLocation(104, 25);
+			Match("m^3"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_CU_METER_2", 22);
+			LeaveRule("SI_CU_METER_2", 22);
+			LeaveRule_SI_CU_METER_2();
+		}
+	}
+	// $ANTLR end "SI_CU_METER_2"
+
+	partial void EnterRule_SI_MPS();
+	partial void LeaveRule_SI_MPS();
+
+	// $ANTLR start "SI_MPS"
+	[GrammarRule("SI_MPS")]
+	private void mSI_MPS()
+	{
+		EnterRule_SI_MPS();
+		EnterRule("SI_MPS", 23);
+		TraceIn("SI_MPS", 23);
+		try
+		{
+			// formula.g:105:16: ( 'm/s' )
+			DebugEnterAlt(1);
+			// formula.g:105:18: 'm/s'
+			{
+			DebugLocation(105, 18);
+			Match("m/s"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_MPS", 23);
+			LeaveRule("SI_MPS", 23);
+			LeaveRule_SI_MPS();
+		}
+	}
+	// $ANTLR end "SI_MPS"
+
+	partial void EnterRule_SI_MPS_SQ_1();
+	partial void LeaveRule_SI_MPS_SQ_1();
+
+	// $ANTLR start "SI_MPS_SQ_1"
+	[GrammarRule("SI_MPS_SQ_1")]
+	private void mSI_MPS_SQ_1()
+	{
+		EnterRule_SI_MPS_SQ_1();
+		EnterRule("SI_MPS_SQ_1", 24);
+		TraceIn("SI_MPS_SQ_1", 24);
+		try
+		{
+			// formula.g:106:21: ( 'm/s²' )
+			DebugEnterAlt(1);
+			// formula.g:106:23: 'm/s²'
+			{
+			DebugLocation(106, 23);
+			Match("m/s²"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_MPS_SQ_1", 24);
+			LeaveRule("SI_MPS_SQ_1", 24);
+			LeaveRule_SI_MPS_SQ_1();
+		}
+	}
+	// $ANTLR end "SI_MPS_SQ_1"
+
+	partial void EnterRule_SI_MPS_SQ_2();
+	partial void LeaveRule_SI_MPS_SQ_2();
+
+	// $ANTLR start "SI_MPS_SQ_2"
+	[GrammarRule("SI_MPS_SQ_2")]
+	private void mSI_MPS_SQ_2()
+	{
+		EnterRule_SI_MPS_SQ_2();
+		EnterRule("SI_MPS_SQ_2", 25);
+		TraceIn("SI_MPS_SQ_2", 25);
+		try
+		{
+			// formula.g:107:21: ( 'm/s^2' )
+			DebugEnterAlt(1);
+			// formula.g:107:23: 'm/s^2'
+			{
+			DebugLocation(107, 23);
+			Match("m/s^2"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_MPS_SQ_2", 25);
+			LeaveRule("SI_MPS_SQ_2", 25);
+			LeaveRule_SI_MPS_SQ_2();
+		}
+	}
+	// $ANTLR end "SI_MPS_SQ_2"
+
+	partial void EnterRule_SI_REC_METER_1();
+	partial void LeaveRule_SI_REC_METER_1();
+
+	// $ANTLR start "SI_REC_METER_1"
+	[GrammarRule("SI_REC_METER_1")]
+	private void mSI_REC_METER_1()
+	{
+		EnterRule_SI_REC_METER_1();
+		EnterRule("SI_REC_METER_1", 26);
+		TraceIn("SI_REC_METER_1", 26);
+		try
+		{
+			// formula.g:108:24: ( 'm⁻¹' )
+			DebugEnterAlt(1);
+			// formula.g:108:26: 'm⁻¹'
+			{
+			DebugLocation(108, 26);
+			Match("m⁻¹"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_REC_METER_1", 26);
+			LeaveRule("SI_REC_METER_1", 26);
+			LeaveRule_SI_REC_METER_1();
+		}
+	}
+	// $ANTLR end "SI_REC_METER_1"
+
+	partial void EnterRule_SI_REC_METER_2();
+	partial void LeaveRule_SI_REC_METER_2();
+
+	// $ANTLR start "SI_REC_METER_2"
+	[GrammarRule("SI_REC_METER_2")]
+	private void mSI_REC_METER_2()
+	{
+		EnterRule_SI_REC_METER_2();
+		EnterRule("SI_REC_METER_2", 27);
+		TraceIn("SI_REC_METER_2", 27);
+		try
+		{
+			// formula.g:109:24: ( 'm^-1' )
+			DebugEnterAlt(1);
+			// formula.g:109:26: 'm^-1'
+			{
+			DebugLocation(109, 26);
+			Match("m^-1"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_REC_METER_2", 27);
+			LeaveRule("SI_REC_METER_2", 27);
+			LeaveRule_SI_REC_METER_2();
+		}
+	}
+	// $ANTLR end "SI_REC_METER_2"
+
+	partial void EnterRule_SI_KG_CU_METER_1();
+	partial void LeaveRule_SI_KG_CU_METER_1();
+
+	// $ANTLR start "SI_KG_CU_METER_1"
+	[GrammarRule("SI_KG_CU_METER_1")]
+	private void mSI_KG_CU_METER_1()
+	{
+		EnterRule_SI_KG_CU_METER_1();
+		EnterRule("SI_KG_CU_METER_1", 28);
+		TraceIn("SI_KG_CU_METER_1", 28);
+		try
+		{
+			// formula.g:110:26: ( 'kg/m³' )
+			DebugEnterAlt(1);
+			// formula.g:110:28: 'kg/m³'
+			{
+			DebugLocation(110, 28);
+			Match("kg/m³"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_KG_CU_METER_1", 28);
+			LeaveRule("SI_KG_CU_METER_1", 28);
+			LeaveRule_SI_KG_CU_METER_1();
+		}
+	}
+	// $ANTLR end "SI_KG_CU_METER_1"
+
+	partial void EnterRule_SI_KG_CU_METER_2();
+	partial void LeaveRule_SI_KG_CU_METER_2();
+
+	// $ANTLR start "SI_KG_CU_METER_2"
+	[GrammarRule("SI_KG_CU_METER_2")]
+	private void mSI_KG_CU_METER_2()
+	{
+		EnterRule_SI_KG_CU_METER_2();
+		EnterRule("SI_KG_CU_METER_2", 29);
+		TraceIn("SI_KG_CU_METER_2", 29);
+		try
+		{
+			// formula.g:111:26: ( 'kg/m^3' )
+			DebugEnterAlt(1);
+			// formula.g:111:28: 'kg/m^3'
+			{
+			DebugLocation(111, 28);
+			Match("kg/m^3"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_KG_CU_METER_2", 29);
+			LeaveRule("SI_KG_CU_METER_2", 29);
+			LeaveRule_SI_KG_CU_METER_2();
+		}
+	}
+	// $ANTLR end "SI_KG_CU_METER_2"
+
+	partial void EnterRule_SI_CU_METER_KG_1();
+	partial void LeaveRule_SI_CU_METER_KG_1();
+
+	// $ANTLR start "SI_CU_METER_KG_1"
+	[GrammarRule("SI_CU_METER_KG_1")]
+	private void mSI_CU_METER_KG_1()
+	{
+		EnterRule_SI_CU_METER_KG_1();
+		EnterRule("SI_CU_METER_KG_1", 30);
+		TraceIn("SI_CU_METER_KG_1", 30);
+		try
+		{
+			// formula.g:112:26: ( 'm³/kg' )
+			DebugEnterAlt(1);
+			// formula.g:112:28: 'm³/kg'
+			{
+			DebugLocation(112, 28);
+			Match("m³/kg"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_CU_METER_KG_1", 30);
+			LeaveRule("SI_CU_METER_KG_1", 30);
+			LeaveRule_SI_CU_METER_KG_1();
+		}
+	}
+	// $ANTLR end "SI_CU_METER_KG_1"
+
+	partial void EnterRule_SI_CU_METER_KG_2();
+	partial void LeaveRule_SI_CU_METER_KG_2();
+
+	// $ANTLR start "SI_CU_METER_KG_2"
+	[GrammarRule("SI_CU_METER_KG_2")]
+	private void mSI_CU_METER_KG_2()
+	{
+		EnterRule_SI_CU_METER_KG_2();
+		EnterRule("SI_CU_METER_KG_2", 31);
+		TraceIn("SI_CU_METER_KG_2", 31);
+		try
+		{
+			// formula.g:113:26: ( 'm^3/kg' )
+			DebugEnterAlt(1);
+			// formula.g:113:28: 'm^3/kg'
+			{
+			DebugLocation(113, 28);
+			Match("m^3/kg"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_CU_METER_KG_2", 31);
+			LeaveRule("SI_CU_METER_KG_2", 31);
+			LeaveRule_SI_CU_METER_KG_2();
+		}
+	}
+	// $ANTLR end "SI_CU_METER_KG_2"
+
+	partial void EnterRule_SI_AMP_SQ_METER_1();
+	partial void LeaveRule_SI_AMP_SQ_METER_1();
+
+	// $ANTLR start "SI_AMP_SQ_METER_1"
+	[GrammarRule("SI_AMP_SQ_METER_1")]
+	private void mSI_AMP_SQ_METER_1()
+	{
+		EnterRule_SI_AMP_SQ_METER_1();
+		EnterRule("SI_AMP_SQ_METER_1", 32);
+		TraceIn("SI_AMP_SQ_METER_1", 32);
+		try
+		{
+			// formula.g:114:27: ( 'A/m²' )
+			DebugEnterAlt(1);
+			// formula.g:114:29: 'A/m²'
+			{
+			DebugLocation(114, 29);
+			Match("A/m²"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_AMP_SQ_METER_1", 32);
+			LeaveRule("SI_AMP_SQ_METER_1", 32);
+			LeaveRule_SI_AMP_SQ_METER_1();
+		}
+	}
+	// $ANTLR end "SI_AMP_SQ_METER_1"
+
+	partial void EnterRule_SI_AMP_SQ_METER_2();
+	partial void LeaveRule_SI_AMP_SQ_METER_2();
+
+	// $ANTLR start "SI_AMP_SQ_METER_2"
+	[GrammarRule("SI_AMP_SQ_METER_2")]
+	private void mSI_AMP_SQ_METER_2()
+	{
+		EnterRule_SI_AMP_SQ_METER_2();
+		EnterRule("SI_AMP_SQ_METER_2", 33);
+		TraceIn("SI_AMP_SQ_METER_2", 33);
+		try
+		{
+			// formula.g:115:27: ( 'A/m^2' )
+			DebugEnterAlt(1);
+			// formula.g:115:29: 'A/m^2'
+			{
+			DebugLocation(115, 29);
+			Match("A/m^2"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_AMP_SQ_METER_2", 33);
+			LeaveRule("SI_AMP_SQ_METER_2", 33);
+			LeaveRule_SI_AMP_SQ_METER_2();
+		}
+	}
+	// $ANTLR end "SI_AMP_SQ_METER_2"
+
+	partial void EnterRule_SI_AMP_METER();
+	partial void LeaveRule_SI_AMP_METER();
+
+	// $ANTLR start "SI_AMP_METER"
+	[GrammarRule("SI_AMP_METER")]
+	private void mSI_AMP_METER()
+	{
+		EnterRule_SI_AMP_METER();
+		EnterRule("SI_AMP_METER", 34);
+		TraceIn("SI_AMP_METER", 34);
+		try
+		{
+			// formula.g:116:22: ( 'A/m' )
+			DebugEnterAlt(1);
+			// formula.g:116:24: 'A/m'
+			{
+			DebugLocation(116, 24);
+			Match("A/m"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_AMP_METER", 34);
+			LeaveRule("SI_AMP_METER", 34);
+			LeaveRule_SI_AMP_METER();
+		}
+	}
+	// $ANTLR end "SI_AMP_METER"
+
+	partial void EnterRule_SI_MOL_CU_METER_1();
+	partial void LeaveRule_SI_MOL_CU_METER_1();
+
+	// $ANTLR start "SI_MOL_CU_METER_1"
+	[GrammarRule("SI_MOL_CU_METER_1")]
+	private void mSI_MOL_CU_METER_1()
+	{
+		EnterRule_SI_MOL_CU_METER_1();
+		EnterRule("SI_MOL_CU_METER_1", 35);
+		TraceIn("SI_MOL_CU_METER_1", 35);
+		try
+		{
+			// formula.g:117:27: ( 'mol/m³' )
+			DebugEnterAlt(1);
+			// formula.g:117:29: 'mol/m³'
+			{
+			DebugLocation(117, 29);
+			Match("mol/m³"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_MOL_CU_METER_1", 35);
+			LeaveRule("SI_MOL_CU_METER_1", 35);
+			LeaveRule_SI_MOL_CU_METER_1();
+		}
+	}
+	// $ANTLR end "SI_MOL_CU_METER_1"
+
+	partial void EnterRule_SI_MOL_CU_METER_2();
+	partial void LeaveRule_SI_MOL_CU_METER_2();
+
+	// $ANTLR start "SI_MOL_CU_METER_2"
+	[GrammarRule("SI_MOL_CU_METER_2")]
+	private void mSI_MOL_CU_METER_2()
+	{
+		EnterRule_SI_MOL_CU_METER_2();
+		EnterRule("SI_MOL_CU_METER_2", 36);
+		TraceIn("SI_MOL_CU_METER_2", 36);
+		try
+		{
+			// formula.g:118:27: ( 'mol/m^3' )
+			DebugEnterAlt(1);
+			// formula.g:118:29: 'mol/m^3'
+			{
+			DebugLocation(118, 29);
+			Match("mol/m^3"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_MOL_CU_METER_2", 36);
+			LeaveRule("SI_MOL_CU_METER_2", 36);
+			LeaveRule_SI_MOL_CU_METER_2();
+		}
+	}
+	// $ANTLR end "SI_MOL_CU_METER_2"
+
+	partial void EnterRule_SI_CANDELA_SQ_METER_1();
+	partial void LeaveRule_SI_CANDELA_SQ_METER_1();
+
+	// $ANTLR start "SI_CANDELA_SQ_METER_1"
+	[GrammarRule("SI_CANDELA_SQ_METER_1")]
+	private void mSI_CANDELA_SQ_METER_1()
+	{
+		EnterRule_SI_CANDELA_SQ_METER_1();
+		EnterRule("SI_CANDELA_SQ_METER_1", 37);
+		TraceIn("SI_CANDELA_SQ_METER_1", 37);
+		try
+		{
+			// formula.g:119:31: ( 'cd/m²' )
+			DebugEnterAlt(1);
+			// formula.g:119:33: 'cd/m²'
+			{
+			DebugLocation(119, 33);
+			Match("cd/m²"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_CANDELA_SQ_METER_1", 37);
+			LeaveRule("SI_CANDELA_SQ_METER_1", 37);
+			LeaveRule_SI_CANDELA_SQ_METER_1();
+		}
+	}
+	// $ANTLR end "SI_CANDELA_SQ_METER_1"
+
+	partial void EnterRule_SI_CANDELA_SQ_METER_2();
+	partial void LeaveRule_SI_CANDELA_SQ_METER_2();
+
+	// $ANTLR start "SI_CANDELA_SQ_METER_2"
+	[GrammarRule("SI_CANDELA_SQ_METER_2")]
+	private void mSI_CANDELA_SQ_METER_2()
+	{
+		EnterRule_SI_CANDELA_SQ_METER_2();
+		EnterRule("SI_CANDELA_SQ_METER_2", 38);
+		TraceIn("SI_CANDELA_SQ_METER_2", 38);
+		try
+		{
+			// formula.g:120:31: ( 'cd/m^2' )
+			DebugEnterAlt(1);
+			// formula.g:120:33: 'cd/m^2'
+			{
+			DebugLocation(120, 33);
+			Match("cd/m^2"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_CANDELA_SQ_METER_2", 38);
+			LeaveRule("SI_CANDELA_SQ_METER_2", 38);
+			LeaveRule_SI_CANDELA_SQ_METER_2();
+		}
+	}
+	// $ANTLR end "SI_CANDELA_SQ_METER_2"
+
+	partial void EnterRule_SI_RADIAN();
+	partial void LeaveRule_SI_RADIAN();
+
+	// $ANTLR start "SI_RADIAN"
+	[GrammarRule("SI_RADIAN")]
+	private void mSI_RADIAN()
+	{
+		EnterRule_SI_RADIAN();
+		EnterRule("SI_RADIAN", 39);
+		TraceIn("SI_RADIAN", 39);
+		try
+		{
+			// formula.g:122:19: ( 'rad' )
+			DebugEnterAlt(1);
+			// formula.g:122:21: 'rad'
+			{
+			DebugLocation(122, 21);
+			Match("rad"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_RADIAN", 39);
+			LeaveRule("SI_RADIAN", 39);
+			LeaveRule_SI_RADIAN();
+		}
+	}
+	// $ANTLR end "SI_RADIAN"
+
+	partial void EnterRule_SI_SOLID_ANGLE();
+	partial void LeaveRule_SI_SOLID_ANGLE();
+
+	// $ANTLR start "SI_SOLID_ANGLE"
+	[GrammarRule("SI_SOLID_ANGLE")]
+	private void mSI_SOLID_ANGLE()
+	{
+		EnterRule_SI_SOLID_ANGLE();
+		EnterRule("SI_SOLID_ANGLE", 40);
+		TraceIn("SI_SOLID_ANGLE", 40);
+		try
+		{
+			// formula.g:123:24: ( 'sr(c)' )
+			DebugEnterAlt(1);
+			// formula.g:123:26: 'sr(c)'
+			{
+			DebugLocation(123, 26);
+			Match("sr(c)"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_SOLID_ANGLE", 40);
+			LeaveRule("SI_SOLID_ANGLE", 40);
+			LeaveRule_SI_SOLID_ANGLE();
+		}
+	}
+	// $ANTLR end "SI_SOLID_ANGLE"
+
+	partial void EnterRule_SI_HERTZ();
+	partial void LeaveRule_SI_HERTZ();
+
+	// $ANTLR start "SI_HERTZ"
+	[GrammarRule("SI_HERTZ")]
+	private void mSI_HERTZ()
+	{
+		EnterRule_SI_HERTZ();
+		EnterRule("SI_HERTZ", 41);
+		TraceIn("SI_HERTZ", 41);
+		try
+		{
+			// formula.g:124:18: ( 'Hz' )
+			DebugEnterAlt(1);
+			// formula.g:124:20: 'Hz'
+			{
+			DebugLocation(124, 20);
+			Match("Hz"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_HERTZ", 41);
+			LeaveRule("SI_HERTZ", 41);
+			LeaveRule_SI_HERTZ();
+		}
+	}
+	// $ANTLR end "SI_HERTZ"
+
+	partial void EnterRule_SI_NEWTON();
+	partial void LeaveRule_SI_NEWTON();
+
+	// $ANTLR start "SI_NEWTON"
+	[GrammarRule("SI_NEWTON")]
+	private void mSI_NEWTON()
+	{
+		EnterRule_SI_NEWTON();
+		EnterRule("SI_NEWTON", 42);
+		TraceIn("SI_NEWTON", 42);
+		try
+		{
+			// formula.g:125:19: ( 'N' )
+			DebugEnterAlt(1);
+			// formula.g:125:21: 'N'
+			{
+			DebugLocation(125, 21);
+			Match('N'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_NEWTON", 42);
+			LeaveRule("SI_NEWTON", 42);
+			LeaveRule_SI_NEWTON();
+		}
+	}
+	// $ANTLR end "SI_NEWTON"
+
+	partial void EnterRule_SI_PASCAL();
+	partial void LeaveRule_SI_PASCAL();
+
+	// $ANTLR start "SI_PASCAL"
+	[GrammarRule("SI_PASCAL")]
+	private void mSI_PASCAL()
+	{
+		EnterRule_SI_PASCAL();
+		EnterRule("SI_PASCAL", 43);
+		TraceIn("SI_PASCAL", 43);
+		try
+		{
+			// formula.g:126:19: ( 'Pa' )
+			DebugEnterAlt(1);
+			// formula.g:126:21: 'Pa'
+			{
+			DebugLocation(126, 21);
+			Match("Pa"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_PASCAL", 43);
+			LeaveRule("SI_PASCAL", 43);
+			LeaveRule_SI_PASCAL();
+		}
+	}
+	// $ANTLR end "SI_PASCAL"
+
+	partial void EnterRule_SI_JOULE();
+	partial void LeaveRule_SI_JOULE();
+
+	// $ANTLR start "SI_JOULE"
+	[GrammarRule("SI_JOULE")]
+	private void mSI_JOULE()
+	{
+		EnterRule_SI_JOULE();
+		EnterRule("SI_JOULE", 44);
+		TraceIn("SI_JOULE", 44);
+		try
+		{
+			// formula.g:127:18: ( 'J' )
+			DebugEnterAlt(1);
+			// formula.g:127:20: 'J'
+			{
+			DebugLocation(127, 20);
+			Match('J'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_JOULE", 44);
+			LeaveRule("SI_JOULE", 44);
+			LeaveRule_SI_JOULE();
+		}
+	}
+	// $ANTLR end "SI_JOULE"
+
+	partial void EnterRule_SI_WATT();
+	partial void LeaveRule_SI_WATT();
+
+	// $ANTLR start "SI_WATT"
+	[GrammarRule("SI_WATT")]
+	private void mSI_WATT()
+	{
+		EnterRule_SI_WATT();
+		EnterRule("SI_WATT", 45);
+		TraceIn("SI_WATT", 45);
+		try
+		{
+			// formula.g:128:17: ( 'W' )
+			DebugEnterAlt(1);
+			// formula.g:128:19: 'W'
+			{
+			DebugLocation(128, 19);
+			Match('W'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_WATT", 45);
+			LeaveRule("SI_WATT", 45);
+			LeaveRule_SI_WATT();
+		}
+	}
+	// $ANTLR end "SI_WATT"
+
+	partial void EnterRule_SI_COULOMB();
+	partial void LeaveRule_SI_COULOMB();
+
+	// $ANTLR start "SI_COULOMB"
+	[GrammarRule("SI_COULOMB")]
+	private void mSI_COULOMB()
+	{
+		EnterRule_SI_COULOMB();
+		EnterRule("SI_COULOMB", 46);
+		TraceIn("SI_COULOMB", 46);
+		try
+		{
+			// formula.g:129:20: ( 'C' )
+			DebugEnterAlt(1);
+			// formula.g:129:22: 'C'
+			{
+			DebugLocation(129, 22);
+			Match('C'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_COULOMB", 46);
+			LeaveRule("SI_COULOMB", 46);
+			LeaveRule_SI_COULOMB();
+		}
+	}
+	// $ANTLR end "SI_COULOMB"
+
+	partial void EnterRule_SI_VOLT();
+	partial void LeaveRule_SI_VOLT();
+
+	// $ANTLR start "SI_VOLT"
+	[GrammarRule("SI_VOLT")]
+	private void mSI_VOLT()
+	{
+		EnterRule_SI_VOLT();
+		EnterRule("SI_VOLT", 47);
+		TraceIn("SI_VOLT", 47);
+		try
+		{
+			// formula.g:130:17: ( 'V' )
+			DebugEnterAlt(1);
+			// formula.g:130:19: 'V'
+			{
+			DebugLocation(130, 19);
+			Match('V'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_VOLT", 47);
+			LeaveRule("SI_VOLT", 47);
+			LeaveRule_SI_VOLT();
+		}
+	}
+	// $ANTLR end "SI_VOLT"
+
+	partial void EnterRule_SI_FARAD();
+	partial void LeaveRule_SI_FARAD();
+
+	// $ANTLR start "SI_FARAD"
+	[GrammarRule("SI_FARAD")]
+	private void mSI_FARAD()
+	{
+		EnterRule_SI_FARAD();
+		EnterRule("SI_FARAD", 48);
+		TraceIn("SI_FARAD", 48);
+		try
+		{
+			// formula.g:131:18: ( 'F' )
+			DebugEnterAlt(1);
+			// formula.g:131:20: 'F'
+			{
+			DebugLocation(131, 20);
+			Match('F'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_FARAD", 48);
+			LeaveRule("SI_FARAD", 48);
+			LeaveRule_SI_FARAD();
+		}
+	}
+	// $ANTLR end "SI_FARAD"
+
+	partial void EnterRule_SI_OHM_1();
+	partial void LeaveRule_SI_OHM_1();
+
+	// $ANTLR start "SI_OHM_1"
+	[GrammarRule("SI_OHM_1")]
+	private void mSI_OHM_1()
+	{
+		EnterRule_SI_OHM_1();
+		EnterRule("SI_OHM_1", 49);
+		TraceIn("SI_OHM_1", 49);
+		try
+		{
+			// formula.g:132:18: ( 'Ω' )
+			DebugEnterAlt(1);
+			// formula.g:132:20: 'Ω'
+			{
+			DebugLocation(132, 20);
+			Match('\u2126'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_OHM_1", 49);
+			LeaveRule("SI_OHM_1", 49);
+			LeaveRule_SI_OHM_1();
+		}
+	}
+	// $ANTLR end "SI_OHM_1"
+
+	partial void EnterRule_SI_OHM_2();
+	partial void LeaveRule_SI_OHM_2();
+
+	// $ANTLR start "SI_OHM_2"
+	[GrammarRule("SI_OHM_2")]
+	private void mSI_OHM_2()
+	{
+		EnterRule_SI_OHM_2();
+		EnterRule("SI_OHM_2", 50);
+		TraceIn("SI_OHM_2", 50);
+		try
+		{
+			// formula.g:133:18: ( 'ohm' )
+			DebugEnterAlt(1);
+			// formula.g:133:20: 'ohm'
+			{
+			DebugLocation(133, 20);
+			Match("ohm"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_OHM_2", 50);
+			LeaveRule("SI_OHM_2", 50);
+			LeaveRule_SI_OHM_2();
+		}
+	}
+	// $ANTLR end "SI_OHM_2"
+
+	partial void EnterRule_SI_SIEMENS();
+	partial void LeaveRule_SI_SIEMENS();
+
+	// $ANTLR start "SI_SIEMENS"
+	[GrammarRule("SI_SIEMENS")]
+	private void mSI_SIEMENS()
+	{
+		EnterRule_SI_SIEMENS();
+		EnterRule("SI_SIEMENS", 51);
+		TraceIn("SI_SIEMENS", 51);
+		try
+		{
+			// formula.g:134:20: ( 'S' )
+			DebugEnterAlt(1);
+			// formula.g:134:22: 'S'
+			{
+			DebugLocation(134, 22);
+			Match('S'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_SIEMENS", 51);
+			LeaveRule("SI_SIEMENS", 51);
+			LeaveRule_SI_SIEMENS();
+		}
+	}
+	// $ANTLR end "SI_SIEMENS"
+
+	partial void EnterRule_SI_WEBER();
+	partial void LeaveRule_SI_WEBER();
+
+	// $ANTLR start "SI_WEBER"
+	[GrammarRule("SI_WEBER")]
+	private void mSI_WEBER()
+	{
+		EnterRule_SI_WEBER();
+		EnterRule("SI_WEBER", 52);
+		TraceIn("SI_WEBER", 52);
+		try
+		{
+			// formula.g:135:18: ( 'Wb' )
+			DebugEnterAlt(1);
+			// formula.g:135:20: 'Wb'
+			{
+			DebugLocation(135, 20);
+			Match("Wb"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_WEBER", 52);
+			LeaveRule("SI_WEBER", 52);
+			LeaveRule_SI_WEBER();
+		}
+	}
+	// $ANTLR end "SI_WEBER"
+
+	partial void EnterRule_SI_TESLA();
+	partial void LeaveRule_SI_TESLA();
+
+	// $ANTLR start "SI_TESLA"
+	[GrammarRule("SI_TESLA")]
+	private void mSI_TESLA()
+	{
+		EnterRule_SI_TESLA();
+		EnterRule("SI_TESLA", 53);
+		TraceIn("SI_TESLA", 53);
+		try
+		{
+			// formula.g:136:18: ( 'T' )
+			DebugEnterAlt(1);
+			// formula.g:136:20: 'T'
+			{
+			DebugLocation(136, 20);
+			Match('T'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_TESLA", 53);
+			LeaveRule("SI_TESLA", 53);
+			LeaveRule_SI_TESLA();
+		}
+	}
+	// $ANTLR end "SI_TESLA"
+
+	partial void EnterRule_SI_HENRY();
+	partial void LeaveRule_SI_HENRY();
+
+	// $ANTLR start "SI_HENRY"
+	[GrammarRule("SI_HENRY")]
+	private void mSI_HENRY()
+	{
+		EnterRule_SI_HENRY();
+		EnterRule("SI_HENRY", 54);
+		TraceIn("SI_HENRY", 54);
+		try
+		{
+			// formula.g:137:18: ( 'H' )
+			DebugEnterAlt(1);
+			// formula.g:137:20: 'H'
+			{
+			DebugLocation(137, 20);
+			Match('H'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_HENRY", 54);
+			LeaveRule("SI_HENRY", 54);
+			LeaveRule_SI_HENRY();
+		}
+	}
+	// $ANTLR end "SI_HENRY"
+
+	partial void EnterRule_SI_CELCIUS();
+	partial void LeaveRule_SI_CELCIUS();
+
+	// $ANTLR start "SI_CELCIUS"
+	[GrammarRule("SI_CELCIUS")]
+	private void mSI_CELCIUS()
+	{
+		EnterRule_SI_CELCIUS();
+		EnterRule("SI_CELCIUS", 55);
+		TraceIn("SI_CELCIUS", 55);
+		try
+		{
+			// formula.g:138:20: ( '°C' )
+			DebugEnterAlt(1);
+			// formula.g:138:22: '°C'
+			{
+			DebugLocation(138, 22);
+			Match("°C"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_CELCIUS", 55);
+			LeaveRule("SI_CELCIUS", 55);
+			LeaveRule_SI_CELCIUS();
+		}
+	}
+	// $ANTLR end "SI_CELCIUS"
+
+	partial void EnterRule_SI_LUMEN();
+	partial void LeaveRule_SI_LUMEN();
+
+	// $ANTLR start "SI_LUMEN"
+	[GrammarRule("SI_LUMEN")]
+	private void mSI_LUMEN()
+	{
+		EnterRule_SI_LUMEN();
+		EnterRule("SI_LUMEN", 56);
+		TraceIn("SI_LUMEN", 56);
+		try
+		{
+			// formula.g:139:18: ( 'lm' )
+			DebugEnterAlt(1);
+			// formula.g:139:20: 'lm'
+			{
+			DebugLocation(139, 20);
+			Match("lm"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_LUMEN", 56);
+			LeaveRule("SI_LUMEN", 56);
+			LeaveRule_SI_LUMEN();
+		}
+	}
+	// $ANTLR end "SI_LUMEN"
+
+	partial void EnterRule_SI_LUX();
+	partial void LeaveRule_SI_LUX();
+
+	// $ANTLR start "SI_LUX"
+	[GrammarRule("SI_LUX")]
+	private void mSI_LUX()
+	{
+		EnterRule_SI_LUX();
+		EnterRule("SI_LUX", 57);
+		TraceIn("SI_LUX", 57);
+		try
+		{
+			// formula.g:140:16: ( 'lx' )
+			DebugEnterAlt(1);
+			// formula.g:140:18: 'lx'
+			{
+			DebugLocation(140, 18);
+			Match("lx"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_LUX", 57);
+			LeaveRule("SI_LUX", 57);
+			LeaveRule_SI_LUX();
+		}
+	}
+	// $ANTLR end "SI_LUX"
+
+	partial void EnterRule_SI_BECQUEREL();
+	partial void LeaveRule_SI_BECQUEREL();
+
+	// $ANTLR start "SI_BECQUEREL"
+	[GrammarRule("SI_BECQUEREL")]
+	private void mSI_BECQUEREL()
+	{
+		EnterRule_SI_BECQUEREL();
+		EnterRule("SI_BECQUEREL", 58);
+		TraceIn("SI_BECQUEREL", 58);
+		try
+		{
+			// formula.g:141:22: ( 'Bq' )
+			DebugEnterAlt(1);
+			// formula.g:141:24: 'Bq'
+			{
+			DebugLocation(141, 24);
+			Match("Bq"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_BECQUEREL", 58);
+			LeaveRule("SI_BECQUEREL", 58);
+			LeaveRule_SI_BECQUEREL();
+		}
+	}
+	// $ANTLR end "SI_BECQUEREL"
+
+	partial void EnterRule_SI_GRAY();
+	partial void LeaveRule_SI_GRAY();
+
+	// $ANTLR start "SI_GRAY"
+	[GrammarRule("SI_GRAY")]
+	private void mSI_GRAY()
+	{
+		EnterRule_SI_GRAY();
+		EnterRule("SI_GRAY", 59);
+		TraceIn("SI_GRAY", 59);
+		try
+		{
+			// formula.g:142:17: ( 'Gy' )
+			DebugEnterAlt(1);
+			// formula.g:142:19: 'Gy'
+			{
+			DebugLocation(142, 19);
+			Match("Gy"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_GRAY", 59);
+			LeaveRule("SI_GRAY", 59);
+			LeaveRule_SI_GRAY();
+		}
+	}
+	// $ANTLR end "SI_GRAY"
+
+	partial void EnterRule_SI_SIEVERT();
+	partial void LeaveRule_SI_SIEVERT();
+
+	// $ANTLR start "SI_SIEVERT"
+	[GrammarRule("SI_SIEVERT")]
+	private void mSI_SIEVERT()
+	{
+		EnterRule_SI_SIEVERT();
+		EnterRule("SI_SIEVERT", 60);
+		TraceIn("SI_SIEVERT", 60);
+		try
+		{
+			// formula.g:143:20: ( 'Sv' )
+			DebugEnterAlt(1);
+			// formula.g:143:22: 'Sv'
+			{
+			DebugLocation(143, 22);
+			Match("Sv"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_SIEVERT", 60);
+			LeaveRule("SI_SIEVERT", 60);
+			LeaveRule_SI_SIEVERT();
+		}
+	}
+	// $ANTLR end "SI_SIEVERT"
+
+	partial void EnterRule_SI_KATAL();
+	partial void LeaveRule_SI_KATAL();
+
+	// $ANTLR start "SI_KATAL"
+	[GrammarRule("SI_KATAL")]
+	private void mSI_KATAL()
+	{
+		EnterRule_SI_KATAL();
+		EnterRule("SI_KATAL", 61);
+		TraceIn("SI_KATAL", 61);
+		try
+		{
+			// formula.g:144:18: ( 'kat' )
+			DebugEnterAlt(1);
+			// formula.g:144:20: 'kat'
+			{
+			DebugLocation(144, 20);
+			Match("kat"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_KATAL", 61);
+			LeaveRule("SI_KATAL", 61);
+			LeaveRule_SI_KATAL();
+		}
+	}
+	// $ANTLR end "SI_KATAL"
+
+	partial void EnterRule_SI_PASCAL_SEC();
+	partial void LeaveRule_SI_PASCAL_SEC();
+
+	// $ANTLR start "SI_PASCAL_SEC"
+	[GrammarRule("SI_PASCAL_SEC")]
+	private void mSI_PASCAL_SEC()
+	{
+		EnterRule_SI_PASCAL_SEC();
+		EnterRule("SI_PASCAL_SEC", 62);
+		TraceIn("SI_PASCAL_SEC", 62);
+		try
+		{
+			// formula.g:145:23: ( 'Pa·s' )
+			DebugEnterAlt(1);
+			// formula.g:145:25: 'Pa·s'
+			{
+			DebugLocation(145, 25);
+			Match("Pa·s"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_PASCAL_SEC", 62);
+			LeaveRule("SI_PASCAL_SEC", 62);
+			LeaveRule_SI_PASCAL_SEC();
+		}
+	}
+	// $ANTLR end "SI_PASCAL_SEC"
+
+	partial void EnterRule_SI_NEWTON_METER();
+	partial void LeaveRule_SI_NEWTON_METER();
+
+	// $ANTLR start "SI_NEWTON_METER"
+	[GrammarRule("SI_NEWTON_METER")]
+	private void mSI_NEWTON_METER()
+	{
+		EnterRule_SI_NEWTON_METER();
+		EnterRule("SI_NEWTON_METER", 63);
+		TraceIn("SI_NEWTON_METER", 63);
+		try
+		{
+			// formula.g:146:25: ( 'N·m' )
+			DebugEnterAlt(1);
+			// formula.g:146:27: 'N·m'
+			{
+			DebugLocation(146, 27);
+			Match("N·m"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_NEWTON_METER", 63);
+			LeaveRule("SI_NEWTON_METER", 63);
+			LeaveRule_SI_NEWTON_METER();
+		}
+	}
+	// $ANTLR end "SI_NEWTON_METER"
+
+	partial void EnterRule_SI_NEWTON_PER_METER();
+	partial void LeaveRule_SI_NEWTON_PER_METER();
+
+	// $ANTLR start "SI_NEWTON_PER_METER"
+	[GrammarRule("SI_NEWTON_PER_METER")]
+	private void mSI_NEWTON_PER_METER()
+	{
+		EnterRule_SI_NEWTON_PER_METER();
+		EnterRule("SI_NEWTON_PER_METER", 64);
+		TraceIn("SI_NEWTON_PER_METER", 64);
+		try
+		{
+			// formula.g:147:29: ( 'N/m' )
+			DebugEnterAlt(1);
+			// formula.g:147:31: 'N/m'
+			{
+			DebugLocation(147, 31);
+			Match("N/m"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_NEWTON_PER_METER", 64);
+			LeaveRule("SI_NEWTON_PER_METER", 64);
+			LeaveRule_SI_NEWTON_PER_METER();
+		}
+	}
+	// $ANTLR end "SI_NEWTON_PER_METER"
+
+	partial void EnterRule_SI_RADIAN_PER_SEC();
+	partial void LeaveRule_SI_RADIAN_PER_SEC();
+
+	// $ANTLR start "SI_RADIAN_PER_SEC"
+	[GrammarRule("SI_RADIAN_PER_SEC")]
+	private void mSI_RADIAN_PER_SEC()
+	{
+		EnterRule_SI_RADIAN_PER_SEC();
+		EnterRule("SI_RADIAN_PER_SEC", 65);
+		TraceIn("SI_RADIAN_PER_SEC", 65);
+		try
+		{
+			// formula.g:148:27: ( 'rad/s' )
+			DebugEnterAlt(1);
+			// formula.g:148:29: 'rad/s'
+			{
+			DebugLocation(148, 29);
+			Match("rad/s"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_RADIAN_PER_SEC", 65);
+			LeaveRule("SI_RADIAN_PER_SEC", 65);
+			LeaveRule_SI_RADIAN_PER_SEC();
+		}
+	}
+	// $ANTLR end "SI_RADIAN_PER_SEC"
+
+	partial void EnterRule_SI_RADIAN_PER_SEC_SQ_1();
+	partial void LeaveRule_SI_RADIAN_PER_SEC_SQ_1();
+
+	// $ANTLR start "SI_RADIAN_PER_SEC_SQ_1"
+	[GrammarRule("SI_RADIAN_PER_SEC_SQ_1")]
+	private void mSI_RADIAN_PER_SEC_SQ_1()
+	{
+		EnterRule_SI_RADIAN_PER_SEC_SQ_1();
+		EnterRule("SI_RADIAN_PER_SEC_SQ_1", 66);
+		TraceIn("SI_RADIAN_PER_SEC_SQ_1", 66);
+		try
+		{
+			// formula.g:149:32: ( 'rad/s²' )
+			DebugEnterAlt(1);
+			// formula.g:149:34: 'rad/s²'
+			{
+			DebugLocation(149, 34);
+			Match("rad/s²"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_RADIAN_PER_SEC_SQ_1", 66);
+			LeaveRule("SI_RADIAN_PER_SEC_SQ_1", 66);
+			LeaveRule_SI_RADIAN_PER_SEC_SQ_1();
+		}
+	}
+	// $ANTLR end "SI_RADIAN_PER_SEC_SQ_1"
+
+	partial void EnterRule_SI_RADIAN_PER_SEC_SQ_2();
+	partial void LeaveRule_SI_RADIAN_PER_SEC_SQ_2();
+
+	// $ANTLR start "SI_RADIAN_PER_SEC_SQ_2"
+	[GrammarRule("SI_RADIAN_PER_SEC_SQ_2")]
+	private void mSI_RADIAN_PER_SEC_SQ_2()
+	{
+		EnterRule_SI_RADIAN_PER_SEC_SQ_2();
+		EnterRule("SI_RADIAN_PER_SEC_SQ_2", 67);
+		TraceIn("SI_RADIAN_PER_SEC_SQ_2", 67);
+		try
+		{
+			// formula.g:150:32: ( 'rad/s^2' )
+			DebugEnterAlt(1);
+			// formula.g:150:34: 'rad/s^2'
+			{
+			DebugLocation(150, 34);
+			Match("rad/s^2"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_RADIAN_PER_SEC_SQ_2", 67);
+			LeaveRule("SI_RADIAN_PER_SEC_SQ_2", 67);
+			LeaveRule_SI_RADIAN_PER_SEC_SQ_2();
+		}
+	}
+	// $ANTLR end "SI_RADIAN_PER_SEC_SQ_2"
+
+	partial void EnterRule_SI_WATT_PER_METER_SQ_1();
+	partial void LeaveRule_SI_WATT_PER_METER_SQ_1();
+
+	// $ANTLR start "SI_WATT_PER_METER_SQ_1"
+	[GrammarRule("SI_WATT_PER_METER_SQ_1")]
+	private void mSI_WATT_PER_METER_SQ_1()
+	{
+		EnterRule_SI_WATT_PER_METER_SQ_1();
+		EnterRule("SI_WATT_PER_METER_SQ_1", 68);
+		TraceIn("SI_WATT_PER_METER_SQ_1", 68);
+		try
+		{
+			// formula.g:151:32: ( 'W/m²' )
+			DebugEnterAlt(1);
+			// formula.g:151:34: 'W/m²'
+			{
+			DebugLocation(151, 34);
+			Match("W/m²"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_WATT_PER_METER_SQ_1", 68);
+			LeaveRule("SI_WATT_PER_METER_SQ_1", 68);
+			LeaveRule_SI_WATT_PER_METER_SQ_1();
+		}
+	}
+	// $ANTLR end "SI_WATT_PER_METER_SQ_1"
+
+	partial void EnterRule_SI_WATT_PER_METER_SQ_2();
+	partial void LeaveRule_SI_WATT_PER_METER_SQ_2();
+
+	// $ANTLR start "SI_WATT_PER_METER_SQ_2"
+	[GrammarRule("SI_WATT_PER_METER_SQ_2")]
+	private void mSI_WATT_PER_METER_SQ_2()
+	{
+		EnterRule_SI_WATT_PER_METER_SQ_2();
+		EnterRule("SI_WATT_PER_METER_SQ_2", 69);
+		TraceIn("SI_WATT_PER_METER_SQ_2", 69);
+		try
+		{
+			// formula.g:152:32: ( 'W/m^2' )
+			DebugEnterAlt(1);
+			// formula.g:152:34: 'W/m^2'
+			{
+			DebugLocation(152, 34);
+			Match("W/m^2"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_WATT_PER_METER_SQ_2", 69);
+			LeaveRule("SI_WATT_PER_METER_SQ_2", 69);
+			LeaveRule_SI_WATT_PER_METER_SQ_2();
+		}
+	}
+	// $ANTLR end "SI_WATT_PER_METER_SQ_2"
+
+	partial void EnterRule_SI_JOULE_PER_KELVIN();
+	partial void LeaveRule_SI_JOULE_PER_KELVIN();
+
+	// $ANTLR start "SI_JOULE_PER_KELVIN"
+	[GrammarRule("SI_JOULE_PER_KELVIN")]
+	private void mSI_JOULE_PER_KELVIN()
+	{
+		EnterRule_SI_JOULE_PER_KELVIN();
+		EnterRule("SI_JOULE_PER_KELVIN", 70);
+		TraceIn("SI_JOULE_PER_KELVIN", 70);
+		try
+		{
+			// formula.g:153:29: ( 'J/K' )
+			DebugEnterAlt(1);
+			// formula.g:153:31: 'J/K'
+			{
+			DebugLocation(153, 31);
+			Match("J/K"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_JOULE_PER_KELVIN", 70);
+			LeaveRule("SI_JOULE_PER_KELVIN", 70);
+			LeaveRule_SI_JOULE_PER_KELVIN();
+		}
+	}
+	// $ANTLR end "SI_JOULE_PER_KELVIN"
+
+	partial void EnterRule_SI_JOULE_PER_KG_KELVIN();
+	partial void LeaveRule_SI_JOULE_PER_KG_KELVIN();
+
+	// $ANTLR start "SI_JOULE_PER_KG_KELVIN"
+	[GrammarRule("SI_JOULE_PER_KG_KELVIN")]
+	private void mSI_JOULE_PER_KG_KELVIN()
+	{
+		EnterRule_SI_JOULE_PER_KG_KELVIN();
+		EnterRule("SI_JOULE_PER_KG_KELVIN", 71);
+		TraceIn("SI_JOULE_PER_KG_KELVIN", 71);
+		try
+		{
+			// formula.g:154:32: ( 'J/(kg·K)' )
+			DebugEnterAlt(1);
+			// formula.g:154:34: 'J/(kg·K)'
+			{
+			DebugLocation(154, 34);
+			Match("J/(kg·K)"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_JOULE_PER_KG_KELVIN", 71);
+			LeaveRule("SI_JOULE_PER_KG_KELVIN", 71);
+			LeaveRule_SI_JOULE_PER_KG_KELVIN();
+		}
+	}
+	// $ANTLR end "SI_JOULE_PER_KG_KELVIN"
+
+	partial void EnterRule_SI_JOULE_PER_KG();
+	partial void LeaveRule_SI_JOULE_PER_KG();
+
+	// $ANTLR start "SI_JOULE_PER_KG"
+	[GrammarRule("SI_JOULE_PER_KG")]
+	private void mSI_JOULE_PER_KG()
+	{
+		EnterRule_SI_JOULE_PER_KG();
+		EnterRule("SI_JOULE_PER_KG", 72);
+		TraceIn("SI_JOULE_PER_KG", 72);
+		try
+		{
+			// formula.g:155:25: ( 'J/kg' )
+			DebugEnterAlt(1);
+			// formula.g:155:27: 'J/kg'
+			{
+			DebugLocation(155, 27);
+			Match("J/kg"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_JOULE_PER_KG", 72);
+			LeaveRule("SI_JOULE_PER_KG", 72);
+			LeaveRule_SI_JOULE_PER_KG();
+		}
+	}
+	// $ANTLR end "SI_JOULE_PER_KG"
+
+	partial void EnterRule_SI_WATT_PER_METER_KELVIN();
+	partial void LeaveRule_SI_WATT_PER_METER_KELVIN();
+
+	// $ANTLR start "SI_WATT_PER_METER_KELVIN"
+	[GrammarRule("SI_WATT_PER_METER_KELVIN")]
+	private void mSI_WATT_PER_METER_KELVIN()
+	{
+		EnterRule_SI_WATT_PER_METER_KELVIN();
+		EnterRule("SI_WATT_PER_METER_KELVIN", 73);
+		TraceIn("SI_WATT_PER_METER_KELVIN", 73);
+		try
+		{
+			// formula.g:156:34: ( 'W/(m·K)' )
+			DebugEnterAlt(1);
+			// formula.g:156:36: 'W/(m·K)'
+			{
+			DebugLocation(156, 36);
+			Match("W/(m·K)"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_WATT_PER_METER_KELVIN", 73);
+			LeaveRule("SI_WATT_PER_METER_KELVIN", 73);
+			LeaveRule_SI_WATT_PER_METER_KELVIN();
+		}
+	}
+	// $ANTLR end "SI_WATT_PER_METER_KELVIN"
+
+	partial void EnterRule_SI_JOULE_PER_CU_METER_1();
+	partial void LeaveRule_SI_JOULE_PER_CU_METER_1();
+
+	// $ANTLR start "SI_JOULE_PER_CU_METER_1"
+	[GrammarRule("SI_JOULE_PER_CU_METER_1")]
+	private void mSI_JOULE_PER_CU_METER_1()
+	{
+		EnterRule_SI_JOULE_PER_CU_METER_1();
+		EnterRule("SI_JOULE_PER_CU_METER_1", 74);
+		TraceIn("SI_JOULE_PER_CU_METER_1", 74);
+		try
+		{
+			// formula.g:157:33: ( 'J/m³' )
+			DebugEnterAlt(1);
+			// formula.g:157:35: 'J/m³'
+			{
+			DebugLocation(157, 35);
+			Match("J/m³"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_JOULE_PER_CU_METER_1", 74);
+			LeaveRule("SI_JOULE_PER_CU_METER_1", 74);
+			LeaveRule_SI_JOULE_PER_CU_METER_1();
+		}
+	}
+	// $ANTLR end "SI_JOULE_PER_CU_METER_1"
+
+	partial void EnterRule_SI_JOULE_PER_CU_METER_2();
+	partial void LeaveRule_SI_JOULE_PER_CU_METER_2();
+
+	// $ANTLR start "SI_JOULE_PER_CU_METER_2"
+	[GrammarRule("SI_JOULE_PER_CU_METER_2")]
+	private void mSI_JOULE_PER_CU_METER_2()
+	{
+		EnterRule_SI_JOULE_PER_CU_METER_2();
+		EnterRule("SI_JOULE_PER_CU_METER_2", 75);
+		TraceIn("SI_JOULE_PER_CU_METER_2", 75);
+		try
+		{
+			// formula.g:158:33: ( 'J/m^3' )
+			DebugEnterAlt(1);
+			// formula.g:158:35: 'J/m^3'
+			{
+			DebugLocation(158, 35);
+			Match("J/m^3"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_JOULE_PER_CU_METER_2", 75);
+			LeaveRule("SI_JOULE_PER_CU_METER_2", 75);
+			LeaveRule_SI_JOULE_PER_CU_METER_2();
+		}
+	}
+	// $ANTLR end "SI_JOULE_PER_CU_METER_2"
+
+	partial void EnterRule_SI_VOLT_PER_METER();
+	partial void LeaveRule_SI_VOLT_PER_METER();
+
+	// $ANTLR start "SI_VOLT_PER_METER"
+	[GrammarRule("SI_VOLT_PER_METER")]
+	private void mSI_VOLT_PER_METER()
+	{
+		EnterRule_SI_VOLT_PER_METER();
+		EnterRule("SI_VOLT_PER_METER", 76);
+		TraceIn("SI_VOLT_PER_METER", 76);
+		try
+		{
+			// formula.g:159:27: ( 'V/m' )
+			DebugEnterAlt(1);
+			// formula.g:159:29: 'V/m'
+			{
+			DebugLocation(159, 29);
+			Match("V/m"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_VOLT_PER_METER", 76);
+			LeaveRule("SI_VOLT_PER_METER", 76);
+			LeaveRule_SI_VOLT_PER_METER();
+		}
+	}
+	// $ANTLR end "SI_VOLT_PER_METER"
+
+	partial void EnterRule_SI_COULOMB_PER_CU_METER_1();
+	partial void LeaveRule_SI_COULOMB_PER_CU_METER_1();
+
+	// $ANTLR start "SI_COULOMB_PER_CU_METER_1"
+	[GrammarRule("SI_COULOMB_PER_CU_METER_1")]
+	private void mSI_COULOMB_PER_CU_METER_1()
+	{
+		EnterRule_SI_COULOMB_PER_CU_METER_1();
+		EnterRule("SI_COULOMB_PER_CU_METER_1", 77);
+		TraceIn("SI_COULOMB_PER_CU_METER_1", 77);
+		try
+		{
+			// formula.g:160:35: ( 'C/m³' )
+			DebugEnterAlt(1);
+			// formula.g:160:37: 'C/m³'
+			{
+			DebugLocation(160, 37);
+			Match("C/m³"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_COULOMB_PER_CU_METER_1", 77);
+			LeaveRule("SI_COULOMB_PER_CU_METER_1", 77);
+			LeaveRule_SI_COULOMB_PER_CU_METER_1();
+		}
+	}
+	// $ANTLR end "SI_COULOMB_PER_CU_METER_1"
+
+	partial void EnterRule_SI_COULOMB_PER_CU_METER_2();
+	partial void LeaveRule_SI_COULOMB_PER_CU_METER_2();
+
+	// $ANTLR start "SI_COULOMB_PER_CU_METER_2"
+	[GrammarRule("SI_COULOMB_PER_CU_METER_2")]
+	private void mSI_COULOMB_PER_CU_METER_2()
+	{
+		EnterRule_SI_COULOMB_PER_CU_METER_2();
+		EnterRule("SI_COULOMB_PER_CU_METER_2", 78);
+		TraceIn("SI_COULOMB_PER_CU_METER_2", 78);
+		try
+		{
+			// formula.g:161:35: ( 'C/m^3' )
+			DebugEnterAlt(1);
+			// formula.g:161:37: 'C/m^3'
+			{
+			DebugLocation(161, 37);
+			Match("C/m^3"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_COULOMB_PER_CU_METER_2", 78);
+			LeaveRule("SI_COULOMB_PER_CU_METER_2", 78);
+			LeaveRule_SI_COULOMB_PER_CU_METER_2();
+		}
+	}
+	// $ANTLR end "SI_COULOMB_PER_CU_METER_2"
+
+	partial void EnterRule_SI_COULOMB_PER_SQ_METER_1();
+	partial void LeaveRule_SI_COULOMB_PER_SQ_METER_1();
+
+	// $ANTLR start "SI_COULOMB_PER_SQ_METER_1"
+	[GrammarRule("SI_COULOMB_PER_SQ_METER_1")]
+	private void mSI_COULOMB_PER_SQ_METER_1()
+	{
+		EnterRule_SI_COULOMB_PER_SQ_METER_1();
+		EnterRule("SI_COULOMB_PER_SQ_METER_1", 79);
+		TraceIn("SI_COULOMB_PER_SQ_METER_1", 79);
+		try
+		{
+			// formula.g:162:35: ( 'C/m²' )
+			DebugEnterAlt(1);
+			// formula.g:162:37: 'C/m²'
+			{
+			DebugLocation(162, 37);
+			Match("C/m²"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_COULOMB_PER_SQ_METER_1", 79);
+			LeaveRule("SI_COULOMB_PER_SQ_METER_1", 79);
+			LeaveRule_SI_COULOMB_PER_SQ_METER_1();
+		}
+	}
+	// $ANTLR end "SI_COULOMB_PER_SQ_METER_1"
+
+	partial void EnterRule_SI_COULOMB_PER_SQ_METER_2();
+	partial void LeaveRule_SI_COULOMB_PER_SQ_METER_2();
+
+	// $ANTLR start "SI_COULOMB_PER_SQ_METER_2"
+	[GrammarRule("SI_COULOMB_PER_SQ_METER_2")]
+	private void mSI_COULOMB_PER_SQ_METER_2()
+	{
+		EnterRule_SI_COULOMB_PER_SQ_METER_2();
+		EnterRule("SI_COULOMB_PER_SQ_METER_2", 80);
+		TraceIn("SI_COULOMB_PER_SQ_METER_2", 80);
+		try
+		{
+			// formula.g:163:35: ( 'C/m^2' )
+			DebugEnterAlt(1);
+			// formula.g:163:37: 'C/m^2'
+			{
+			DebugLocation(163, 37);
+			Match("C/m^2"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_COULOMB_PER_SQ_METER_2", 80);
+			LeaveRule("SI_COULOMB_PER_SQ_METER_2", 80);
+			LeaveRule_SI_COULOMB_PER_SQ_METER_2();
+		}
+	}
+	// $ANTLR end "SI_COULOMB_PER_SQ_METER_2"
+
+	partial void EnterRule_SI_FARAD_PER_METER();
+	partial void LeaveRule_SI_FARAD_PER_METER();
+
+	// $ANTLR start "SI_FARAD_PER_METER"
+	[GrammarRule("SI_FARAD_PER_METER")]
+	private void mSI_FARAD_PER_METER()
+	{
+		EnterRule_SI_FARAD_PER_METER();
+		EnterRule("SI_FARAD_PER_METER", 81);
+		TraceIn("SI_FARAD_PER_METER", 81);
+		try
+		{
+			// formula.g:164:28: ( 'F/m' )
+			DebugEnterAlt(1);
+			// formula.g:164:30: 'F/m'
+			{
+			DebugLocation(164, 30);
+			Match("F/m"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_FARAD_PER_METER", 81);
+			LeaveRule("SI_FARAD_PER_METER", 81);
+			LeaveRule_SI_FARAD_PER_METER();
+		}
+	}
+	// $ANTLR end "SI_FARAD_PER_METER"
+
+	partial void EnterRule_SI_HENRY_PER_METER();
+	partial void LeaveRule_SI_HENRY_PER_METER();
+
+	// $ANTLR start "SI_HENRY_PER_METER"
+	[GrammarRule("SI_HENRY_PER_METER")]
+	private void mSI_HENRY_PER_METER()
+	{
+		EnterRule_SI_HENRY_PER_METER();
+		EnterRule("SI_HENRY_PER_METER", 82);
+		TraceIn("SI_HENRY_PER_METER", 82);
+		try
+		{
+			// formula.g:165:28: ( 'H/m' )
+			DebugEnterAlt(1);
+			// formula.g:165:30: 'H/m'
+			{
+			DebugLocation(165, 30);
+			Match("H/m"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_HENRY_PER_METER", 82);
+			LeaveRule("SI_HENRY_PER_METER", 82);
+			LeaveRule_SI_HENRY_PER_METER();
+		}
+	}
+	// $ANTLR end "SI_HENRY_PER_METER"
+
+	partial void EnterRule_SI_JOULE_PER_MOLE();
+	partial void LeaveRule_SI_JOULE_PER_MOLE();
+
+	// $ANTLR start "SI_JOULE_PER_MOLE"
+	[GrammarRule("SI_JOULE_PER_MOLE")]
+	private void mSI_JOULE_PER_MOLE()
+	{
+		EnterRule_SI_JOULE_PER_MOLE();
+		EnterRule("SI_JOULE_PER_MOLE", 83);
+		TraceIn("SI_JOULE_PER_MOLE", 83);
+		try
+		{
+			// formula.g:166:27: ( 'J/mol' )
+			DebugEnterAlt(1);
+			// formula.g:166:29: 'J/mol'
+			{
+			DebugLocation(166, 29);
+			Match("J/mol"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_JOULE_PER_MOLE", 83);
+			LeaveRule("SI_JOULE_PER_MOLE", 83);
+			LeaveRule_SI_JOULE_PER_MOLE();
+		}
+	}
+	// $ANTLR end "SI_JOULE_PER_MOLE"
+
+	partial void EnterRule_SI_JOULE_PER_MOLE_KELVIN();
+	partial void LeaveRule_SI_JOULE_PER_MOLE_KELVIN();
+
+	// $ANTLR start "SI_JOULE_PER_MOLE_KELVIN"
+	[GrammarRule("SI_JOULE_PER_MOLE_KELVIN")]
+	private void mSI_JOULE_PER_MOLE_KELVIN()
+	{
+		EnterRule_SI_JOULE_PER_MOLE_KELVIN();
+		EnterRule("SI_JOULE_PER_MOLE_KELVIN", 84);
+		TraceIn("SI_JOULE_PER_MOLE_KELVIN", 84);
+		try
+		{
+			// formula.g:167:34: ( 'J/(mol·K)' )
+			DebugEnterAlt(1);
+			// formula.g:167:36: 'J/(mol·K)'
+			{
+			DebugLocation(167, 36);
+			Match("J/(mol·K)"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_JOULE_PER_MOLE_KELVIN", 84);
+			LeaveRule("SI_JOULE_PER_MOLE_KELVIN", 84);
+			LeaveRule_SI_JOULE_PER_MOLE_KELVIN();
+		}
+	}
+	// $ANTLR end "SI_JOULE_PER_MOLE_KELVIN"
+
+	partial void EnterRule_SI_COULOMB_PER_KG();
+	partial void LeaveRule_SI_COULOMB_PER_KG();
+
+	// $ANTLR start "SI_COULOMB_PER_KG"
+	[GrammarRule("SI_COULOMB_PER_KG")]
+	private void mSI_COULOMB_PER_KG()
+	{
+		EnterRule_SI_COULOMB_PER_KG();
+		EnterRule("SI_COULOMB_PER_KG", 85);
+		TraceIn("SI_COULOMB_PER_KG", 85);
+		try
+		{
+			// formula.g:168:27: ( 'C/kg' )
+			DebugEnterAlt(1);
+			// formula.g:168:29: 'C/kg'
+			{
+			DebugLocation(168, 29);
+			Match("C/kg"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_COULOMB_PER_KG", 85);
+			LeaveRule("SI_COULOMB_PER_KG", 85);
+			LeaveRule_SI_COULOMB_PER_KG();
+		}
+	}
+	// $ANTLR end "SI_COULOMB_PER_KG"
+
+	partial void EnterRule_SI_GRAY_PER_SEC();
+	partial void LeaveRule_SI_GRAY_PER_SEC();
+
+	// $ANTLR start "SI_GRAY_PER_SEC"
+	[GrammarRule("SI_GRAY_PER_SEC")]
+	private void mSI_GRAY_PER_SEC()
+	{
+		EnterRule_SI_GRAY_PER_SEC();
+		EnterRule("SI_GRAY_PER_SEC", 86);
+		TraceIn("SI_GRAY_PER_SEC", 86);
+		try
+		{
+			// formula.g:169:25: ( 'Gy/s' )
+			DebugEnterAlt(1);
+			// formula.g:169:27: 'Gy/s'
+			{
+			DebugLocation(169, 27);
+			Match("Gy/s"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_GRAY_PER_SEC", 86);
+			LeaveRule("SI_GRAY_PER_SEC", 86);
+			LeaveRule_SI_GRAY_PER_SEC();
+		}
+	}
+	// $ANTLR end "SI_GRAY_PER_SEC"
+
+	partial void EnterRule_SI_WATT_PER_STERADIAN();
+	partial void LeaveRule_SI_WATT_PER_STERADIAN();
+
+	// $ANTLR start "SI_WATT_PER_STERADIAN"
+	[GrammarRule("SI_WATT_PER_STERADIAN")]
+	private void mSI_WATT_PER_STERADIAN()
+	{
+		EnterRule_SI_WATT_PER_STERADIAN();
+		EnterRule("SI_WATT_PER_STERADIAN", 87);
+		TraceIn("SI_WATT_PER_STERADIAN", 87);
+		try
+		{
+			// formula.g:170:31: ( 'W/sr' )
+			DebugEnterAlt(1);
+			// formula.g:170:33: 'W/sr'
+			{
+			DebugLocation(170, 33);
+			Match("W/sr"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_WATT_PER_STERADIAN", 87);
+			LeaveRule("SI_WATT_PER_STERADIAN", 87);
+			LeaveRule_SI_WATT_PER_STERADIAN();
+		}
+	}
+	// $ANTLR end "SI_WATT_PER_STERADIAN"
+
+	partial void EnterRule_SI_WATT_PER_SQ_METER_STERADIAN_1();
+	partial void LeaveRule_SI_WATT_PER_SQ_METER_STERADIAN_1();
+
+	// $ANTLR start "SI_WATT_PER_SQ_METER_STERADIAN_1"
+	[GrammarRule("SI_WATT_PER_SQ_METER_STERADIAN_1")]
+	private void mSI_WATT_PER_SQ_METER_STERADIAN_1()
+	{
+		EnterRule_SI_WATT_PER_SQ_METER_STERADIAN_1();
+		EnterRule("SI_WATT_PER_SQ_METER_STERADIAN_1", 88);
+		TraceIn("SI_WATT_PER_SQ_METER_STERADIAN_1", 88);
+		try
+		{
+			// formula.g:171:42: ( 'W/(m²·sr)' )
+			DebugEnterAlt(1);
+			// formula.g:171:44: 'W/(m²·sr)'
+			{
+			DebugLocation(171, 44);
+			Match("W/(m²·sr)"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_WATT_PER_SQ_METER_STERADIAN_1", 88);
+			LeaveRule("SI_WATT_PER_SQ_METER_STERADIAN_1", 88);
+			LeaveRule_SI_WATT_PER_SQ_METER_STERADIAN_1();
+		}
+	}
+	// $ANTLR end "SI_WATT_PER_SQ_METER_STERADIAN_1"
+
+	partial void EnterRule_SI_WATT_PER_SQ_METER_STERADIAN_2();
+	partial void LeaveRule_SI_WATT_PER_SQ_METER_STERADIAN_2();
+
+	// $ANTLR start "SI_WATT_PER_SQ_METER_STERADIAN_2"
+	[GrammarRule("SI_WATT_PER_SQ_METER_STERADIAN_2")]
+	private void mSI_WATT_PER_SQ_METER_STERADIAN_2()
+	{
+		EnterRule_SI_WATT_PER_SQ_METER_STERADIAN_2();
+		EnterRule("SI_WATT_PER_SQ_METER_STERADIAN_2", 89);
+		TraceIn("SI_WATT_PER_SQ_METER_STERADIAN_2", 89);
+		try
+		{
+			// formula.g:172:42: ( 'W/(m^2·sr)' )
+			DebugEnterAlt(1);
+			// formula.g:172:44: 'W/(m^2·sr)'
+			{
+			DebugLocation(172, 44);
+			Match("W/(m^2·sr)"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_WATT_PER_SQ_METER_STERADIAN_2", 89);
+			LeaveRule("SI_WATT_PER_SQ_METER_STERADIAN_2", 89);
+			LeaveRule_SI_WATT_PER_SQ_METER_STERADIAN_2();
+		}
+	}
+	// $ANTLR end "SI_WATT_PER_SQ_METER_STERADIAN_2"
+
+	partial void EnterRule_SI_KATAL_PER_CU_METER_1();
+	partial void LeaveRule_SI_KATAL_PER_CU_METER_1();
+
+	// $ANTLR start "SI_KATAL_PER_CU_METER_1"
+	[GrammarRule("SI_KATAL_PER_CU_METER_1")]
+	private void mSI_KATAL_PER_CU_METER_1()
+	{
+		EnterRule_SI_KATAL_PER_CU_METER_1();
+		EnterRule("SI_KATAL_PER_CU_METER_1", 90);
+		TraceIn("SI_KATAL_PER_CU_METER_1", 90);
+		try
+		{
+			// formula.g:173:33: ( 'kat/m³' )
+			DebugEnterAlt(1);
+			// formula.g:173:35: 'kat/m³'
+			{
+			DebugLocation(173, 35);
+			Match("kat/m³"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_KATAL_PER_CU_METER_1", 90);
+			LeaveRule("SI_KATAL_PER_CU_METER_1", 90);
+			LeaveRule_SI_KATAL_PER_CU_METER_1();
+		}
+	}
+	// $ANTLR end "SI_KATAL_PER_CU_METER_1"
+
+	partial void EnterRule_SI_KATAL_PER_CU_METER_2();
+	partial void LeaveRule_SI_KATAL_PER_CU_METER_2();
+
+	// $ANTLR start "SI_KATAL_PER_CU_METER_2"
+	[GrammarRule("SI_KATAL_PER_CU_METER_2")]
+	private void mSI_KATAL_PER_CU_METER_2()
+	{
+		EnterRule_SI_KATAL_PER_CU_METER_2();
+		EnterRule("SI_KATAL_PER_CU_METER_2", 91);
+		TraceIn("SI_KATAL_PER_CU_METER_2", 91);
+		try
+		{
+			// formula.g:174:33: ( 'kat/m^3' )
+			DebugEnterAlt(1);
+			// formula.g:174:35: 'kat/m^3'
+			{
+			DebugLocation(174, 35);
+			Match("kat/m^3"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("SI_KATAL_PER_CU_METER_2", 91);
+			LeaveRule("SI_KATAL_PER_CU_METER_2", 91);
+			LeaveRule_SI_KATAL_PER_CU_METER_2();
+		}
+	}
+	// $ANTLR end "SI_KATAL_PER_CU_METER_2"
+
+	partial void EnterRule_CURR_SYM();
+	partial void LeaveRule_CURR_SYM();
+
+	// $ANTLR start "CURR_SYM"
+	[GrammarRule("CURR_SYM")]
+	private void mCURR_SYM()
+	{
+		EnterRule_CURR_SYM();
+		EnterRule("CURR_SYM", 92);
+		TraceIn("CURR_SYM", 92);
+		try
+		{
+			// formula.g:179:5: ( ( CURR_ALL | CURR_AFN | CURR_USD | CURR_AWG | CURR_AZN | CURR_BYR | CURR_BZD | CURR_BOB | CURR_BAM | CURR_BWP | CURR_BGN | CURR_BRL | CURR_KHR | CURR_CRC | CURR_HRK | CURR_CUP | CURR_CZK | CURR_DKK | CURR_DOP | CURR_GBP | CURR_EUR | CURR_GHS | CURR_GTQ | CURR_HNL | CURR_HUF | CURR_IDR | CURR_IRR | CURR_ILS | CURR_JMD | CURR_JPY | CURR_LAK | CURR_MKD | CURR_MYR | CURR_MNT | CURR_MZN | CURR_NIO | CURR_NGN | CURR_PAB | CURR_PYG | CURR_PEN | CURR_PLN | CURR_RON | CURR_RUB | CURR_RSD | CURR_SOS | CURR_ZAR | CURR_CHF | CURR_TWD | CURR_THB | CURR_TTD | CURR_UAH | CURR_UYU | CURR_VEF | CURR_VND | CURR_ZWD | CURR_XBT ) )
+			DebugEnterAlt(1);
+			// formula.g:179:9: ( CURR_ALL | CURR_AFN | CURR_USD | CURR_AWG | CURR_AZN | CURR_BYR | CURR_BZD | CURR_BOB | CURR_BAM | CURR_BWP | CURR_BGN | CURR_BRL | CURR_KHR | CURR_CRC | CURR_HRK | CURR_CUP | CURR_CZK | CURR_DKK | CURR_DOP | CURR_GBP | CURR_EUR | CURR_GHS | CURR_GTQ | CURR_HNL | CURR_HUF | CURR_IDR | CURR_IRR | CURR_ILS | CURR_JMD | CURR_JPY | CURR_LAK | CURR_MKD | CURR_MYR | CURR_MNT | CURR_MZN | CURR_NIO | CURR_NGN | CURR_PAB | CURR_PYG | CURR_PEN | CURR_PLN | CURR_RON | CURR_RUB | CURR_RSD | CURR_SOS | CURR_ZAR | CURR_CHF | CURR_TWD | CURR_THB | CURR_TTD | CURR_UAH | CURR_UYU | CURR_VEF | CURR_VND | CURR_ZWD | CURR_XBT )
+			{
+			DebugLocation(179, 9);
+			// formula.g:179:9: ( CURR_ALL | CURR_AFN | CURR_USD | CURR_AWG | CURR_AZN | CURR_BYR | CURR_BZD | CURR_BOB | CURR_BAM | CURR_BWP | CURR_BGN | CURR_BRL | CURR_KHR | CURR_CRC | CURR_HRK | CURR_CUP | CURR_CZK | CURR_DKK | CURR_DOP | CURR_GBP | CURR_EUR | CURR_GHS | CURR_GTQ | CURR_HNL | CURR_HUF | CURR_IDR | CURR_IRR | CURR_ILS | CURR_JMD | CURR_JPY | CURR_LAK | CURR_MKD | CURR_MYR | CURR_MNT | CURR_MZN | CURR_NIO | CURR_NGN | CURR_PAB | CURR_PYG | CURR_PEN | CURR_PLN | CURR_RON | CURR_RUB | CURR_RSD | CURR_SOS | CURR_ZAR | CURR_CHF | CURR_TWD | CURR_THB | CURR_TTD | CURR_UAH | CURR_UYU | CURR_VEF | CURR_VND | CURR_ZWD | CURR_XBT )
+			int alt19=56;
+			try { DebugEnterSubRule(19);
+			try { DebugEnterDecision(19, false);
+			try
+			{
+				alt19 = dfa19.Predict(input);
+			}
+			catch (NoViableAltException nvae)
+			{
+				DebugRecognitionException(nvae);
+				throw;
+			}
+			} finally { DebugExitDecision(19); }
+			switch (alt19)
+			{
+			case 1:
+				DebugEnterAlt(1);
+				// formula.g:179:10: CURR_ALL
+				{
+				DebugLocation(179, 10);
+				mCURR_ALL(); 
+
+				}
+				break;
+			case 2:
+				DebugEnterAlt(2);
+				// formula.g:179:19: CURR_AFN
+				{
+				DebugLocation(179, 19);
+				mCURR_AFN(); 
+
+				}
+				break;
+			case 3:
+				DebugEnterAlt(3);
+				// formula.g:179:28: CURR_USD
+				{
+				DebugLocation(179, 28);
+				mCURR_USD(); 
+
+				}
+				break;
+			case 4:
+				DebugEnterAlt(4);
+				// formula.g:179:37: CURR_AWG
+				{
+				DebugLocation(179, 37);
+				mCURR_AWG(); 
+
+				}
+				break;
+			case 5:
+				DebugEnterAlt(5);
+				// formula.g:179:46: CURR_AZN
+				{
+				DebugLocation(179, 46);
+				mCURR_AZN(); 
+
+				}
+				break;
+			case 6:
+				DebugEnterAlt(6);
+				// formula.g:179:55: CURR_BYR
+				{
+				DebugLocation(179, 55);
+				mCURR_BYR(); 
+
+				}
+				break;
+			case 7:
+				DebugEnterAlt(7);
+				// formula.g:179:64: CURR_BZD
+				{
+				DebugLocation(179, 64);
+				mCURR_BZD(); 
+
+				}
+				break;
+			case 8:
+				DebugEnterAlt(8);
+				// formula.g:180:6: CURR_BOB
+				{
+				DebugLocation(180, 6);
+				mCURR_BOB(); 
+
+				}
+				break;
+			case 9:
+				DebugEnterAlt(9);
+				// formula.g:180:15: CURR_BAM
+				{
+				DebugLocation(180, 15);
+				mCURR_BAM(); 
+
+				}
+				break;
+			case 10:
+				DebugEnterAlt(10);
+				// formula.g:180:24: CURR_BWP
+				{
+				DebugLocation(180, 24);
+				mCURR_BWP(); 
+
+				}
+				break;
+			case 11:
+				DebugEnterAlt(11);
+				// formula.g:180:33: CURR_BGN
+				{
+				DebugLocation(180, 33);
+				mCURR_BGN(); 
+
+				}
+				break;
+			case 12:
+				DebugEnterAlt(12);
+				// formula.g:180:42: CURR_BRL
+				{
+				DebugLocation(180, 42);
+				mCURR_BRL(); 
+
+				}
+				break;
+			case 13:
+				DebugEnterAlt(13);
+				// formula.g:180:51: CURR_KHR
+				{
+				DebugLocation(180, 51);
+				mCURR_KHR(); 
+
+				}
+				break;
+			case 14:
+				DebugEnterAlt(14);
+				// formula.g:180:60: CURR_CRC
+				{
+				DebugLocation(180, 60);
+				mCURR_CRC(); 
+
+				}
+				break;
+			case 15:
+				DebugEnterAlt(15);
+				// formula.g:181:6: CURR_HRK
+				{
+				DebugLocation(181, 6);
+				mCURR_HRK(); 
+
+				}
+				break;
+			case 16:
+				DebugEnterAlt(16);
+				// formula.g:181:15: CURR_CUP
+				{
+				DebugLocation(181, 15);
+				mCURR_CUP(); 
+
+				}
+				break;
+			case 17:
+				DebugEnterAlt(17);
+				// formula.g:181:24: CURR_CZK
+				{
+				DebugLocation(181, 24);
+				mCURR_CZK(); 
+
+				}
+				break;
+			case 18:
+				DebugEnterAlt(18);
+				// formula.g:181:33: CURR_DKK
+				{
+				DebugLocation(181, 33);
+				mCURR_DKK(); 
+
+				}
+				break;
+			case 19:
+				DebugEnterAlt(19);
+				// formula.g:181:42: CURR_DOP
+				{
+				DebugLocation(181, 42);
+				mCURR_DOP(); 
+
+				}
+				break;
+			case 20:
+				DebugEnterAlt(20);
+				// formula.g:181:51: CURR_GBP
+				{
+				DebugLocation(181, 51);
+				mCURR_GBP(); 
+
+				}
+				break;
+			case 21:
+				DebugEnterAlt(21);
+				// formula.g:181:60: CURR_EUR
+				{
+				DebugLocation(181, 60);
+				mCURR_EUR(); 
+
+				}
+				break;
+			case 22:
+				DebugEnterAlt(22);
+				// formula.g:181:69: CURR_GHS
+				{
+				DebugLocation(181, 69);
+				mCURR_GHS(); 
+
+				}
+				break;
+			case 23:
+				DebugEnterAlt(23);
+				// formula.g:182:6: CURR_GTQ
+				{
+				DebugLocation(182, 6);
+				mCURR_GTQ(); 
+
+				}
+				break;
+			case 24:
+				DebugEnterAlt(24);
+				// formula.g:182:15: CURR_HNL
+				{
+				DebugLocation(182, 15);
+				mCURR_HNL(); 
+
+				}
+				break;
+			case 25:
+				DebugEnterAlt(25);
+				// formula.g:182:24: CURR_HUF
+				{
+				DebugLocation(182, 24);
+				mCURR_HUF(); 
+
+				}
+				break;
+			case 26:
+				DebugEnterAlt(26);
+				// formula.g:182:33: CURR_IDR
+				{
+				DebugLocation(182, 33);
+				mCURR_IDR(); 
+
+				}
+				break;
+			case 27:
+				DebugEnterAlt(27);
+				// formula.g:182:42: CURR_IRR
+				{
+				DebugLocation(182, 42);
+				mCURR_IRR(); 
+
+				}
+				break;
+			case 28:
+				DebugEnterAlt(28);
+				// formula.g:182:51: CURR_ILS
+				{
+				DebugLocation(182, 51);
+				mCURR_ILS(); 
+
+				}
+				break;
+			case 29:
+				DebugEnterAlt(29);
+				// formula.g:182:60: CURR_JMD
+				{
+				DebugLocation(182, 60);
+				mCURR_JMD(); 
+
+				}
+				break;
+			case 30:
+				DebugEnterAlt(30);
+				// formula.g:182:69: CURR_JPY
+				{
+				DebugLocation(182, 69);
+				mCURR_JPY(); 
+
+				}
+				break;
+			case 31:
+				DebugEnterAlt(31);
+				// formula.g:183:6: CURR_LAK
+				{
+				DebugLocation(183, 6);
+				mCURR_LAK(); 
+
+				}
+				break;
+			case 32:
+				DebugEnterAlt(32);
+				// formula.g:183:15: CURR_MKD
+				{
+				DebugLocation(183, 15);
+				mCURR_MKD(); 
+
+				}
+				break;
+			case 33:
+				DebugEnterAlt(33);
+				// formula.g:183:24: CURR_MYR
+				{
+				DebugLocation(183, 24);
+				mCURR_MYR(); 
+
+				}
+				break;
+			case 34:
+				DebugEnterAlt(34);
+				// formula.g:183:33: CURR_MNT
+				{
+				DebugLocation(183, 33);
+				mCURR_MNT(); 
+
+				}
+				break;
+			case 35:
+				DebugEnterAlt(35);
+				// formula.g:183:42: CURR_MZN
+				{
+				DebugLocation(183, 42);
+				mCURR_MZN(); 
+
+				}
+				break;
+			case 36:
+				DebugEnterAlt(36);
+				// formula.g:183:51: CURR_NIO
+				{
+				DebugLocation(183, 51);
+				mCURR_NIO(); 
+
+				}
+				break;
+			case 37:
+				DebugEnterAlt(37);
+				// formula.g:183:60: CURR_NGN
+				{
+				DebugLocation(183, 60);
+				mCURR_NGN(); 
+
+				}
+				break;
+			case 38:
+				DebugEnterAlt(38);
+				// formula.g:183:69: CURR_PAB
+				{
+				DebugLocation(183, 69);
+				mCURR_PAB(); 
+
+				}
+				break;
+			case 39:
+				DebugEnterAlt(39);
+				// formula.g:184:6: CURR_PYG
+				{
+				DebugLocation(184, 6);
+				mCURR_PYG(); 
+
+				}
+				break;
+			case 40:
+				DebugEnterAlt(40);
+				// formula.g:184:15: CURR_PEN
+				{
+				DebugLocation(184, 15);
+				mCURR_PEN(); 
+
+				}
+				break;
+			case 41:
+				DebugEnterAlt(41);
+				// formula.g:184:24: CURR_PLN
+				{
+				DebugLocation(184, 24);
+				mCURR_PLN(); 
+
+				}
+				break;
+			case 42:
+				DebugEnterAlt(42);
+				// formula.g:184:33: CURR_RON
+				{
+				DebugLocation(184, 33);
+				mCURR_RON(); 
+
+				}
+				break;
+			case 43:
+				DebugEnterAlt(43);
+				// formula.g:184:42: CURR_RUB
+				{
+				DebugLocation(184, 42);
+				mCURR_RUB(); 
+
+				}
+				break;
+			case 44:
+				DebugEnterAlt(44);
+				// formula.g:184:51: CURR_RSD
+				{
+				DebugLocation(184, 51);
+				mCURR_RSD(); 
+
+				}
+				break;
+			case 45:
+				DebugEnterAlt(45);
+				// formula.g:184:60: CURR_SOS
+				{
+				DebugLocation(184, 60);
+				mCURR_SOS(); 
+
+				}
+				break;
+			case 46:
+				DebugEnterAlt(46);
+				// formula.g:184:69: CURR_ZAR
+				{
+				DebugLocation(184, 69);
+				mCURR_ZAR(); 
+
+				}
+				break;
+			case 47:
+				DebugEnterAlt(47);
+				// formula.g:185:6: CURR_CHF
+				{
+				DebugLocation(185, 6);
+				mCURR_CHF(); 
+
+				}
+				break;
+			case 48:
+				DebugEnterAlt(48);
+				// formula.g:185:15: CURR_TWD
+				{
+				DebugLocation(185, 15);
+				mCURR_TWD(); 
+
+				}
+				break;
+			case 49:
+				DebugEnterAlt(49);
+				// formula.g:185:24: CURR_THB
+				{
+				DebugLocation(185, 24);
+				mCURR_THB(); 
+
+				}
+				break;
+			case 50:
+				DebugEnterAlt(50);
+				// formula.g:185:33: CURR_TTD
+				{
+				DebugLocation(185, 33);
+				mCURR_TTD(); 
+
+				}
+				break;
+			case 51:
+				DebugEnterAlt(51);
+				// formula.g:185:42: CURR_UAH
+				{
+				DebugLocation(185, 42);
+				mCURR_UAH(); 
+
+				}
+				break;
+			case 52:
+				DebugEnterAlt(52);
+				// formula.g:185:51: CURR_UYU
+				{
+				DebugLocation(185, 51);
+				mCURR_UYU(); 
+
+				}
+				break;
+			case 53:
+				DebugEnterAlt(53);
+				// formula.g:185:60: CURR_VEF
+				{
+				DebugLocation(185, 60);
+				mCURR_VEF(); 
+
+				}
+				break;
+			case 54:
+				DebugEnterAlt(54);
+				// formula.g:185:69: CURR_VND
+				{
+				DebugLocation(185, 69);
+				mCURR_VND(); 
+
+				}
+				break;
+			case 55:
+				DebugEnterAlt(55);
+				// formula.g:186:6: CURR_ZWD
+				{
+				DebugLocation(186, 6);
+				mCURR_ZWD(); 
+
+				}
+				break;
+			case 56:
+				DebugEnterAlt(56);
+				// formula.g:186:15: CURR_XBT
+				{
+				DebugLocation(186, 15);
+				mCURR_XBT(); 
+
+				}
+				break;
+
+			}
+			} finally { DebugExitSubRule(19); }
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_SYM", 92);
+			LeaveRule("CURR_SYM", 92);
+			LeaveRule_CURR_SYM();
+		}
+	}
+	// $ANTLR end "CURR_SYM"
+
+	partial void EnterRule_CURR_ALL();
+	partial void LeaveRule_CURR_ALL();
+
+	// $ANTLR start "CURR_ALL"
+	[GrammarRule("CURR_ALL")]
+	private void mCURR_ALL()
+	{
+		EnterRule_CURR_ALL();
+		EnterRule("CURR_ALL", 93);
+		TraceIn("CURR_ALL", 93);
+		try
+		{
+			// formula.g:188:18: ( 'Lek' )
+			DebugEnterAlt(1);
+			// formula.g:188:20: 'Lek'
+			{
+			DebugLocation(188, 20);
+			Match("Lek"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_ALL", 93);
+			LeaveRule("CURR_ALL", 93);
+			LeaveRule_CURR_ALL();
+		}
+	}
+	// $ANTLR end "CURR_ALL"
+
+	partial void EnterRule_CURR_AFN();
+	partial void LeaveRule_CURR_AFN();
+
+	// $ANTLR start "CURR_AFN"
+	[GrammarRule("CURR_AFN")]
+	private void mCURR_AFN()
+	{
+		EnterRule_CURR_AFN();
+		EnterRule("CURR_AFN", 94);
+		TraceIn("CURR_AFN", 94);
+		try
+		{
+			// formula.g:189:18: ( '\\u060B' )
+			DebugEnterAlt(1);
+			// formula.g:189:20: '\\u060B'
+			{
+			DebugLocation(189, 20);
+			Match('\u060B'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_AFN", 94);
+			LeaveRule("CURR_AFN", 94);
+			LeaveRule_CURR_AFN();
+		}
+	}
+	// $ANTLR end "CURR_AFN"
+
+	partial void EnterRule_CURR_USD();
+	partial void LeaveRule_CURR_USD();
+
+	// $ANTLR start "CURR_USD"
+	[GrammarRule("CURR_USD")]
+	private void mCURR_USD()
+	{
+		EnterRule_CURR_USD();
+		EnterRule("CURR_USD", 95);
+		TraceIn("CURR_USD", 95);
+		try
+		{
+			// formula.g:190:18: ( '$' )
+			DebugEnterAlt(1);
+			// formula.g:190:20: '$'
+			{
+			DebugLocation(190, 20);
+			Match('$'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_USD", 95);
+			LeaveRule("CURR_USD", 95);
+			LeaveRule_CURR_USD();
+		}
+	}
+	// $ANTLR end "CURR_USD"
+
+	partial void EnterRule_CURR_AWG();
+	partial void LeaveRule_CURR_AWG();
+
+	// $ANTLR start "CURR_AWG"
+	[GrammarRule("CURR_AWG")]
+	private void mCURR_AWG()
+	{
+		EnterRule_CURR_AWG();
+		EnterRule("CURR_AWG", 96);
+		TraceIn("CURR_AWG", 96);
+		try
+		{
+			// formula.g:202:18: ( '\\u0192' )
+			DebugEnterAlt(1);
+			// formula.g:202:20: '\\u0192'
+			{
+			DebugLocation(202, 20);
+			Match('\u0192'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_AWG", 96);
+			LeaveRule("CURR_AWG", 96);
+			LeaveRule_CURR_AWG();
+		}
+	}
+	// $ANTLR end "CURR_AWG"
+
+	partial void EnterRule_CURR_AZN();
+	partial void LeaveRule_CURR_AZN();
+
+	// $ANTLR start "CURR_AZN"
+	[GrammarRule("CURR_AZN")]
+	private void mCURR_AZN()
+	{
+		EnterRule_CURR_AZN();
+		EnterRule("CURR_AZN", 97);
+		TraceIn("CURR_AZN", 97);
+		try
+		{
+			// formula.g:203:18: ( '\\u043c\\u0430\\u043d' )
+			DebugEnterAlt(1);
+			// formula.g:203:20: '\\u043c\\u0430\\u043d'
+			{
+			DebugLocation(203, 20);
+			Match("\u043c\u0430\u043d"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_AZN", 97);
+			LeaveRule("CURR_AZN", 97);
+			LeaveRule_CURR_AZN();
+		}
+	}
+	// $ANTLR end "CURR_AZN"
+
+	partial void EnterRule_CURR_BYR();
+	partial void LeaveRule_CURR_BYR();
+
+	// $ANTLR start "CURR_BYR"
+	[GrammarRule("CURR_BYR")]
+	private void mCURR_BYR()
+	{
+		EnterRule_CURR_BYR();
+		EnterRule("CURR_BYR", 98);
+		TraceIn("CURR_BYR", 98);
+		try
+		{
+			// formula.g:204:18: ( 'p.' )
+			DebugEnterAlt(1);
+			// formula.g:204:20: 'p.'
+			{
+			DebugLocation(204, 20);
+			Match("p."); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_BYR", 98);
+			LeaveRule("CURR_BYR", 98);
+			LeaveRule_CURR_BYR();
+		}
+	}
+	// $ANTLR end "CURR_BYR"
+
+	partial void EnterRule_CURR_BZD();
+	partial void LeaveRule_CURR_BZD();
+
+	// $ANTLR start "CURR_BZD"
+	[GrammarRule("CURR_BZD")]
+	private void mCURR_BZD()
+	{
+		EnterRule_CURR_BZD();
+		EnterRule("CURR_BZD", 99);
+		TraceIn("CURR_BZD", 99);
+		try
+		{
+			// formula.g:205:18: ( 'BZ$' )
+			DebugEnterAlt(1);
+			// formula.g:205:20: 'BZ$'
+			{
+			DebugLocation(205, 20);
+			Match("BZ$"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_BZD", 99);
+			LeaveRule("CURR_BZD", 99);
+			LeaveRule_CURR_BZD();
+		}
+	}
+	// $ANTLR end "CURR_BZD"
+
+	partial void EnterRule_CURR_BOB();
+	partial void LeaveRule_CURR_BOB();
+
+	// $ANTLR start "CURR_BOB"
+	[GrammarRule("CURR_BOB")]
+	private void mCURR_BOB()
+	{
+		EnterRule_CURR_BOB();
+		EnterRule("CURR_BOB", 100);
+		TraceIn("CURR_BOB", 100);
+		try
+		{
+			// formula.g:206:18: ( '$b' )
+			DebugEnterAlt(1);
+			// formula.g:206:20: '$b'
+			{
+			DebugLocation(206, 20);
+			Match("$b"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_BOB", 100);
+			LeaveRule("CURR_BOB", 100);
+			LeaveRule_CURR_BOB();
+		}
+	}
+	// $ANTLR end "CURR_BOB"
+
+	partial void EnterRule_CURR_BAM();
+	partial void LeaveRule_CURR_BAM();
+
+	// $ANTLR start "CURR_BAM"
+	[GrammarRule("CURR_BAM")]
+	private void mCURR_BAM()
+	{
+		EnterRule_CURR_BAM();
+		EnterRule("CURR_BAM", 101);
+		TraceIn("CURR_BAM", 101);
+		try
+		{
+			// formula.g:207:18: ( 'KM' )
+			DebugEnterAlt(1);
+			// formula.g:207:20: 'KM'
+			{
+			DebugLocation(207, 20);
+			Match("KM"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_BAM", 101);
+			LeaveRule("CURR_BAM", 101);
+			LeaveRule_CURR_BAM();
+		}
+	}
+	// $ANTLR end "CURR_BAM"
+
+	partial void EnterRule_CURR_BWP();
+	partial void LeaveRule_CURR_BWP();
+
+	// $ANTLR start "CURR_BWP"
+	[GrammarRule("CURR_BWP")]
+	private void mCURR_BWP()
+	{
+		EnterRule_CURR_BWP();
+		EnterRule("CURR_BWP", 102);
+		TraceIn("CURR_BWP", 102);
+		try
+		{
+			// formula.g:208:18: ( 'P' )
+			DebugEnterAlt(1);
+			// formula.g:208:20: 'P'
+			{
+			DebugLocation(208, 20);
+			Match('P'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_BWP", 102);
+			LeaveRule("CURR_BWP", 102);
+			LeaveRule_CURR_BWP();
+		}
+	}
+	// $ANTLR end "CURR_BWP"
+
+	partial void EnterRule_CURR_BGN();
+	partial void LeaveRule_CURR_BGN();
+
+	// $ANTLR start "CURR_BGN"
+	[GrammarRule("CURR_BGN")]
+	private void mCURR_BGN()
+	{
+		EnterRule_CURR_BGN();
+		EnterRule("CURR_BGN", 103);
+		TraceIn("CURR_BGN", 103);
+		try
+		{
+			// formula.g:209:18: ( '\\u043b\\u0432' )
+			DebugEnterAlt(1);
+			// formula.g:209:20: '\\u043b\\u0432'
+			{
+			DebugLocation(209, 20);
+			Match("\u043b\u0432"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_BGN", 103);
+			LeaveRule("CURR_BGN", 103);
+			LeaveRule_CURR_BGN();
+		}
+	}
+	// $ANTLR end "CURR_BGN"
+
+	partial void EnterRule_CURR_BRL();
+	partial void LeaveRule_CURR_BRL();
+
+	// $ANTLR start "CURR_BRL"
+	[GrammarRule("CURR_BRL")]
+	private void mCURR_BRL()
+	{
+		EnterRule_CURR_BRL();
+		EnterRule("CURR_BRL", 104);
+		TraceIn("CURR_BRL", 104);
+		try
+		{
+			// formula.g:211:18: ( 'R$' )
+			DebugEnterAlt(1);
+			// formula.g:211:20: 'R$'
+			{
+			DebugLocation(211, 20);
+			Match("R$"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_BRL", 104);
+			LeaveRule("CURR_BRL", 104);
+			LeaveRule_CURR_BRL();
+		}
+	}
+	// $ANTLR end "CURR_BRL"
+
+	partial void EnterRule_CURR_KHR();
+	partial void LeaveRule_CURR_KHR();
+
+	// $ANTLR start "CURR_KHR"
+	[GrammarRule("CURR_KHR")]
+	private void mCURR_KHR()
+	{
+		EnterRule_CURR_KHR();
+		EnterRule("CURR_KHR", 105);
+		TraceIn("CURR_KHR", 105);
+		try
+		{
+			// formula.g:212:18: ( '\\u17db' )
+			DebugEnterAlt(1);
+			// formula.g:212:20: '\\u17db'
+			{
+			DebugLocation(212, 20);
+			Match('\u17DB'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_KHR", 105);
+			LeaveRule("CURR_KHR", 105);
+			LeaveRule_CURR_KHR();
+		}
+	}
+	// $ANTLR end "CURR_KHR"
+
+	partial void EnterRule_CURR_JPY();
+	partial void LeaveRule_CURR_JPY();
+
+	// $ANTLR start "CURR_JPY"
+	[GrammarRule("CURR_JPY")]
+	private void mCURR_JPY()
+	{
+		EnterRule_CURR_JPY();
+		EnterRule("CURR_JPY", 106);
+		TraceIn("CURR_JPY", 106);
+		try
+		{
+			// formula.g:213:18: ( '¥' )
+			DebugEnterAlt(1);
+			// formula.g:213:20: '¥'
+			{
+			DebugLocation(213, 20);
+			Match('\u00A5'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_JPY", 106);
+			LeaveRule("CURR_JPY", 106);
+			LeaveRule_CURR_JPY();
+		}
+	}
+	// $ANTLR end "CURR_JPY"
+
+	partial void EnterRule_CURR_CRC();
+	partial void LeaveRule_CURR_CRC();
+
+	// $ANTLR start "CURR_CRC"
+	[GrammarRule("CURR_CRC")]
+	private void mCURR_CRC()
+	{
+		EnterRule_CURR_CRC();
+		EnterRule("CURR_CRC", 107);
+		TraceIn("CURR_CRC", 107);
+		try
+		{
+			// formula.g:214:18: ( '\\u20a1' )
+			DebugEnterAlt(1);
+			// formula.g:214:20: '\\u20a1'
+			{
+			DebugLocation(214, 20);
+			Match('\u20A1'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_CRC", 107);
+			LeaveRule("CURR_CRC", 107);
+			LeaveRule_CURR_CRC();
+		}
+	}
+	// $ANTLR end "CURR_CRC"
+
+	partial void EnterRule_CURR_HRK();
+	partial void LeaveRule_CURR_HRK();
+
+	// $ANTLR start "CURR_HRK"
+	[GrammarRule("CURR_HRK")]
+	private void mCURR_HRK()
+	{
+		EnterRule_CURR_HRK();
+		EnterRule("CURR_HRK", 108);
+		TraceIn("CURR_HRK", 108);
+		try
+		{
+			// formula.g:215:18: ( 'kn' )
+			DebugEnterAlt(1);
+			// formula.g:215:20: 'kn'
+			{
+			DebugLocation(215, 20);
+			Match("kn"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_HRK", 108);
+			LeaveRule("CURR_HRK", 108);
+			LeaveRule_CURR_HRK();
+		}
+	}
+	// $ANTLR end "CURR_HRK"
+
+	partial void EnterRule_CURR_CUP();
+	partial void LeaveRule_CURR_CUP();
+
+	// $ANTLR start "CURR_CUP"
+	[GrammarRule("CURR_CUP")]
+	private void mCURR_CUP()
+	{
+		EnterRule_CURR_CUP();
+		EnterRule("CURR_CUP", 109);
+		TraceIn("CURR_CUP", 109);
+		try
+		{
+			// formula.g:216:18: ( '\\u20b1' )
+			DebugEnterAlt(1);
+			// formula.g:216:20: '\\u20b1'
+			{
+			DebugLocation(216, 20);
+			Match('\u20B1'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_CUP", 109);
+			LeaveRule("CURR_CUP", 109);
+			LeaveRule_CURR_CUP();
+		}
+	}
+	// $ANTLR end "CURR_CUP"
+
+	partial void EnterRule_CURR_CZK();
+	partial void LeaveRule_CURR_CZK();
+
+	// $ANTLR start "CURR_CZK"
+	[GrammarRule("CURR_CZK")]
+	private void mCURR_CZK()
+	{
+		EnterRule_CURR_CZK();
+		EnterRule("CURR_CZK", 110);
+		TraceIn("CURR_CZK", 110);
+		try
+		{
+			// formula.g:217:18: ( 'K\\u010d' )
+			DebugEnterAlt(1);
+			// formula.g:217:20: 'K\\u010d'
+			{
+			DebugLocation(217, 20);
+			Match("K\u010d"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_CZK", 110);
+			LeaveRule("CURR_CZK", 110);
+			LeaveRule_CURR_CZK();
+		}
+	}
+	// $ANTLR end "CURR_CZK"
+
+	partial void EnterRule_CURR_DKK();
+	partial void LeaveRule_CURR_DKK();
+
+	// $ANTLR start "CURR_DKK"
+	[GrammarRule("CURR_DKK")]
+	private void mCURR_DKK()
+	{
+		EnterRule_CURR_DKK();
+		EnterRule("CURR_DKK", 111);
+		TraceIn("CURR_DKK", 111);
+		try
+		{
+			// formula.g:218:18: ( 'kr' )
+			DebugEnterAlt(1);
+			// formula.g:218:20: 'kr'
+			{
+			DebugLocation(218, 20);
+			Match("kr"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_DKK", 111);
+			LeaveRule("CURR_DKK", 111);
+			LeaveRule_CURR_DKK();
+		}
+	}
+	// $ANTLR end "CURR_DKK"
+
+	partial void EnterRule_CURR_DOP();
+	partial void LeaveRule_CURR_DOP();
+
+	// $ANTLR start "CURR_DOP"
+	[GrammarRule("CURR_DOP")]
+	private void mCURR_DOP()
+	{
+		EnterRule_CURR_DOP();
+		EnterRule("CURR_DOP", 112);
+		TraceIn("CURR_DOP", 112);
+		try
+		{
+			// formula.g:220:18: ( 'RD$' )
+			DebugEnterAlt(1);
+			// formula.g:220:20: 'RD$'
+			{
+			DebugLocation(220, 20);
+			Match("RD$"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_DOP", 112);
+			LeaveRule("CURR_DOP", 112);
+			LeaveRule_CURR_DOP();
+		}
+	}
+	// $ANTLR end "CURR_DOP"
+
+	partial void EnterRule_CURR_GBP();
+	partial void LeaveRule_CURR_GBP();
+
+	// $ANTLR start "CURR_GBP"
+	[GrammarRule("CURR_GBP")]
+	private void mCURR_GBP()
+	{
+		EnterRule_CURR_GBP();
+		EnterRule("CURR_GBP", 113);
+		TraceIn("CURR_GBP", 113);
+		try
+		{
+			// formula.g:221:18: ( '£' )
+			DebugEnterAlt(1);
+			// formula.g:221:20: '£'
+			{
+			DebugLocation(221, 20);
+			Match('\u00A3'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_GBP", 113);
+			LeaveRule("CURR_GBP", 113);
+			LeaveRule_CURR_GBP();
+		}
+	}
+	// $ANTLR end "CURR_GBP"
+
+	partial void EnterRule_CURR_EUR();
+	partial void LeaveRule_CURR_EUR();
+
+	// $ANTLR start "CURR_EUR"
+	[GrammarRule("CURR_EUR")]
+	private void mCURR_EUR()
+	{
+		EnterRule_CURR_EUR();
+		EnterRule("CURR_EUR", 114);
+		TraceIn("CURR_EUR", 114);
+		try
+		{
+			// formula.g:227:18: ( '€' )
+			DebugEnterAlt(1);
+			// formula.g:227:20: '€'
+			{
+			DebugLocation(227, 20);
+			Match('\u20AC'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_EUR", 114);
+			LeaveRule("CURR_EUR", 114);
+			LeaveRule_CURR_EUR();
+		}
+	}
+	// $ANTLR end "CURR_EUR"
+
+	partial void EnterRule_CURR_GHS();
+	partial void LeaveRule_CURR_GHS();
+
+	// $ANTLR start "CURR_GHS"
+	[GrammarRule("CURR_GHS")]
+	private void mCURR_GHS()
+	{
+		EnterRule_CURR_GHS();
+		EnterRule("CURR_GHS", 115);
+		TraceIn("CURR_GHS", 115);
+		try
+		{
+			// formula.g:228:18: ( '\\u00a2' )
+			DebugEnterAlt(1);
+			// formula.g:228:20: '\\u00a2'
+			{
+			DebugLocation(228, 20);
+			Match('\u00A2'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_GHS", 115);
+			LeaveRule("CURR_GHS", 115);
+			LeaveRule_CURR_GHS();
+		}
+	}
+	// $ANTLR end "CURR_GHS"
+
+	partial void EnterRule_CURR_GTQ();
+	partial void LeaveRule_CURR_GTQ();
+
+	// $ANTLR start "CURR_GTQ"
+	[GrammarRule("CURR_GTQ")]
+	private void mCURR_GTQ()
+	{
+		EnterRule_CURR_GTQ();
+		EnterRule("CURR_GTQ", 116);
+		TraceIn("CURR_GTQ", 116);
+		try
+		{
+			// formula.g:229:18: ( 'Q' )
+			DebugEnterAlt(1);
+			// formula.g:229:20: 'Q'
+			{
+			DebugLocation(229, 20);
+			Match('Q'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_GTQ", 116);
+			LeaveRule("CURR_GTQ", 116);
+			LeaveRule_CURR_GTQ();
+		}
+	}
+	// $ANTLR end "CURR_GTQ"
+
+	partial void EnterRule_CURR_HNL();
+	partial void LeaveRule_CURR_HNL();
+
+	// $ANTLR start "CURR_HNL"
+	[GrammarRule("CURR_HNL")]
+	private void mCURR_HNL()
+	{
+		EnterRule_CURR_HNL();
+		EnterRule("CURR_HNL", 117);
+		TraceIn("CURR_HNL", 117);
+		try
+		{
+			// formula.g:230:18: ( 'L' )
+			DebugEnterAlt(1);
+			// formula.g:230:20: 'L'
+			{
+			DebugLocation(230, 20);
+			Match('L'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_HNL", 117);
+			LeaveRule("CURR_HNL", 117);
+			LeaveRule_CURR_HNL();
+		}
+	}
+	// $ANTLR end "CURR_HNL"
+
+	partial void EnterRule_CURR_HUF();
+	partial void LeaveRule_CURR_HUF();
+
+	// $ANTLR start "CURR_HUF"
+	[GrammarRule("CURR_HUF")]
+	private void mCURR_HUF()
+	{
+		EnterRule_CURR_HUF();
+		EnterRule("CURR_HUF", 118);
+		TraceIn("CURR_HUF", 118);
+		try
+		{
+			// formula.g:231:18: ( 'Ft' )
+			DebugEnterAlt(1);
+			// formula.g:231:20: 'Ft'
+			{
+			DebugLocation(231, 20);
+			Match("Ft"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_HUF", 118);
+			LeaveRule("CURR_HUF", 118);
+			LeaveRule_CURR_HUF();
+		}
+	}
+	// $ANTLR end "CURR_HUF"
+
+	partial void EnterRule_CURR_IDR();
+	partial void LeaveRule_CURR_IDR();
+
+	// $ANTLR start "CURR_IDR"
+	[GrammarRule("CURR_IDR")]
+	private void mCURR_IDR()
+	{
+		EnterRule_CURR_IDR();
+		EnterRule("CURR_IDR", 119);
+		TraceIn("CURR_IDR", 119);
+		try
+		{
+			// formula.g:232:18: ( 'Rp' )
+			DebugEnterAlt(1);
+			// formula.g:232:20: 'Rp'
+			{
+			DebugLocation(232, 20);
+			Match("Rp"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_IDR", 119);
+			LeaveRule("CURR_IDR", 119);
+			LeaveRule_CURR_IDR();
+		}
+	}
+	// $ANTLR end "CURR_IDR"
+
+	partial void EnterRule_CURR_IRR();
+	partial void LeaveRule_CURR_IRR();
+
+	// $ANTLR start "CURR_IRR"
+	[GrammarRule("CURR_IRR")]
+	private void mCURR_IRR()
+	{
+		EnterRule_CURR_IRR();
+		EnterRule("CURR_IRR", 120);
+		TraceIn("CURR_IRR", 120);
+		try
+		{
+			// formula.g:233:18: ( '\\ufdfc' )
+			DebugEnterAlt(1);
+			// formula.g:233:20: '\\ufdfc'
+			{
+			DebugLocation(233, 20);
+			Match('\uFDFC'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_IRR", 120);
+			LeaveRule("CURR_IRR", 120);
+			LeaveRule_CURR_IRR();
+		}
+	}
+	// $ANTLR end "CURR_IRR"
+
+	partial void EnterRule_CURR_ILS();
+	partial void LeaveRule_CURR_ILS();
+
+	// $ANTLR start "CURR_ILS"
+	[GrammarRule("CURR_ILS")]
+	private void mCURR_ILS()
+	{
+		EnterRule_CURR_ILS();
+		EnterRule("CURR_ILS", 121);
+		TraceIn("CURR_ILS", 121);
+		try
+		{
+			// formula.g:235:18: ( '\\u20aa' )
+			DebugEnterAlt(1);
+			// formula.g:235:20: '\\u20aa'
+			{
+			DebugLocation(235, 20);
+			Match('\u20AA'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_ILS", 121);
+			LeaveRule("CURR_ILS", 121);
+			LeaveRule_CURR_ILS();
+		}
+	}
+	// $ANTLR end "CURR_ILS"
+
+	partial void EnterRule_CURR_JMD();
+	partial void LeaveRule_CURR_JMD();
+
+	// $ANTLR start "CURR_JMD"
+	[GrammarRule("CURR_JMD")]
+	private void mCURR_JMD()
+	{
+		EnterRule_CURR_JMD();
+		EnterRule("CURR_JMD", 122);
+		TraceIn("CURR_JMD", 122);
+		try
+		{
+			// formula.g:236:18: ( 'J$' )
+			DebugEnterAlt(1);
+			// formula.g:236:20: 'J$'
+			{
+			DebugLocation(236, 20);
+			Match("J$"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_JMD", 122);
+			LeaveRule("CURR_JMD", 122);
+			LeaveRule_CURR_JMD();
+		}
+	}
+	// $ANTLR end "CURR_JMD"
+
+	partial void EnterRule_CURR_KPW();
+	partial void LeaveRule_CURR_KPW();
+
+	// $ANTLR start "CURR_KPW"
+	[GrammarRule("CURR_KPW")]
+	private void mCURR_KPW()
+	{
+		EnterRule_CURR_KPW();
+		EnterRule("CURR_KPW", 123);
+		TraceIn("CURR_KPW", 123);
+		try
+		{
+			// formula.g:237:18: ( '\\u20a9' )
+			DebugEnterAlt(1);
+			// formula.g:237:20: '\\u20a9'
+			{
+			DebugLocation(237, 20);
+			Match('\u20A9'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_KPW", 123);
+			LeaveRule("CURR_KPW", 123);
+			LeaveRule_CURR_KPW();
+		}
+	}
+	// $ANTLR end "CURR_KPW"
+
+	partial void EnterRule_CURR_LAK();
+	partial void LeaveRule_CURR_LAK();
+
+	// $ANTLR start "CURR_LAK"
+	[GrammarRule("CURR_LAK")]
+	private void mCURR_LAK()
+	{
+		EnterRule_CURR_LAK();
+		EnterRule("CURR_LAK", 124);
+		TraceIn("CURR_LAK", 124);
+		try
+		{
+			// formula.g:238:18: ( '\\u20ad' )
+			DebugEnterAlt(1);
+			// formula.g:238:20: '\\u20ad'
+			{
+			DebugLocation(238, 20);
+			Match('\u20AD'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_LAK", 124);
+			LeaveRule("CURR_LAK", 124);
+			LeaveRule_CURR_LAK();
+		}
+	}
+	// $ANTLR end "CURR_LAK"
+
+	partial void EnterRule_CURR_MKD();
+	partial void LeaveRule_CURR_MKD();
+
+	// $ANTLR start "CURR_MKD"
+	[GrammarRule("CURR_MKD")]
+	private void mCURR_MKD()
+	{
+		EnterRule_CURR_MKD();
+		EnterRule("CURR_MKD", 125);
+		TraceIn("CURR_MKD", 125);
+		try
+		{
+			// formula.g:239:18: ( '\\u0434\\u0435\\u043d' )
+			DebugEnterAlt(1);
+			// formula.g:239:20: '\\u0434\\u0435\\u043d'
+			{
+			DebugLocation(239, 20);
+			Match("\u0434\u0435\u043d"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_MKD", 125);
+			LeaveRule("CURR_MKD", 125);
+			LeaveRule_CURR_MKD();
+		}
+	}
+	// $ANTLR end "CURR_MKD"
+
+	partial void EnterRule_CURR_MYR();
+	partial void LeaveRule_CURR_MYR();
+
+	// $ANTLR start "CURR_MYR"
+	[GrammarRule("CURR_MYR")]
+	private void mCURR_MYR()
+	{
+		EnterRule_CURR_MYR();
+		EnterRule("CURR_MYR", 126);
+		TraceIn("CURR_MYR", 126);
+		try
+		{
+			// formula.g:240:18: ( 'RM' )
+			DebugEnterAlt(1);
+			// formula.g:240:20: 'RM'
+			{
+			DebugLocation(240, 20);
+			Match("RM"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_MYR", 126);
+			LeaveRule("CURR_MYR", 126);
+			LeaveRule_CURR_MYR();
+		}
+	}
+	// $ANTLR end "CURR_MYR"
+
+	partial void EnterRule_CURR_MUR();
+	partial void LeaveRule_CURR_MUR();
+
+	// $ANTLR start "CURR_MUR"
+	[GrammarRule("CURR_MUR")]
+	private void mCURR_MUR()
+	{
+		EnterRule_CURR_MUR();
+		EnterRule("CURR_MUR", 127);
+		TraceIn("CURR_MUR", 127);
+		try
+		{
+			// formula.g:241:18: ( '\\u20a8' )
+			DebugEnterAlt(1);
+			// formula.g:241:20: '\\u20a8'
+			{
+			DebugLocation(241, 20);
+			Match('\u20A8'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_MUR", 127);
+			LeaveRule("CURR_MUR", 127);
+			LeaveRule_CURR_MUR();
+		}
+	}
+	// $ANTLR end "CURR_MUR"
+
+	partial void EnterRule_CURR_MNT();
+	partial void LeaveRule_CURR_MNT();
+
+	// $ANTLR start "CURR_MNT"
+	[GrammarRule("CURR_MNT")]
+	private void mCURR_MNT()
+	{
+		EnterRule_CURR_MNT();
+		EnterRule("CURR_MNT", 128);
+		TraceIn("CURR_MNT", 128);
+		try
+		{
+			// formula.g:244:18: ( '\\u20ae' )
+			DebugEnterAlt(1);
+			// formula.g:244:20: '\\u20ae'
+			{
+			DebugLocation(244, 20);
+			Match('\u20AE'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_MNT", 128);
+			LeaveRule("CURR_MNT", 128);
+			LeaveRule_CURR_MNT();
+		}
+	}
+	// $ANTLR end "CURR_MNT"
+
+	partial void EnterRule_CURR_MZN();
+	partial void LeaveRule_CURR_MZN();
+
+	// $ANTLR start "CURR_MZN"
+	[GrammarRule("CURR_MZN")]
+	private void mCURR_MZN()
+	{
+		EnterRule_CURR_MZN();
+		EnterRule("CURR_MZN", 129);
+		TraceIn("CURR_MZN", 129);
+		try
+		{
+			// formula.g:245:18: ( 'MT' )
+			DebugEnterAlt(1);
+			// formula.g:245:20: 'MT'
+			{
+			DebugLocation(245, 20);
+			Match("MT"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_MZN", 129);
+			LeaveRule("CURR_MZN", 129);
+			LeaveRule_CURR_MZN();
+		}
+	}
+	// $ANTLR end "CURR_MZN"
+
+	partial void EnterRule_CURR_NIO();
+	partial void LeaveRule_CURR_NIO();
+
+	// $ANTLR start "CURR_NIO"
+	[GrammarRule("CURR_NIO")]
+	private void mCURR_NIO()
+	{
+		EnterRule_CURR_NIO();
+		EnterRule("CURR_NIO", 130);
+		TraceIn("CURR_NIO", 130);
+		try
+		{
+			// formula.g:246:18: ( 'C$' )
+			DebugEnterAlt(1);
+			// formula.g:246:20: 'C$'
+			{
+			DebugLocation(246, 20);
+			Match("C$"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_NIO", 130);
+			LeaveRule("CURR_NIO", 130);
+			LeaveRule_CURR_NIO();
+		}
+	}
+	// $ANTLR end "CURR_NIO"
+
+	partial void EnterRule_CURR_NGN();
+	partial void LeaveRule_CURR_NGN();
+
+	// $ANTLR start "CURR_NGN"
+	[GrammarRule("CURR_NGN")]
+	private void mCURR_NGN()
+	{
+		EnterRule_CURR_NGN();
+		EnterRule("CURR_NGN", 131);
+		TraceIn("CURR_NGN", 131);
+		try
+		{
+			// formula.g:247:18: ( '\\u20a6' )
+			DebugEnterAlt(1);
+			// formula.g:247:20: '\\u20a6'
+			{
+			DebugLocation(247, 20);
+			Match('\u20A6'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_NGN", 131);
+			LeaveRule("CURR_NGN", 131);
+			LeaveRule_CURR_NGN();
+		}
+	}
+	// $ANTLR end "CURR_NGN"
+
+	partial void EnterRule_CURR_PAB();
+	partial void LeaveRule_CURR_PAB();
+
+	// $ANTLR start "CURR_PAB"
+	[GrammarRule("CURR_PAB")]
+	private void mCURR_PAB()
+	{
+		EnterRule_CURR_PAB();
+		EnterRule("CURR_PAB", 132);
+		TraceIn("CURR_PAB", 132);
+		try
+		{
+			// formula.g:248:18: ( 'B\\/\\.' )
+			DebugEnterAlt(1);
+			// formula.g:248:20: 'B\\/\\.'
+			{
+			DebugLocation(248, 20);
+			Match("B/."); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_PAB", 132);
+			LeaveRule("CURR_PAB", 132);
+			LeaveRule_CURR_PAB();
+		}
+	}
+	// $ANTLR end "CURR_PAB"
+
+	partial void EnterRule_CURR_PYG();
+	partial void LeaveRule_CURR_PYG();
+
+	// $ANTLR start "CURR_PYG"
+	[GrammarRule("CURR_PYG")]
+	private void mCURR_PYG()
+	{
+		EnterRule_CURR_PYG();
+		EnterRule("CURR_PYG", 133);
+		TraceIn("CURR_PYG", 133);
+		try
+		{
+			// formula.g:249:18: ( 'Gs' )
+			DebugEnterAlt(1);
+			// formula.g:249:20: 'Gs'
+			{
+			DebugLocation(249, 20);
+			Match("Gs"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_PYG", 133);
+			LeaveRule("CURR_PYG", 133);
+			LeaveRule_CURR_PYG();
+		}
+	}
+	// $ANTLR end "CURR_PYG"
+
+	partial void EnterRule_CURR_PEN();
+	partial void LeaveRule_CURR_PEN();
+
+	// $ANTLR start "CURR_PEN"
+	[GrammarRule("CURR_PEN")]
+	private void mCURR_PEN()
+	{
+		EnterRule_CURR_PEN();
+		EnterRule("CURR_PEN", 134);
+		TraceIn("CURR_PEN", 134);
+		try
+		{
+			// formula.g:250:18: ( 'S/.' )
+			DebugEnterAlt(1);
+			// formula.g:250:20: 'S/.'
+			{
+			DebugLocation(250, 20);
+			Match("S/."); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_PEN", 134);
+			LeaveRule("CURR_PEN", 134);
+			LeaveRule_CURR_PEN();
+		}
+	}
+	// $ANTLR end "CURR_PEN"
+
+	partial void EnterRule_CURR_PLN();
+	partial void LeaveRule_CURR_PLN();
+
+	// $ANTLR start "CURR_PLN"
+	[GrammarRule("CURR_PLN")]
+	private void mCURR_PLN()
+	{
+		EnterRule_CURR_PLN();
+		EnterRule("CURR_PLN", 135);
+		TraceIn("CURR_PLN", 135);
+		try
+		{
+			// formula.g:251:18: ( 'z\\u0142' )
+			DebugEnterAlt(1);
+			// formula.g:251:20: 'z\\u0142'
+			{
+			DebugLocation(251, 20);
+			Match("z\u0142"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_PLN", 135);
+			LeaveRule("CURR_PLN", 135);
+			LeaveRule_CURR_PLN();
+		}
+	}
+	// $ANTLR end "CURR_PLN"
+
+	partial void EnterRule_CURR_RON();
+	partial void LeaveRule_CURR_RON();
+
+	// $ANTLR start "CURR_RON"
+	[GrammarRule("CURR_RON")]
+	private void mCURR_RON()
+	{
+		EnterRule_CURR_RON();
+		EnterRule("CURR_RON", 136);
+		TraceIn("CURR_RON", 136);
+		try
+		{
+			// formula.g:252:18: ( 'lei' )
+			DebugEnterAlt(1);
+			// formula.g:252:20: 'lei'
+			{
+			DebugLocation(252, 20);
+			Match("lei"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_RON", 136);
+			LeaveRule("CURR_RON", 136);
+			LeaveRule_CURR_RON();
+		}
+	}
+	// $ANTLR end "CURR_RON"
+
+	partial void EnterRule_CURR_RUB();
+	partial void LeaveRule_CURR_RUB();
+
+	// $ANTLR start "CURR_RUB"
+	[GrammarRule("CURR_RUB")]
+	private void mCURR_RUB()
+	{
+		EnterRule_CURR_RUB();
+		EnterRule("CURR_RUB", 137);
+		TraceIn("CURR_RUB", 137);
+		try
+		{
+			// formula.g:253:18: ( '\\u0440\\u0443\\u0431' )
+			DebugEnterAlt(1);
+			// formula.g:253:20: '\\u0440\\u0443\\u0431'
+			{
+			DebugLocation(253, 20);
+			Match("\u0440\u0443\u0431"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_RUB", 137);
+			LeaveRule("CURR_RUB", 137);
+			LeaveRule_CURR_RUB();
+		}
+	}
+	// $ANTLR end "CURR_RUB"
+
+	partial void EnterRule_CURR_RSD();
+	partial void LeaveRule_CURR_RSD();
+
+	// $ANTLR start "CURR_RSD"
+	[GrammarRule("CURR_RSD")]
+	private void mCURR_RSD()
+	{
+		EnterRule_CURR_RSD();
+		EnterRule("CURR_RSD", 138);
+		TraceIn("CURR_RSD", 138);
+		try
+		{
+			// formula.g:254:18: ( '\\u0414\\u0438\\u043d\\.' )
+			DebugEnterAlt(1);
+			// formula.g:254:20: '\\u0414\\u0438\\u043d\\.'
+			{
+			DebugLocation(254, 20);
+			Match("\u0414\u0438\u043d."); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_RSD", 138);
+			LeaveRule("CURR_RSD", 138);
+			LeaveRule_CURR_RSD();
+		}
+	}
+	// $ANTLR end "CURR_RSD"
+
+	partial void EnterRule_CURR_SOS();
+	partial void LeaveRule_CURR_SOS();
+
+	// $ANTLR start "CURR_SOS"
+	[GrammarRule("CURR_SOS")]
+	private void mCURR_SOS()
+	{
+		EnterRule_CURR_SOS();
+		EnterRule("CURR_SOS", 139);
+		TraceIn("CURR_SOS", 139);
+		try
+		{
+			// formula.g:255:18: ( 'S' )
+			DebugEnterAlt(1);
+			// formula.g:255:20: 'S'
+			{
+			DebugLocation(255, 20);
+			Match('S'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_SOS", 139);
+			LeaveRule("CURR_SOS", 139);
+			LeaveRule_CURR_SOS();
+		}
+	}
+	// $ANTLR end "CURR_SOS"
+
+	partial void EnterRule_CURR_ZAR();
+	partial void LeaveRule_CURR_ZAR();
+
+	// $ANTLR start "CURR_ZAR"
+	[GrammarRule("CURR_ZAR")]
+	private void mCURR_ZAR()
+	{
+		EnterRule_CURR_ZAR();
+		EnterRule("CURR_ZAR", 140);
+		TraceIn("CURR_ZAR", 140);
+		try
+		{
+			// formula.g:256:18: ( 'R' )
+			DebugEnterAlt(1);
+			// formula.g:256:20: 'R'
+			{
+			DebugLocation(256, 20);
+			Match('R'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_ZAR", 140);
+			LeaveRule("CURR_ZAR", 140);
+			LeaveRule_CURR_ZAR();
+		}
+	}
+	// $ANTLR end "CURR_ZAR"
+
+	partial void EnterRule_CURR_CHF();
+	partial void LeaveRule_CURR_CHF();
+
+	// $ANTLR start "CURR_CHF"
+	[GrammarRule("CURR_CHF")]
+	private void mCURR_CHF()
+	{
+		EnterRule_CURR_CHF();
+		EnterRule("CURR_CHF", 141);
+		TraceIn("CURR_CHF", 141);
+		try
+		{
+			// formula.g:257:18: ( 'CHF' )
+			DebugEnterAlt(1);
+			// formula.g:257:20: 'CHF'
+			{
+			DebugLocation(257, 20);
+			Match("CHF"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_CHF", 141);
+			LeaveRule("CURR_CHF", 141);
+			LeaveRule_CURR_CHF();
+		}
+	}
+	// $ANTLR end "CURR_CHF"
+
+	partial void EnterRule_CURR_TWD();
+	partial void LeaveRule_CURR_TWD();
+
+	// $ANTLR start "CURR_TWD"
+	[GrammarRule("CURR_TWD")]
+	private void mCURR_TWD()
+	{
+		EnterRule_CURR_TWD();
+		EnterRule("CURR_TWD", 142);
+		TraceIn("CURR_TWD", 142);
+		try
+		{
+			// formula.g:258:18: ( 'NT$' )
+			DebugEnterAlt(1);
+			// formula.g:258:20: 'NT$'
+			{
+			DebugLocation(258, 20);
+			Match("NT$"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_TWD", 142);
+			LeaveRule("CURR_TWD", 142);
+			LeaveRule_CURR_TWD();
+		}
+	}
+	// $ANTLR end "CURR_TWD"
+
+	partial void EnterRule_CURR_THB();
+	partial void LeaveRule_CURR_THB();
+
+	// $ANTLR start "CURR_THB"
+	[GrammarRule("CURR_THB")]
+	private void mCURR_THB()
+	{
+		EnterRule_CURR_THB();
+		EnterRule("CURR_THB", 143);
+		TraceIn("CURR_THB", 143);
+		try
+		{
+			// formula.g:259:18: ( '\\u0e3f' )
+			DebugEnterAlt(1);
+			// formula.g:259:20: '\\u0e3f'
+			{
+			DebugLocation(259, 20);
+			Match('\u0E3F'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_THB", 143);
+			LeaveRule("CURR_THB", 143);
+			LeaveRule_CURR_THB();
+		}
+	}
+	// $ANTLR end "CURR_THB"
+
+	partial void EnterRule_CURR_TTD();
+	partial void LeaveRule_CURR_TTD();
+
+	// $ANTLR start "CURR_TTD"
+	[GrammarRule("CURR_TTD")]
+	private void mCURR_TTD()
+	{
+		EnterRule_CURR_TTD();
+		EnterRule("CURR_TTD", 144);
+		TraceIn("CURR_TTD", 144);
+		try
+		{
+			// formula.g:260:18: ( 'TT$' )
+			DebugEnterAlt(1);
+			// formula.g:260:20: 'TT$'
+			{
+			DebugLocation(260, 20);
+			Match("TT$"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_TTD", 144);
+			LeaveRule("CURR_TTD", 144);
+			LeaveRule_CURR_TTD();
+		}
+	}
+	// $ANTLR end "CURR_TTD"
+
+	partial void EnterRule_CURR_UAH();
+	partial void LeaveRule_CURR_UAH();
+
+	// $ANTLR start "CURR_UAH"
+	[GrammarRule("CURR_UAH")]
+	private void mCURR_UAH()
+	{
+		EnterRule_CURR_UAH();
+		EnterRule("CURR_UAH", 145);
+		TraceIn("CURR_UAH", 145);
+		try
+		{
+			// formula.g:261:18: ( '\\u20b4' )
+			DebugEnterAlt(1);
+			// formula.g:261:20: '\\u20b4'
+			{
+			DebugLocation(261, 20);
+			Match('\u20B4'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_UAH", 145);
+			LeaveRule("CURR_UAH", 145);
+			LeaveRule_CURR_UAH();
+		}
+	}
+	// $ANTLR end "CURR_UAH"
+
+	partial void EnterRule_CURR_UYU();
+	partial void LeaveRule_CURR_UYU();
+
+	// $ANTLR start "CURR_UYU"
+	[GrammarRule("CURR_UYU")]
+	private void mCURR_UYU()
+	{
+		EnterRule_CURR_UYU();
+		EnterRule("CURR_UYU", 146);
+		TraceIn("CURR_UYU", 146);
+		try
+		{
+			// formula.g:262:18: ( '$U' )
+			DebugEnterAlt(1);
+			// formula.g:262:20: '$U'
+			{
+			DebugLocation(262, 20);
+			Match("$U"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_UYU", 146);
+			LeaveRule("CURR_UYU", 146);
+			LeaveRule_CURR_UYU();
+		}
+	}
+	// $ANTLR end "CURR_UYU"
+
+	partial void EnterRule_CURR_VEF();
+	partial void LeaveRule_CURR_VEF();
+
+	// $ANTLR start "CURR_VEF"
+	[GrammarRule("CURR_VEF")]
+	private void mCURR_VEF()
+	{
+		EnterRule_CURR_VEF();
+		EnterRule("CURR_VEF", 147);
+		TraceIn("CURR_VEF", 147);
+		try
+		{
+			// formula.g:263:18: ( 'Bs' )
+			DebugEnterAlt(1);
+			// formula.g:263:20: 'Bs'
+			{
+			DebugLocation(263, 20);
+			Match("Bs"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_VEF", 147);
+			LeaveRule("CURR_VEF", 147);
+			LeaveRule_CURR_VEF();
+		}
+	}
+	// $ANTLR end "CURR_VEF"
+
+	partial void EnterRule_CURR_VND();
+	partial void LeaveRule_CURR_VND();
+
+	// $ANTLR start "CURR_VND"
+	[GrammarRule("CURR_VND")]
+	private void mCURR_VND()
+	{
+		EnterRule_CURR_VND();
+		EnterRule("CURR_VND", 148);
+		TraceIn("CURR_VND", 148);
+		try
+		{
+			// formula.g:264:18: ( '\\u20ab' )
+			DebugEnterAlt(1);
+			// formula.g:264:20: '\\u20ab'
+			{
+			DebugLocation(264, 20);
+			Match('\u20AB'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_VND", 148);
+			LeaveRule("CURR_VND", 148);
+			LeaveRule_CURR_VND();
+		}
+	}
+	// $ANTLR end "CURR_VND"
+
+	partial void EnterRule_CURR_ZWD();
+	partial void LeaveRule_CURR_ZWD();
+
+	// $ANTLR start "CURR_ZWD"
+	[GrammarRule("CURR_ZWD")]
+	private void mCURR_ZWD()
+	{
+		EnterRule_CURR_ZWD();
+		EnterRule("CURR_ZWD", 149);
+		TraceIn("CURR_ZWD", 149);
+		try
+		{
+			// formula.g:265:18: ( 'Z$' )
+			DebugEnterAlt(1);
+			// formula.g:265:20: 'Z$'
+			{
+			DebugLocation(265, 20);
+			Match("Z$"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_ZWD", 149);
+			LeaveRule("CURR_ZWD", 149);
+			LeaveRule_CURR_ZWD();
+		}
+	}
+	// $ANTLR end "CURR_ZWD"
+
+	partial void EnterRule_CURR_XBT();
+	partial void LeaveRule_CURR_XBT();
+
+	// $ANTLR start "CURR_XBT"
+	[GrammarRule("CURR_XBT")]
+	private void mCURR_XBT()
+	{
+		EnterRule_CURR_XBT();
+		EnterRule("CURR_XBT", 150);
+		TraceIn("CURR_XBT", 150);
+		try
+		{
+			// formula.g:267:18: ( '\\u20bf' )
+			DebugEnterAlt(1);
+			// formula.g:267:20: '\\u20bf'
+			{
+			DebugLocation(267, 20);
+			Match('\u20BF'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_XBT", 150);
+			LeaveRule("CURR_XBT", 150);
+			LeaveRule_CURR_XBT();
+		}
+	}
+	// $ANTLR end "CURR_XBT"
+
+	partial void EnterRule_DIGIT();
+	partial void LeaveRule_DIGIT();
+
+	// $ANTLR start "DIGIT"
+	[GrammarRule("DIGIT")]
+	private void mDIGIT()
+	{
+		EnterRule_DIGIT();
+		EnterRule("DIGIT", 151);
+		TraceIn("DIGIT", 151);
+		try
+		{
+			// formula.g:269:15: ( '1' .. '9' ( '0' .. '9' )* )
+			DebugEnterAlt(1);
+			// formula.g:269:17: '1' .. '9' ( '0' .. '9' )*
+			{
+			DebugLocation(269, 17);
+			MatchRange('1','9'); 
+			DebugLocation(269, 26);
+			// formula.g:269:26: ( '0' .. '9' )*
+			try { DebugEnterSubRule(20);
+			while (true)
+			{
+				int alt20=2;
+				try { DebugEnterDecision(20, false);
+				int LA20_0 = input.LA(1);
+
+				if (((LA20_0>='0' && LA20_0<='9')))
+				{
+					alt20 = 1;
+				}
+
+
+				} finally { DebugExitDecision(20); }
+				switch ( alt20 )
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// formula.g:
+					{
+					DebugLocation(269, 26);
+					input.Consume();
+
+
+					}
+					break;
+
+				default:
+					goto loop20;
+				}
+			}
+
+			loop20:
+				;
+
+			} finally { DebugExitSubRule(20); }
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("DIGIT", 151);
+			LeaveRule("DIGIT", 151);
+			LeaveRule_DIGIT();
+		}
+	}
+	// $ANTLR end "DIGIT"
+
+	partial void EnterRule_OCTAL_DIGIT();
+	partial void LeaveRule_OCTAL_DIGIT();
+
+	// $ANTLR start "OCTAL_DIGIT"
+	[GrammarRule("OCTAL_DIGIT")]
+	private void mOCTAL_DIGIT()
+	{
+		EnterRule_OCTAL_DIGIT();
+		EnterRule("OCTAL_DIGIT", 152);
+		TraceIn("OCTAL_DIGIT", 152);
+		try
+		{
+			// formula.g:270:21: ( '0' ( '0' .. '7' )+ )
+			DebugEnterAlt(1);
+			// formula.g:270:23: '0' ( '0' .. '7' )+
+			{
+			DebugLocation(270, 23);
+			Match('0'); 
+			DebugLocation(270, 27);
+			// formula.g:270:27: ( '0' .. '7' )+
+			int cnt21=0;
+			try { DebugEnterSubRule(21);
+			while (true)
+			{
+				int alt21=2;
+				try { DebugEnterDecision(21, false);
+				int LA21_0 = input.LA(1);
+
+				if (((LA21_0>='0' && LA21_0<='7')))
+				{
+					alt21 = 1;
+				}
+
+
+				} finally { DebugExitDecision(21); }
+				switch (alt21)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// formula.g:
+					{
+					DebugLocation(270, 27);
+					input.Consume();
+
+
+					}
+					break;
+
+				default:
+					if (cnt21 >= 1)
+						goto loop21;
+
+					EarlyExitException eee21 = new EarlyExitException( 21, input );
+					DebugRecognitionException(eee21);
+					throw eee21;
+				}
+				cnt21++;
+			}
+			loop21:
+				;
+
+			} finally { DebugExitSubRule(21); }
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("OCTAL_DIGIT", 152);
+			LeaveRule("OCTAL_DIGIT", 152);
+			LeaveRule_OCTAL_DIGIT();
+		}
+	}
+	// $ANTLR end "OCTAL_DIGIT"
+
+	partial void EnterRule_HEX_DIGIT();
+	partial void LeaveRule_HEX_DIGIT();
+
+	// $ANTLR start "HEX_DIGIT"
+	[GrammarRule("HEX_DIGIT")]
+	private void mHEX_DIGIT()
+	{
+		EnterRule_HEX_DIGIT();
+		EnterRule("HEX_DIGIT", 153);
+		TraceIn("HEX_DIGIT", 153);
+		try
+		{
+			// formula.g:271:19: ( '0x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ )
+			DebugEnterAlt(1);
+			// formula.g:271:21: '0x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
+			{
+			DebugLocation(271, 21);
+			Match("0x"); 
+
+			DebugLocation(271, 26);
+			// formula.g:271:26: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
+			int cnt22=0;
+			try { DebugEnterSubRule(22);
+			while (true)
+			{
+				int alt22=2;
+				try { DebugEnterDecision(22, false);
+				int LA22_0 = input.LA(1);
+
+				if (((LA22_0>='0' && LA22_0<='9')||(LA22_0>='A' && LA22_0<='F')||(LA22_0>='a' && LA22_0<='f')))
+				{
+					alt22 = 1;
+				}
+
+
+				} finally { DebugExitDecision(22); }
+				switch (alt22)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// formula.g:
+					{
+					DebugLocation(271, 26);
+					input.Consume();
+
+
+					}
+					break;
+
+				default:
+					if (cnt22 >= 1)
+						goto loop22;
+
+					EarlyExitException eee22 = new EarlyExitException( 22, input );
+					DebugRecognitionException(eee22);
+					throw eee22;
+				}
+				cnt22++;
+			}
+			loop22:
+				;
+
+			} finally { DebugExitSubRule(22); }
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("HEX_DIGIT", 153);
+			LeaveRule("HEX_DIGIT", 153);
+			LeaveRule_HEX_DIGIT();
+		}
+	}
+	// $ANTLR end "HEX_DIGIT"
+
+	public override void mTokens()
+	{
+		// formula.g:1:8: ( DIV | MINUS | MULT | PLUS | INTEGER | FLOAT | CURRENCY | UNIT | EXP | WHITESPACE )
+		int alt23=10;
+		try { DebugEnterDecision(23, false);
+		try
+		{
+			alt23 = dfa23.Predict(input);
 		}
 		catch (NoViableAltException nvae)
 		{
 			DebugRecognitionException(nvae);
 			throw;
 		}
-		} finally { DebugExitDecision(20); }
-		switch (alt20)
+		} finally { DebugExitDecision(23); }
+		switch (alt23)
 		{
 		case 1:
 			DebugEnterAlt(1);
@@ -3690,18 +7180,27 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 			break;
 		case 8:
 			DebugEnterAlt(8);
-			// formula.g:1:53: EXP
+			// formula.g:1:53: UNIT
 			{
 			DebugLocation(1, 53);
-			mEXP(); 
+			mUNIT(); 
 
 			}
 			break;
 		case 9:
 			DebugEnterAlt(9);
-			// formula.g:1:57: WHITESPACE
+			// formula.g:1:58: EXP
 			{
-			DebugLocation(1, 57);
+			DebugLocation(1, 58);
+			mEXP(); 
+
+			}
+			break;
+		case 10:
+			DebugEnterAlt(10);
+			// formula.g:1:62: WHITESPACE
+			{
+			DebugLocation(1, 62);
 			mWHITESPACE(); 
 
 			}
@@ -3715,16 +7214,20 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 	#region DFA
 	DFA6 dfa6;
 	DFA12 dfa12;
-	DFA13 dfa13;
-	DFA20 dfa20;
+	DFA14 dfa14;
+	DFA18 dfa18;
+	DFA19 dfa19;
+	DFA23 dfa23;
 
 	protected override void InitDFAs()
 	{
 		base.InitDFAs();
 		dfa6 = new DFA6(this);
 		dfa12 = new DFA12(this);
-		dfa13 = new DFA13(this);
-		dfa20 = new DFA20(this);
+		dfa14 = new DFA14(this);
+		dfa18 = new DFA18(this);
+		dfa19 = new DFA19(this);
+		dfa23 = new DFA23(this);
 	}
 
 	private class DFA6 : DFA
@@ -3964,20 +7467,319 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 		}
 	}
 
-	private class DFA13 : DFA
+	private class DFA14 : DFA
 	{
-		private const string DFA13_eotS =
+		private const string DFA14_eotS =
+			"\x6\xFFFF";
+		private const string DFA14_eofS =
+			"\x6\xFFFF";
+		private const string DFA14_minS =
+			"\x2\x2E\x1\xFFFF\x2\x2E\x1\xFFFF";
+		private const string DFA14_maxS =
+			"\x1\x39\x1\x2126\x1\xFFFF\x2\x2126\x1\xFFFF";
+		private const string DFA14_acceptS =
+			"\x2\xFFFF\x1\x1\x2\xFFFF\x1\x2";
+		private const string DFA14_specialS =
+			"\x6\xFFFF}>";
+		private static readonly string[] DFA14_transitionS =
+			{
+				"\x1\x2\x2\xFFFF\x9\x1",
+				"\x1\x2\x1\xFFFF\x1\x4\x9\x3\x7\xFFFF\x3\x5\x1\xFFFF\x1\x2\x3\x5\x1"+
+				"\xFFFF\x2\x5\x2\xFFFF\x1\x5\x1\xFFFF\x1\x5\x2\xFFFF\x2\x5\x1\xFFFF\x2"+
+				"\x5\xB\xFFFF\x1\x5\x1\xFFFF\x1\x2\x5\xFFFF\x3\x5\x1\xFFFF\x1\x5\x2\xFFFF"+
+				"\x2\x5\x3C\xFFFF\x1\x5\x2075\xFFFF\x1\x5",
+				"",
+				"\x1\x2\x1\xFFFF\x1\x4\x9\x3\x7\xFFFF\x3\x5\x1\xFFFF\x1\x2\x3\x5\x1"+
+				"\xFFFF\x2\x5\x2\xFFFF\x1\x5\x1\xFFFF\x1\x5\x2\xFFFF\x2\x5\x1\xFFFF\x2"+
+				"\x5\xB\xFFFF\x1\x5\x1\xFFFF\x1\x2\x5\xFFFF\x3\x5\x1\xFFFF\x1\x5\x2\xFFFF"+
+				"\x2\x5\x3C\xFFFF\x1\x5\x2075\xFFFF\x1\x5",
+				"\x1\x2\x1\xFFFF\x1\x4\x9\x3\x7\xFFFF\x3\x5\x1\xFFFF\x1\x2\x3\x5\x1"+
+				"\xFFFF\x2\x5\x2\xFFFF\x1\x5\x1\xFFFF\x1\x5\x2\xFFFF\x2\x5\x1\xFFFF\x2"+
+				"\x5\xB\xFFFF\x1\x5\x1\xFFFF\x1\x2\x5\xFFFF\x3\x5\x1\xFFFF\x1\x5\x2\xFFFF"+
+				"\x2\x5\x3C\xFFFF\x1\x5\x2075\xFFFF\x1\x5",
+				""
+			};
+
+		private static readonly short[] DFA14_eot = DFA.UnpackEncodedString(DFA14_eotS);
+		private static readonly short[] DFA14_eof = DFA.UnpackEncodedString(DFA14_eofS);
+		private static readonly char[] DFA14_min = DFA.UnpackEncodedStringToUnsignedChars(DFA14_minS);
+		private static readonly char[] DFA14_max = DFA.UnpackEncodedStringToUnsignedChars(DFA14_maxS);
+		private static readonly short[] DFA14_accept = DFA.UnpackEncodedString(DFA14_acceptS);
+		private static readonly short[] DFA14_special = DFA.UnpackEncodedString(DFA14_specialS);
+		private static readonly short[][] DFA14_transition;
+
+		static DFA14()
+		{
+			int numStates = DFA14_transitionS.Length;
+			DFA14_transition = new short[numStates][];
+			for ( int i=0; i < numStates; i++ )
+			{
+				DFA14_transition[i] = DFA.UnpackEncodedString(DFA14_transitionS[i]);
+			}
+		}
+
+		public DFA14( BaseRecognizer recognizer )
+		{
+			this.recognizer = recognizer;
+			this.decisionNumber = 14;
+			this.eot = DFA14_eot;
+			this.eof = DFA14_eof;
+			this.min = DFA14_min;
+			this.max = DFA14_max;
+			this.accept = DFA14_accept;
+			this.special = DFA14_special;
+			this.transition = DFA14_transition;
+		}
+
+		public override string Description { get { return "58:1: UNIT : ( FLOAT ( ' ' )? SI_UNIT | INTEGER SI_UNIT );"; } }
+
+		public override void Error(NoViableAltException nvae)
+		{
+			DebugRecognitionException(nvae);
+		}
+	}
+
+	private class DFA18 : DFA
+	{
+		private const string DFA18_eotS =
+			"\x1\xFFFF\x1\x1E\x1\xFFFF\x1\x22\x1\x24\x3\xFFFF\x1\x29\x1\x2C\x1\xFFFF"+
+			"\x1\x2F\x1\x32\x1\x34\x1\x36\x1\x38\x2\xFFFF\x1\x3A\x8\xFFFF\x1\x43\x3"+
+			"\xFFFF\x1\x46\x5\xFFFF\x1\x4A\x7\xFFFF\x1\x4D\xF\xFFFF\x1\x58\x1\x5A"+
+			"\x1\xFFFF\x1\x5C\x3\xFFFF\x1\x5F\x2\xFFFF\x1\x62\x1\x65\x2\xFFFF\x1\x68"+
+			"\x2E\xFFFF\x1\x86\xC\xFFFF";
+		private const string DFA18_eofS =
+			"\x87\xFFFF";
+		private const string DFA18_minS =
+			"\x1\x41\x1\x2F\x1\x61\x1\x72\x1\x2F\x1\xFFFF\x1\x64\x1\x61\x2\x2F\x1"+
+			"\x61\x5\x2F\x2\xFFFF\x1\x76\x2\xFFFF\x1\x6D\x1\xFFFF\x1\x79\x1\x6C\x1"+
+			"\xFFFF\x1\x2D\x1\x2F\x1\x73\x2\xFFFF\x1\x2F\x1\x74\x2\xFFFF\x1\x6D\x1"+
+			"\xFFFF\x1\x2F\x1\x64\x6\xFFFF\x1\xB7\x1\x28\x2\xFFFF\x1\x28\x1\xFFFF"+
+			"\x1\x6B\x9\xFFFF\x2\x2F\x1\xFFFF\x1\x2F\x3\xFFFF\x1\x5E\x1\x6D\x1\xFFFF"+
+			"\x1\x2F\x1\x5E\x1\x6D\x1\xFFFF\x1\x2F\x3\xFFFF\x1\x6B\x1\xFFFF\x2\x5E"+
+			"\x1\x6D\x1\xFFFF\x1\x5E\x3\xFFFF\x1\x6D\x6\xFFFF\x1\x5E\x1\x6D\x4\xFFFF"+
+			"\x1\x5E\x1\x73\x8\xFFFF\x1\x5E\x1\xFFFF\x1\x32\x1\xFFFF\x1\x5E\x2\xFFFF"+
+			"\x1\x5E\x2\xFFFF\x1\x5E\xC\xFFFF";
+		private const string DFA18_maxS =
+			"\x1\x2126\x1\x207B\x1\x67\x1\x72\x1\x2F\x1\xFFFF\x1\x64\x1\x61\x1\x7A"+
+			"\x1\xB7\x1\x61\x1\x2F\x1\x62\x3\x2F\x2\xFFFF\x1\x76\x2\xFFFF\x1\x78\x1"+
+			"\xFFFF\x1\x79\x1\x6C\x1\xFFFF\x1\x33\x1\x2F\x1\x73\x2\xFFFF\x1\x2F\x1"+
+			"\x74\x2\xFFFF\x1\x6D\x1\xFFFF\x1\x2F\x1\x64\x6\xFFFF\x1\xB7\x1\x6D\x2"+
+			"\xFFFF\x1\x73\x1\xFFFF\x1\x6D\x9\xFFFF\x2\x2F\x1\xFFFF\x1\x2F\x3\xFFFF"+
+			"\x1\xB2\x1\x6D\x1\xFFFF\x1\x2F\x1\xB2\x1\x6D\x1\xFFFF\x1\x2F\x3\xFFFF"+
+			"\x1\x6D\x1\xFFFF\x1\xB3\x1\xB2\x1\x6D\x1\xFFFF\x1\xB3\x3\xFFFF\x1\x6D"+
+			"\x6\xFFFF\x1\xB3\x1\x6D\x4\xFFFF\x1\xB2\x1\x73\x8\xFFFF\x1\xB7\x1\xFFFF"+
+			"\x1\x33\x1\xFFFF\x1\xB3\x2\xFFFF\x1\xB3\x2\xFFFF\x1\xB2\xC\xFFFF";
+		private const string DFA18_acceptS =
+			"\x5\xFFFF\x1\x5\xA\xFFFF\x1\x26\x1\x27\x1\xFFFF\x1\x2A\x1\x2C\x1\xFFFF"+
+			"\x1\x2F\x2\xFFFF\x1\x8\x3\xFFFF\x1\xF\x1\x1\x2\xFFFF\x1\x1D\x1\x3\x1"+
+			"\xFFFF\x1\x4\x2\xFFFF\x1\x1E\x1\x47\x1\x2B\x1\x34\x1\x35\x1\x1F\x2\xFFFF"+
+			"\x1\x21\x1\x29\x1\xFFFF\x1\x22\x1\xFFFF\x1\x23\x1\x41\x1\x24\x1\x46\x1"+
+			"\x25\x1\x31\x1\x28\x1\x2D\x1\x2E\x2\xFFFF\x1\x9\x1\xFFFF\x1\x10\x1\x13"+
+			"\x1\xA\x2\xFFFF\x1\x2\x3\xFFFF\x1\x7\x1\xFFFF\x1\x33\x1\x20\x1\x3B\x1"+
+			"\xFFFF\x1\x3D\x3\xFFFF\x1\x4C\x1\xFFFF\x1\x4A\x1\x4B\x1\x30\x1\xFFFF"+
+			"\x1\x6\x1\x14\x1\xB\x1\xD\x1\xE\x1\xC\x2\xFFFF\x1\x32\x1\x15\x1\x16\x1"+
+			"\x17\x2\xFFFF\x1\x1C\x1\x3C\x1\x49\x1\x3F\x1\x40\x1\x48\x1\x39\x1\x3A"+
+			"\x1\xFFFF\x1\x42\x1\xFFFF\x1\x44\x1\xFFFF\x1\x11\x1\x12\x1\xFFFF\x1\x1A"+
+			"\x1\x1B\x1\xFFFF\x1\x3E\x1\x4D\x1\x4E\x1\x43\x1\x45\x1\x18\x1\x19\x1"+
+			"\x4F\x1\x50\x1\x37\x1\x38\x1\x36";
+		private const string DFA18_specialS =
+			"\x87\xFFFF}>";
+		private static readonly string[] DFA18_transitionS =
+			{
+				"\x1\x4\x1\x16\x1\xD\x2\xFFFF\x1\xF\x1\x17\x1\x8\x1\xFFFF\x1\xB\x1\x5"+
+				"\x2\xFFFF\x1\x9\x1\xFFFF\x1\xA\x2\xFFFF\x1\x12\x1\x13\x1\xFFFF\x1\xE"+
+				"\x1\xC\xB\xFFFF\x1\x6\x7\xFFFF\x1\x2\x1\x15\x1\x1\x1\xFFFF\x1\x11\x2"+
+				"\xFFFF\x1\x7\x1\x3\x3C\xFFFF\x1\x14\x2075\xFFFF\x1\x10",
+				"\x1\x1C\x2E\xFFFF\x1\x1A\x10\xFFFF\x1\x18\x42\xFFFF\x1\x19\x1\x1B\x1FC7"+
+				"\xFFFF\x1\x1D",
+				"\x1\x20\x5\xFFFF\x1\x1F",
+				"\x1\x21",
+				"\x1\x23",
+				"",
+				"\x1\x25",
+				"\x1\x26",
+				"\x1\x28\x4A\xFFFF\x1\x27",
+				"\x1\x2B\x87\xFFFF\x1\x2A",
+				"\x1\x2D",
+				"\x1\x2E",
+				"\x1\x31\x32\xFFFF\x1\x30",
+				"\x1\x33",
+				"\x1\x35",
+				"\x1\x37",
+				"",
+				"",
+				"\x1\x39",
+				"",
+				"",
+				"\x1\x3B\xA\xFFFF\x1\x3C",
+				"",
+				"\x1\x3D",
+				"\x1\x3E",
+				"",
+				"\x1\x41\x4\xFFFF\x1\x3F\x1\x40",
+				"\x1\x42",
+				"\x1\x44",
+				"",
+				"",
+				"\x1\x45",
+				"\x1\x47",
+				"",
+				"",
+				"\x1\x48",
+				"",
+				"\x1\x49",
+				"\x1\x4B",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"\x1\x4C",
+				"\x1\x4F\x22\xFFFF\x1\x4E\x1F\xFFFF\x1\x50\x1\xFFFF\x1\x51",
+				"",
+				"",
+				"\x1\x53\x44\xFFFF\x1\x52\x5\xFFFF\x1\x54",
+				"",
+				"\x1\x56\x1\xFFFF\x1\x55",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"\x1\x57",
+				"\x1\x59",
+				"",
+				"\x1\x5B",
+				"",
+				"",
+				"",
+				"\x1\x5E\x53\xFFFF\x1\x5D",
+				"\x1\x60",
+				"",
+				"\x1\x61",
+				"\x1\x64\x53\xFFFF\x1\x63",
+				"\x1\x66",
+				"",
+				"\x1\x67",
+				"",
+				"",
+				"",
+				"\x1\x69\x1\xFFFF\x1\x6A",
+				"",
+				"\x1\x6C\x10\xFFFF\x1\x6D\x43\xFFFF\x1\x6B",
+				"\x1\x6F\x53\xFFFF\x1\x6E",
+				"\x1\x70",
+				"",
+				"\x1\x72\x53\xFFFF\x1\x73\x1\x71",
+				"",
+				"",
+				"",
+				"\x1\x74",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"\x1\x76\x54\xFFFF\x1\x75",
+				"\x1\x77",
+				"",
+				"",
+				"",
+				"",
+				"\x1\x79\x53\xFFFF\x1\x78",
+				"\x1\x7A",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"\x1\x7D\x53\xFFFF\x1\x7C\x4\xFFFF\x1\x7B",
+				"",
+				"\x1\x7F\x1\x7E",
+				"",
+				"\x1\x81\x54\xFFFF\x1\x80",
+				"",
+				"",
+				"\x1\x83\x54\xFFFF\x1\x82",
+				"",
+				"",
+				"\x1\x85\x53\xFFFF\x1\x84",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				""
+			};
+
+		private static readonly short[] DFA18_eot = DFA.UnpackEncodedString(DFA18_eotS);
+		private static readonly short[] DFA18_eof = DFA.UnpackEncodedString(DFA18_eofS);
+		private static readonly char[] DFA18_min = DFA.UnpackEncodedStringToUnsignedChars(DFA18_minS);
+		private static readonly char[] DFA18_max = DFA.UnpackEncodedStringToUnsignedChars(DFA18_maxS);
+		private static readonly short[] DFA18_accept = DFA.UnpackEncodedString(DFA18_acceptS);
+		private static readonly short[] DFA18_special = DFA.UnpackEncodedString(DFA18_specialS);
+		private static readonly short[][] DFA18_transition;
+
+		static DFA18()
+		{
+			int numStates = DFA18_transitionS.Length;
+			DFA18_transition = new short[numStates][];
+			for ( int i=0; i < numStates; i++ )
+			{
+				DFA18_transition[i] = DFA.UnpackEncodedString(DFA18_transitionS[i]);
+			}
+		}
+
+		public DFA18( BaseRecognizer recognizer )
+		{
+			this.recognizer = recognizer;
+			this.decisionNumber = 18;
+			this.eot = DFA18_eot;
+			this.eof = DFA18_eof;
+			this.min = DFA18_min;
+			this.max = DFA18_max;
+			this.accept = DFA18_accept;
+			this.special = DFA18_special;
+			this.transition = DFA18_transition;
+		}
+
+		public override string Description { get { return "68:20: ( SI_METER | SI_KG | SI_SEC | SI_AMP | SI_KELVIN | SI_MOLE | SI_CANDELA | SI_SQ_METER_1 | SI_SQ_METER_2 | SI_CU_METER_1 | SI_CU_METER_2 | SI_MPS | SI_MPS_SQ_1 | SI_MPS_SQ_2 | SI_REC_METER_1 | SI_REC_METER_2 | SI_KG_CU_METER_1 | SI_KG_CU_METER_2 | SI_CU_METER_KG_1 | SI_CU_METER_KG_2 | SI_AMP_SQ_METER_1 | SI_AMP_SQ_METER_2 | SI_AMP_METER | SI_MOL_CU_METER_1 | SI_MOL_CU_METER_2 | SI_CANDELA_SQ_METER_1 | SI_CANDELA_SQ_METER_2 | SI_RADIAN | SI_SOLID_ANGLE | SI_HERTZ | SI_NEWTON | SI_PASCAL | SI_JOULE | SI_WATT | SI_COULOMB | SI_VOLT | SI_FARAD | SI_OHM_1 | SI_OHM_2 | SI_SIEMENS | SI_WEBER | SI_TESLA | SI_HENRY | SI_CELCIUS | SI_LUMEN | SI_LUX | SI_BECQUEREL | SI_GRAY | SI_SIEVERT | SI_KATAL | SI_PASCAL_SEC | SI_NEWTON_METER | SI_NEWTON_PER_METER | SI_RADIAN_PER_SEC | SI_RADIAN_PER_SEC_SQ_1 | SI_RADIAN_PER_SEC_SQ_2 | SI_WATT_PER_METER_SQ_1 | SI_WATT_PER_METER_SQ_2 | SI_JOULE_PER_KELVIN | SI_JOULE_PER_KG_KELVIN | SI_JOULE_PER_KG | SI_WATT_PER_METER_KELVIN | SI_JOULE_PER_CU_METER_1 | SI_JOULE_PER_CU_METER_2 | SI_VOLT_PER_METER | SI_COULOMB_PER_CU_METER_1 | SI_COULOMB_PER_CU_METER_2 | SI_COULOMB_PER_SQ_METER_1 | SI_COULOMB_PER_SQ_METER_2 | SI_FARAD_PER_METER | SI_HENRY_PER_METER | SI_JOULE_PER_MOLE | SI_JOULE_PER_MOLE_KELVIN | SI_COULOMB_PER_KG | SI_GRAY_PER_SEC | SI_WATT_PER_STERADIAN | SI_WATT_PER_SQ_METER_STERADIAN_1 | SI_WATT_PER_SQ_METER_STERADIAN_2 | SI_KATAL_PER_CU_METER_1 | SI_KATAL_PER_CU_METER_2 )"; } }
+
+		public override void Error(NoViableAltException nvae)
+		{
+			DebugRecognitionException(nvae);
+		}
+	}
+
+	private class DFA19 : DFA
+	{
+		private const string DFA19_eotS =
 			"\x1\xFFFF\x1\x2D\x1\xFFFF\x1\x30\x7\xFFFF\x1\x3A\x14\xFFFF\x1\x40\x20"+
 			"\xFFFF";
-		private const string DFA13_eofS =
+		private const string DFA19_eofS =
 			"\x41\xFFFF";
-		private const string DFA13_minS =
+		private const string DFA19_minS =
 			"\x1\x24\x1\x65\x1\xFFFF\x1\x55\x3\xFFFF\x1\x0\x1\x4D\x2\xFFFF\x1\x24"+
 			"\x2\xFFFF\x1\x6E\xE\xFFFF\x1\x24\x2\xFFFF\x1\x2F\x20\xFFFF";
-		private const string DFA13_maxS =
+		private const string DFA19_maxS =
 			"\x1\xFDFC\x1\x65\x1\xFFFF\x1\x62\x3\xFFFF\x1\x73\x1\x10D\x2\xFFFF\x1"+
 			"\x70\x2\xFFFF\x1\x72\xE\xFFFF\x1\x48\x2\xFFFF\x1\x2F\x20\xFFFF";
-		private const string DFA13_acceptS =
+		private const string DFA19_acceptS =
 			"\x2\xFFFF\x1\x2\x1\xFFFF\x1\x4\x1\x5\x1\x6\x2\xFFFF\x1\xA\x1\xB\x1\xFFFF"+
 			"\x1\xD\x1\xE\x1\xFFFF\x1\x10\x1\x14\x1\x15\x1\x16\x1\x17\x1\x19\x1\x1B"+
 			"\x1\x1C\x1\x1D\x1\x1E\x1\x1F\x1\x20\x1\x22\x1\x23\x1\xFFFF\x1\x25\x1"+
@@ -3985,9 +7787,9 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 			"\x1\x36\x1\x37\x1\x38\x1\x1\x1\x18\x1\x8\x1\x34\x1\x3\x1\x7\x1\x26\x1"+
 			"\x35\x1\x9\x1\x11\x1\xC\x1\x13\x1\x1A\x1\x21\x1\x2E\x1\xF\x1\x12\x1\x24"+
 			"\x1\x2F\x1\x28\x1\x2D";
-		private const string DFA13_specialS =
+		private const string DFA19_specialS =
 			"\x41\xFFFF}>";
-		private static readonly string[] DFA13_transitionS =
+		private static readonly string[] DFA19_transitionS =
 			{
 				"\x1\x3\x1D\xFFFF\x1\x7\x1\x1D\x2\xFFFF\x1\x14\x1\x1F\x2\xFFFF\x1\x17"+
 				"\x1\x8\x1\x1\x1\x1C\x1\x25\x1\xFFFF\x1\x9\x1\x13\x1\xB\x1\x20\x1\x27"+
@@ -4063,38 +7865,38 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 				""
 			};
 
-		private static readonly short[] DFA13_eot = DFA.UnpackEncodedString(DFA13_eotS);
-		private static readonly short[] DFA13_eof = DFA.UnpackEncodedString(DFA13_eofS);
-		private static readonly char[] DFA13_min = DFA.UnpackEncodedStringToUnsignedChars(DFA13_minS);
-		private static readonly char[] DFA13_max = DFA.UnpackEncodedStringToUnsignedChars(DFA13_maxS);
-		private static readonly short[] DFA13_accept = DFA.UnpackEncodedString(DFA13_acceptS);
-		private static readonly short[] DFA13_special = DFA.UnpackEncodedString(DFA13_specialS);
-		private static readonly short[][] DFA13_transition;
+		private static readonly short[] DFA19_eot = DFA.UnpackEncodedString(DFA19_eotS);
+		private static readonly short[] DFA19_eof = DFA.UnpackEncodedString(DFA19_eofS);
+		private static readonly char[] DFA19_min = DFA.UnpackEncodedStringToUnsignedChars(DFA19_minS);
+		private static readonly char[] DFA19_max = DFA.UnpackEncodedStringToUnsignedChars(DFA19_maxS);
+		private static readonly short[] DFA19_accept = DFA.UnpackEncodedString(DFA19_acceptS);
+		private static readonly short[] DFA19_special = DFA.UnpackEncodedString(DFA19_specialS);
+		private static readonly short[][] DFA19_transition;
 
-		static DFA13()
+		static DFA19()
 		{
-			int numStates = DFA13_transitionS.Length;
-			DFA13_transition = new short[numStates][];
+			int numStates = DFA19_transitionS.Length;
+			DFA19_transition = new short[numStates][];
 			for ( int i=0; i < numStates; i++ )
 			{
-				DFA13_transition[i] = DFA.UnpackEncodedString(DFA13_transitionS[i]);
+				DFA19_transition[i] = DFA.UnpackEncodedString(DFA19_transitionS[i]);
 			}
 		}
 
-		public DFA13( BaseRecognizer recognizer )
+		public DFA19( BaseRecognizer recognizer )
 		{
 			this.recognizer = recognizer;
-			this.decisionNumber = 13;
-			this.eot = DFA13_eot;
-			this.eof = DFA13_eof;
-			this.min = DFA13_min;
-			this.max = DFA13_max;
-			this.accept = DFA13_accept;
-			this.special = DFA13_special;
-			this.transition = DFA13_transition;
+			this.decisionNumber = 19;
+			this.eot = DFA19_eot;
+			this.eof = DFA19_eof;
+			this.min = DFA19_min;
+			this.max = DFA19_max;
+			this.accept = DFA19_accept;
+			this.special = DFA19_special;
+			this.transition = DFA19_transition;
 		}
 
-		public override string Description { get { return "60:9: ( CURR_ALL | CURR_AFN | CURR_USD | CURR_AWG | CURR_AZN | CURR_BYR | CURR_BZD | CURR_BOB | CURR_BAM | CURR_BWP | CURR_BGN | CURR_BRL | CURR_KHR | CURR_CRC | CURR_HRK | CURR_CUP | CURR_CZK | CURR_DKK | CURR_DOP | CURR_GBP | CURR_EUR | CURR_GHS | CURR_GTQ | CURR_HNL | CURR_HUF | CURR_IDR | CURR_IRR | CURR_ILS | CURR_JMD | CURR_JPY | CURR_LAK | CURR_MKD | CURR_MYR | CURR_MNT | CURR_MZN | CURR_NIO | CURR_NGN | CURR_PAB | CURR_PYG | CURR_PEN | CURR_PLN | CURR_RON | CURR_RUB | CURR_RSD | CURR_SOS | CURR_ZAR | CURR_CHF | CURR_TWD | CURR_THB | CURR_TTD | CURR_UAH | CURR_UYU | CURR_VEF | CURR_VND | CURR_ZWD | CURR_XBT )"; } }
+		public override string Description { get { return "179:9: ( CURR_ALL | CURR_AFN | CURR_USD | CURR_AWG | CURR_AZN | CURR_BYR | CURR_BZD | CURR_BOB | CURR_BAM | CURR_BWP | CURR_BGN | CURR_BRL | CURR_KHR | CURR_CRC | CURR_HRK | CURR_CUP | CURR_CZK | CURR_DKK | CURR_DOP | CURR_GBP | CURR_EUR | CURR_GHS | CURR_GTQ | CURR_HNL | CURR_HUF | CURR_IDR | CURR_IRR | CURR_ILS | CURR_JMD | CURR_JPY | CURR_LAK | CURR_MKD | CURR_MYR | CURR_MNT | CURR_MZN | CURR_NIO | CURR_NGN | CURR_PAB | CURR_PYG | CURR_PEN | CURR_PLN | CURR_RON | CURR_RUB | CURR_RSD | CURR_SOS | CURR_ZAR | CURR_CHF | CURR_TWD | CURR_THB | CURR_TTD | CURR_UAH | CURR_UYU | CURR_VEF | CURR_VND | CURR_ZWD | CURR_XBT )"; } }
 
 		public override void Error(NoViableAltException nvae)
 		{
@@ -4102,22 +7904,26 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 		}
 	}
 
-	private class DFA20 : DFA
+	private class DFA23 : DFA
 	{
-		private const string DFA20_eotS =
-			"\x5\xFFFF\x1\xB\x4\xFFFF\x1\xB\x1\xFFFF\x1\xB";
-		private const string DFA20_eofS =
-			"\xD\xFFFF";
-		private const string DFA20_minS =
-			"\x1\x9\x4\xFFFF\x1\x2E\x4\xFFFF\x1\x2E\x1\xFFFF\x1\x2E";
-		private const string DFA20_maxS =
-			"\x1\xFDFC\x4\xFFFF\x1\x65\x4\xFFFF\x1\x65\x1\xFFFF\x1\x65";
-		private const string DFA20_acceptS =
-			"\x1\xFFFF\x1\x1\x1\x2\x1\x3\x1\x4\x1\xFFFF\x1\x6\x1\x7\x1\x8\x1\x9\x1"+
-			"\xFFFF\x1\x5\x1\xFFFF";
-		private const string DFA20_specialS =
-			"\xD\xFFFF}>";
-		private static readonly string[] DFA20_transitionS =
+		private const string DFA23_eotS =
+			"\x5\xFFFF\x1\xB\x4\xFFFF\x1\xB\x1\xFFFF\x1\xB\x2\xFFFF\x1\x13\x1\xFFFF"+
+			"\x2\x13\x2\xFFFF\x3\x13\x1\xFFFF\x3\x13";
+		private const string DFA23_eofS =
+			"\x1C\xFFFF";
+		private const string DFA23_minS =
+			"\x1\x9\x4\xFFFF\x1\x2E\x1\x31\x3\xFFFF\x1\x2E\x1\xFFFF\x1\x2E\x1\x2B"+
+			"\x1\xFFFF\x1\x20\x1\x31\x2\x20\x1\xFFFF\x1\x2B\x3\x20\x1\x31\x3\x20";
+		private const string DFA23_maxS =
+			"\x1\xFDFC\x4\xFFFF\x1\x2126\x1\x39\x3\xFFFF\x1\x2126\x1\xFFFF\x1\x2126"+
+			"\x1\x39\x1\xFFFF\x1\x2126\x1\x39\x2\x2126\x1\xFFFF\x1\x39\x3\x2126\x1"+
+			"\x39\x3\x2126";
+		private const string DFA23_acceptS =
+			"\x1\xFFFF\x1\x1\x1\x2\x1\x3\x1\x4\x2\xFFFF\x1\x7\x1\x9\x1\xA\x1\xFFFF"+
+			"\x1\x5\x2\xFFFF\x1\x8\x4\xFFFF\x1\x6\x8\xFFFF";
+		private const string DFA23_specialS =
+			"\x1C\xFFFF}>";
+		private static readonly string[] DFA23_transitionS =
 			{
 				"\x2\x9\x1\xFFFF\x2\x9\x12\xFFFF\x1\x9\x3\xFFFF\x1\x7\x5\xFFFF\x1\x3"+
 				"\x1\x4\x1\xFFFF\x1\x2\x1\x6\x1\x1\x1\xFFFF\x9\x5\x8\xFFFF\x2\x7\x1\xFFFF"+
@@ -4131,48 +7937,99 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 				"",
 				"",
 				"",
-				"\x1\x6\x1\xFFFF\x1\xC\x9\xA\xB\xFFFF\x1\x6\x1F\xFFFF\x1\x6",
+				"\x1\x6\x1\xFFFF\x1\xC\x9\xA\x7\xFFFF\x3\xE\x1\xFFFF\x1\xD\x3\xE\x1"+
+				"\xFFFF\x2\xE\x2\xFFFF\x1\xE\x1\xFFFF\x1\xE\x2\xFFFF\x2\xE\x1\xFFFF\x2"+
+				"\xE\xB\xFFFF\x1\xE\x1\xFFFF\x1\xD\x5\xFFFF\x3\xE\x1\xFFFF\x1\xE\x2\xFFFF"+
+				"\x2\xE\x3C\xFFFF\x1\xE\x2075\xFFFF\x1\xE",
+				"\x9\xF",
 				"",
 				"",
 				"",
+				"\x1\x6\x1\xFFFF\x1\xC\x9\xA\x7\xFFFF\x3\xE\x1\xFFFF\x1\xD\x3\xE\x1"+
+				"\xFFFF\x2\xE\x2\xFFFF\x1\xE\x1\xFFFF\x1\xE\x2\xFFFF\x2\xE\x1\xFFFF\x2"+
+				"\xE\xB\xFFFF\x1\xE\x1\xFFFF\x1\xD\x5\xFFFF\x3\xE\x1\xFFFF\x1\xE\x2\xFFFF"+
+				"\x2\xE\x3C\xFFFF\x1\xE\x2075\xFFFF\x1\xE",
 				"",
-				"\x1\x6\x1\xFFFF\x1\xC\x9\xA\xB\xFFFF\x1\x6\x1F\xFFFF\x1\x6",
+				"\x1\x6\x1\xFFFF\x1\xC\x9\xA\x7\xFFFF\x3\xE\x1\xFFFF\x1\xD\x3\xE\x1"+
+				"\xFFFF\x2\xE\x2\xFFFF\x1\xE\x1\xFFFF\x1\xE\x2\xFFFF\x2\xE\x1\xFFFF\x2"+
+				"\xE\xB\xFFFF\x1\xE\x1\xFFFF\x1\xD\x5\xFFFF\x3\xE\x1\xFFFF\x1\xE\x2\xFFFF"+
+				"\x2\xE\x3C\xFFFF\x1\xE\x2075\xFFFF\x1\xE",
+				"\x1\x10\x1\xFFFF\x1\x10\x3\xFFFF\x9\x11",
 				"",
-				"\x1\x6\x1\xFFFF\x1\xC\x9\xA\xB\xFFFF\x1\x6\x1F\xFFFF\x1\x6"
+				"\x1\xE\xF\xFFFF\x1\x15\x9\x12\x7\xFFFF\x3\xE\x1\xFFFF\x1\x14\x3\xE"+
+				"\x1\xFFFF\x2\xE\x2\xFFFF\x1\xE\x1\xFFFF\x1\xE\x2\xFFFF\x2\xE\x1\xFFFF"+
+				"\x2\xE\xB\xFFFF\x1\xE\x1\xFFFF\x1\x14\x5\xFFFF\x3\xE\x1\xFFFF\x1\xE"+
+				"\x2\xFFFF\x2\xE\x3C\xFFFF\x1\xE\x2075\xFFFF\x1\xE",
+				"\x9\x11",
+				"\x1\xE\xF\xFFFF\x1\x17\x9\x16\x7\xFFFF\x3\xE\x2\xFFFF\x3\xE\x1\xFFFF"+
+				"\x2\xE\x2\xFFFF\x1\xE\x1\xFFFF\x1\xE\x2\xFFFF\x2\xE\x1\xFFFF\x2\xE\xB"+
+				"\xFFFF\x1\xE\x7\xFFFF\x3\xE\x1\xFFFF\x1\xE\x2\xFFFF\x2\xE\x3C\xFFFF"+
+				"\x1\xE\x2075\xFFFF\x1\xE",
+				"\x1\xE\xF\xFFFF\x1\x15\x9\x12\x7\xFFFF\x3\xE\x1\xFFFF\x1\x14\x3\xE"+
+				"\x1\xFFFF\x2\xE\x2\xFFFF\x1\xE\x1\xFFFF\x1\xE\x2\xFFFF\x2\xE\x1\xFFFF"+
+				"\x2\xE\xB\xFFFF\x1\xE\x1\xFFFF\x1\x14\x5\xFFFF\x3\xE\x1\xFFFF\x1\xE"+
+				"\x2\xFFFF\x2\xE\x3C\xFFFF\x1\xE\x2075\xFFFF\x1\xE",
+				"",
+				"\x1\x18\x1\xFFFF\x1\x18\x3\xFFFF\x9\x19",
+				"\x1\xE\xF\xFFFF\x1\x15\x9\x12\x7\xFFFF\x3\xE\x1\xFFFF\x1\x14\x3\xE"+
+				"\x1\xFFFF\x2\xE\x2\xFFFF\x1\xE\x1\xFFFF\x1\xE\x2\xFFFF\x2\xE\x1\xFFFF"+
+				"\x2\xE\xB\xFFFF\x1\xE\x1\xFFFF\x1\x14\x5\xFFFF\x3\xE\x1\xFFFF\x1\xE"+
+				"\x2\xFFFF\x2\xE\x3C\xFFFF\x1\xE\x2075\xFFFF\x1\xE",
+				"\x1\xE\xF\xFFFF\x1\x17\x9\x16\x7\xFFFF\x3\xE\x2\xFFFF\x3\xE\x1\xFFFF"+
+				"\x2\xE\x2\xFFFF\x1\xE\x1\xFFFF\x1\xE\x2\xFFFF\x2\xE\x1\xFFFF\x2\xE\xB"+
+				"\xFFFF\x1\xE\x7\xFFFF\x3\xE\x1\xFFFF\x1\xE\x2\xFFFF\x2\xE\x3C\xFFFF"+
+				"\x1\xE\x2075\xFFFF\x1\xE",
+				"\x1\xE\xF\xFFFF\x1\x17\x9\x16\x7\xFFFF\x3\xE\x2\xFFFF\x3\xE\x1\xFFFF"+
+				"\x2\xE\x2\xFFFF\x1\xE\x1\xFFFF\x1\xE\x2\xFFFF\x2\xE\x1\xFFFF\x2\xE\xB"+
+				"\xFFFF\x1\xE\x7\xFFFF\x3\xE\x1\xFFFF\x1\xE\x2\xFFFF\x2\xE\x3C\xFFFF"+
+				"\x1\xE\x2075\xFFFF\x1\xE",
+				"\x9\x19",
+				"\x1\xE\xF\xFFFF\x1\x1B\x9\x1A\x7\xFFFF\x3\xE\x2\xFFFF\x3\xE\x1\xFFFF"+
+				"\x2\xE\x2\xFFFF\x1\xE\x1\xFFFF\x1\xE\x2\xFFFF\x2\xE\x1\xFFFF\x2\xE\xB"+
+				"\xFFFF\x1\xE\x7\xFFFF\x3\xE\x1\xFFFF\x1\xE\x2\xFFFF\x2\xE\x3C\xFFFF"+
+				"\x1\xE\x2075\xFFFF\x1\xE",
+				"\x1\xE\xF\xFFFF\x1\x1B\x9\x1A\x7\xFFFF\x3\xE\x2\xFFFF\x3\xE\x1\xFFFF"+
+				"\x2\xE\x2\xFFFF\x1\xE\x1\xFFFF\x1\xE\x2\xFFFF\x2\xE\x1\xFFFF\x2\xE\xB"+
+				"\xFFFF\x1\xE\x7\xFFFF\x3\xE\x1\xFFFF\x1\xE\x2\xFFFF\x2\xE\x3C\xFFFF"+
+				"\x1\xE\x2075\xFFFF\x1\xE",
+				"\x1\xE\xF\xFFFF\x1\x1B\x9\x1A\x7\xFFFF\x3\xE\x2\xFFFF\x3\xE\x1\xFFFF"+
+				"\x2\xE\x2\xFFFF\x1\xE\x1\xFFFF\x1\xE\x2\xFFFF\x2\xE\x1\xFFFF\x2\xE\xB"+
+				"\xFFFF\x1\xE\x7\xFFFF\x3\xE\x1\xFFFF\x1\xE\x2\xFFFF\x2\xE\x3C\xFFFF"+
+				"\x1\xE\x2075\xFFFF\x1\xE"
 			};
 
-		private static readonly short[] DFA20_eot = DFA.UnpackEncodedString(DFA20_eotS);
-		private static readonly short[] DFA20_eof = DFA.UnpackEncodedString(DFA20_eofS);
-		private static readonly char[] DFA20_min = DFA.UnpackEncodedStringToUnsignedChars(DFA20_minS);
-		private static readonly char[] DFA20_max = DFA.UnpackEncodedStringToUnsignedChars(DFA20_maxS);
-		private static readonly short[] DFA20_accept = DFA.UnpackEncodedString(DFA20_acceptS);
-		private static readonly short[] DFA20_special = DFA.UnpackEncodedString(DFA20_specialS);
-		private static readonly short[][] DFA20_transition;
+		private static readonly short[] DFA23_eot = DFA.UnpackEncodedString(DFA23_eotS);
+		private static readonly short[] DFA23_eof = DFA.UnpackEncodedString(DFA23_eofS);
+		private static readonly char[] DFA23_min = DFA.UnpackEncodedStringToUnsignedChars(DFA23_minS);
+		private static readonly char[] DFA23_max = DFA.UnpackEncodedStringToUnsignedChars(DFA23_maxS);
+		private static readonly short[] DFA23_accept = DFA.UnpackEncodedString(DFA23_acceptS);
+		private static readonly short[] DFA23_special = DFA.UnpackEncodedString(DFA23_specialS);
+		private static readonly short[][] DFA23_transition;
 
-		static DFA20()
+		static DFA23()
 		{
-			int numStates = DFA20_transitionS.Length;
-			DFA20_transition = new short[numStates][];
+			int numStates = DFA23_transitionS.Length;
+			DFA23_transition = new short[numStates][];
 			for ( int i=0; i < numStates; i++ )
 			{
-				DFA20_transition[i] = DFA.UnpackEncodedString(DFA20_transitionS[i]);
+				DFA23_transition[i] = DFA.UnpackEncodedString(DFA23_transitionS[i]);
 			}
 		}
 
-		public DFA20( BaseRecognizer recognizer )
+		public DFA23( BaseRecognizer recognizer )
 		{
 			this.recognizer = recognizer;
-			this.decisionNumber = 20;
-			this.eot = DFA20_eot;
-			this.eof = DFA20_eof;
-			this.min = DFA20_min;
-			this.max = DFA20_max;
-			this.accept = DFA20_accept;
-			this.special = DFA20_special;
-			this.transition = DFA20_transition;
+			this.decisionNumber = 23;
+			this.eot = DFA23_eot;
+			this.eof = DFA23_eof;
+			this.min = DFA23_min;
+			this.max = DFA23_max;
+			this.accept = DFA23_accept;
+			this.special = DFA23_special;
+			this.transition = DFA23_transition;
 		}
 
-		public override string Description { get { return "1:1: Tokens : ( DIV | MINUS | MULT | PLUS | INTEGER | FLOAT | CURRENCY | EXP | WHITESPACE );"; } }
+		public override string Description { get { return "1:1: Tokens : ( DIV | MINUS | MULT | PLUS | INTEGER | FLOAT | CURRENCY | UNIT | EXP | WHITESPACE );"; } }
 
 		public override void Error(NoViableAltException nvae)
 		{

@@ -12,6 +12,36 @@ namespace Palantir.Numeric.UnitTests
     {
         private formulaLexer lexer;
         
+        #region Unit Lexer
+        [Fact]
+        public void ReadSimpleUnits_ShouldOutputCorrectTokens() 
+        {
+            Read("50kg");
+            ExpectToken(formulaLexer.UNIT, "50kg");
+            Read("50rad/s²");
+            ExpectToken(formulaLexer.UNIT, "50rad/s²");
+            Read("50e10kg");
+            ExpectToken(formulaLexer.UNIT, "50e10kg");
+            Read("50e10rad/s²");
+            ExpectToken(formulaLexer.UNIT, "50e10rad/s²");
+            Read("50.1kg");
+            ExpectToken(formulaLexer.UNIT, "50.1kg");
+            Read("50.1rad/s²");
+            ExpectToken(formulaLexer.UNIT, "50.1rad/s²");
+
+            // With spaces
+            /* TODO: Get this working
+            Read("50 kg");
+            ExpectToken(formulaLexer.UNIT, "50 kg");
+            Read("50 rad/s²");
+            ExpectToken(formulaLexer.UNIT, "50 rad/s²");*/
+            Read("50.1 kg");
+            ExpectToken(formulaLexer.UNIT, "50.1 kg");
+            Read("50.1 rad/s²");
+            ExpectToken(formulaLexer.UNIT, "50.1 rad/s²");
+        }
+        #endregion
+        
         #region Currency Lexer
         [Fact]
         public void ReadSimpleCurrencies_ShouldOutputCorrectTokens() 
@@ -22,6 +52,12 @@ namespace Palantir.Numeric.UnitTests
             ExpectToken(formulaLexer.CURRENCY, "Lek50");
             Read("؋50");
             ExpectToken(formulaLexer.CURRENCY, "؋50");
+            Read("$50.1");
+            ExpectToken(formulaLexer.CURRENCY, "$50.1");
+            Read("Lek50.1");
+            ExpectToken(formulaLexer.CURRENCY, "Lek50.1");
+            Read("؋50.1");
+            ExpectToken(formulaLexer.CURRENCY, "؋50.1");
 
             // With spaces
             Read("$ 50");
@@ -30,6 +66,12 @@ namespace Palantir.Numeric.UnitTests
             ExpectToken(formulaLexer.CURRENCY, "Lek 50");
             Read("؋ 50");
             ExpectToken(formulaLexer.CURRENCY, "؋ 50");
+            Read("$ 50.1");
+            ExpectToken(formulaLexer.CURRENCY, "$ 50.1");
+            Read("Lek 50.1");
+            ExpectToken(formulaLexer.CURRENCY, "Lek 50.1");
+            Read("؋ 50.1");
+            ExpectToken(formulaLexer.CURRENCY, "؋ 50.1");
         }
         #endregion
         
