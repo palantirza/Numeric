@@ -1,0 +1,308 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Palantir.Numeric</name>
+    </assembly>
+    <members>
+        <member name="T:Palantir.Numeric.Currency">
+            <summary>
+            Represents a currency.
+            </summary>
+        </member>
+        <member name="M:Palantir.Numeric.Currency.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Palantir.Numeric.Currency" /> class.
+            </summary>
+            <param name="code">The currency code.</param>
+            <param name="symbol">The currency symbol.</param>
+            <param name="scale">The currency scale.</param>
+        </member>
+        <member name="P:Palantir.Numeric.Currency.Code">
+            <summary>
+            The currency code.
+            </summary>
+        </member>
+        <member name="P:Palantir.Numeric.Currency.Symbol">
+            <summary>
+            The currency symbol.
+            </summary>
+        </member>
+        <member name="P:Palantir.Numeric.Currency.Scale">
+            <summary>
+            The currency scale.
+            </summary>
+        </member>
+        <member name="T:Palantir.Numeric.Formula">
+            <summary>
+            Used to construct and manipulate formulas.
+            </summary>
+        </member>
+        <member name="T:Palantir.Numeric.IncompatibleUnitException">
+            <summary>
+            An exception that is thrown when an operation is done on two <see cref="T:Palantir.Numeric.Measure" />s
+            which have different and incompatible <see cref="T:Palantir.Numeric.Unit" />s.
+            </summary>
+        </member>
+        <member name="M:Palantir.Numeric.IncompatibleUnitException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Palantir.Numeric.IncompatibleUnitException" />.
+            </summary>
+        </member>
+        <member name="M:Palantir.Numeric.IncompatibleUnitException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Palantir.Numeric.IncompatibleUnitException" />.
+            </summary>
+            <param name="message">The exception message.</param>
+        </member>
+        <member name="M:Palantir.Numeric.IncompatibleUnitException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Palantir.Numeric.IncompatibleUnitException" />.
+            </summary>
+            <param name="message">The exception message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="T:Palantir.Numeric.Measure">
+            <summary>
+            Represents a measure, a value associated with a particular <see cref="P:Palantir.Numeric.Measure.Unit" />.
+            </summary>
+        </member>
+        <member name="M:Palantir.Numeric.Measure.#ctor(System.Decimal,Palantir.Numeric.Unit)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Palantir.Numeric.Measure" />.
+            </summary>
+            <param name="value">The measure value.</param>
+            <param name="unit">The unit type.</param>
+        </member>
+        <member name="P:Palantir.Numeric.Measure.Unit">
+            <summary>
+            The unit the measure is represented in.
+            </summary>
+        </member>
+        <member name="P:Palantir.Numeric.Measure.Value">
+            <summary>
+            The value of the measure.
+            </summary>
+        </member>
+        <member name="M:Palantir.Numeric.Measure.ConvertTo(Palantir.Numeric.Unit)">
+            <summary>
+            Converts a measure to another type.
+            </summary>
+            <param name="unit">The unit to convert to.</param>
+            <returns>The converted measure.</returns>
+        </member>
+        <member name="M:Palantir.Numeric.Measure.op_Addition(Palantir.Numeric.Measure,Palantir.Numeric.Measure)">
+            <summary>
+            Adds two Measure's together.
+            </summary>
+            <param name="lhs">The left hand side of the operation.</param>
+            <param name="rhs">The right hand side of the operation.</param>
+            <returns>The resultant measure.</returns>
+        </member>
+        <member name="M:Palantir.Numeric.Measure.op_Subtraction(Palantir.Numeric.Measure,Palantir.Numeric.Measure)">
+            <summary>
+            Subtracts <paramref name="rhs" /> from <paramref name="lhs" />.
+            </summary>
+            <param name="lhs">The left hand side of the operation.</param>
+            <param name="rhs">The right hand side of the operation.</param>
+            <returns>The resultant measure.</returns>
+        </member>
+        <member name="M:Palantir.Numeric.Measure.op_Division(Palantir.Numeric.Measure,Palantir.Numeric.Measure)">
+            <summary>
+            Divides <paramref name="lhs" /> by <paramref name="rhs" />.
+            </summary>
+            <param name="lhs">The left hand side of the operation.</param>
+            <param name="rhs">The right hand side of the operation.</param>
+            <returns>The resultant measure.</returns>
+        </member>
+        <member name="M:Palantir.Numeric.Measure.op_Multiply(Palantir.Numeric.Measure,Palantir.Numeric.Measure)">
+            <summary>
+            Multiplies <paramref name="lhs" /> by <paramref name="rhs" />.
+            </summary>
+            <param name="lhs">The left hand side of the operation.</param>
+            <param name="rhs">The right hand side of the operation.</param>
+            <returns>The resultant measure.</returns>
+        </member>
+        <member name="T:Palantir.Numeric.Money">
+            <summary>
+            Represents Money, a combination of currency, amount, and scale.
+            Rounding is strict, and remainders are always returned for handling.
+            </summary>
+        </member>
+        <member name="F:Palantir.Numeric.Money.Empty">
+            <summary>
+            The empty money.
+            </summary>
+        </member>
+        <member name="F:Palantir.Numeric.Money.amount">
+            <summary>
+            The amount.
+            </summary>
+        </member>
+        <member name="F:Palantir.Numeric.Money.currency">
+            <summary>
+            The currency information.
+            </summary>
+        </member>
+        <member name="M:Palantir.Numeric.Money.#ctor(System.Decimal,Palantir.Numeric.Currency)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Palantir.Numeric.Money"/> struct.
+            </summary>
+            <param name="amount">
+            The amount.
+            </param>
+            <param name="currency">
+            The currency.
+            </param>
+        </member>
+        <member name="P:Palantir.Numeric.Money.Currency">
+            <summary>
+            Gets the currency.
+            </summary>
+        </member>
+        <member name="P:Palantir.Numeric.Money.Amount">
+            <summary>
+            Gets the money amount.
+            </summary>
+        </member>
+        <member name="P:Palantir.Numeric.Money.IsEmpty">
+            <summary>
+            Gets a value indicating whether the Money instance is Empty or not.
+            </summary>
+        </member>
+        <member name="M:Palantir.Numeric.Money.op_Addition(Palantir.Numeric.Money,Palantir.Numeric.Money)">
+            <summary>
+            Adds two money instances together.
+            </summary>
+            <param name="lhs">The left hand side of the expression.</param>
+            <param name="rhs">The right hand side of the expression.</param>
+            <returns>The expression result.</returns>
+        </member>
+        <member name="M:Palantir.Numeric.Money.op_Subtraction(Palantir.Numeric.Money,Palantir.Numeric.Money)">
+            <summary>
+            Adds two money instances together.
+            </summary>
+            <param name="lhs">The left hand side of the expression.</param>
+            <param name="rhs">The right hand side of the expression.</param>
+            <returns>The expression result.</returns>
+        </member>
+        <member name="M:Palantir.Numeric.Money.op_Division(Palantir.Numeric.Money,Palantir.Numeric.Money)">
+            <summary>
+            Divides two money instances.
+            </summary>
+            <param name="lhs">The left hand side of the expression.</param>
+            <param name="rhs">The right hand side of the expression.</param>
+            <returns>The expression result.</returns>
+        </member>
+        <member name="M:Palantir.Numeric.Money.op_Multiply(Palantir.Numeric.Money,Palantir.Numeric.Money)">
+            <summary>
+            Multiplies two money instances.
+            </summary>
+            <param name="lhs">The left hand side of the expression.</param>
+            <param name="rhs">The right hand side of the expression.</param>
+            <returns>The expression result.</returns>
+        </member>
+        <member name="M:Palantir.Numeric.Money.op_Equality(Palantir.Numeric.Money,Palantir.Numeric.Money)">
+            <summary>
+            Compares two Money types for equality.
+            </summary>
+            <param name="lhs">The left hand side of the expression.</param>
+            <param name="rhs">The right hand side of the expression.</param>
+            <returns>true if the operands are equal, false otherwise.</returns>
+        </member>
+        <member name="M:Palantir.Numeric.Money.op_Inequality(Palantir.Numeric.Money,Palantir.Numeric.Money)">
+            <summary>
+            Compares two Money types for inequality.
+            </summary>
+            <param name="lhs">The left hand side of the expression.</param>
+            <param name="rhs">The right hand side of the expression.</param>
+            <returns>true if the operands are not equal, false otherwise.</returns>
+        </member>
+        <member name="M:Palantir.Numeric.Money.AssertCompatible(Palantir.Numeric.Money,Palantir.Numeric.Money)">
+            <summary>
+            Asserts that two Money instances are compatible.
+            </summary>
+            <param name="lhs">The first Money instance.</param>
+            <param name="rhs">The second Money instance.</param>
+        </member>
+        <member name="M:Palantir.Numeric.Money.IsCompatibleWith(Palantir.Numeric.Money)">
+            <summary>
+            Indicates whether the two Money instances are compatible or not.
+            </summary>
+            <param name="that">The Money instance to compare with.</param>
+            <returns>true if the two Money instances are compatible, false otherwise.</returns>
+        </member>
+        <member name="M:Palantir.Numeric.Money.SetSign(System.Int32)">
+            <summary>
+            Sets the sign.
+            </summary>
+            <param name="sign">
+            The sign to set. Can be -1, or 1.
+            </param>
+            <returns>
+            The <see cref="T:Palantir.Numeric.Money"/>.
+            </returns>
+        </member>
+        <member name="M:Palantir.Numeric.Money.Equals(System.Object)">
+            <summary>
+            Compares the Money for equality.
+            </summary>
+            <param name="obj">The object to compare to.</param>
+            <returns>true if the objects are equal, false otherwise.</returns>
+        </member>
+        <member name="M:Palantir.Numeric.Money.Equals(Palantir.Numeric.Money)">
+            <summary>
+            Compares the Money for equality.
+            </summary>
+            <param name="obj">The object to compare to.</param>
+            <returns>true if the objects are equal, false otherwise.</returns>
+        </member>
+        <member name="M:Palantir.Numeric.Money.GetHashCode">
+            <summary>
+            Fetches the hash code for the Money.
+            </summary>
+            <returns>The hash code.</returns>
+        </member>
+        <member name="M:Palantir.Numeric.Money.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:Palantir.Numeric.Money"/>.
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents the current <see cref="T:Palantir.Numeric.Money"/>.</returns>
+        </member>
+        <member name="T:Palantir.Numeric.Unit">
+            <summary>
+            Represents a Unit for a Unit of Measure calculation.
+            </summary>
+        </member>
+        <member name="M:Palantir.Numeric.Unit.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Palantir.Numeric.Unit" /> class.
+            </summary>
+            <param name="abbreviation">The unit abbreviation.</param>
+            <param name="name">The unit name.</param>
+        </member>
+        <member name="P:Palantir.Numeric.Unit.Abbreviation">
+            <summary>
+            The unit abbreviation.
+            </summary>
+        </member>
+        <member name="P:Palantir.Numeric.Unit.Name">
+            <summary>
+            The unit name.
+            </summary>
+        </member>
+        <member name="M:Palantir.Numeric.Unit.AddConversion(Palantir.Numeric.Unit,System.Func{System.Decimal,System.Decimal})">
+            <summary>
+            Indicates if the Unit can be converted to another unit type.
+            </summary>
+            <param name="unit">The unit type to convert to.</param>
+            <param name="conversion">The conversion function that returns the converted units.</param>
+        </member>
+        <member name="M:Palantir.Numeric.Unit.CanConvertTo(Palantir.Numeric.Unit)">
+            <summary>
+            Indicates if the Unit can be converted to another unit type.
+            </summary>
+            <param name="unit">The unit type to convert to.</param>
+            <returns>true if the indicated unit type can be converted to.</returns>
+        </member>
+    </members>
+</doc>
