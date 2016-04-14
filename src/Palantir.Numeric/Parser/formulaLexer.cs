@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 formula.g 2016-04-14 05:25:36
+// $ANTLR 3.4 formula.g 2016-04-14 11:46:14
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -31,17 +31,77 @@ namespace Palantir.Numeric.Parser
 public partial class formulaLexer : Antlr.Runtime.Lexer
 {
 	public const int EOF=-1;
-	public const int DIGIT=4;
-	public const int DIV=5;
-	public const int EXP=6;
-	public const int FLOAT=7;
-	public const int HEX_DIGIT=8;
-	public const int INTEGER=9;
-	public const int MINUS=10;
-	public const int MULT=11;
-	public const int OCTAL_DIGIT=12;
-	public const int PLUS=13;
-	public const int WHITESPACE=14;
+	public const int CURRENCY=4;
+	public const int CURR_AFN=5;
+	public const int CURR_ALL=6;
+	public const int CURR_AWG=7;
+	public const int CURR_AZN=8;
+	public const int CURR_BAM=9;
+	public const int CURR_BGN=10;
+	public const int CURR_BOB=11;
+	public const int CURR_BRL=12;
+	public const int CURR_BWP=13;
+	public const int CURR_BYR=14;
+	public const int CURR_BZD=15;
+	public const int CURR_CHF=16;
+	public const int CURR_CRC=17;
+	public const int CURR_CUP=18;
+	public const int CURR_CZK=19;
+	public const int CURR_DKK=20;
+	public const int CURR_DOP=21;
+	public const int CURR_EUR=22;
+	public const int CURR_GBP=23;
+	public const int CURR_GHS=24;
+	public const int CURR_GTQ=25;
+	public const int CURR_HNL=26;
+	public const int CURR_HRK=27;
+	public const int CURR_HUF=28;
+	public const int CURR_IDR=29;
+	public const int CURR_ILS=30;
+	public const int CURR_IRR=31;
+	public const int CURR_JMD=32;
+	public const int CURR_JPY=33;
+	public const int CURR_KHR=34;
+	public const int CURR_KPW=35;
+	public const int CURR_LAK=36;
+	public const int CURR_MKD=37;
+	public const int CURR_MNT=38;
+	public const int CURR_MUR=39;
+	public const int CURR_MYR=40;
+	public const int CURR_MZN=41;
+	public const int CURR_NGN=42;
+	public const int CURR_NIO=43;
+	public const int CURR_PAB=44;
+	public const int CURR_PEN=45;
+	public const int CURR_PLN=46;
+	public const int CURR_PYG=47;
+	public const int CURR_RON=48;
+	public const int CURR_RSD=49;
+	public const int CURR_RUB=50;
+	public const int CURR_SOS=51;
+	public const int CURR_SYM=52;
+	public const int CURR_THB=53;
+	public const int CURR_TTD=54;
+	public const int CURR_TWD=55;
+	public const int CURR_UAH=56;
+	public const int CURR_USD=57;
+	public const int CURR_UYU=58;
+	public const int CURR_VEF=59;
+	public const int CURR_VND=60;
+	public const int CURR_XBT=61;
+	public const int CURR_ZAR=62;
+	public const int CURR_ZWD=63;
+	public const int DIGIT=64;
+	public const int DIV=65;
+	public const int EXP=66;
+	public const int FLOAT=67;
+	public const int HEX_DIGIT=68;
+	public const int INTEGER=69;
+	public const int MINUS=70;
+	public const int MULT=71;
+	public const int OCTAL_DIGIT=72;
+	public const int PLUS=73;
+	public const int WHITESPACE=74;
 
     // delegates
     // delegators
@@ -500,6 +560,2633 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 	}
 	// $ANTLR end "FLOAT"
 
+	partial void EnterRule_CURRENCY();
+	partial void LeaveRule_CURRENCY();
+
+	// $ANTLR start "CURRENCY"
+	[GrammarRule("CURRENCY")]
+	private void mCURRENCY()
+	{
+		EnterRule_CURRENCY();
+		EnterRule("CURRENCY", 7);
+		TraceIn("CURRENCY", 7);
+		try
+		{
+			int _type = CURRENCY;
+			int _channel = DefaultTokenChannel;
+			// formula.g:54:2: ( CURR_SYM ( ' ' )? ( DIGIT )* '.' ( DIGIT )+ | CURR_SYM ( ' ' )? ( DIGIT )+ )
+			int alt12=2;
+			try { DebugEnterDecision(12, false);
+			try
+			{
+				alt12 = dfa12.Predict(input);
+			}
+			catch (NoViableAltException nvae)
+			{
+				DebugRecognitionException(nvae);
+				throw;
+			}
+			} finally { DebugExitDecision(12); }
+			switch (alt12)
+			{
+			case 1:
+				DebugEnterAlt(1);
+				// formula.g:54:4: CURR_SYM ( ' ' )? ( DIGIT )* '.' ( DIGIT )+
+				{
+				DebugLocation(54, 4);
+				mCURR_SYM(); 
+				DebugLocation(54, 13);
+				// formula.g:54:13: ( ' ' )?
+				int alt7=2;
+				try { DebugEnterSubRule(7);
+				try { DebugEnterDecision(7, false);
+				int LA7_0 = input.LA(1);
+
+				if ((LA7_0==' '))
+				{
+					alt7 = 1;
+				}
+				} finally { DebugExitDecision(7); }
+				switch (alt7)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// formula.g:54:13: ' '
+					{
+					DebugLocation(54, 13);
+					Match(' '); 
+
+					}
+					break;
+
+				}
+				} finally { DebugExitSubRule(7); }
+
+				DebugLocation(54, 18);
+				// formula.g:54:18: ( DIGIT )*
+				try { DebugEnterSubRule(8);
+				while (true)
+				{
+					int alt8=2;
+					try { DebugEnterDecision(8, false);
+					int LA8_0 = input.LA(1);
+
+					if (((LA8_0>='1' && LA8_0<='9')))
+					{
+						alt8 = 1;
+					}
+
+
+					} finally { DebugExitDecision(8); }
+					switch ( alt8 )
+					{
+					case 1:
+						DebugEnterAlt(1);
+						// formula.g:54:18: DIGIT
+						{
+						DebugLocation(54, 18);
+						mDIGIT(); 
+
+						}
+						break;
+
+					default:
+						goto loop8;
+					}
+				}
+
+				loop8:
+					;
+
+				} finally { DebugExitSubRule(8); }
+
+				DebugLocation(54, 25);
+				Match('.'); 
+				DebugLocation(54, 29);
+				// formula.g:54:29: ( DIGIT )+
+				int cnt9=0;
+				try { DebugEnterSubRule(9);
+				while (true)
+				{
+					int alt9=2;
+					try { DebugEnterDecision(9, false);
+					int LA9_0 = input.LA(1);
+
+					if (((LA9_0>='1' && LA9_0<='9')))
+					{
+						alt9 = 1;
+					}
+
+
+					} finally { DebugExitDecision(9); }
+					switch (alt9)
+					{
+					case 1:
+						DebugEnterAlt(1);
+						// formula.g:54:29: DIGIT
+						{
+						DebugLocation(54, 29);
+						mDIGIT(); 
+
+						}
+						break;
+
+					default:
+						if (cnt9 >= 1)
+							goto loop9;
+
+						EarlyExitException eee9 = new EarlyExitException( 9, input );
+						DebugRecognitionException(eee9);
+						throw eee9;
+					}
+					cnt9++;
+				}
+				loop9:
+					;
+
+				} finally { DebugExitSubRule(9); }
+
+
+				}
+				break;
+			case 2:
+				DebugEnterAlt(2);
+				// formula.g:55:4: CURR_SYM ( ' ' )? ( DIGIT )+
+				{
+				DebugLocation(55, 4);
+				mCURR_SYM(); 
+				DebugLocation(55, 13);
+				// formula.g:55:13: ( ' ' )?
+				int alt10=2;
+				try { DebugEnterSubRule(10);
+				try { DebugEnterDecision(10, false);
+				int LA10_0 = input.LA(1);
+
+				if ((LA10_0==' '))
+				{
+					alt10 = 1;
+				}
+				} finally { DebugExitDecision(10); }
+				switch (alt10)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// formula.g:55:13: ' '
+					{
+					DebugLocation(55, 13);
+					Match(' '); 
+
+					}
+					break;
+
+				}
+				} finally { DebugExitSubRule(10); }
+
+				DebugLocation(55, 18);
+				// formula.g:55:18: ( DIGIT )+
+				int cnt11=0;
+				try { DebugEnterSubRule(11);
+				while (true)
+				{
+					int alt11=2;
+					try { DebugEnterDecision(11, false);
+					int LA11_0 = input.LA(1);
+
+					if (((LA11_0>='1' && LA11_0<='9')))
+					{
+						alt11 = 1;
+					}
+
+
+					} finally { DebugExitDecision(11); }
+					switch (alt11)
+					{
+					case 1:
+						DebugEnterAlt(1);
+						// formula.g:55:18: DIGIT
+						{
+						DebugLocation(55, 18);
+						mDIGIT(); 
+
+						}
+						break;
+
+					default:
+						if (cnt11 >= 1)
+							goto loop11;
+
+						EarlyExitException eee11 = new EarlyExitException( 11, input );
+						DebugRecognitionException(eee11);
+						throw eee11;
+					}
+					cnt11++;
+				}
+				loop11:
+					;
+
+				} finally { DebugExitSubRule(11); }
+
+
+				}
+				break;
+
+			}
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("CURRENCY", 7);
+			LeaveRule("CURRENCY", 7);
+			LeaveRule_CURRENCY();
+		}
+	}
+	// $ANTLR end "CURRENCY"
+
+	partial void EnterRule_CURR_SYM();
+	partial void LeaveRule_CURR_SYM();
+
+	// $ANTLR start "CURR_SYM"
+	[GrammarRule("CURR_SYM")]
+	private void mCURR_SYM()
+	{
+		EnterRule_CURR_SYM();
+		EnterRule("CURR_SYM", 8);
+		TraceIn("CURR_SYM", 8);
+		try
+		{
+			// formula.g:60:5: ( ( CURR_ALL | CURR_AFN | CURR_USD | CURR_AWG | CURR_AZN | CURR_BYR | CURR_BZD | CURR_BOB | CURR_BAM | CURR_BWP | CURR_BGN | CURR_BRL | CURR_KHR | CURR_CRC | CURR_HRK | CURR_CUP | CURR_CZK | CURR_DKK | CURR_DOP | CURR_GBP | CURR_EUR | CURR_GHS | CURR_GTQ | CURR_HNL | CURR_HUF | CURR_IDR | CURR_IRR | CURR_ILS | CURR_JMD | CURR_JPY | CURR_LAK | CURR_MKD | CURR_MYR | CURR_MNT | CURR_MZN | CURR_NIO | CURR_NGN | CURR_PAB | CURR_PYG | CURR_PEN | CURR_PLN | CURR_RON | CURR_RUB | CURR_RSD | CURR_SOS | CURR_ZAR | CURR_CHF | CURR_TWD | CURR_THB | CURR_TTD | CURR_UAH | CURR_UYU | CURR_VEF | CURR_VND | CURR_ZWD | CURR_XBT ) )
+			DebugEnterAlt(1);
+			// formula.g:60:9: ( CURR_ALL | CURR_AFN | CURR_USD | CURR_AWG | CURR_AZN | CURR_BYR | CURR_BZD | CURR_BOB | CURR_BAM | CURR_BWP | CURR_BGN | CURR_BRL | CURR_KHR | CURR_CRC | CURR_HRK | CURR_CUP | CURR_CZK | CURR_DKK | CURR_DOP | CURR_GBP | CURR_EUR | CURR_GHS | CURR_GTQ | CURR_HNL | CURR_HUF | CURR_IDR | CURR_IRR | CURR_ILS | CURR_JMD | CURR_JPY | CURR_LAK | CURR_MKD | CURR_MYR | CURR_MNT | CURR_MZN | CURR_NIO | CURR_NGN | CURR_PAB | CURR_PYG | CURR_PEN | CURR_PLN | CURR_RON | CURR_RUB | CURR_RSD | CURR_SOS | CURR_ZAR | CURR_CHF | CURR_TWD | CURR_THB | CURR_TTD | CURR_UAH | CURR_UYU | CURR_VEF | CURR_VND | CURR_ZWD | CURR_XBT )
+			{
+			DebugLocation(60, 9);
+			// formula.g:60:9: ( CURR_ALL | CURR_AFN | CURR_USD | CURR_AWG | CURR_AZN | CURR_BYR | CURR_BZD | CURR_BOB | CURR_BAM | CURR_BWP | CURR_BGN | CURR_BRL | CURR_KHR | CURR_CRC | CURR_HRK | CURR_CUP | CURR_CZK | CURR_DKK | CURR_DOP | CURR_GBP | CURR_EUR | CURR_GHS | CURR_GTQ | CURR_HNL | CURR_HUF | CURR_IDR | CURR_IRR | CURR_ILS | CURR_JMD | CURR_JPY | CURR_LAK | CURR_MKD | CURR_MYR | CURR_MNT | CURR_MZN | CURR_NIO | CURR_NGN | CURR_PAB | CURR_PYG | CURR_PEN | CURR_PLN | CURR_RON | CURR_RUB | CURR_RSD | CURR_SOS | CURR_ZAR | CURR_CHF | CURR_TWD | CURR_THB | CURR_TTD | CURR_UAH | CURR_UYU | CURR_VEF | CURR_VND | CURR_ZWD | CURR_XBT )
+			int alt13=56;
+			try { DebugEnterSubRule(13);
+			try { DebugEnterDecision(13, false);
+			try
+			{
+				alt13 = dfa13.Predict(input);
+			}
+			catch (NoViableAltException nvae)
+			{
+				DebugRecognitionException(nvae);
+				throw;
+			}
+			} finally { DebugExitDecision(13); }
+			switch (alt13)
+			{
+			case 1:
+				DebugEnterAlt(1);
+				// formula.g:60:10: CURR_ALL
+				{
+				DebugLocation(60, 10);
+				mCURR_ALL(); 
+
+				}
+				break;
+			case 2:
+				DebugEnterAlt(2);
+				// formula.g:60:19: CURR_AFN
+				{
+				DebugLocation(60, 19);
+				mCURR_AFN(); 
+
+				}
+				break;
+			case 3:
+				DebugEnterAlt(3);
+				// formula.g:60:28: CURR_USD
+				{
+				DebugLocation(60, 28);
+				mCURR_USD(); 
+
+				}
+				break;
+			case 4:
+				DebugEnterAlt(4);
+				// formula.g:60:37: CURR_AWG
+				{
+				DebugLocation(60, 37);
+				mCURR_AWG(); 
+
+				}
+				break;
+			case 5:
+				DebugEnterAlt(5);
+				// formula.g:60:46: CURR_AZN
+				{
+				DebugLocation(60, 46);
+				mCURR_AZN(); 
+
+				}
+				break;
+			case 6:
+				DebugEnterAlt(6);
+				// formula.g:60:55: CURR_BYR
+				{
+				DebugLocation(60, 55);
+				mCURR_BYR(); 
+
+				}
+				break;
+			case 7:
+				DebugEnterAlt(7);
+				// formula.g:60:64: CURR_BZD
+				{
+				DebugLocation(60, 64);
+				mCURR_BZD(); 
+
+				}
+				break;
+			case 8:
+				DebugEnterAlt(8);
+				// formula.g:61:6: CURR_BOB
+				{
+				DebugLocation(61, 6);
+				mCURR_BOB(); 
+
+				}
+				break;
+			case 9:
+				DebugEnterAlt(9);
+				// formula.g:61:15: CURR_BAM
+				{
+				DebugLocation(61, 15);
+				mCURR_BAM(); 
+
+				}
+				break;
+			case 10:
+				DebugEnterAlt(10);
+				// formula.g:61:24: CURR_BWP
+				{
+				DebugLocation(61, 24);
+				mCURR_BWP(); 
+
+				}
+				break;
+			case 11:
+				DebugEnterAlt(11);
+				// formula.g:61:33: CURR_BGN
+				{
+				DebugLocation(61, 33);
+				mCURR_BGN(); 
+
+				}
+				break;
+			case 12:
+				DebugEnterAlt(12);
+				// formula.g:61:42: CURR_BRL
+				{
+				DebugLocation(61, 42);
+				mCURR_BRL(); 
+
+				}
+				break;
+			case 13:
+				DebugEnterAlt(13);
+				// formula.g:61:51: CURR_KHR
+				{
+				DebugLocation(61, 51);
+				mCURR_KHR(); 
+
+				}
+				break;
+			case 14:
+				DebugEnterAlt(14);
+				// formula.g:61:60: CURR_CRC
+				{
+				DebugLocation(61, 60);
+				mCURR_CRC(); 
+
+				}
+				break;
+			case 15:
+				DebugEnterAlt(15);
+				// formula.g:62:6: CURR_HRK
+				{
+				DebugLocation(62, 6);
+				mCURR_HRK(); 
+
+				}
+				break;
+			case 16:
+				DebugEnterAlt(16);
+				// formula.g:62:15: CURR_CUP
+				{
+				DebugLocation(62, 15);
+				mCURR_CUP(); 
+
+				}
+				break;
+			case 17:
+				DebugEnterAlt(17);
+				// formula.g:62:24: CURR_CZK
+				{
+				DebugLocation(62, 24);
+				mCURR_CZK(); 
+
+				}
+				break;
+			case 18:
+				DebugEnterAlt(18);
+				// formula.g:62:33: CURR_DKK
+				{
+				DebugLocation(62, 33);
+				mCURR_DKK(); 
+
+				}
+				break;
+			case 19:
+				DebugEnterAlt(19);
+				// formula.g:62:42: CURR_DOP
+				{
+				DebugLocation(62, 42);
+				mCURR_DOP(); 
+
+				}
+				break;
+			case 20:
+				DebugEnterAlt(20);
+				// formula.g:62:51: CURR_GBP
+				{
+				DebugLocation(62, 51);
+				mCURR_GBP(); 
+
+				}
+				break;
+			case 21:
+				DebugEnterAlt(21);
+				// formula.g:62:60: CURR_EUR
+				{
+				DebugLocation(62, 60);
+				mCURR_EUR(); 
+
+				}
+				break;
+			case 22:
+				DebugEnterAlt(22);
+				// formula.g:62:69: CURR_GHS
+				{
+				DebugLocation(62, 69);
+				mCURR_GHS(); 
+
+				}
+				break;
+			case 23:
+				DebugEnterAlt(23);
+				// formula.g:63:6: CURR_GTQ
+				{
+				DebugLocation(63, 6);
+				mCURR_GTQ(); 
+
+				}
+				break;
+			case 24:
+				DebugEnterAlt(24);
+				// formula.g:63:15: CURR_HNL
+				{
+				DebugLocation(63, 15);
+				mCURR_HNL(); 
+
+				}
+				break;
+			case 25:
+				DebugEnterAlt(25);
+				// formula.g:63:24: CURR_HUF
+				{
+				DebugLocation(63, 24);
+				mCURR_HUF(); 
+
+				}
+				break;
+			case 26:
+				DebugEnterAlt(26);
+				// formula.g:63:33: CURR_IDR
+				{
+				DebugLocation(63, 33);
+				mCURR_IDR(); 
+
+				}
+				break;
+			case 27:
+				DebugEnterAlt(27);
+				// formula.g:63:42: CURR_IRR
+				{
+				DebugLocation(63, 42);
+				mCURR_IRR(); 
+
+				}
+				break;
+			case 28:
+				DebugEnterAlt(28);
+				// formula.g:63:51: CURR_ILS
+				{
+				DebugLocation(63, 51);
+				mCURR_ILS(); 
+
+				}
+				break;
+			case 29:
+				DebugEnterAlt(29);
+				// formula.g:63:60: CURR_JMD
+				{
+				DebugLocation(63, 60);
+				mCURR_JMD(); 
+
+				}
+				break;
+			case 30:
+				DebugEnterAlt(30);
+				// formula.g:63:69: CURR_JPY
+				{
+				DebugLocation(63, 69);
+				mCURR_JPY(); 
+
+				}
+				break;
+			case 31:
+				DebugEnterAlt(31);
+				// formula.g:64:6: CURR_LAK
+				{
+				DebugLocation(64, 6);
+				mCURR_LAK(); 
+
+				}
+				break;
+			case 32:
+				DebugEnterAlt(32);
+				// formula.g:64:15: CURR_MKD
+				{
+				DebugLocation(64, 15);
+				mCURR_MKD(); 
+
+				}
+				break;
+			case 33:
+				DebugEnterAlt(33);
+				// formula.g:64:24: CURR_MYR
+				{
+				DebugLocation(64, 24);
+				mCURR_MYR(); 
+
+				}
+				break;
+			case 34:
+				DebugEnterAlt(34);
+				// formula.g:64:33: CURR_MNT
+				{
+				DebugLocation(64, 33);
+				mCURR_MNT(); 
+
+				}
+				break;
+			case 35:
+				DebugEnterAlt(35);
+				// formula.g:64:42: CURR_MZN
+				{
+				DebugLocation(64, 42);
+				mCURR_MZN(); 
+
+				}
+				break;
+			case 36:
+				DebugEnterAlt(36);
+				// formula.g:64:51: CURR_NIO
+				{
+				DebugLocation(64, 51);
+				mCURR_NIO(); 
+
+				}
+				break;
+			case 37:
+				DebugEnterAlt(37);
+				// formula.g:64:60: CURR_NGN
+				{
+				DebugLocation(64, 60);
+				mCURR_NGN(); 
+
+				}
+				break;
+			case 38:
+				DebugEnterAlt(38);
+				// formula.g:64:69: CURR_PAB
+				{
+				DebugLocation(64, 69);
+				mCURR_PAB(); 
+
+				}
+				break;
+			case 39:
+				DebugEnterAlt(39);
+				// formula.g:65:6: CURR_PYG
+				{
+				DebugLocation(65, 6);
+				mCURR_PYG(); 
+
+				}
+				break;
+			case 40:
+				DebugEnterAlt(40);
+				// formula.g:65:15: CURR_PEN
+				{
+				DebugLocation(65, 15);
+				mCURR_PEN(); 
+
+				}
+				break;
+			case 41:
+				DebugEnterAlt(41);
+				// formula.g:65:24: CURR_PLN
+				{
+				DebugLocation(65, 24);
+				mCURR_PLN(); 
+
+				}
+				break;
+			case 42:
+				DebugEnterAlt(42);
+				// formula.g:65:33: CURR_RON
+				{
+				DebugLocation(65, 33);
+				mCURR_RON(); 
+
+				}
+				break;
+			case 43:
+				DebugEnterAlt(43);
+				// formula.g:65:42: CURR_RUB
+				{
+				DebugLocation(65, 42);
+				mCURR_RUB(); 
+
+				}
+				break;
+			case 44:
+				DebugEnterAlt(44);
+				// formula.g:65:51: CURR_RSD
+				{
+				DebugLocation(65, 51);
+				mCURR_RSD(); 
+
+				}
+				break;
+			case 45:
+				DebugEnterAlt(45);
+				// formula.g:65:60: CURR_SOS
+				{
+				DebugLocation(65, 60);
+				mCURR_SOS(); 
+
+				}
+				break;
+			case 46:
+				DebugEnterAlt(46);
+				// formula.g:65:69: CURR_ZAR
+				{
+				DebugLocation(65, 69);
+				mCURR_ZAR(); 
+
+				}
+				break;
+			case 47:
+				DebugEnterAlt(47);
+				// formula.g:66:6: CURR_CHF
+				{
+				DebugLocation(66, 6);
+				mCURR_CHF(); 
+
+				}
+				break;
+			case 48:
+				DebugEnterAlt(48);
+				// formula.g:66:15: CURR_TWD
+				{
+				DebugLocation(66, 15);
+				mCURR_TWD(); 
+
+				}
+				break;
+			case 49:
+				DebugEnterAlt(49);
+				// formula.g:66:24: CURR_THB
+				{
+				DebugLocation(66, 24);
+				mCURR_THB(); 
+
+				}
+				break;
+			case 50:
+				DebugEnterAlt(50);
+				// formula.g:66:33: CURR_TTD
+				{
+				DebugLocation(66, 33);
+				mCURR_TTD(); 
+
+				}
+				break;
+			case 51:
+				DebugEnterAlt(51);
+				// formula.g:66:42: CURR_UAH
+				{
+				DebugLocation(66, 42);
+				mCURR_UAH(); 
+
+				}
+				break;
+			case 52:
+				DebugEnterAlt(52);
+				// formula.g:66:51: CURR_UYU
+				{
+				DebugLocation(66, 51);
+				mCURR_UYU(); 
+
+				}
+				break;
+			case 53:
+				DebugEnterAlt(53);
+				// formula.g:66:60: CURR_VEF
+				{
+				DebugLocation(66, 60);
+				mCURR_VEF(); 
+
+				}
+				break;
+			case 54:
+				DebugEnterAlt(54);
+				// formula.g:66:69: CURR_VND
+				{
+				DebugLocation(66, 69);
+				mCURR_VND(); 
+
+				}
+				break;
+			case 55:
+				DebugEnterAlt(55);
+				// formula.g:67:6: CURR_ZWD
+				{
+				DebugLocation(67, 6);
+				mCURR_ZWD(); 
+
+				}
+				break;
+			case 56:
+				DebugEnterAlt(56);
+				// formula.g:67:15: CURR_XBT
+				{
+				DebugLocation(67, 15);
+				mCURR_XBT(); 
+
+				}
+				break;
+
+			}
+			} finally { DebugExitSubRule(13); }
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_SYM", 8);
+			LeaveRule("CURR_SYM", 8);
+			LeaveRule_CURR_SYM();
+		}
+	}
+	// $ANTLR end "CURR_SYM"
+
+	partial void EnterRule_CURR_ALL();
+	partial void LeaveRule_CURR_ALL();
+
+	// $ANTLR start "CURR_ALL"
+	[GrammarRule("CURR_ALL")]
+	private void mCURR_ALL()
+	{
+		EnterRule_CURR_ALL();
+		EnterRule("CURR_ALL", 9);
+		TraceIn("CURR_ALL", 9);
+		try
+		{
+			// formula.g:69:18: ( 'Lek' )
+			DebugEnterAlt(1);
+			// formula.g:69:20: 'Lek'
+			{
+			DebugLocation(69, 20);
+			Match("Lek"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_ALL", 9);
+			LeaveRule("CURR_ALL", 9);
+			LeaveRule_CURR_ALL();
+		}
+	}
+	// $ANTLR end "CURR_ALL"
+
+	partial void EnterRule_CURR_AFN();
+	partial void LeaveRule_CURR_AFN();
+
+	// $ANTLR start "CURR_AFN"
+	[GrammarRule("CURR_AFN")]
+	private void mCURR_AFN()
+	{
+		EnterRule_CURR_AFN();
+		EnterRule("CURR_AFN", 10);
+		TraceIn("CURR_AFN", 10);
+		try
+		{
+			// formula.g:70:18: ( '\\u060B' )
+			DebugEnterAlt(1);
+			// formula.g:70:20: '\\u060B'
+			{
+			DebugLocation(70, 20);
+			Match('\u060B'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_AFN", 10);
+			LeaveRule("CURR_AFN", 10);
+			LeaveRule_CURR_AFN();
+		}
+	}
+	// $ANTLR end "CURR_AFN"
+
+	partial void EnterRule_CURR_USD();
+	partial void LeaveRule_CURR_USD();
+
+	// $ANTLR start "CURR_USD"
+	[GrammarRule("CURR_USD")]
+	private void mCURR_USD()
+	{
+		EnterRule_CURR_USD();
+		EnterRule("CURR_USD", 11);
+		TraceIn("CURR_USD", 11);
+		try
+		{
+			// formula.g:71:18: ( '$' )
+			DebugEnterAlt(1);
+			// formula.g:71:20: '$'
+			{
+			DebugLocation(71, 20);
+			Match('$'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_USD", 11);
+			LeaveRule("CURR_USD", 11);
+			LeaveRule_CURR_USD();
+		}
+	}
+	// $ANTLR end "CURR_USD"
+
+	partial void EnterRule_CURR_AWG();
+	partial void LeaveRule_CURR_AWG();
+
+	// $ANTLR start "CURR_AWG"
+	[GrammarRule("CURR_AWG")]
+	private void mCURR_AWG()
+	{
+		EnterRule_CURR_AWG();
+		EnterRule("CURR_AWG", 12);
+		TraceIn("CURR_AWG", 12);
+		try
+		{
+			// formula.g:83:18: ( '\\u0192' )
+			DebugEnterAlt(1);
+			// formula.g:83:20: '\\u0192'
+			{
+			DebugLocation(83, 20);
+			Match('\u0192'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_AWG", 12);
+			LeaveRule("CURR_AWG", 12);
+			LeaveRule_CURR_AWG();
+		}
+	}
+	// $ANTLR end "CURR_AWG"
+
+	partial void EnterRule_CURR_AZN();
+	partial void LeaveRule_CURR_AZN();
+
+	// $ANTLR start "CURR_AZN"
+	[GrammarRule("CURR_AZN")]
+	private void mCURR_AZN()
+	{
+		EnterRule_CURR_AZN();
+		EnterRule("CURR_AZN", 13);
+		TraceIn("CURR_AZN", 13);
+		try
+		{
+			// formula.g:84:18: ( '\\u043c\\u0430\\u043d' )
+			DebugEnterAlt(1);
+			// formula.g:84:20: '\\u043c\\u0430\\u043d'
+			{
+			DebugLocation(84, 20);
+			Match("\u043c\u0430\u043d"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_AZN", 13);
+			LeaveRule("CURR_AZN", 13);
+			LeaveRule_CURR_AZN();
+		}
+	}
+	// $ANTLR end "CURR_AZN"
+
+	partial void EnterRule_CURR_BYR();
+	partial void LeaveRule_CURR_BYR();
+
+	// $ANTLR start "CURR_BYR"
+	[GrammarRule("CURR_BYR")]
+	private void mCURR_BYR()
+	{
+		EnterRule_CURR_BYR();
+		EnterRule("CURR_BYR", 14);
+		TraceIn("CURR_BYR", 14);
+		try
+		{
+			// formula.g:85:18: ( 'p.' )
+			DebugEnterAlt(1);
+			// formula.g:85:20: 'p.'
+			{
+			DebugLocation(85, 20);
+			Match("p."); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_BYR", 14);
+			LeaveRule("CURR_BYR", 14);
+			LeaveRule_CURR_BYR();
+		}
+	}
+	// $ANTLR end "CURR_BYR"
+
+	partial void EnterRule_CURR_BZD();
+	partial void LeaveRule_CURR_BZD();
+
+	// $ANTLR start "CURR_BZD"
+	[GrammarRule("CURR_BZD")]
+	private void mCURR_BZD()
+	{
+		EnterRule_CURR_BZD();
+		EnterRule("CURR_BZD", 15);
+		TraceIn("CURR_BZD", 15);
+		try
+		{
+			// formula.g:86:18: ( 'BZ$' )
+			DebugEnterAlt(1);
+			// formula.g:86:20: 'BZ$'
+			{
+			DebugLocation(86, 20);
+			Match("BZ$"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_BZD", 15);
+			LeaveRule("CURR_BZD", 15);
+			LeaveRule_CURR_BZD();
+		}
+	}
+	// $ANTLR end "CURR_BZD"
+
+	partial void EnterRule_CURR_BOB();
+	partial void LeaveRule_CURR_BOB();
+
+	// $ANTLR start "CURR_BOB"
+	[GrammarRule("CURR_BOB")]
+	private void mCURR_BOB()
+	{
+		EnterRule_CURR_BOB();
+		EnterRule("CURR_BOB", 16);
+		TraceIn("CURR_BOB", 16);
+		try
+		{
+			// formula.g:87:18: ( '$b' )
+			DebugEnterAlt(1);
+			// formula.g:87:20: '$b'
+			{
+			DebugLocation(87, 20);
+			Match("$b"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_BOB", 16);
+			LeaveRule("CURR_BOB", 16);
+			LeaveRule_CURR_BOB();
+		}
+	}
+	// $ANTLR end "CURR_BOB"
+
+	partial void EnterRule_CURR_BAM();
+	partial void LeaveRule_CURR_BAM();
+
+	// $ANTLR start "CURR_BAM"
+	[GrammarRule("CURR_BAM")]
+	private void mCURR_BAM()
+	{
+		EnterRule_CURR_BAM();
+		EnterRule("CURR_BAM", 17);
+		TraceIn("CURR_BAM", 17);
+		try
+		{
+			// formula.g:88:18: ( 'KM' )
+			DebugEnterAlt(1);
+			// formula.g:88:20: 'KM'
+			{
+			DebugLocation(88, 20);
+			Match("KM"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_BAM", 17);
+			LeaveRule("CURR_BAM", 17);
+			LeaveRule_CURR_BAM();
+		}
+	}
+	// $ANTLR end "CURR_BAM"
+
+	partial void EnterRule_CURR_BWP();
+	partial void LeaveRule_CURR_BWP();
+
+	// $ANTLR start "CURR_BWP"
+	[GrammarRule("CURR_BWP")]
+	private void mCURR_BWP()
+	{
+		EnterRule_CURR_BWP();
+		EnterRule("CURR_BWP", 18);
+		TraceIn("CURR_BWP", 18);
+		try
+		{
+			// formula.g:89:18: ( 'P' )
+			DebugEnterAlt(1);
+			// formula.g:89:20: 'P'
+			{
+			DebugLocation(89, 20);
+			Match('P'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_BWP", 18);
+			LeaveRule("CURR_BWP", 18);
+			LeaveRule_CURR_BWP();
+		}
+	}
+	// $ANTLR end "CURR_BWP"
+
+	partial void EnterRule_CURR_BGN();
+	partial void LeaveRule_CURR_BGN();
+
+	// $ANTLR start "CURR_BGN"
+	[GrammarRule("CURR_BGN")]
+	private void mCURR_BGN()
+	{
+		EnterRule_CURR_BGN();
+		EnterRule("CURR_BGN", 19);
+		TraceIn("CURR_BGN", 19);
+		try
+		{
+			// formula.g:90:18: ( '\\u043b\\u0432' )
+			DebugEnterAlt(1);
+			// formula.g:90:20: '\\u043b\\u0432'
+			{
+			DebugLocation(90, 20);
+			Match("\u043b\u0432"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_BGN", 19);
+			LeaveRule("CURR_BGN", 19);
+			LeaveRule_CURR_BGN();
+		}
+	}
+	// $ANTLR end "CURR_BGN"
+
+	partial void EnterRule_CURR_BRL();
+	partial void LeaveRule_CURR_BRL();
+
+	// $ANTLR start "CURR_BRL"
+	[GrammarRule("CURR_BRL")]
+	private void mCURR_BRL()
+	{
+		EnterRule_CURR_BRL();
+		EnterRule("CURR_BRL", 20);
+		TraceIn("CURR_BRL", 20);
+		try
+		{
+			// formula.g:92:18: ( 'R$' )
+			DebugEnterAlt(1);
+			// formula.g:92:20: 'R$'
+			{
+			DebugLocation(92, 20);
+			Match("R$"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_BRL", 20);
+			LeaveRule("CURR_BRL", 20);
+			LeaveRule_CURR_BRL();
+		}
+	}
+	// $ANTLR end "CURR_BRL"
+
+	partial void EnterRule_CURR_KHR();
+	partial void LeaveRule_CURR_KHR();
+
+	// $ANTLR start "CURR_KHR"
+	[GrammarRule("CURR_KHR")]
+	private void mCURR_KHR()
+	{
+		EnterRule_CURR_KHR();
+		EnterRule("CURR_KHR", 21);
+		TraceIn("CURR_KHR", 21);
+		try
+		{
+			// formula.g:93:18: ( '\\u17db' )
+			DebugEnterAlt(1);
+			// formula.g:93:20: '\\u17db'
+			{
+			DebugLocation(93, 20);
+			Match('\u17DB'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_KHR", 21);
+			LeaveRule("CURR_KHR", 21);
+			LeaveRule_CURR_KHR();
+		}
+	}
+	// $ANTLR end "CURR_KHR"
+
+	partial void EnterRule_CURR_JPY();
+	partial void LeaveRule_CURR_JPY();
+
+	// $ANTLR start "CURR_JPY"
+	[GrammarRule("CURR_JPY")]
+	private void mCURR_JPY()
+	{
+		EnterRule_CURR_JPY();
+		EnterRule("CURR_JPY", 22);
+		TraceIn("CURR_JPY", 22);
+		try
+		{
+			// formula.g:94:18: ( '¥' )
+			DebugEnterAlt(1);
+			// formula.g:94:20: '¥'
+			{
+			DebugLocation(94, 20);
+			Match('\u00A5'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_JPY", 22);
+			LeaveRule("CURR_JPY", 22);
+			LeaveRule_CURR_JPY();
+		}
+	}
+	// $ANTLR end "CURR_JPY"
+
+	partial void EnterRule_CURR_CRC();
+	partial void LeaveRule_CURR_CRC();
+
+	// $ANTLR start "CURR_CRC"
+	[GrammarRule("CURR_CRC")]
+	private void mCURR_CRC()
+	{
+		EnterRule_CURR_CRC();
+		EnterRule("CURR_CRC", 23);
+		TraceIn("CURR_CRC", 23);
+		try
+		{
+			// formula.g:95:18: ( '\\u20a1' )
+			DebugEnterAlt(1);
+			// formula.g:95:20: '\\u20a1'
+			{
+			DebugLocation(95, 20);
+			Match('\u20A1'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_CRC", 23);
+			LeaveRule("CURR_CRC", 23);
+			LeaveRule_CURR_CRC();
+		}
+	}
+	// $ANTLR end "CURR_CRC"
+
+	partial void EnterRule_CURR_HRK();
+	partial void LeaveRule_CURR_HRK();
+
+	// $ANTLR start "CURR_HRK"
+	[GrammarRule("CURR_HRK")]
+	private void mCURR_HRK()
+	{
+		EnterRule_CURR_HRK();
+		EnterRule("CURR_HRK", 24);
+		TraceIn("CURR_HRK", 24);
+		try
+		{
+			// formula.g:96:18: ( 'kn' )
+			DebugEnterAlt(1);
+			// formula.g:96:20: 'kn'
+			{
+			DebugLocation(96, 20);
+			Match("kn"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_HRK", 24);
+			LeaveRule("CURR_HRK", 24);
+			LeaveRule_CURR_HRK();
+		}
+	}
+	// $ANTLR end "CURR_HRK"
+
+	partial void EnterRule_CURR_CUP();
+	partial void LeaveRule_CURR_CUP();
+
+	// $ANTLR start "CURR_CUP"
+	[GrammarRule("CURR_CUP")]
+	private void mCURR_CUP()
+	{
+		EnterRule_CURR_CUP();
+		EnterRule("CURR_CUP", 25);
+		TraceIn("CURR_CUP", 25);
+		try
+		{
+			// formula.g:97:18: ( '\\u20b1' )
+			DebugEnterAlt(1);
+			// formula.g:97:20: '\\u20b1'
+			{
+			DebugLocation(97, 20);
+			Match('\u20B1'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_CUP", 25);
+			LeaveRule("CURR_CUP", 25);
+			LeaveRule_CURR_CUP();
+		}
+	}
+	// $ANTLR end "CURR_CUP"
+
+	partial void EnterRule_CURR_CZK();
+	partial void LeaveRule_CURR_CZK();
+
+	// $ANTLR start "CURR_CZK"
+	[GrammarRule("CURR_CZK")]
+	private void mCURR_CZK()
+	{
+		EnterRule_CURR_CZK();
+		EnterRule("CURR_CZK", 26);
+		TraceIn("CURR_CZK", 26);
+		try
+		{
+			// formula.g:98:18: ( 'K\\u010d' )
+			DebugEnterAlt(1);
+			// formula.g:98:20: 'K\\u010d'
+			{
+			DebugLocation(98, 20);
+			Match("K\u010d"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_CZK", 26);
+			LeaveRule("CURR_CZK", 26);
+			LeaveRule_CURR_CZK();
+		}
+	}
+	// $ANTLR end "CURR_CZK"
+
+	partial void EnterRule_CURR_DKK();
+	partial void LeaveRule_CURR_DKK();
+
+	// $ANTLR start "CURR_DKK"
+	[GrammarRule("CURR_DKK")]
+	private void mCURR_DKK()
+	{
+		EnterRule_CURR_DKK();
+		EnterRule("CURR_DKK", 27);
+		TraceIn("CURR_DKK", 27);
+		try
+		{
+			// formula.g:99:18: ( 'kr' )
+			DebugEnterAlt(1);
+			// formula.g:99:20: 'kr'
+			{
+			DebugLocation(99, 20);
+			Match("kr"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_DKK", 27);
+			LeaveRule("CURR_DKK", 27);
+			LeaveRule_CURR_DKK();
+		}
+	}
+	// $ANTLR end "CURR_DKK"
+
+	partial void EnterRule_CURR_DOP();
+	partial void LeaveRule_CURR_DOP();
+
+	// $ANTLR start "CURR_DOP"
+	[GrammarRule("CURR_DOP")]
+	private void mCURR_DOP()
+	{
+		EnterRule_CURR_DOP();
+		EnterRule("CURR_DOP", 28);
+		TraceIn("CURR_DOP", 28);
+		try
+		{
+			// formula.g:101:18: ( 'RD$' )
+			DebugEnterAlt(1);
+			// formula.g:101:20: 'RD$'
+			{
+			DebugLocation(101, 20);
+			Match("RD$"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_DOP", 28);
+			LeaveRule("CURR_DOP", 28);
+			LeaveRule_CURR_DOP();
+		}
+	}
+	// $ANTLR end "CURR_DOP"
+
+	partial void EnterRule_CURR_GBP();
+	partial void LeaveRule_CURR_GBP();
+
+	// $ANTLR start "CURR_GBP"
+	[GrammarRule("CURR_GBP")]
+	private void mCURR_GBP()
+	{
+		EnterRule_CURR_GBP();
+		EnterRule("CURR_GBP", 29);
+		TraceIn("CURR_GBP", 29);
+		try
+		{
+			// formula.g:102:18: ( '£' )
+			DebugEnterAlt(1);
+			// formula.g:102:20: '£'
+			{
+			DebugLocation(102, 20);
+			Match('\u00A3'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_GBP", 29);
+			LeaveRule("CURR_GBP", 29);
+			LeaveRule_CURR_GBP();
+		}
+	}
+	// $ANTLR end "CURR_GBP"
+
+	partial void EnterRule_CURR_EUR();
+	partial void LeaveRule_CURR_EUR();
+
+	// $ANTLR start "CURR_EUR"
+	[GrammarRule("CURR_EUR")]
+	private void mCURR_EUR()
+	{
+		EnterRule_CURR_EUR();
+		EnterRule("CURR_EUR", 30);
+		TraceIn("CURR_EUR", 30);
+		try
+		{
+			// formula.g:108:18: ( '€' )
+			DebugEnterAlt(1);
+			// formula.g:108:20: '€'
+			{
+			DebugLocation(108, 20);
+			Match('\u20AC'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_EUR", 30);
+			LeaveRule("CURR_EUR", 30);
+			LeaveRule_CURR_EUR();
+		}
+	}
+	// $ANTLR end "CURR_EUR"
+
+	partial void EnterRule_CURR_GHS();
+	partial void LeaveRule_CURR_GHS();
+
+	// $ANTLR start "CURR_GHS"
+	[GrammarRule("CURR_GHS")]
+	private void mCURR_GHS()
+	{
+		EnterRule_CURR_GHS();
+		EnterRule("CURR_GHS", 31);
+		TraceIn("CURR_GHS", 31);
+		try
+		{
+			// formula.g:109:18: ( '\\u00a2' )
+			DebugEnterAlt(1);
+			// formula.g:109:20: '\\u00a2'
+			{
+			DebugLocation(109, 20);
+			Match('\u00A2'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_GHS", 31);
+			LeaveRule("CURR_GHS", 31);
+			LeaveRule_CURR_GHS();
+		}
+	}
+	// $ANTLR end "CURR_GHS"
+
+	partial void EnterRule_CURR_GTQ();
+	partial void LeaveRule_CURR_GTQ();
+
+	// $ANTLR start "CURR_GTQ"
+	[GrammarRule("CURR_GTQ")]
+	private void mCURR_GTQ()
+	{
+		EnterRule_CURR_GTQ();
+		EnterRule("CURR_GTQ", 32);
+		TraceIn("CURR_GTQ", 32);
+		try
+		{
+			// formula.g:110:18: ( 'Q' )
+			DebugEnterAlt(1);
+			// formula.g:110:20: 'Q'
+			{
+			DebugLocation(110, 20);
+			Match('Q'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_GTQ", 32);
+			LeaveRule("CURR_GTQ", 32);
+			LeaveRule_CURR_GTQ();
+		}
+	}
+	// $ANTLR end "CURR_GTQ"
+
+	partial void EnterRule_CURR_HNL();
+	partial void LeaveRule_CURR_HNL();
+
+	// $ANTLR start "CURR_HNL"
+	[GrammarRule("CURR_HNL")]
+	private void mCURR_HNL()
+	{
+		EnterRule_CURR_HNL();
+		EnterRule("CURR_HNL", 33);
+		TraceIn("CURR_HNL", 33);
+		try
+		{
+			// formula.g:111:18: ( 'L' )
+			DebugEnterAlt(1);
+			// formula.g:111:20: 'L'
+			{
+			DebugLocation(111, 20);
+			Match('L'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_HNL", 33);
+			LeaveRule("CURR_HNL", 33);
+			LeaveRule_CURR_HNL();
+		}
+	}
+	// $ANTLR end "CURR_HNL"
+
+	partial void EnterRule_CURR_HUF();
+	partial void LeaveRule_CURR_HUF();
+
+	// $ANTLR start "CURR_HUF"
+	[GrammarRule("CURR_HUF")]
+	private void mCURR_HUF()
+	{
+		EnterRule_CURR_HUF();
+		EnterRule("CURR_HUF", 34);
+		TraceIn("CURR_HUF", 34);
+		try
+		{
+			// formula.g:112:18: ( 'Ft' )
+			DebugEnterAlt(1);
+			// formula.g:112:20: 'Ft'
+			{
+			DebugLocation(112, 20);
+			Match("Ft"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_HUF", 34);
+			LeaveRule("CURR_HUF", 34);
+			LeaveRule_CURR_HUF();
+		}
+	}
+	// $ANTLR end "CURR_HUF"
+
+	partial void EnterRule_CURR_IDR();
+	partial void LeaveRule_CURR_IDR();
+
+	// $ANTLR start "CURR_IDR"
+	[GrammarRule("CURR_IDR")]
+	private void mCURR_IDR()
+	{
+		EnterRule_CURR_IDR();
+		EnterRule("CURR_IDR", 35);
+		TraceIn("CURR_IDR", 35);
+		try
+		{
+			// formula.g:113:18: ( 'Rp' )
+			DebugEnterAlt(1);
+			// formula.g:113:20: 'Rp'
+			{
+			DebugLocation(113, 20);
+			Match("Rp"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_IDR", 35);
+			LeaveRule("CURR_IDR", 35);
+			LeaveRule_CURR_IDR();
+		}
+	}
+	// $ANTLR end "CURR_IDR"
+
+	partial void EnterRule_CURR_IRR();
+	partial void LeaveRule_CURR_IRR();
+
+	// $ANTLR start "CURR_IRR"
+	[GrammarRule("CURR_IRR")]
+	private void mCURR_IRR()
+	{
+		EnterRule_CURR_IRR();
+		EnterRule("CURR_IRR", 36);
+		TraceIn("CURR_IRR", 36);
+		try
+		{
+			// formula.g:114:18: ( '\\ufdfc' )
+			DebugEnterAlt(1);
+			// formula.g:114:20: '\\ufdfc'
+			{
+			DebugLocation(114, 20);
+			Match('\uFDFC'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_IRR", 36);
+			LeaveRule("CURR_IRR", 36);
+			LeaveRule_CURR_IRR();
+		}
+	}
+	// $ANTLR end "CURR_IRR"
+
+	partial void EnterRule_CURR_ILS();
+	partial void LeaveRule_CURR_ILS();
+
+	// $ANTLR start "CURR_ILS"
+	[GrammarRule("CURR_ILS")]
+	private void mCURR_ILS()
+	{
+		EnterRule_CURR_ILS();
+		EnterRule("CURR_ILS", 37);
+		TraceIn("CURR_ILS", 37);
+		try
+		{
+			// formula.g:116:18: ( '\\u20aa' )
+			DebugEnterAlt(1);
+			// formula.g:116:20: '\\u20aa'
+			{
+			DebugLocation(116, 20);
+			Match('\u20AA'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_ILS", 37);
+			LeaveRule("CURR_ILS", 37);
+			LeaveRule_CURR_ILS();
+		}
+	}
+	// $ANTLR end "CURR_ILS"
+
+	partial void EnterRule_CURR_JMD();
+	partial void LeaveRule_CURR_JMD();
+
+	// $ANTLR start "CURR_JMD"
+	[GrammarRule("CURR_JMD")]
+	private void mCURR_JMD()
+	{
+		EnterRule_CURR_JMD();
+		EnterRule("CURR_JMD", 38);
+		TraceIn("CURR_JMD", 38);
+		try
+		{
+			// formula.g:117:18: ( 'J$' )
+			DebugEnterAlt(1);
+			// formula.g:117:20: 'J$'
+			{
+			DebugLocation(117, 20);
+			Match("J$"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_JMD", 38);
+			LeaveRule("CURR_JMD", 38);
+			LeaveRule_CURR_JMD();
+		}
+	}
+	// $ANTLR end "CURR_JMD"
+
+	partial void EnterRule_CURR_KPW();
+	partial void LeaveRule_CURR_KPW();
+
+	// $ANTLR start "CURR_KPW"
+	[GrammarRule("CURR_KPW")]
+	private void mCURR_KPW()
+	{
+		EnterRule_CURR_KPW();
+		EnterRule("CURR_KPW", 39);
+		TraceIn("CURR_KPW", 39);
+		try
+		{
+			// formula.g:118:18: ( '\\u20a9' )
+			DebugEnterAlt(1);
+			// formula.g:118:20: '\\u20a9'
+			{
+			DebugLocation(118, 20);
+			Match('\u20A9'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_KPW", 39);
+			LeaveRule("CURR_KPW", 39);
+			LeaveRule_CURR_KPW();
+		}
+	}
+	// $ANTLR end "CURR_KPW"
+
+	partial void EnterRule_CURR_LAK();
+	partial void LeaveRule_CURR_LAK();
+
+	// $ANTLR start "CURR_LAK"
+	[GrammarRule("CURR_LAK")]
+	private void mCURR_LAK()
+	{
+		EnterRule_CURR_LAK();
+		EnterRule("CURR_LAK", 40);
+		TraceIn("CURR_LAK", 40);
+		try
+		{
+			// formula.g:119:18: ( '\\u20ad' )
+			DebugEnterAlt(1);
+			// formula.g:119:20: '\\u20ad'
+			{
+			DebugLocation(119, 20);
+			Match('\u20AD'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_LAK", 40);
+			LeaveRule("CURR_LAK", 40);
+			LeaveRule_CURR_LAK();
+		}
+	}
+	// $ANTLR end "CURR_LAK"
+
+	partial void EnterRule_CURR_MKD();
+	partial void LeaveRule_CURR_MKD();
+
+	// $ANTLR start "CURR_MKD"
+	[GrammarRule("CURR_MKD")]
+	private void mCURR_MKD()
+	{
+		EnterRule_CURR_MKD();
+		EnterRule("CURR_MKD", 41);
+		TraceIn("CURR_MKD", 41);
+		try
+		{
+			// formula.g:120:18: ( '\\u0434\\u0435\\u043d' )
+			DebugEnterAlt(1);
+			// formula.g:120:20: '\\u0434\\u0435\\u043d'
+			{
+			DebugLocation(120, 20);
+			Match("\u0434\u0435\u043d"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_MKD", 41);
+			LeaveRule("CURR_MKD", 41);
+			LeaveRule_CURR_MKD();
+		}
+	}
+	// $ANTLR end "CURR_MKD"
+
+	partial void EnterRule_CURR_MYR();
+	partial void LeaveRule_CURR_MYR();
+
+	// $ANTLR start "CURR_MYR"
+	[GrammarRule("CURR_MYR")]
+	private void mCURR_MYR()
+	{
+		EnterRule_CURR_MYR();
+		EnterRule("CURR_MYR", 42);
+		TraceIn("CURR_MYR", 42);
+		try
+		{
+			// formula.g:121:18: ( 'RM' )
+			DebugEnterAlt(1);
+			// formula.g:121:20: 'RM'
+			{
+			DebugLocation(121, 20);
+			Match("RM"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_MYR", 42);
+			LeaveRule("CURR_MYR", 42);
+			LeaveRule_CURR_MYR();
+		}
+	}
+	// $ANTLR end "CURR_MYR"
+
+	partial void EnterRule_CURR_MUR();
+	partial void LeaveRule_CURR_MUR();
+
+	// $ANTLR start "CURR_MUR"
+	[GrammarRule("CURR_MUR")]
+	private void mCURR_MUR()
+	{
+		EnterRule_CURR_MUR();
+		EnterRule("CURR_MUR", 43);
+		TraceIn("CURR_MUR", 43);
+		try
+		{
+			// formula.g:122:18: ( '\\u20a8' )
+			DebugEnterAlt(1);
+			// formula.g:122:20: '\\u20a8'
+			{
+			DebugLocation(122, 20);
+			Match('\u20A8'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_MUR", 43);
+			LeaveRule("CURR_MUR", 43);
+			LeaveRule_CURR_MUR();
+		}
+	}
+	// $ANTLR end "CURR_MUR"
+
+	partial void EnterRule_CURR_MNT();
+	partial void LeaveRule_CURR_MNT();
+
+	// $ANTLR start "CURR_MNT"
+	[GrammarRule("CURR_MNT")]
+	private void mCURR_MNT()
+	{
+		EnterRule_CURR_MNT();
+		EnterRule("CURR_MNT", 44);
+		TraceIn("CURR_MNT", 44);
+		try
+		{
+			// formula.g:125:18: ( '\\u20ae' )
+			DebugEnterAlt(1);
+			// formula.g:125:20: '\\u20ae'
+			{
+			DebugLocation(125, 20);
+			Match('\u20AE'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_MNT", 44);
+			LeaveRule("CURR_MNT", 44);
+			LeaveRule_CURR_MNT();
+		}
+	}
+	// $ANTLR end "CURR_MNT"
+
+	partial void EnterRule_CURR_MZN();
+	partial void LeaveRule_CURR_MZN();
+
+	// $ANTLR start "CURR_MZN"
+	[GrammarRule("CURR_MZN")]
+	private void mCURR_MZN()
+	{
+		EnterRule_CURR_MZN();
+		EnterRule("CURR_MZN", 45);
+		TraceIn("CURR_MZN", 45);
+		try
+		{
+			// formula.g:126:18: ( 'MT' )
+			DebugEnterAlt(1);
+			// formula.g:126:20: 'MT'
+			{
+			DebugLocation(126, 20);
+			Match("MT"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_MZN", 45);
+			LeaveRule("CURR_MZN", 45);
+			LeaveRule_CURR_MZN();
+		}
+	}
+	// $ANTLR end "CURR_MZN"
+
+	partial void EnterRule_CURR_NIO();
+	partial void LeaveRule_CURR_NIO();
+
+	// $ANTLR start "CURR_NIO"
+	[GrammarRule("CURR_NIO")]
+	private void mCURR_NIO()
+	{
+		EnterRule_CURR_NIO();
+		EnterRule("CURR_NIO", 46);
+		TraceIn("CURR_NIO", 46);
+		try
+		{
+			// formula.g:127:18: ( 'C$' )
+			DebugEnterAlt(1);
+			// formula.g:127:20: 'C$'
+			{
+			DebugLocation(127, 20);
+			Match("C$"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_NIO", 46);
+			LeaveRule("CURR_NIO", 46);
+			LeaveRule_CURR_NIO();
+		}
+	}
+	// $ANTLR end "CURR_NIO"
+
+	partial void EnterRule_CURR_NGN();
+	partial void LeaveRule_CURR_NGN();
+
+	// $ANTLR start "CURR_NGN"
+	[GrammarRule("CURR_NGN")]
+	private void mCURR_NGN()
+	{
+		EnterRule_CURR_NGN();
+		EnterRule("CURR_NGN", 47);
+		TraceIn("CURR_NGN", 47);
+		try
+		{
+			// formula.g:128:18: ( '\\u20a6' )
+			DebugEnterAlt(1);
+			// formula.g:128:20: '\\u20a6'
+			{
+			DebugLocation(128, 20);
+			Match('\u20A6'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_NGN", 47);
+			LeaveRule("CURR_NGN", 47);
+			LeaveRule_CURR_NGN();
+		}
+	}
+	// $ANTLR end "CURR_NGN"
+
+	partial void EnterRule_CURR_PAB();
+	partial void LeaveRule_CURR_PAB();
+
+	// $ANTLR start "CURR_PAB"
+	[GrammarRule("CURR_PAB")]
+	private void mCURR_PAB()
+	{
+		EnterRule_CURR_PAB();
+		EnterRule("CURR_PAB", 48);
+		TraceIn("CURR_PAB", 48);
+		try
+		{
+			// formula.g:129:18: ( 'B\\/\\.' )
+			DebugEnterAlt(1);
+			// formula.g:129:20: 'B\\/\\.'
+			{
+			DebugLocation(129, 20);
+			Match("B/."); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_PAB", 48);
+			LeaveRule("CURR_PAB", 48);
+			LeaveRule_CURR_PAB();
+		}
+	}
+	// $ANTLR end "CURR_PAB"
+
+	partial void EnterRule_CURR_PYG();
+	partial void LeaveRule_CURR_PYG();
+
+	// $ANTLR start "CURR_PYG"
+	[GrammarRule("CURR_PYG")]
+	private void mCURR_PYG()
+	{
+		EnterRule_CURR_PYG();
+		EnterRule("CURR_PYG", 49);
+		TraceIn("CURR_PYG", 49);
+		try
+		{
+			// formula.g:130:18: ( 'Gs' )
+			DebugEnterAlt(1);
+			// formula.g:130:20: 'Gs'
+			{
+			DebugLocation(130, 20);
+			Match("Gs"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_PYG", 49);
+			LeaveRule("CURR_PYG", 49);
+			LeaveRule_CURR_PYG();
+		}
+	}
+	// $ANTLR end "CURR_PYG"
+
+	partial void EnterRule_CURR_PEN();
+	partial void LeaveRule_CURR_PEN();
+
+	// $ANTLR start "CURR_PEN"
+	[GrammarRule("CURR_PEN")]
+	private void mCURR_PEN()
+	{
+		EnterRule_CURR_PEN();
+		EnterRule("CURR_PEN", 50);
+		TraceIn("CURR_PEN", 50);
+		try
+		{
+			// formula.g:131:18: ( 'S/.' )
+			DebugEnterAlt(1);
+			// formula.g:131:20: 'S/.'
+			{
+			DebugLocation(131, 20);
+			Match("S/."); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_PEN", 50);
+			LeaveRule("CURR_PEN", 50);
+			LeaveRule_CURR_PEN();
+		}
+	}
+	// $ANTLR end "CURR_PEN"
+
+	partial void EnterRule_CURR_PLN();
+	partial void LeaveRule_CURR_PLN();
+
+	// $ANTLR start "CURR_PLN"
+	[GrammarRule("CURR_PLN")]
+	private void mCURR_PLN()
+	{
+		EnterRule_CURR_PLN();
+		EnterRule("CURR_PLN", 51);
+		TraceIn("CURR_PLN", 51);
+		try
+		{
+			// formula.g:132:18: ( 'z\\u0142' )
+			DebugEnterAlt(1);
+			// formula.g:132:20: 'z\\u0142'
+			{
+			DebugLocation(132, 20);
+			Match("z\u0142"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_PLN", 51);
+			LeaveRule("CURR_PLN", 51);
+			LeaveRule_CURR_PLN();
+		}
+	}
+	// $ANTLR end "CURR_PLN"
+
+	partial void EnterRule_CURR_RON();
+	partial void LeaveRule_CURR_RON();
+
+	// $ANTLR start "CURR_RON"
+	[GrammarRule("CURR_RON")]
+	private void mCURR_RON()
+	{
+		EnterRule_CURR_RON();
+		EnterRule("CURR_RON", 52);
+		TraceIn("CURR_RON", 52);
+		try
+		{
+			// formula.g:133:18: ( 'lei' )
+			DebugEnterAlt(1);
+			// formula.g:133:20: 'lei'
+			{
+			DebugLocation(133, 20);
+			Match("lei"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_RON", 52);
+			LeaveRule("CURR_RON", 52);
+			LeaveRule_CURR_RON();
+		}
+	}
+	// $ANTLR end "CURR_RON"
+
+	partial void EnterRule_CURR_RUB();
+	partial void LeaveRule_CURR_RUB();
+
+	// $ANTLR start "CURR_RUB"
+	[GrammarRule("CURR_RUB")]
+	private void mCURR_RUB()
+	{
+		EnterRule_CURR_RUB();
+		EnterRule("CURR_RUB", 53);
+		TraceIn("CURR_RUB", 53);
+		try
+		{
+			// formula.g:134:18: ( '\\u0440\\u0443\\u0431' )
+			DebugEnterAlt(1);
+			// formula.g:134:20: '\\u0440\\u0443\\u0431'
+			{
+			DebugLocation(134, 20);
+			Match("\u0440\u0443\u0431"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_RUB", 53);
+			LeaveRule("CURR_RUB", 53);
+			LeaveRule_CURR_RUB();
+		}
+	}
+	// $ANTLR end "CURR_RUB"
+
+	partial void EnterRule_CURR_RSD();
+	partial void LeaveRule_CURR_RSD();
+
+	// $ANTLR start "CURR_RSD"
+	[GrammarRule("CURR_RSD")]
+	private void mCURR_RSD()
+	{
+		EnterRule_CURR_RSD();
+		EnterRule("CURR_RSD", 54);
+		TraceIn("CURR_RSD", 54);
+		try
+		{
+			// formula.g:135:18: ( '\\u0414\\u0438\\u043d\\.' )
+			DebugEnterAlt(1);
+			// formula.g:135:20: '\\u0414\\u0438\\u043d\\.'
+			{
+			DebugLocation(135, 20);
+			Match("\u0414\u0438\u043d."); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_RSD", 54);
+			LeaveRule("CURR_RSD", 54);
+			LeaveRule_CURR_RSD();
+		}
+	}
+	// $ANTLR end "CURR_RSD"
+
+	partial void EnterRule_CURR_SOS();
+	partial void LeaveRule_CURR_SOS();
+
+	// $ANTLR start "CURR_SOS"
+	[GrammarRule("CURR_SOS")]
+	private void mCURR_SOS()
+	{
+		EnterRule_CURR_SOS();
+		EnterRule("CURR_SOS", 55);
+		TraceIn("CURR_SOS", 55);
+		try
+		{
+			// formula.g:136:18: ( 'S' )
+			DebugEnterAlt(1);
+			// formula.g:136:20: 'S'
+			{
+			DebugLocation(136, 20);
+			Match('S'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_SOS", 55);
+			LeaveRule("CURR_SOS", 55);
+			LeaveRule_CURR_SOS();
+		}
+	}
+	// $ANTLR end "CURR_SOS"
+
+	partial void EnterRule_CURR_ZAR();
+	partial void LeaveRule_CURR_ZAR();
+
+	// $ANTLR start "CURR_ZAR"
+	[GrammarRule("CURR_ZAR")]
+	private void mCURR_ZAR()
+	{
+		EnterRule_CURR_ZAR();
+		EnterRule("CURR_ZAR", 56);
+		TraceIn("CURR_ZAR", 56);
+		try
+		{
+			// formula.g:137:18: ( 'R' )
+			DebugEnterAlt(1);
+			// formula.g:137:20: 'R'
+			{
+			DebugLocation(137, 20);
+			Match('R'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_ZAR", 56);
+			LeaveRule("CURR_ZAR", 56);
+			LeaveRule_CURR_ZAR();
+		}
+	}
+	// $ANTLR end "CURR_ZAR"
+
+	partial void EnterRule_CURR_CHF();
+	partial void LeaveRule_CURR_CHF();
+
+	// $ANTLR start "CURR_CHF"
+	[GrammarRule("CURR_CHF")]
+	private void mCURR_CHF()
+	{
+		EnterRule_CURR_CHF();
+		EnterRule("CURR_CHF", 57);
+		TraceIn("CURR_CHF", 57);
+		try
+		{
+			// formula.g:138:18: ( 'CHF' )
+			DebugEnterAlt(1);
+			// formula.g:138:20: 'CHF'
+			{
+			DebugLocation(138, 20);
+			Match("CHF"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_CHF", 57);
+			LeaveRule("CURR_CHF", 57);
+			LeaveRule_CURR_CHF();
+		}
+	}
+	// $ANTLR end "CURR_CHF"
+
+	partial void EnterRule_CURR_TWD();
+	partial void LeaveRule_CURR_TWD();
+
+	// $ANTLR start "CURR_TWD"
+	[GrammarRule("CURR_TWD")]
+	private void mCURR_TWD()
+	{
+		EnterRule_CURR_TWD();
+		EnterRule("CURR_TWD", 58);
+		TraceIn("CURR_TWD", 58);
+		try
+		{
+			// formula.g:139:18: ( 'NT$' )
+			DebugEnterAlt(1);
+			// formula.g:139:20: 'NT$'
+			{
+			DebugLocation(139, 20);
+			Match("NT$"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_TWD", 58);
+			LeaveRule("CURR_TWD", 58);
+			LeaveRule_CURR_TWD();
+		}
+	}
+	// $ANTLR end "CURR_TWD"
+
+	partial void EnterRule_CURR_THB();
+	partial void LeaveRule_CURR_THB();
+
+	// $ANTLR start "CURR_THB"
+	[GrammarRule("CURR_THB")]
+	private void mCURR_THB()
+	{
+		EnterRule_CURR_THB();
+		EnterRule("CURR_THB", 59);
+		TraceIn("CURR_THB", 59);
+		try
+		{
+			// formula.g:140:18: ( '\\u0e3f' )
+			DebugEnterAlt(1);
+			// formula.g:140:20: '\\u0e3f'
+			{
+			DebugLocation(140, 20);
+			Match('\u0E3F'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_THB", 59);
+			LeaveRule("CURR_THB", 59);
+			LeaveRule_CURR_THB();
+		}
+	}
+	// $ANTLR end "CURR_THB"
+
+	partial void EnterRule_CURR_TTD();
+	partial void LeaveRule_CURR_TTD();
+
+	// $ANTLR start "CURR_TTD"
+	[GrammarRule("CURR_TTD")]
+	private void mCURR_TTD()
+	{
+		EnterRule_CURR_TTD();
+		EnterRule("CURR_TTD", 60);
+		TraceIn("CURR_TTD", 60);
+		try
+		{
+			// formula.g:141:18: ( 'TT$' )
+			DebugEnterAlt(1);
+			// formula.g:141:20: 'TT$'
+			{
+			DebugLocation(141, 20);
+			Match("TT$"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_TTD", 60);
+			LeaveRule("CURR_TTD", 60);
+			LeaveRule_CURR_TTD();
+		}
+	}
+	// $ANTLR end "CURR_TTD"
+
+	partial void EnterRule_CURR_UAH();
+	partial void LeaveRule_CURR_UAH();
+
+	// $ANTLR start "CURR_UAH"
+	[GrammarRule("CURR_UAH")]
+	private void mCURR_UAH()
+	{
+		EnterRule_CURR_UAH();
+		EnterRule("CURR_UAH", 61);
+		TraceIn("CURR_UAH", 61);
+		try
+		{
+			// formula.g:142:18: ( '\\u20b4' )
+			DebugEnterAlt(1);
+			// formula.g:142:20: '\\u20b4'
+			{
+			DebugLocation(142, 20);
+			Match('\u20B4'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_UAH", 61);
+			LeaveRule("CURR_UAH", 61);
+			LeaveRule_CURR_UAH();
+		}
+	}
+	// $ANTLR end "CURR_UAH"
+
+	partial void EnterRule_CURR_UYU();
+	partial void LeaveRule_CURR_UYU();
+
+	// $ANTLR start "CURR_UYU"
+	[GrammarRule("CURR_UYU")]
+	private void mCURR_UYU()
+	{
+		EnterRule_CURR_UYU();
+		EnterRule("CURR_UYU", 62);
+		TraceIn("CURR_UYU", 62);
+		try
+		{
+			// formula.g:143:18: ( '$U' )
+			DebugEnterAlt(1);
+			// formula.g:143:20: '$U'
+			{
+			DebugLocation(143, 20);
+			Match("$U"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_UYU", 62);
+			LeaveRule("CURR_UYU", 62);
+			LeaveRule_CURR_UYU();
+		}
+	}
+	// $ANTLR end "CURR_UYU"
+
+	partial void EnterRule_CURR_VEF();
+	partial void LeaveRule_CURR_VEF();
+
+	// $ANTLR start "CURR_VEF"
+	[GrammarRule("CURR_VEF")]
+	private void mCURR_VEF()
+	{
+		EnterRule_CURR_VEF();
+		EnterRule("CURR_VEF", 63);
+		TraceIn("CURR_VEF", 63);
+		try
+		{
+			// formula.g:144:18: ( 'Bs' )
+			DebugEnterAlt(1);
+			// formula.g:144:20: 'Bs'
+			{
+			DebugLocation(144, 20);
+			Match("Bs"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_VEF", 63);
+			LeaveRule("CURR_VEF", 63);
+			LeaveRule_CURR_VEF();
+		}
+	}
+	// $ANTLR end "CURR_VEF"
+
+	partial void EnterRule_CURR_VND();
+	partial void LeaveRule_CURR_VND();
+
+	// $ANTLR start "CURR_VND"
+	[GrammarRule("CURR_VND")]
+	private void mCURR_VND()
+	{
+		EnterRule_CURR_VND();
+		EnterRule("CURR_VND", 64);
+		TraceIn("CURR_VND", 64);
+		try
+		{
+			// formula.g:145:18: ( '\\u20ab' )
+			DebugEnterAlt(1);
+			// formula.g:145:20: '\\u20ab'
+			{
+			DebugLocation(145, 20);
+			Match('\u20AB'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_VND", 64);
+			LeaveRule("CURR_VND", 64);
+			LeaveRule_CURR_VND();
+		}
+	}
+	// $ANTLR end "CURR_VND"
+
+	partial void EnterRule_CURR_ZWD();
+	partial void LeaveRule_CURR_ZWD();
+
+	// $ANTLR start "CURR_ZWD"
+	[GrammarRule("CURR_ZWD")]
+	private void mCURR_ZWD()
+	{
+		EnterRule_CURR_ZWD();
+		EnterRule("CURR_ZWD", 65);
+		TraceIn("CURR_ZWD", 65);
+		try
+		{
+			// formula.g:146:18: ( 'Z$' )
+			DebugEnterAlt(1);
+			// formula.g:146:20: 'Z$'
+			{
+			DebugLocation(146, 20);
+			Match("Z$"); 
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_ZWD", 65);
+			LeaveRule("CURR_ZWD", 65);
+			LeaveRule_CURR_ZWD();
+		}
+	}
+	// $ANTLR end "CURR_ZWD"
+
+	partial void EnterRule_CURR_XBT();
+	partial void LeaveRule_CURR_XBT();
+
+	// $ANTLR start "CURR_XBT"
+	[GrammarRule("CURR_XBT")]
+	private void mCURR_XBT()
+	{
+		EnterRule_CURR_XBT();
+		EnterRule("CURR_XBT", 66);
+		TraceIn("CURR_XBT", 66);
+		try
+		{
+			// formula.g:148:18: ( '\\u20bf' )
+			DebugEnterAlt(1);
+			// formula.g:148:20: '\\u20bf'
+			{
+			DebugLocation(148, 20);
+			Match('\u20BF'); 
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("CURR_XBT", 66);
+			LeaveRule("CURR_XBT", 66);
+			LeaveRule_CURR_XBT();
+		}
+	}
+	// $ANTLR end "CURR_XBT"
+
 	partial void EnterRule_DIGIT();
 	partial void LeaveRule_DIGIT();
 
@@ -508,39 +3195,39 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 	private void mDIGIT()
 	{
 		EnterRule_DIGIT();
-		EnterRule("DIGIT", 7);
-		TraceIn("DIGIT", 7);
+		EnterRule("DIGIT", 67);
+		TraceIn("DIGIT", 67);
 		try
 		{
-			// formula.g:53:15: ( '1' .. '9' ( '0' .. '9' )* )
+			// formula.g:150:15: ( '1' .. '9' ( '0' .. '9' )* )
 			DebugEnterAlt(1);
-			// formula.g:53:17: '1' .. '9' ( '0' .. '9' )*
+			// formula.g:150:17: '1' .. '9' ( '0' .. '9' )*
 			{
-			DebugLocation(53, 17);
+			DebugLocation(150, 17);
 			MatchRange('1','9'); 
-			DebugLocation(53, 26);
-			// formula.g:53:26: ( '0' .. '9' )*
-			try { DebugEnterSubRule(7);
+			DebugLocation(150, 26);
+			// formula.g:150:26: ( '0' .. '9' )*
+			try { DebugEnterSubRule(14);
 			while (true)
 			{
-				int alt7=2;
-				try { DebugEnterDecision(7, false);
-				int LA7_0 = input.LA(1);
+				int alt14=2;
+				try { DebugEnterDecision(14, false);
+				int LA14_0 = input.LA(1);
 
-				if (((LA7_0>='0' && LA7_0<='9')))
+				if (((LA14_0>='0' && LA14_0<='9')))
 				{
-					alt7 = 1;
+					alt14 = 1;
 				}
 
 
-				} finally { DebugExitDecision(7); }
-				switch ( alt7 )
+				} finally { DebugExitDecision(14); }
+				switch ( alt14 )
 				{
 				case 1:
 					DebugEnterAlt(1);
 					// formula.g:
 					{
-					DebugLocation(53, 26);
+					DebugLocation(150, 26);
 					input.Consume();
 
 
@@ -548,14 +3235,14 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 					break;
 
 				default:
-					goto loop7;
+					goto loop14;
 				}
 			}
 
-			loop7:
+			loop14:
 				;
 
-			} finally { DebugExitSubRule(7); }
+			} finally { DebugExitSubRule(14); }
 
 
 			}
@@ -563,8 +3250,8 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("DIGIT", 7);
-			LeaveRule("DIGIT", 7);
+			TraceOut("DIGIT", 67);
+			LeaveRule("DIGIT", 67);
 			LeaveRule_DIGIT();
 		}
 	}
@@ -578,40 +3265,40 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 	private void mOCTAL_DIGIT()
 	{
 		EnterRule_OCTAL_DIGIT();
-		EnterRule("OCTAL_DIGIT", 8);
-		TraceIn("OCTAL_DIGIT", 8);
+		EnterRule("OCTAL_DIGIT", 68);
+		TraceIn("OCTAL_DIGIT", 68);
 		try
 		{
-			// formula.g:54:21: ( '0' ( '0' .. '7' )+ )
+			// formula.g:151:21: ( '0' ( '0' .. '7' )+ )
 			DebugEnterAlt(1);
-			// formula.g:54:23: '0' ( '0' .. '7' )+
+			// formula.g:151:23: '0' ( '0' .. '7' )+
 			{
-			DebugLocation(54, 23);
+			DebugLocation(151, 23);
 			Match('0'); 
-			DebugLocation(54, 27);
-			// formula.g:54:27: ( '0' .. '7' )+
-			int cnt8=0;
-			try { DebugEnterSubRule(8);
+			DebugLocation(151, 27);
+			// formula.g:151:27: ( '0' .. '7' )+
+			int cnt15=0;
+			try { DebugEnterSubRule(15);
 			while (true)
 			{
-				int alt8=2;
-				try { DebugEnterDecision(8, false);
-				int LA8_0 = input.LA(1);
+				int alt15=2;
+				try { DebugEnterDecision(15, false);
+				int LA15_0 = input.LA(1);
 
-				if (((LA8_0>='0' && LA8_0<='7')))
+				if (((LA15_0>='0' && LA15_0<='7')))
 				{
-					alt8 = 1;
+					alt15 = 1;
 				}
 
 
-				} finally { DebugExitDecision(8); }
-				switch (alt8)
+				} finally { DebugExitDecision(15); }
+				switch (alt15)
 				{
 				case 1:
 					DebugEnterAlt(1);
 					// formula.g:
 					{
-					DebugLocation(54, 27);
+					DebugLocation(151, 27);
 					input.Consume();
 
 
@@ -619,19 +3306,19 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 					break;
 
 				default:
-					if (cnt8 >= 1)
-						goto loop8;
+					if (cnt15 >= 1)
+						goto loop15;
 
-					EarlyExitException eee8 = new EarlyExitException( 8, input );
-					DebugRecognitionException(eee8);
-					throw eee8;
+					EarlyExitException eee15 = new EarlyExitException( 15, input );
+					DebugRecognitionException(eee15);
+					throw eee15;
 				}
-				cnt8++;
+				cnt15++;
 			}
-			loop8:
+			loop15:
 				;
 
-			} finally { DebugExitSubRule(8); }
+			} finally { DebugExitSubRule(15); }
 
 
 			}
@@ -639,8 +3326,8 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("OCTAL_DIGIT", 8);
-			LeaveRule("OCTAL_DIGIT", 8);
+			TraceOut("OCTAL_DIGIT", 68);
+			LeaveRule("OCTAL_DIGIT", 68);
 			LeaveRule_OCTAL_DIGIT();
 		}
 	}
@@ -654,41 +3341,41 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 	private void mHEX_DIGIT()
 	{
 		EnterRule_HEX_DIGIT();
-		EnterRule("HEX_DIGIT", 9);
-		TraceIn("HEX_DIGIT", 9);
+		EnterRule("HEX_DIGIT", 69);
+		TraceIn("HEX_DIGIT", 69);
 		try
 		{
-			// formula.g:55:19: ( '0x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ )
+			// formula.g:152:19: ( '0x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ )
 			DebugEnterAlt(1);
-			// formula.g:55:21: '0x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
+			// formula.g:152:21: '0x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
 			{
-			DebugLocation(55, 21);
+			DebugLocation(152, 21);
 			Match("0x"); 
 
-			DebugLocation(55, 26);
-			// formula.g:55:26: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
-			int cnt9=0;
-			try { DebugEnterSubRule(9);
+			DebugLocation(152, 26);
+			// formula.g:152:26: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
+			int cnt16=0;
+			try { DebugEnterSubRule(16);
 			while (true)
 			{
-				int alt9=2;
-				try { DebugEnterDecision(9, false);
-				int LA9_0 = input.LA(1);
+				int alt16=2;
+				try { DebugEnterDecision(16, false);
+				int LA16_0 = input.LA(1);
 
-				if (((LA9_0>='0' && LA9_0<='9')||(LA9_0>='A' && LA9_0<='F')||(LA9_0>='a' && LA9_0<='f')))
+				if (((LA16_0>='0' && LA16_0<='9')||(LA16_0>='A' && LA16_0<='F')||(LA16_0>='a' && LA16_0<='f')))
 				{
-					alt9 = 1;
+					alt16 = 1;
 				}
 
 
-				} finally { DebugExitDecision(9); }
-				switch (alt9)
+				} finally { DebugExitDecision(16); }
+				switch (alt16)
 				{
 				case 1:
 					DebugEnterAlt(1);
 					// formula.g:
 					{
-					DebugLocation(55, 26);
+					DebugLocation(152, 26);
 					input.Consume();
 
 
@@ -696,19 +3383,19 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 					break;
 
 				default:
-					if (cnt9 >= 1)
-						goto loop9;
+					if (cnt16 >= 1)
+						goto loop16;
 
-					EarlyExitException eee9 = new EarlyExitException( 9, input );
-					DebugRecognitionException(eee9);
-					throw eee9;
+					EarlyExitException eee16 = new EarlyExitException( 16, input );
+					DebugRecognitionException(eee16);
+					throw eee16;
 				}
-				cnt9++;
+				cnt16++;
 			}
-			loop9:
+			loop16:
 				;
 
-			} finally { DebugExitSubRule(9); }
+			} finally { DebugExitSubRule(16); }
 
 
 			}
@@ -716,8 +3403,8 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("HEX_DIGIT", 9);
-			LeaveRule("HEX_DIGIT", 9);
+			TraceOut("HEX_DIGIT", 69);
+			LeaveRule("HEX_DIGIT", 69);
 			LeaveRule_HEX_DIGIT();
 		}
 	}
@@ -731,17 +3418,17 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 	private void mEXP()
 	{
 		EnterRule_EXP();
-		EnterRule("EXP", 10);
-		TraceIn("EXP", 10);
+		EnterRule("EXP", 70);
+		TraceIn("EXP", 70);
 		try
 		{
 			int _type = EXP;
 			int _channel = DefaultTokenChannel;
-			// formula.g:57:5: ( ( 'E' | 'e' ) ( '+' | '-' )? ( DIGIT )+ )
+			// formula.g:154:5: ( ( 'E' | 'e' ) ( '+' | '-' )? ( DIGIT )+ )
 			DebugEnterAlt(1);
-			// formula.g:57:7: ( 'E' | 'e' ) ( '+' | '-' )? ( DIGIT )+
+			// formula.g:154:7: ( 'E' | 'e' ) ( '+' | '-' )? ( DIGIT )+
 			{
-			DebugLocation(57, 7);
+			DebugLocation(154, 7);
 			if (input.LA(1)=='E'||input.LA(1)=='e')
 			{
 				input.Consume();
@@ -754,25 +3441,25 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 				throw mse;
 			}
 
-			DebugLocation(57, 17);
-			// formula.g:57:17: ( '+' | '-' )?
-			int alt10=2;
-			try { DebugEnterSubRule(10);
-			try { DebugEnterDecision(10, false);
-			int LA10_0 = input.LA(1);
+			DebugLocation(154, 17);
+			// formula.g:154:17: ( '+' | '-' )?
+			int alt17=2;
+			try { DebugEnterSubRule(17);
+			try { DebugEnterDecision(17, false);
+			int LA17_0 = input.LA(1);
 
-			if ((LA10_0=='+'||LA10_0=='-'))
+			if ((LA17_0=='+'||LA17_0=='-'))
 			{
-				alt10 = 1;
+				alt17 = 1;
 			}
-			} finally { DebugExitDecision(10); }
-			switch (alt10)
+			} finally { DebugExitDecision(17); }
+			switch (alt17)
 			{
 			case 1:
 				DebugEnterAlt(1);
 				// formula.g:
 				{
-				DebugLocation(57, 17);
+				DebugLocation(154, 17);
 				input.Consume();
 
 
@@ -780,51 +3467,51 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 				break;
 
 			}
-			} finally { DebugExitSubRule(10); }
+			} finally { DebugExitSubRule(17); }
 
-			DebugLocation(57, 28);
-			// formula.g:57:28: ( DIGIT )+
-			int cnt11=0;
-			try { DebugEnterSubRule(11);
+			DebugLocation(154, 28);
+			// formula.g:154:28: ( DIGIT )+
+			int cnt18=0;
+			try { DebugEnterSubRule(18);
 			while (true)
 			{
-				int alt11=2;
-				try { DebugEnterDecision(11, false);
-				int LA11_0 = input.LA(1);
+				int alt18=2;
+				try { DebugEnterDecision(18, false);
+				int LA18_0 = input.LA(1);
 
-				if (((LA11_0>='1' && LA11_0<='9')))
+				if (((LA18_0>='1' && LA18_0<='9')))
 				{
-					alt11 = 1;
+					alt18 = 1;
 				}
 
 
-				} finally { DebugExitDecision(11); }
-				switch (alt11)
+				} finally { DebugExitDecision(18); }
+				switch (alt18)
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// formula.g:57:28: DIGIT
+					// formula.g:154:28: DIGIT
 					{
-					DebugLocation(57, 28);
+					DebugLocation(154, 28);
 					mDIGIT(); 
 
 					}
 					break;
 
 				default:
-					if (cnt11 >= 1)
-						goto loop11;
+					if (cnt18 >= 1)
+						goto loop18;
 
-					EarlyExitException eee11 = new EarlyExitException( 11, input );
-					DebugRecognitionException(eee11);
-					throw eee11;
+					EarlyExitException eee18 = new EarlyExitException( 18, input );
+					DebugRecognitionException(eee18);
+					throw eee18;
 				}
-				cnt11++;
+				cnt18++;
 			}
-			loop11:
+			loop18:
 				;
 
-			} finally { DebugExitSubRule(11); }
+			} finally { DebugExitSubRule(18); }
 
 
 			}
@@ -834,8 +3521,8 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("EXP", 10);
-			LeaveRule("EXP", 10);
+			TraceOut("EXP", 70);
+			LeaveRule("EXP", 70);
 			LeaveRule_EXP();
 		}
 	}
@@ -849,40 +3536,40 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 	private void mWHITESPACE()
 	{
 		EnterRule_WHITESPACE();
-		EnterRule("WHITESPACE", 11);
-		TraceIn("WHITESPACE", 11);
+		EnterRule("WHITESPACE", 71);
+		TraceIn("WHITESPACE", 71);
 		try
 		{
 			int _type = WHITESPACE;
 			int _channel = DefaultTokenChannel;
-			// formula.g:60:12: ( ( '\\t' | ' ' | '\\r' | '\\n' | '\\u000C' )+ )
+			// formula.g:157:12: ( ( '\\t' | ' ' | '\\r' | '\\n' | '\\u000C' )+ )
 			DebugEnterAlt(1);
-			// formula.g:60:14: ( '\\t' | ' ' | '\\r' | '\\n' | '\\u000C' )+
+			// formula.g:157:14: ( '\\t' | ' ' | '\\r' | '\\n' | '\\u000C' )+
 			{
-			DebugLocation(60, 14);
-			// formula.g:60:14: ( '\\t' | ' ' | '\\r' | '\\n' | '\\u000C' )+
-			int cnt12=0;
-			try { DebugEnterSubRule(12);
+			DebugLocation(157, 14);
+			// formula.g:157:14: ( '\\t' | ' ' | '\\r' | '\\n' | '\\u000C' )+
+			int cnt19=0;
+			try { DebugEnterSubRule(19);
 			while (true)
 			{
-				int alt12=2;
-				try { DebugEnterDecision(12, false);
-				int LA12_0 = input.LA(1);
+				int alt19=2;
+				try { DebugEnterDecision(19, false);
+				int LA19_0 = input.LA(1);
 
-				if (((LA12_0>='\t' && LA12_0<='\n')||(LA12_0>='\f' && LA12_0<='\r')||LA12_0==' '))
+				if (((LA19_0>='\t' && LA19_0<='\n')||(LA19_0>='\f' && LA19_0<='\r')||LA19_0==' '))
 				{
-					alt12 = 1;
+					alt19 = 1;
 				}
 
 
-				} finally { DebugExitDecision(12); }
-				switch (alt12)
+				} finally { DebugExitDecision(19); }
+				switch (alt19)
 				{
 				case 1:
 					DebugEnterAlt(1);
 					// formula.g:
 					{
-					DebugLocation(60, 14);
+					DebugLocation(157, 14);
 					input.Consume();
 
 
@@ -890,21 +3577,21 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 					break;
 
 				default:
-					if (cnt12 >= 1)
-						goto loop12;
+					if (cnt19 >= 1)
+						goto loop19;
 
-					EarlyExitException eee12 = new EarlyExitException( 12, input );
-					DebugRecognitionException(eee12);
-					throw eee12;
+					EarlyExitException eee19 = new EarlyExitException( 19, input );
+					DebugRecognitionException(eee19);
+					throw eee19;
 				}
-				cnt12++;
+				cnt19++;
 			}
-			loop12:
+			loop19:
 				;
 
-			} finally { DebugExitSubRule(12); }
+			} finally { DebugExitSubRule(19); }
 
-			DebugLocation(60, 57);
+			DebugLocation(157, 57);
 			 _channel = Hidden; 
 
 			}
@@ -914,8 +3601,8 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("WHITESPACE", 11);
-			LeaveRule("WHITESPACE", 11);
+			TraceOut("WHITESPACE", 71);
+			LeaveRule("WHITESPACE", 71);
 			LeaveRule_WHITESPACE();
 		}
 	}
@@ -923,20 +3610,20 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 
 	public override void mTokens()
 	{
-		// formula.g:1:8: ( DIV | MINUS | MULT | PLUS | INTEGER | FLOAT | EXP | WHITESPACE )
-		int alt13=8;
-		try { DebugEnterDecision(13, false);
+		// formula.g:1:8: ( DIV | MINUS | MULT | PLUS | INTEGER | FLOAT | CURRENCY | EXP | WHITESPACE )
+		int alt20=9;
+		try { DebugEnterDecision(20, false);
 		try
 		{
-			alt13 = dfa13.Predict(input);
+			alt20 = dfa20.Predict(input);
 		}
 		catch (NoViableAltException nvae)
 		{
 			DebugRecognitionException(nvae);
 			throw;
 		}
-		} finally { DebugExitDecision(13); }
-		switch (alt13)
+		} finally { DebugExitDecision(20); }
+		switch (alt20)
 		{
 		case 1:
 			DebugEnterAlt(1);
@@ -994,18 +3681,27 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 			break;
 		case 7:
 			DebugEnterAlt(7);
-			// formula.g:1:44: EXP
+			// formula.g:1:44: CURRENCY
 			{
 			DebugLocation(1, 44);
-			mEXP(); 
+			mCURRENCY(); 
 
 			}
 			break;
 		case 8:
 			DebugEnterAlt(8);
-			// formula.g:1:48: WHITESPACE
+			// formula.g:1:53: EXP
 			{
-			DebugLocation(1, 48);
+			DebugLocation(1, 53);
+			mEXP(); 
+
+			}
+			break;
+		case 9:
+			DebugEnterAlt(9);
+			// formula.g:1:57: WHITESPACE
+			{
+			DebugLocation(1, 57);
 			mWHITESPACE(); 
 
 			}
@@ -1018,13 +3714,17 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 
 	#region DFA
 	DFA6 dfa6;
+	DFA12 dfa12;
 	DFA13 dfa13;
+	DFA20 dfa20;
 
 	protected override void InitDFAs()
 	{
 		base.InitDFAs();
 		dfa6 = new DFA6(this);
+		dfa12 = new DFA12(this);
 		dfa13 = new DFA13(this);
+		dfa20 = new DFA20(this);
 	}
 
 	private class DFA6 : DFA
@@ -1090,36 +3790,277 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 		}
 	}
 
+	private class DFA12 : DFA
+	{
+		private const string DFA12_eotS =
+			"\x2E\xFFFF\x1\x51\x21\xFFFF\x1\x51\x1\xFFFF\x1\x51\xD\xFFFF";
+		private const string DFA12_eofS =
+			"\x60\xFFFF";
+		private const string DFA12_minS =
+			"\x1\x24\x4\x20\x1\x430\x1\x2E\x1\x0\x1\x4D\x1\x20\x1\x432\x3\x20\x1\x6E"+
+			"\x5\x20\x1\x74\x2\x20\x1\x24\x2\x20\x1\x435\x1\x20\x1\x54\x1\x24\x1\x20"+
+			"\x1\x73\x1\x20\x1\x142\x1\x65\x1\x443\x1\x438\x1\x54\x1\x20\x1\x54\x2"+
+			"\x20\x1\x24\x1\x20\x1\x6B\x2\x2E\x1\xFFFF\x2\x20\x1\x43D\x1\x20\x1\x24"+
+			"\x1\x0\x5\x20\x1\x24\x6\x20\x1\x43D\x2\x20\x1\x46\x1\x20\x1\x2E\x1\x20"+
+			"\x1\x69\x1\x431\x1\x43D\x2\x24\x2\x20\x1\x2E\x1\xFFFF\x1\x2E\x9\x20\x1"+
+			"\x0\x3\x20";
+		private const string DFA12_maxS =
+			"\x1\xFDFC\x1\x65\x1\x39\x1\x62\x1\x39\x1\x430\x1\x2E\x1\x73\x1\x10D\x1"+
+			"\x39\x1\x432\x1\x70\x2\x39\x1\x72\x5\x39\x1\x74\x2\x39\x1\x24\x2\x39"+
+			"\x1\x435\x1\x39\x1\x54\x1\x48\x1\x39\x1\x73\x1\x39\x1\x142\x1\x65\x1"+
+			"\x443\x1\x438\x1\x54\x1\x39\x1\x54\x2\x39\x1\x24\x1\x39\x1\x6B\x2\x39"+
+			"\x1\xFFFF\x2\x39\x1\x43D\x1\x39\x1\x24\x1\x0\x5\x39\x1\x24\x6\x39\x1"+
+			"\x43D\x2\x39\x1\x46\x1\x39\x1\x2E\x1\x39\x1\x69\x1\x431\x1\x43D\x2\x24"+
+			"\x3\x39\x1\xFFFF\xA\x39\x1\x0\x3\x39";
+		private const string DFA12_acceptS =
+			"\x2F\xFFFF\x1\x1\x21\xFFFF\x1\x2\xE\xFFFF";
+		private const string DFA12_specialS =
+			"\x60\xFFFF}>";
+		private static readonly string[] DFA12_transitionS =
+			{
+				"\x1\x3\x1D\xFFFF\x1\x7\x1\x1D\x2\xFFFF\x1\x14\x1\x1F\x2\xFFFF\x1\x17"+
+				"\x1\x8\x1\x1\x1\x1C\x1\x25\x1\xFFFF\x1\x9\x1\x13\x1\xB\x1\x20\x1\x27"+
+				"\x5\xFFFF\x1\x2A\x10\xFFFF\x1\xE\x1\x22\x3\xFFFF\x1\x6\x9\xFFFF\x1\x21"+
+				"\x27\xFFFF\x1\x12\x1\x10\x1\xFFFF\x1\x18\xEC\xFFFF\x1\x4\x281\xFFFF"+
+				"\x1\x24\x1F\xFFFF\x1\x1A\x6\xFFFF\x1\xA\x1\x5\x3\xFFFF\x1\x23\x1CA\xFFFF"+
+				"\x1\x2\x833\xFFFF\x1\x26\x99B\xFFFF\x1\xC\x8C5\xFFFF\x1\xD\x4\xFFFF"+
+				"\x1\x1E\x3\xFFFF\x1\x16\x1\x29\x1\x11\x1\x19\x1\x1B\x2\xFFFF\x1\xF\x2"+
+				"\xFFFF\x1\x28\xA\xFFFF\x1\x2B\xDD3C\xFFFF\x1\x15",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E\x2B\xFFFF\x1\x2C",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E\x1B\xFFFF\x1\x31\xC\xFFFF\x1"+
+				"\x30",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x32",
+				"\x1\x33",
+				"\x1\x35\x59\xFFFF\x1\x34\x18\xFFFF\x1\x36",
+				"\x1\x37\xBF\xFFFF\x1\x38",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x39",
+				"\x1\x2D\x3\xFFFF\x1\x3A\x9\xFFFF\x1\x2F\x2\xFFFF\x9\x2E\xA\xFFFF\x1"+
+				"\x3B\x8\xFFFF\x1\x3D\x22\xFFFF\x1\x3C",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x3E\x3\xFFFF\x1\x3F",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x40",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x41",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x42",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x43",
+				"\x1\x44\x23\xFFFF\x1\x45",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x46",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x1\x47\x1\xFFFF\x9\x2E",
+				"\x1\x48",
+				"\x1\x49",
+				"\x1\x4A",
+				"\x1\x4B",
+				"\x1\x4C",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x4D",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x4E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x4F",
+				"\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2F\x1\xFFFF\x1\x52\x9\x50",
+				"",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x53",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x54",
+				"\x1\x55",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x56",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x57",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x58",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x59",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x5A",
+				"\x1\x5B",
+				"\x1\x5C",
+				"\x1\x5D",
+				"\x1\x5E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2F\x1\xFFFF\x1\x52\x9\x50",
+				"",
+				"\x1\x2F\x1\xFFFF\x1\x52\x9\x50",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x5F",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E",
+				"\x1\x2D\xD\xFFFF\x1\x2F\x2\xFFFF\x9\x2E"
+			};
+
+		private static readonly short[] DFA12_eot = DFA.UnpackEncodedString(DFA12_eotS);
+		private static readonly short[] DFA12_eof = DFA.UnpackEncodedString(DFA12_eofS);
+		private static readonly char[] DFA12_min = DFA.UnpackEncodedStringToUnsignedChars(DFA12_minS);
+		private static readonly char[] DFA12_max = DFA.UnpackEncodedStringToUnsignedChars(DFA12_maxS);
+		private static readonly short[] DFA12_accept = DFA.UnpackEncodedString(DFA12_acceptS);
+		private static readonly short[] DFA12_special = DFA.UnpackEncodedString(DFA12_specialS);
+		private static readonly short[][] DFA12_transition;
+
+		static DFA12()
+		{
+			int numStates = DFA12_transitionS.Length;
+			DFA12_transition = new short[numStates][];
+			for ( int i=0; i < numStates; i++ )
+			{
+				DFA12_transition[i] = DFA.UnpackEncodedString(DFA12_transitionS[i]);
+			}
+		}
+
+		public DFA12( BaseRecognizer recognizer )
+		{
+			this.recognizer = recognizer;
+			this.decisionNumber = 12;
+			this.eot = DFA12_eot;
+			this.eof = DFA12_eof;
+			this.min = DFA12_min;
+			this.max = DFA12_max;
+			this.accept = DFA12_accept;
+			this.special = DFA12_special;
+			this.transition = DFA12_transition;
+		}
+
+		public override string Description { get { return "53:1: CURRENCY : ( CURR_SYM ( ' ' )? ( DIGIT )* '.' ( DIGIT )+ | CURR_SYM ( ' ' )? ( DIGIT )+ );"; } }
+
+		public override void Error(NoViableAltException nvae)
+		{
+			DebugRecognitionException(nvae);
+		}
+	}
+
 	private class DFA13 : DFA
 	{
 		private const string DFA13_eotS =
-			"\x5\xFFFF\x1\xA\x3\xFFFF\x1\xA\x1\xFFFF\x1\xA";
+			"\x1\xFFFF\x1\x2D\x1\xFFFF\x1\x30\x7\xFFFF\x1\x3A\x14\xFFFF\x1\x40\x20"+
+			"\xFFFF";
 		private const string DFA13_eofS =
-			"\xC\xFFFF";
+			"\x41\xFFFF";
 		private const string DFA13_minS =
-			"\x1\x9\x4\xFFFF\x1\x2E\x3\xFFFF\x1\x2E\x1\xFFFF\x1\x2E";
+			"\x1\x24\x1\x65\x1\xFFFF\x1\x55\x3\xFFFF\x1\x0\x1\x4D\x2\xFFFF\x1\x24"+
+			"\x2\xFFFF\x1\x6E\xE\xFFFF\x1\x24\x2\xFFFF\x1\x2F\x20\xFFFF";
 		private const string DFA13_maxS =
-			"\x1\x65\x4\xFFFF\x1\x65\x3\xFFFF\x1\x65\x1\xFFFF\x1\x65";
+			"\x1\xFDFC\x1\x65\x1\xFFFF\x1\x62\x3\xFFFF\x1\x73\x1\x10D\x2\xFFFF\x1"+
+			"\x70\x2\xFFFF\x1\x72\xE\xFFFF\x1\x48\x2\xFFFF\x1\x2F\x20\xFFFF";
 		private const string DFA13_acceptS =
-			"\x1\xFFFF\x1\x1\x1\x2\x1\x3\x1\x4\x1\xFFFF\x1\x6\x1\x7\x1\x8\x1\xFFFF"+
-			"\x1\x5\x1\xFFFF";
+			"\x2\xFFFF\x1\x2\x1\xFFFF\x1\x4\x1\x5\x1\x6\x2\xFFFF\x1\xA\x1\xB\x1\xFFFF"+
+			"\x1\xD\x1\xE\x1\xFFFF\x1\x10\x1\x14\x1\x15\x1\x16\x1\x17\x1\x19\x1\x1B"+
+			"\x1\x1C\x1\x1D\x1\x1E\x1\x1F\x1\x20\x1\x22\x1\x23\x1\xFFFF\x1\x25\x1"+
+			"\x27\x1\xFFFF\x1\x29\x1\x2A\x1\x2B\x1\x2C\x1\x30\x1\x31\x1\x32\x1\x33"+
+			"\x1\x36\x1\x37\x1\x38\x1\x1\x1\x18\x1\x8\x1\x34\x1\x3\x1\x7\x1\x26\x1"+
+			"\x35\x1\x9\x1\x11\x1\xC\x1\x13\x1\x1A\x1\x21\x1\x2E\x1\xF\x1\x12\x1\x24"+
+			"\x1\x2F\x1\x28\x1\x2D";
 		private const string DFA13_specialS =
-			"\xC\xFFFF}>";
+			"\x41\xFFFF}>";
 		private static readonly string[] DFA13_transitionS =
 			{
-				"\x2\x8\x1\xFFFF\x2\x8\x12\xFFFF\x1\x8\x9\xFFFF\x1\x3\x1\x4\x1\xFFFF"+
-				"\x1\x2\x1\x6\x1\x1\x1\xFFFF\x9\x5\xB\xFFFF\x1\x7\x1F\xFFFF\x1\x7",
+				"\x1\x3\x1D\xFFFF\x1\x7\x1\x1D\x2\xFFFF\x1\x14\x1\x1F\x2\xFFFF\x1\x17"+
+				"\x1\x8\x1\x1\x1\x1C\x1\x25\x1\xFFFF\x1\x9\x1\x13\x1\xB\x1\x20\x1\x27"+
+				"\x5\xFFFF\x1\x2A\x10\xFFFF\x1\xE\x1\x22\x3\xFFFF\x1\x6\x9\xFFFF\x1\x21"+
+				"\x27\xFFFF\x1\x12\x1\x10\x1\xFFFF\x1\x18\xEC\xFFFF\x1\x4\x281\xFFFF"+
+				"\x1\x24\x1F\xFFFF\x1\x1A\x6\xFFFF\x1\xA\x1\x5\x3\xFFFF\x1\x23\x1CA\xFFFF"+
+				"\x1\x2\x833\xFFFF\x1\x26\x99B\xFFFF\x1\xC\x8C5\xFFFF\x1\xD\x4\xFFFF"+
+				"\x1\x1E\x3\xFFFF\x1\x16\x1\x29\x1\x11\x1\x19\x1\x1B\x2\xFFFF\x1\xF\x2"+
+				"\xFFFF\x1\x28\xA\xFFFF\x1\x2B\xDD3C\xFFFF\x1\x15",
+				"\x1\x2C",
+				"",
+				"\x1\x2F\xC\xFFFF\x1\x2E",
+				"",
+				"",
+				"",
+				"\x1\x32\x59\xFFFF\x1\x31\x18\xFFFF\x1\x33",
+				"\x1\x34\xBF\xFFFF\x1\x35",
+				"",
+				"",
+				"\x1\x36\x1F\xFFFF\x1\x37\x8\xFFFF\x1\x39\x22\xFFFF\x1\x38",
+				"",
+				"",
+				"\x1\x3B\x3\xFFFF\x1\x3C",
 				"",
 				"",
 				"",
 				"",
-				"\x1\x6\x1\xFFFF\x1\xB\x9\x9\xB\xFFFF\x1\x6\x1F\xFFFF\x1\x6",
 				"",
 				"",
 				"",
-				"\x1\x6\x1\xFFFF\x1\xB\x9\x9\xB\xFFFF\x1\x6\x1F\xFFFF\x1\x6",
 				"",
-				"\x1\x6\x1\xFFFF\x1\xB\x9\x9\xB\xFFFF\x1\x6\x1F\xFFFF\x1\x6"
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"\x1\x3D\x23\xFFFF\x1\x3E",
+				"",
+				"",
+				"\x1\x3F",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				""
 			};
 
 		private static readonly short[] DFA13_eot = DFA.UnpackEncodedString(DFA13_eotS);
@@ -1153,7 +4094,85 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 			this.transition = DFA13_transition;
 		}
 
-		public override string Description { get { return "1:1: Tokens : ( DIV | MINUS | MULT | PLUS | INTEGER | FLOAT | EXP | WHITESPACE );"; } }
+		public override string Description { get { return "60:9: ( CURR_ALL | CURR_AFN | CURR_USD | CURR_AWG | CURR_AZN | CURR_BYR | CURR_BZD | CURR_BOB | CURR_BAM | CURR_BWP | CURR_BGN | CURR_BRL | CURR_KHR | CURR_CRC | CURR_HRK | CURR_CUP | CURR_CZK | CURR_DKK | CURR_DOP | CURR_GBP | CURR_EUR | CURR_GHS | CURR_GTQ | CURR_HNL | CURR_HUF | CURR_IDR | CURR_IRR | CURR_ILS | CURR_JMD | CURR_JPY | CURR_LAK | CURR_MKD | CURR_MYR | CURR_MNT | CURR_MZN | CURR_NIO | CURR_NGN | CURR_PAB | CURR_PYG | CURR_PEN | CURR_PLN | CURR_RON | CURR_RUB | CURR_RSD | CURR_SOS | CURR_ZAR | CURR_CHF | CURR_TWD | CURR_THB | CURR_TTD | CURR_UAH | CURR_UYU | CURR_VEF | CURR_VND | CURR_ZWD | CURR_XBT )"; } }
+
+		public override void Error(NoViableAltException nvae)
+		{
+			DebugRecognitionException(nvae);
+		}
+	}
+
+	private class DFA20 : DFA
+	{
+		private const string DFA20_eotS =
+			"\x5\xFFFF\x1\xB\x4\xFFFF\x1\xB\x1\xFFFF\x1\xB";
+		private const string DFA20_eofS =
+			"\xD\xFFFF";
+		private const string DFA20_minS =
+			"\x1\x9\x4\xFFFF\x1\x2E\x4\xFFFF\x1\x2E\x1\xFFFF\x1\x2E";
+		private const string DFA20_maxS =
+			"\x1\xFDFC\x4\xFFFF\x1\x65\x4\xFFFF\x1\x65\x1\xFFFF\x1\x65";
+		private const string DFA20_acceptS =
+			"\x1\xFFFF\x1\x1\x1\x2\x1\x3\x1\x4\x1\xFFFF\x1\x6\x1\x7\x1\x8\x1\x9\x1"+
+			"\xFFFF\x1\x5\x1\xFFFF";
+		private const string DFA20_specialS =
+			"\xD\xFFFF}>";
+		private static readonly string[] DFA20_transitionS =
+			{
+				"\x2\x9\x1\xFFFF\x2\x9\x12\xFFFF\x1\x9\x3\xFFFF\x1\x7\x5\xFFFF\x1\x3"+
+				"\x1\x4\x1\xFFFF\x1\x2\x1\x6\x1\x1\x1\xFFFF\x9\x5\x8\xFFFF\x2\x7\x1\xFFFF"+
+				"\x1\x8\x2\x7\x2\xFFFF\x5\x7\x1\xFFFF\x5\x7\x5\xFFFF\x1\x7\xA\xFFFF\x1"+
+				"\x8\x5\xFFFF\x2\x7\x3\xFFFF\x1\x7\x9\xFFFF\x1\x7\x27\xFFFF\x2\x7\x1"+
+				"\xFFFF\x1\x7\xEC\xFFFF\x1\x7\x281\xFFFF\x1\x7\x1F\xFFFF\x1\x7\x6\xFFFF"+
+				"\x2\x7\x3\xFFFF\x1\x7\x1CA\xFFFF\x1\x7\x833\xFFFF\x1\x7\x99B\xFFFF\x1"+
+				"\x7\x8C5\xFFFF\x1\x7\x4\xFFFF\x1\x7\x3\xFFFF\x5\x7\x2\xFFFF\x1\x7\x2"+
+				"\xFFFF\x1\x7\xA\xFFFF\x1\x7\xDD3C\xFFFF\x1\x7",
+				"",
+				"",
+				"",
+				"",
+				"\x1\x6\x1\xFFFF\x1\xC\x9\xA\xB\xFFFF\x1\x6\x1F\xFFFF\x1\x6",
+				"",
+				"",
+				"",
+				"",
+				"\x1\x6\x1\xFFFF\x1\xC\x9\xA\xB\xFFFF\x1\x6\x1F\xFFFF\x1\x6",
+				"",
+				"\x1\x6\x1\xFFFF\x1\xC\x9\xA\xB\xFFFF\x1\x6\x1F\xFFFF\x1\x6"
+			};
+
+		private static readonly short[] DFA20_eot = DFA.UnpackEncodedString(DFA20_eotS);
+		private static readonly short[] DFA20_eof = DFA.UnpackEncodedString(DFA20_eofS);
+		private static readonly char[] DFA20_min = DFA.UnpackEncodedStringToUnsignedChars(DFA20_minS);
+		private static readonly char[] DFA20_max = DFA.UnpackEncodedStringToUnsignedChars(DFA20_maxS);
+		private static readonly short[] DFA20_accept = DFA.UnpackEncodedString(DFA20_acceptS);
+		private static readonly short[] DFA20_special = DFA.UnpackEncodedString(DFA20_specialS);
+		private static readonly short[][] DFA20_transition;
+
+		static DFA20()
+		{
+			int numStates = DFA20_transitionS.Length;
+			DFA20_transition = new short[numStates][];
+			for ( int i=0; i < numStates; i++ )
+			{
+				DFA20_transition[i] = DFA.UnpackEncodedString(DFA20_transitionS[i]);
+			}
+		}
+
+		public DFA20( BaseRecognizer recognizer )
+		{
+			this.recognizer = recognizer;
+			this.decisionNumber = 20;
+			this.eot = DFA20_eot;
+			this.eof = DFA20_eof;
+			this.min = DFA20_min;
+			this.max = DFA20_max;
+			this.accept = DFA20_accept;
+			this.special = DFA20_special;
+			this.transition = DFA20_transition;
+		}
+
+		public override string Description { get { return "1:1: Tokens : ( DIV | MINUS | MULT | PLUS | INTEGER | FLOAT | CURRENCY | EXP | WHITESPACE );"; } }
 
 		public override void Error(NoViableAltException nvae)
 		{

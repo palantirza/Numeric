@@ -12,6 +12,27 @@ namespace Palantir.Numeric.UnitTests
     {
         private formulaLexer lexer;
         
+        #region Currency Lexer
+        [Fact]
+        public void ReadSimpleCurrencies_ShouldOutputCorrectTokens() 
+        {
+            Read("$50");
+            ExpectToken(formulaLexer.CURRENCY, "$50");
+            Read("Lek50");
+            ExpectToken(formulaLexer.CURRENCY, "Lek50");
+            Read("؋50");
+            ExpectToken(formulaLexer.CURRENCY, "؋50");
+
+            // With spaces
+            Read("$ 50");
+            ExpectToken(formulaLexer.CURRENCY, "$ 50");
+            Read("Lek 50");
+            ExpectToken(formulaLexer.CURRENCY, "Lek 50");
+            Read("؋ 50");
+            ExpectToken(formulaLexer.CURRENCY, "؋ 50");
+        }
+        #endregion
+        
         #region Number Lexer
         [Fact]
         public void ReadSimpleIntegers_ShouldOutputCorrectTokens() 

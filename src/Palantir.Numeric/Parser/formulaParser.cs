@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 formula.g 2016-04-14 05:25:36
+// $ANTLR 3.4 formula.g 2016-04-14 11:46:14
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -38,20 +38,80 @@ namespace Palantir.Numeric.Parser
 public partial class formulaParser : Antlr.Runtime.Parser
 {
 	internal static readonly string[] tokenNames = new string[] {
-		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "DIGIT", "DIV", "EXP", "FLOAT", "HEX_DIGIT", "INTEGER", "MINUS", "MULT", "OCTAL_DIGIT", "PLUS", "WHITESPACE"
+		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "CURRENCY", "CURR_AFN", "CURR_ALL", "CURR_AWG", "CURR_AZN", "CURR_BAM", "CURR_BGN", "CURR_BOB", "CURR_BRL", "CURR_BWP", "CURR_BYR", "CURR_BZD", "CURR_CHF", "CURR_CRC", "CURR_CUP", "CURR_CZK", "CURR_DKK", "CURR_DOP", "CURR_EUR", "CURR_GBP", "CURR_GHS", "CURR_GTQ", "CURR_HNL", "CURR_HRK", "CURR_HUF", "CURR_IDR", "CURR_ILS", "CURR_IRR", "CURR_JMD", "CURR_JPY", "CURR_KHR", "CURR_KPW", "CURR_LAK", "CURR_MKD", "CURR_MNT", "CURR_MUR", "CURR_MYR", "CURR_MZN", "CURR_NGN", "CURR_NIO", "CURR_PAB", "CURR_PEN", "CURR_PLN", "CURR_PYG", "CURR_RON", "CURR_RSD", "CURR_RUB", "CURR_SOS", "CURR_SYM", "CURR_THB", "CURR_TTD", "CURR_TWD", "CURR_UAH", "CURR_USD", "CURR_UYU", "CURR_VEF", "CURR_VND", "CURR_XBT", "CURR_ZAR", "CURR_ZWD", "DIGIT", "DIV", "EXP", "FLOAT", "HEX_DIGIT", "INTEGER", "MINUS", "MULT", "OCTAL_DIGIT", "PLUS", "WHITESPACE"
 	};
 	public const int EOF=-1;
-	public const int DIGIT=4;
-	public const int DIV=5;
-	public const int EXP=6;
-	public const int FLOAT=7;
-	public const int HEX_DIGIT=8;
-	public const int INTEGER=9;
-	public const int MINUS=10;
-	public const int MULT=11;
-	public const int OCTAL_DIGIT=12;
-	public const int PLUS=13;
-	public const int WHITESPACE=14;
+	public const int CURRENCY=4;
+	public const int CURR_AFN=5;
+	public const int CURR_ALL=6;
+	public const int CURR_AWG=7;
+	public const int CURR_AZN=8;
+	public const int CURR_BAM=9;
+	public const int CURR_BGN=10;
+	public const int CURR_BOB=11;
+	public const int CURR_BRL=12;
+	public const int CURR_BWP=13;
+	public const int CURR_BYR=14;
+	public const int CURR_BZD=15;
+	public const int CURR_CHF=16;
+	public const int CURR_CRC=17;
+	public const int CURR_CUP=18;
+	public const int CURR_CZK=19;
+	public const int CURR_DKK=20;
+	public const int CURR_DOP=21;
+	public const int CURR_EUR=22;
+	public const int CURR_GBP=23;
+	public const int CURR_GHS=24;
+	public const int CURR_GTQ=25;
+	public const int CURR_HNL=26;
+	public const int CURR_HRK=27;
+	public const int CURR_HUF=28;
+	public const int CURR_IDR=29;
+	public const int CURR_ILS=30;
+	public const int CURR_IRR=31;
+	public const int CURR_JMD=32;
+	public const int CURR_JPY=33;
+	public const int CURR_KHR=34;
+	public const int CURR_KPW=35;
+	public const int CURR_LAK=36;
+	public const int CURR_MKD=37;
+	public const int CURR_MNT=38;
+	public const int CURR_MUR=39;
+	public const int CURR_MYR=40;
+	public const int CURR_MZN=41;
+	public const int CURR_NGN=42;
+	public const int CURR_NIO=43;
+	public const int CURR_PAB=44;
+	public const int CURR_PEN=45;
+	public const int CURR_PLN=46;
+	public const int CURR_PYG=47;
+	public const int CURR_RON=48;
+	public const int CURR_RSD=49;
+	public const int CURR_RUB=50;
+	public const int CURR_SOS=51;
+	public const int CURR_SYM=52;
+	public const int CURR_THB=53;
+	public const int CURR_TTD=54;
+	public const int CURR_TWD=55;
+	public const int CURR_UAH=56;
+	public const int CURR_USD=57;
+	public const int CURR_UYU=58;
+	public const int CURR_VEF=59;
+	public const int CURR_VND=60;
+	public const int CURR_XBT=61;
+	public const int CURR_ZAR=62;
+	public const int CURR_ZWD=63;
+	public const int DIGIT=64;
+	public const int DIV=65;
+	public const int EXP=66;
+	public const int FLOAT=67;
+	public const int HEX_DIGIT=68;
+	public const int INTEGER=69;
+	public const int MINUS=70;
+	public const int MULT=71;
+	public const int OCTAL_DIGIT=72;
+	public const int PLUS=73;
+	public const int WHITESPACE=74;
 
 	public formulaParser(ITokenStream input)
 		: this(input, new RecognizerSharedState())
@@ -409,12 +469,12 @@ public partial class formulaParser : Antlr.Runtime.Parser
 	#region Follow sets
 	private static class Follow
 	{
-		public static readonly BitSet _term_in_expr146 = new BitSet(new ulong[]{0x2402UL});
-		public static readonly BitSet _set_in_expr150 = new BitSet(new ulong[]{0x200UL});
-		public static readonly BitSet _term_in_expr161 = new BitSet(new ulong[]{0x2402UL});
-		public static readonly BitSet _factor_in_term176 = new BitSet(new ulong[]{0x822UL});
-		public static readonly BitSet _set_in_term180 = new BitSet(new ulong[]{0x200UL});
-		public static readonly BitSet _factor_in_term190 = new BitSet(new ulong[]{0x822UL});
+		public static readonly BitSet _term_in_expr146 = new BitSet(new ulong[]{0x2UL,0x240UL});
+		public static readonly BitSet _set_in_expr150 = new BitSet(new ulong[]{0x0UL,0x20UL});
+		public static readonly BitSet _term_in_expr161 = new BitSet(new ulong[]{0x2UL,0x240UL});
+		public static readonly BitSet _factor_in_term176 = new BitSet(new ulong[]{0x2UL,0x82UL});
+		public static readonly BitSet _set_in_term180 = new BitSet(new ulong[]{0x0UL,0x20UL});
+		public static readonly BitSet _factor_in_term190 = new BitSet(new ulong[]{0x2UL,0x82UL});
 		public static readonly BitSet _INTEGER_in_factor204 = new BitSet(new ulong[]{0x2UL});
 	}
 	#endregion Follow sets
