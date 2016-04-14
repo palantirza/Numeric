@@ -62,7 +62,7 @@ var result = weight1 + weight2; // 100500 g
 ## Money
 ```Money``` is quite similar to a Unit of Measure in many respects, with ```Currency``` taking the place of ```Unit```. However, unlike a unit of measure a ```Currency``` can also have a ```Scale``` which defines the number of digits in the ```Money``` instance.
 
-### Currency
+### Currency [In Progress]
 
 Currency is the "type" of Money transactions, and similar to Units. Currencies consist of:
 
@@ -88,7 +88,7 @@ var value2 = new Money(150, usd);
 var result = value1 + value2; // $ 250
 ~~~
 
-## Formulas
+## Formulas [In Progress]
 
 The Palantir Calculation Library supports complex formulas. These can be parsed from text, and rendered for display.
 
@@ -100,6 +100,9 @@ Parse the formula $$x = \frac{x^3}{\pi}$$
 Expression formula = Formula.Parse("x = x^3 \ [Pi]");
 ~~~
 
-## Stochastic
-### Probability Distribution
+## Roadmap
 
+* Force Currency operations that result in remainders, to return a different type
+* Formula parsing
+* Financial Formulas
+* Stochastic calculations
