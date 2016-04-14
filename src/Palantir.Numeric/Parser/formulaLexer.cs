@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 formula.g 2016-04-13 21:12:57
+// $ANTLR 3.4 formula.g 2016-04-14 05:25:36
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -33,11 +33,15 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 	public const int EOF=-1;
 	public const int DIGIT=4;
 	public const int DIV=5;
-	public const int MINUS=6;
-	public const int MULT=7;
-	public const int NUMBER=8;
-	public const int PLUS=9;
-	public const int WHITESPACE=10;
+	public const int EXP=6;
+	public const int FLOAT=7;
+	public const int HEX_DIGIT=8;
+	public const int INTEGER=9;
+	public const int MINUS=10;
+	public const int MULT=11;
+	public const int OCTAL_DIGIT=12;
+	public const int PLUS=13;
+	public const int WHITESPACE=14;
 
     // delegates
     // delegators
@@ -205,26 +209,26 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 	}
 	// $ANTLR end "PLUS"
 
-	partial void EnterRule_NUMBER();
-	partial void LeaveRule_NUMBER();
+	partial void EnterRule_INTEGER();
+	partial void LeaveRule_INTEGER();
 
-	// $ANTLR start "NUMBER"
-	[GrammarRule("NUMBER")]
-	private void mNUMBER()
+	// $ANTLR start "INTEGER"
+	[GrammarRule("INTEGER")]
+	private void mINTEGER()
 	{
-		EnterRule_NUMBER();
-		EnterRule("NUMBER", 5);
-		TraceIn("NUMBER", 5);
+		EnterRule_INTEGER();
+		EnterRule("INTEGER", 5);
+		TraceIn("INTEGER", 5);
 		try
 		{
-			int _type = NUMBER;
+			int _type = INTEGER;
 			int _channel = DefaultTokenChannel;
-			// formula.g:46:9: ( ( DIGIT )+ )
+			// formula.g:46:10: ( ( DIGIT )+ )
 			DebugEnterAlt(1);
-			// formula.g:46:11: ( DIGIT )+
+			// formula.g:46:12: ( DIGIT )+
 			{
-			DebugLocation(46, 11);
-			// formula.g:46:11: ( DIGIT )+
+			DebugLocation(46, 12);
+			// formula.g:46:12: ( DIGIT )+
 			int cnt1=0;
 			try { DebugEnterSubRule(1);
 			while (true)
@@ -233,7 +237,7 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 				try { DebugEnterDecision(1, false);
 				int LA1_0 = input.LA(1);
 
-				if (((LA1_0>='0' && LA1_0<='9')))
+				if (((LA1_0>='1' && LA1_0<='9')))
 				{
 					alt1 = 1;
 				}
@@ -244,11 +248,10 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// formula.g:
+					// formula.g:46:13: DIGIT
 					{
-					DebugLocation(46, 11);
-					input.Consume();
-
+					DebugLocation(46, 13);
+					mDIGIT(); 
 
 					}
 					break;
@@ -276,92 +279,226 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("NUMBER", 5);
-			LeaveRule("NUMBER", 5);
-			LeaveRule_NUMBER();
+			TraceOut("INTEGER", 5);
+			LeaveRule("INTEGER", 5);
+			LeaveRule_INTEGER();
 		}
 	}
-	// $ANTLR end "NUMBER"
+	// $ANTLR end "INTEGER"
 
-	partial void EnterRule_WHITESPACE();
-	partial void LeaveRule_WHITESPACE();
+	partial void EnterRule_FLOAT();
+	partial void LeaveRule_FLOAT();
 
-	// $ANTLR start "WHITESPACE"
-	[GrammarRule("WHITESPACE")]
-	private void mWHITESPACE()
+	// $ANTLR start "FLOAT"
+	[GrammarRule("FLOAT")]
+	private void mFLOAT()
 	{
-		EnterRule_WHITESPACE();
-		EnterRule("WHITESPACE", 6);
-		TraceIn("WHITESPACE", 6);
+		EnterRule_FLOAT();
+		EnterRule("FLOAT", 6);
+		TraceIn("FLOAT", 6);
 		try
 		{
-			int _type = WHITESPACE;
+			int _type = FLOAT;
 			int _channel = DefaultTokenChannel;
-			// formula.g:48:12: ( ( '\\t' | ' ' | '\\r' | '\\n' | '\\u000C' )+ )
-			DebugEnterAlt(1);
-			// formula.g:48:14: ( '\\t' | ' ' | '\\r' | '\\n' | '\\u000C' )+
+			// formula.g:49:2: ( ( DIGIT )* '.' ( DIGIT )+ ( EXP )? | ( DIGIT )+ EXP )
+			int alt6=2;
+			try { DebugEnterDecision(6, false);
+			try
 			{
-			DebugLocation(48, 14);
-			// formula.g:48:14: ( '\\t' | ' ' | '\\r' | '\\n' | '\\u000C' )+
-			int cnt2=0;
-			try { DebugEnterSubRule(2);
-			while (true)
+				alt6 = dfa6.Predict(input);
+			}
+			catch (NoViableAltException nvae)
 			{
-				int alt2=2;
-				try { DebugEnterDecision(2, false);
-				int LA2_0 = input.LA(1);
-
-				if (((LA2_0>='\t' && LA2_0<='\n')||(LA2_0>='\f' && LA2_0<='\r')||LA2_0==' '))
+				DebugRecognitionException(nvae);
+				throw;
+			}
+			} finally { DebugExitDecision(6); }
+			switch (alt6)
+			{
+			case 1:
+				DebugEnterAlt(1);
+				// formula.g:49:4: ( DIGIT )* '.' ( DIGIT )+ ( EXP )?
 				{
-					alt2 = 1;
+				DebugLocation(49, 4);
+				// formula.g:49:4: ( DIGIT )*
+				try { DebugEnterSubRule(2);
+				while (true)
+				{
+					int alt2=2;
+					try { DebugEnterDecision(2, false);
+					int LA2_0 = input.LA(1);
+
+					if (((LA2_0>='1' && LA2_0<='9')))
+					{
+						alt2 = 1;
+					}
+
+
+					} finally { DebugExitDecision(2); }
+					switch ( alt2 )
+					{
+					case 1:
+						DebugEnterAlt(1);
+						// formula.g:49:4: DIGIT
+						{
+						DebugLocation(49, 4);
+						mDIGIT(); 
+
+						}
+						break;
+
+					default:
+						goto loop2;
+					}
 				}
 
+				loop2:
+					;
 
-				} finally { DebugExitDecision(2); }
-				switch (alt2)
+				} finally { DebugExitSubRule(2); }
+
+				DebugLocation(49, 11);
+				Match('.'); 
+				DebugLocation(49, 15);
+				// formula.g:49:15: ( DIGIT )+
+				int cnt3=0;
+				try { DebugEnterSubRule(3);
+				while (true)
+				{
+					int alt3=2;
+					try { DebugEnterDecision(3, false);
+					int LA3_0 = input.LA(1);
+
+					if (((LA3_0>='1' && LA3_0<='9')))
+					{
+						alt3 = 1;
+					}
+
+
+					} finally { DebugExitDecision(3); }
+					switch (alt3)
+					{
+					case 1:
+						DebugEnterAlt(1);
+						// formula.g:49:15: DIGIT
+						{
+						DebugLocation(49, 15);
+						mDIGIT(); 
+
+						}
+						break;
+
+					default:
+						if (cnt3 >= 1)
+							goto loop3;
+
+						EarlyExitException eee3 = new EarlyExitException( 3, input );
+						DebugRecognitionException(eee3);
+						throw eee3;
+					}
+					cnt3++;
+				}
+				loop3:
+					;
+
+				} finally { DebugExitSubRule(3); }
+
+				DebugLocation(49, 22);
+				// formula.g:49:22: ( EXP )?
+				int alt4=2;
+				try { DebugEnterSubRule(4);
+				try { DebugEnterDecision(4, false);
+				int LA4_0 = input.LA(1);
+
+				if ((LA4_0=='E'||LA4_0=='e'))
+				{
+					alt4 = 1;
+				}
+				} finally { DebugExitDecision(4); }
+				switch (alt4)
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// formula.g:
+					// formula.g:49:22: EXP
 					{
-					DebugLocation(48, 14);
-					input.Consume();
-
+					DebugLocation(49, 22);
+					mEXP(); 
 
 					}
 					break;
 
-				default:
-					if (cnt2 >= 1)
-						goto loop2;
-
-					EarlyExitException eee2 = new EarlyExitException( 2, input );
-					DebugRecognitionException(eee2);
-					throw eee2;
 				}
-				cnt2++;
+				} finally { DebugExitSubRule(4); }
+
+
+				}
+				break;
+			case 2:
+				DebugEnterAlt(2);
+				// formula.g:50:4: ( DIGIT )+ EXP
+				{
+				DebugLocation(50, 4);
+				// formula.g:50:4: ( DIGIT )+
+				int cnt5=0;
+				try { DebugEnterSubRule(5);
+				while (true)
+				{
+					int alt5=2;
+					try { DebugEnterDecision(5, false);
+					int LA5_0 = input.LA(1);
+
+					if (((LA5_0>='1' && LA5_0<='9')))
+					{
+						alt5 = 1;
+					}
+
+
+					} finally { DebugExitDecision(5); }
+					switch (alt5)
+					{
+					case 1:
+						DebugEnterAlt(1);
+						// formula.g:50:4: DIGIT
+						{
+						DebugLocation(50, 4);
+						mDIGIT(); 
+
+						}
+						break;
+
+					default:
+						if (cnt5 >= 1)
+							goto loop5;
+
+						EarlyExitException eee5 = new EarlyExitException( 5, input );
+						DebugRecognitionException(eee5);
+						throw eee5;
+					}
+					cnt5++;
+				}
+				loop5:
+					;
+
+				} finally { DebugExitSubRule(5); }
+
+				DebugLocation(50, 11);
+				mEXP(); 
+
+				}
+				break;
+
 			}
-			loop2:
-				;
-
-			} finally { DebugExitSubRule(2); }
-
-			DebugLocation(48, 57);
-			 _channel = Hidden; 
-
-			}
-
 			state.type = _type;
 			state.channel = _channel;
 		}
 		finally
 		{
-			TraceOut("WHITESPACE", 6);
-			LeaveRule("WHITESPACE", 6);
-			LeaveRule_WHITESPACE();
+			TraceOut("FLOAT", 6);
+			LeaveRule("FLOAT", 6);
+			LeaveRule_FLOAT();
 		}
 	}
-	// $ANTLR end "WHITESPACE"
+	// $ANTLR end "FLOAT"
 
 	partial void EnterRule_DIGIT();
 	partial void LeaveRule_DIGIT();
@@ -375,22 +512,50 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 		TraceIn("DIGIT", 7);
 		try
 		{
-			// formula.g:50:17: ( '0' .. '9' )
+			// formula.g:53:15: ( '1' .. '9' ( '0' .. '9' )* )
 			DebugEnterAlt(1);
-			// formula.g:
+			// formula.g:53:17: '1' .. '9' ( '0' .. '9' )*
 			{
-			DebugLocation(50, 17);
-			if ((input.LA(1)>='0' && input.LA(1)<='9'))
+			DebugLocation(53, 17);
+			MatchRange('1','9'); 
+			DebugLocation(53, 26);
+			// formula.g:53:26: ( '0' .. '9' )*
+			try { DebugEnterSubRule(7);
+			while (true)
 			{
-				input.Consume();
+				int alt7=2;
+				try { DebugEnterDecision(7, false);
+				int LA7_0 = input.LA(1);
+
+				if (((LA7_0>='0' && LA7_0<='9')))
+				{
+					alt7 = 1;
+				}
+
+
+				} finally { DebugExitDecision(7); }
+				switch ( alt7 )
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// formula.g:
+					{
+					DebugLocation(53, 26);
+					input.Consume();
+
+
+					}
+					break;
+
+				default:
+					goto loop7;
+				}
 			}
-			else
-			{
-				MismatchedSetException mse = new MismatchedSetException(null,input);
-				DebugRecognitionException(mse);
-				Recover(mse);
-				throw mse;
-			}
+
+			loop7:
+				;
+
+			} finally { DebugExitSubRule(7); }
 
 
 			}
@@ -405,66 +570,373 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 	}
 	// $ANTLR end "DIGIT"
 
+	partial void EnterRule_OCTAL_DIGIT();
+	partial void LeaveRule_OCTAL_DIGIT();
+
+	// $ANTLR start "OCTAL_DIGIT"
+	[GrammarRule("OCTAL_DIGIT")]
+	private void mOCTAL_DIGIT()
+	{
+		EnterRule_OCTAL_DIGIT();
+		EnterRule("OCTAL_DIGIT", 8);
+		TraceIn("OCTAL_DIGIT", 8);
+		try
+		{
+			// formula.g:54:21: ( '0' ( '0' .. '7' )+ )
+			DebugEnterAlt(1);
+			// formula.g:54:23: '0' ( '0' .. '7' )+
+			{
+			DebugLocation(54, 23);
+			Match('0'); 
+			DebugLocation(54, 27);
+			// formula.g:54:27: ( '0' .. '7' )+
+			int cnt8=0;
+			try { DebugEnterSubRule(8);
+			while (true)
+			{
+				int alt8=2;
+				try { DebugEnterDecision(8, false);
+				int LA8_0 = input.LA(1);
+
+				if (((LA8_0>='0' && LA8_0<='7')))
+				{
+					alt8 = 1;
+				}
+
+
+				} finally { DebugExitDecision(8); }
+				switch (alt8)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// formula.g:
+					{
+					DebugLocation(54, 27);
+					input.Consume();
+
+
+					}
+					break;
+
+				default:
+					if (cnt8 >= 1)
+						goto loop8;
+
+					EarlyExitException eee8 = new EarlyExitException( 8, input );
+					DebugRecognitionException(eee8);
+					throw eee8;
+				}
+				cnt8++;
+			}
+			loop8:
+				;
+
+			} finally { DebugExitSubRule(8); }
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("OCTAL_DIGIT", 8);
+			LeaveRule("OCTAL_DIGIT", 8);
+			LeaveRule_OCTAL_DIGIT();
+		}
+	}
+	// $ANTLR end "OCTAL_DIGIT"
+
+	partial void EnterRule_HEX_DIGIT();
+	partial void LeaveRule_HEX_DIGIT();
+
+	// $ANTLR start "HEX_DIGIT"
+	[GrammarRule("HEX_DIGIT")]
+	private void mHEX_DIGIT()
+	{
+		EnterRule_HEX_DIGIT();
+		EnterRule("HEX_DIGIT", 9);
+		TraceIn("HEX_DIGIT", 9);
+		try
+		{
+			// formula.g:55:19: ( '0x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ )
+			DebugEnterAlt(1);
+			// formula.g:55:21: '0x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
+			{
+			DebugLocation(55, 21);
+			Match("0x"); 
+
+			DebugLocation(55, 26);
+			// formula.g:55:26: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
+			int cnt9=0;
+			try { DebugEnterSubRule(9);
+			while (true)
+			{
+				int alt9=2;
+				try { DebugEnterDecision(9, false);
+				int LA9_0 = input.LA(1);
+
+				if (((LA9_0>='0' && LA9_0<='9')||(LA9_0>='A' && LA9_0<='F')||(LA9_0>='a' && LA9_0<='f')))
+				{
+					alt9 = 1;
+				}
+
+
+				} finally { DebugExitDecision(9); }
+				switch (alt9)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// formula.g:
+					{
+					DebugLocation(55, 26);
+					input.Consume();
+
+
+					}
+					break;
+
+				default:
+					if (cnt9 >= 1)
+						goto loop9;
+
+					EarlyExitException eee9 = new EarlyExitException( 9, input );
+					DebugRecognitionException(eee9);
+					throw eee9;
+				}
+				cnt9++;
+			}
+			loop9:
+				;
+
+			} finally { DebugExitSubRule(9); }
+
+
+			}
+
+		}
+		finally
+		{
+			TraceOut("HEX_DIGIT", 9);
+			LeaveRule("HEX_DIGIT", 9);
+			LeaveRule_HEX_DIGIT();
+		}
+	}
+	// $ANTLR end "HEX_DIGIT"
+
+	partial void EnterRule_EXP();
+	partial void LeaveRule_EXP();
+
+	// $ANTLR start "EXP"
+	[GrammarRule("EXP")]
+	private void mEXP()
+	{
+		EnterRule_EXP();
+		EnterRule("EXP", 10);
+		TraceIn("EXP", 10);
+		try
+		{
+			int _type = EXP;
+			int _channel = DefaultTokenChannel;
+			// formula.g:57:5: ( ( 'E' | 'e' ) ( '+' | '-' )? ( DIGIT )+ )
+			DebugEnterAlt(1);
+			// formula.g:57:7: ( 'E' | 'e' ) ( '+' | '-' )? ( DIGIT )+
+			{
+			DebugLocation(57, 7);
+			if (input.LA(1)=='E'||input.LA(1)=='e')
+			{
+				input.Consume();
+			}
+			else
+			{
+				MismatchedSetException mse = new MismatchedSetException(null,input);
+				DebugRecognitionException(mse);
+				Recover(mse);
+				throw mse;
+			}
+
+			DebugLocation(57, 17);
+			// formula.g:57:17: ( '+' | '-' )?
+			int alt10=2;
+			try { DebugEnterSubRule(10);
+			try { DebugEnterDecision(10, false);
+			int LA10_0 = input.LA(1);
+
+			if ((LA10_0=='+'||LA10_0=='-'))
+			{
+				alt10 = 1;
+			}
+			} finally { DebugExitDecision(10); }
+			switch (alt10)
+			{
+			case 1:
+				DebugEnterAlt(1);
+				// formula.g:
+				{
+				DebugLocation(57, 17);
+				input.Consume();
+
+
+				}
+				break;
+
+			}
+			} finally { DebugExitSubRule(10); }
+
+			DebugLocation(57, 28);
+			// formula.g:57:28: ( DIGIT )+
+			int cnt11=0;
+			try { DebugEnterSubRule(11);
+			while (true)
+			{
+				int alt11=2;
+				try { DebugEnterDecision(11, false);
+				int LA11_0 = input.LA(1);
+
+				if (((LA11_0>='1' && LA11_0<='9')))
+				{
+					alt11 = 1;
+				}
+
+
+				} finally { DebugExitDecision(11); }
+				switch (alt11)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// formula.g:57:28: DIGIT
+					{
+					DebugLocation(57, 28);
+					mDIGIT(); 
+
+					}
+					break;
+
+				default:
+					if (cnt11 >= 1)
+						goto loop11;
+
+					EarlyExitException eee11 = new EarlyExitException( 11, input );
+					DebugRecognitionException(eee11);
+					throw eee11;
+				}
+				cnt11++;
+			}
+			loop11:
+				;
+
+			} finally { DebugExitSubRule(11); }
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("EXP", 10);
+			LeaveRule("EXP", 10);
+			LeaveRule_EXP();
+		}
+	}
+	// $ANTLR end "EXP"
+
+	partial void EnterRule_WHITESPACE();
+	partial void LeaveRule_WHITESPACE();
+
+	// $ANTLR start "WHITESPACE"
+	[GrammarRule("WHITESPACE")]
+	private void mWHITESPACE()
+	{
+		EnterRule_WHITESPACE();
+		EnterRule("WHITESPACE", 11);
+		TraceIn("WHITESPACE", 11);
+		try
+		{
+			int _type = WHITESPACE;
+			int _channel = DefaultTokenChannel;
+			// formula.g:60:12: ( ( '\\t' | ' ' | '\\r' | '\\n' | '\\u000C' )+ )
+			DebugEnterAlt(1);
+			// formula.g:60:14: ( '\\t' | ' ' | '\\r' | '\\n' | '\\u000C' )+
+			{
+			DebugLocation(60, 14);
+			// formula.g:60:14: ( '\\t' | ' ' | '\\r' | '\\n' | '\\u000C' )+
+			int cnt12=0;
+			try { DebugEnterSubRule(12);
+			while (true)
+			{
+				int alt12=2;
+				try { DebugEnterDecision(12, false);
+				int LA12_0 = input.LA(1);
+
+				if (((LA12_0>='\t' && LA12_0<='\n')||(LA12_0>='\f' && LA12_0<='\r')||LA12_0==' '))
+				{
+					alt12 = 1;
+				}
+
+
+				} finally { DebugExitDecision(12); }
+				switch (alt12)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// formula.g:
+					{
+					DebugLocation(60, 14);
+					input.Consume();
+
+
+					}
+					break;
+
+				default:
+					if (cnt12 >= 1)
+						goto loop12;
+
+					EarlyExitException eee12 = new EarlyExitException( 12, input );
+					DebugRecognitionException(eee12);
+					throw eee12;
+				}
+				cnt12++;
+			}
+			loop12:
+				;
+
+			} finally { DebugExitSubRule(12); }
+
+			DebugLocation(60, 57);
+			 _channel = Hidden; 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("WHITESPACE", 11);
+			LeaveRule("WHITESPACE", 11);
+			LeaveRule_WHITESPACE();
+		}
+	}
+	// $ANTLR end "WHITESPACE"
+
 	public override void mTokens()
 	{
-		// formula.g:1:8: ( DIV | MINUS | MULT | PLUS | NUMBER | WHITESPACE )
-		int alt3=6;
-		try { DebugEnterDecision(3, false);
-		switch (input.LA(1))
+		// formula.g:1:8: ( DIV | MINUS | MULT | PLUS | INTEGER | FLOAT | EXP | WHITESPACE )
+		int alt13=8;
+		try { DebugEnterDecision(13, false);
+		try
 		{
-		case '/':
-			{
-			alt3 = 1;
-			}
-			break;
-		case '-':
-			{
-			alt3 = 2;
-			}
-			break;
-		case '*':
-			{
-			alt3 = 3;
-			}
-			break;
-		case '+':
-			{
-			alt3 = 4;
-			}
-			break;
-		case '0':
-		case '1':
-		case '2':
-		case '3':
-		case '4':
-		case '5':
-		case '6':
-		case '7':
-		case '8':
-		case '9':
-			{
-			alt3 = 5;
-			}
-			break;
-		case '\t':
-		case '\n':
-		case '\f':
-		case '\r':
-		case ' ':
-			{
-			alt3 = 6;
-			}
-			break;
-		default:
-			{
-				NoViableAltException nvae = new NoViableAltException("", 3, 0, input);
-				DebugRecognitionException(nvae);
-				throw nvae;
-			}
+			alt13 = dfa13.Predict(input);
 		}
-
-		} finally { DebugExitDecision(3); }
-		switch (alt3)
+		catch (NoViableAltException nvae)
+		{
+			DebugRecognitionException(nvae);
+			throw;
+		}
+		} finally { DebugExitDecision(13); }
+		switch (alt13)
 		{
 		case 1:
 			DebugEnterAlt(1);
@@ -504,18 +976,36 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 			break;
 		case 5:
 			DebugEnterAlt(5);
-			// formula.g:1:30: NUMBER
+			// formula.g:1:30: INTEGER
 			{
 			DebugLocation(1, 30);
-			mNUMBER(); 
+			mINTEGER(); 
 
 			}
 			break;
 		case 6:
 			DebugEnterAlt(6);
-			// formula.g:1:37: WHITESPACE
+			// formula.g:1:38: FLOAT
 			{
-			DebugLocation(1, 37);
+			DebugLocation(1, 38);
+			mFLOAT(); 
+
+			}
+			break;
+		case 7:
+			DebugEnterAlt(7);
+			// formula.g:1:44: EXP
+			{
+			DebugLocation(1, 44);
+			mEXP(); 
+
+			}
+			break;
+		case 8:
+			DebugEnterAlt(8);
+			// formula.g:1:48: WHITESPACE
+			{
+			DebugLocation(1, 48);
 			mWHITESPACE(); 
 
 			}
@@ -527,10 +1017,148 @@ public partial class formulaLexer : Antlr.Runtime.Lexer
 
 
 	#region DFA
+	DFA6 dfa6;
+	DFA13 dfa13;
 
 	protected override void InitDFAs()
 	{
 		base.InitDFAs();
+		dfa6 = new DFA6(this);
+		dfa13 = new DFA13(this);
+	}
+
+	private class DFA6 : DFA
+	{
+		private const string DFA6_eotS =
+			"\x6\xFFFF";
+		private const string DFA6_eofS =
+			"\x6\xFFFF";
+		private const string DFA6_minS =
+			"\x2\x2E\x1\xFFFF\x2\x2E\x1\xFFFF";
+		private const string DFA6_maxS =
+			"\x1\x39\x1\x65\x1\xFFFF\x2\x65\x1\xFFFF";
+		private const string DFA6_acceptS =
+			"\x2\xFFFF\x1\x1\x2\xFFFF\x1\x2";
+		private const string DFA6_specialS =
+			"\x6\xFFFF}>";
+		private static readonly string[] DFA6_transitionS =
+			{
+				"\x1\x2\x2\xFFFF\x9\x1",
+				"\x1\x2\x1\xFFFF\x1\x4\x9\x3\xB\xFFFF\x1\x5\x1F\xFFFF\x1\x5",
+				"",
+				"\x1\x2\x1\xFFFF\x1\x4\x9\x3\xB\xFFFF\x1\x5\x1F\xFFFF\x1\x5",
+				"\x1\x2\x1\xFFFF\x1\x4\x9\x3\xB\xFFFF\x1\x5\x1F\xFFFF\x1\x5",
+				""
+			};
+
+		private static readonly short[] DFA6_eot = DFA.UnpackEncodedString(DFA6_eotS);
+		private static readonly short[] DFA6_eof = DFA.UnpackEncodedString(DFA6_eofS);
+		private static readonly char[] DFA6_min = DFA.UnpackEncodedStringToUnsignedChars(DFA6_minS);
+		private static readonly char[] DFA6_max = DFA.UnpackEncodedStringToUnsignedChars(DFA6_maxS);
+		private static readonly short[] DFA6_accept = DFA.UnpackEncodedString(DFA6_acceptS);
+		private static readonly short[] DFA6_special = DFA.UnpackEncodedString(DFA6_specialS);
+		private static readonly short[][] DFA6_transition;
+
+		static DFA6()
+		{
+			int numStates = DFA6_transitionS.Length;
+			DFA6_transition = new short[numStates][];
+			for ( int i=0; i < numStates; i++ )
+			{
+				DFA6_transition[i] = DFA.UnpackEncodedString(DFA6_transitionS[i]);
+			}
+		}
+
+		public DFA6( BaseRecognizer recognizer )
+		{
+			this.recognizer = recognizer;
+			this.decisionNumber = 6;
+			this.eot = DFA6_eot;
+			this.eof = DFA6_eof;
+			this.min = DFA6_min;
+			this.max = DFA6_max;
+			this.accept = DFA6_accept;
+			this.special = DFA6_special;
+			this.transition = DFA6_transition;
+		}
+
+		public override string Description { get { return "48:1: FLOAT : ( ( DIGIT )* '.' ( DIGIT )+ ( EXP )? | ( DIGIT )+ EXP );"; } }
+
+		public override void Error(NoViableAltException nvae)
+		{
+			DebugRecognitionException(nvae);
+		}
+	}
+
+	private class DFA13 : DFA
+	{
+		private const string DFA13_eotS =
+			"\x5\xFFFF\x1\xA\x3\xFFFF\x1\xA\x1\xFFFF\x1\xA";
+		private const string DFA13_eofS =
+			"\xC\xFFFF";
+		private const string DFA13_minS =
+			"\x1\x9\x4\xFFFF\x1\x2E\x3\xFFFF\x1\x2E\x1\xFFFF\x1\x2E";
+		private const string DFA13_maxS =
+			"\x1\x65\x4\xFFFF\x1\x65\x3\xFFFF\x1\x65\x1\xFFFF\x1\x65";
+		private const string DFA13_acceptS =
+			"\x1\xFFFF\x1\x1\x1\x2\x1\x3\x1\x4\x1\xFFFF\x1\x6\x1\x7\x1\x8\x1\xFFFF"+
+			"\x1\x5\x1\xFFFF";
+		private const string DFA13_specialS =
+			"\xC\xFFFF}>";
+		private static readonly string[] DFA13_transitionS =
+			{
+				"\x2\x8\x1\xFFFF\x2\x8\x12\xFFFF\x1\x8\x9\xFFFF\x1\x3\x1\x4\x1\xFFFF"+
+				"\x1\x2\x1\x6\x1\x1\x1\xFFFF\x9\x5\xB\xFFFF\x1\x7\x1F\xFFFF\x1\x7",
+				"",
+				"",
+				"",
+				"",
+				"\x1\x6\x1\xFFFF\x1\xB\x9\x9\xB\xFFFF\x1\x6\x1F\xFFFF\x1\x6",
+				"",
+				"",
+				"",
+				"\x1\x6\x1\xFFFF\x1\xB\x9\x9\xB\xFFFF\x1\x6\x1F\xFFFF\x1\x6",
+				"",
+				"\x1\x6\x1\xFFFF\x1\xB\x9\x9\xB\xFFFF\x1\x6\x1F\xFFFF\x1\x6"
+			};
+
+		private static readonly short[] DFA13_eot = DFA.UnpackEncodedString(DFA13_eotS);
+		private static readonly short[] DFA13_eof = DFA.UnpackEncodedString(DFA13_eofS);
+		private static readonly char[] DFA13_min = DFA.UnpackEncodedStringToUnsignedChars(DFA13_minS);
+		private static readonly char[] DFA13_max = DFA.UnpackEncodedStringToUnsignedChars(DFA13_maxS);
+		private static readonly short[] DFA13_accept = DFA.UnpackEncodedString(DFA13_acceptS);
+		private static readonly short[] DFA13_special = DFA.UnpackEncodedString(DFA13_specialS);
+		private static readonly short[][] DFA13_transition;
+
+		static DFA13()
+		{
+			int numStates = DFA13_transitionS.Length;
+			DFA13_transition = new short[numStates][];
+			for ( int i=0; i < numStates; i++ )
+			{
+				DFA13_transition[i] = DFA.UnpackEncodedString(DFA13_transitionS[i]);
+			}
+		}
+
+		public DFA13( BaseRecognizer recognizer )
+		{
+			this.recognizer = recognizer;
+			this.decisionNumber = 13;
+			this.eot = DFA13_eot;
+			this.eof = DFA13_eof;
+			this.min = DFA13_min;
+			this.max = DFA13_max;
+			this.accept = DFA13_accept;
+			this.special = DFA13_special;
+			this.transition = DFA13_transition;
+		}
+
+		public override string Description { get { return "1:1: Tokens : ( DIV | MINUS | MULT | PLUS | INTEGER | FLOAT | EXP | WHITESPACE );"; } }
+
+		public override void Error(NoViableAltException nvae)
+		{
+			DebugRecognitionException(nvae);
+		}
 	}
 
  

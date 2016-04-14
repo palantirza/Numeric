@@ -12,17 +12,100 @@ namespace Palantir.Numeric.UnitTests
     {
         private formulaLexer lexer;
         
-        #region Simple Tests // A lot of simple and basic logic tests, many duplications
+        #region Number Lexer
+        [Fact]
+        public void ReadSimpleIntegers_ShouldOutputCorrectTokens() 
+        {
+            Read("5");
+            ExpectToken(formulaLexer.INTEGER, "5");
+
+            Read("53");
+            ExpectToken(formulaLexer.INTEGER, "53");
+
+            Read("5362");
+            ExpectToken(formulaLexer.INTEGER, "5362");
+
+            Read("53628549");
+            ExpectToken(formulaLexer.INTEGER, "53628549");
+        }
+        
+        [Fact]
+        public void ReadSimpleFloats_ShouldOutputCorrectTokens() 
+        {
+            Read("5.3");
+            ExpectToken(formulaLexer.FLOAT, "5.3");
+
+            Read("53.3");
+            ExpectToken(formulaLexer.FLOAT, "53.3");
+
+            Read("5362.3");
+            ExpectToken(formulaLexer.FLOAT, "5362.3");
+
+            Read("53628549.3");
+            ExpectToken(formulaLexer.FLOAT, "53628549.3");
+
+            Read("5e3");
+            ExpectToken(formulaLexer.FLOAT, "5e3");
+
+            Read("53e3");
+            ExpectToken(formulaLexer.FLOAT, "53e3");
+
+            Read("5362e3");
+            ExpectToken(formulaLexer.FLOAT, "5362e3");
+
+            Read("53628549e3");
+            ExpectToken(formulaLexer.FLOAT, "53628549e3");
+
+            Read("5e+3");
+            ExpectToken(formulaLexer.FLOAT, "5e+3");
+
+            Read("53e+3");
+            ExpectToken(formulaLexer.FLOAT, "53e+3");
+
+            Read("5362e+3");
+            ExpectToken(formulaLexer.FLOAT, "5362e+3");
+
+            Read("53628549e+3");
+            ExpectToken(formulaLexer.FLOAT, "53628549e+3");
+
+            Read("5e-3");
+            ExpectToken(formulaLexer.FLOAT, "5e-3");
+
+            Read("53e-3");
+            ExpectToken(formulaLexer.FLOAT, "53e-3");
+
+            Read("5362e-3");
+            ExpectToken(formulaLexer.FLOAT, "5362e-3");
+
+            Read("53628549e-3");
+            ExpectToken(formulaLexer.FLOAT, "53628549e-3");
+
+            Read("5.3e3");
+            ExpectToken(formulaLexer.FLOAT, "5.3e3");
+
+            Read("53.3e3");
+            ExpectToken(formulaLexer.FLOAT, "53.3e3");
+
+            Read("5362.3e3");
+            ExpectToken(formulaLexer.FLOAT, "5362.3e3");
+
+            Read("53628549.3e3");
+            ExpectToken(formulaLexer.FLOAT, "53628549.3e3");
+        }
+        
+        #endregion
+        
+        #region Simple Calcs // A lot of simple and basic logic tests, many duplications
         [Fact]
         public void ReadSimpleEquationMUL_ShouldOutputCorrectTokens() 
         {
             Read("5 * 3");
 
-            ExpectToken(formulaLexer.NUMBER, "5");
+            ExpectToken(formulaLexer.INTEGER, "5");
             ExpectToken(formulaLexer.WHITESPACE);
             ExpectToken(formulaLexer.MULT);
             ExpectToken(formulaLexer.WHITESPACE);
-            ExpectToken(formulaLexer.NUMBER, "3");
+            ExpectToken(formulaLexer.INTEGER, "3");
             ExpectToken(formulaLexer.EOF);
         }
         
@@ -31,11 +114,11 @@ namespace Palantir.Numeric.UnitTests
         {
             Read("56 * 376");
 
-            ExpectToken(formulaLexer.NUMBER, "56");
+            ExpectToken(formulaLexer.INTEGER, "56");
             ExpectToken(formulaLexer.WHITESPACE);
             ExpectToken(formulaLexer.MULT);
             ExpectToken(formulaLexer.WHITESPACE);
-            ExpectToken(formulaLexer.NUMBER, "376");
+            ExpectToken(formulaLexer.INTEGER, "376");
             ExpectToken(formulaLexer.EOF);
         }
         
@@ -44,9 +127,9 @@ namespace Palantir.Numeric.UnitTests
         {
             Read("56*376");
 
-            ExpectToken(formulaLexer.NUMBER, "56");
+            ExpectToken(formulaLexer.INTEGER, "56");
             ExpectToken(formulaLexer.MULT);
-            ExpectToken(formulaLexer.NUMBER, "376");
+            ExpectToken(formulaLexer.INTEGER, "376");
             ExpectToken(formulaLexer.EOF);
         }
         
@@ -55,9 +138,9 @@ namespace Palantir.Numeric.UnitTests
         {
             Read("5*3");
 
-            ExpectToken(formulaLexer.NUMBER, "5");
+            ExpectToken(formulaLexer.INTEGER, "5");
             ExpectToken(formulaLexer.MULT);
-            ExpectToken(formulaLexer.NUMBER, "3");
+            ExpectToken(formulaLexer.INTEGER, "3");
             ExpectToken(formulaLexer.EOF);
         }
         
@@ -66,11 +149,11 @@ namespace Palantir.Numeric.UnitTests
         {
             Read("5 / 3");
 
-            ExpectToken(formulaLexer.NUMBER, "5");
+            ExpectToken(formulaLexer.INTEGER, "5");
             ExpectToken(formulaLexer.WHITESPACE);
             ExpectToken(formulaLexer.DIV);
             ExpectToken(formulaLexer.WHITESPACE);
-            ExpectToken(formulaLexer.NUMBER, "3");
+            ExpectToken(formulaLexer.INTEGER, "3");
             ExpectToken(formulaLexer.EOF);
         }
         
@@ -79,11 +162,11 @@ namespace Palantir.Numeric.UnitTests
         {
             Read("56 / 376");
 
-            ExpectToken(formulaLexer.NUMBER, "56");
+            ExpectToken(formulaLexer.INTEGER, "56");
             ExpectToken(formulaLexer.WHITESPACE);
             ExpectToken(formulaLexer.DIV);
             ExpectToken(formulaLexer.WHITESPACE);
-            ExpectToken(formulaLexer.NUMBER, "376");
+            ExpectToken(formulaLexer.INTEGER, "376");
             ExpectToken(formulaLexer.EOF);
         }
         
@@ -92,9 +175,9 @@ namespace Palantir.Numeric.UnitTests
         {
             Read("56/376");
 
-            ExpectToken(formulaLexer.NUMBER, "56");
+            ExpectToken(formulaLexer.INTEGER, "56");
             ExpectToken(formulaLexer.DIV);
-            ExpectToken(formulaLexer.NUMBER, "376");
+            ExpectToken(formulaLexer.INTEGER, "376");
             ExpectToken(formulaLexer.EOF);
         }
         
@@ -103,9 +186,9 @@ namespace Palantir.Numeric.UnitTests
         {
             Read("5/3");
 
-            ExpectToken(formulaLexer.NUMBER, "5");
+            ExpectToken(formulaLexer.INTEGER, "5");
             ExpectToken(formulaLexer.DIV);
-            ExpectToken(formulaLexer.NUMBER, "3");
+            ExpectToken(formulaLexer.INTEGER, "3");
             ExpectToken(formulaLexer.EOF);
         }
         
@@ -114,11 +197,11 @@ namespace Palantir.Numeric.UnitTests
         {
             Read("5 + 3");
 
-            ExpectToken(formulaLexer.NUMBER, "5");
+            ExpectToken(formulaLexer.INTEGER, "5");
             ExpectToken(formulaLexer.WHITESPACE);
             ExpectToken(formulaLexer.PLUS);
             ExpectToken(formulaLexer.WHITESPACE);
-            ExpectToken(formulaLexer.NUMBER, "3");
+            ExpectToken(formulaLexer.INTEGER, "3");
             ExpectToken(formulaLexer.EOF);
         }
         
@@ -127,11 +210,11 @@ namespace Palantir.Numeric.UnitTests
         {
             Read("56 + 376");
 
-            ExpectToken(formulaLexer.NUMBER, "56");
+            ExpectToken(formulaLexer.INTEGER, "56");
             ExpectToken(formulaLexer.WHITESPACE);
             ExpectToken(formulaLexer.PLUS);
             ExpectToken(formulaLexer.WHITESPACE);
-            ExpectToken(formulaLexer.NUMBER, "376");
+            ExpectToken(formulaLexer.INTEGER, "376");
             ExpectToken(formulaLexer.EOF);
         }
         
@@ -140,9 +223,9 @@ namespace Palantir.Numeric.UnitTests
         {
             Read("56+376");
 
-            ExpectToken(formulaLexer.NUMBER, "56");
+            ExpectToken(formulaLexer.INTEGER, "56");
             ExpectToken(formulaLexer.PLUS);
-            ExpectToken(formulaLexer.NUMBER, "376");
+            ExpectToken(formulaLexer.INTEGER, "376");
             ExpectToken(formulaLexer.EOF);
         }
         
@@ -151,9 +234,9 @@ namespace Palantir.Numeric.UnitTests
         {
             Read("5+3");
 
-            ExpectToken(formulaLexer.NUMBER, "5");
+            ExpectToken(formulaLexer.INTEGER, "5");
             ExpectToken(formulaLexer.PLUS);
-            ExpectToken(formulaLexer.NUMBER, "3");
+            ExpectToken(formulaLexer.INTEGER, "3");
             ExpectToken(formulaLexer.EOF);
         }
         
@@ -162,11 +245,11 @@ namespace Palantir.Numeric.UnitTests
         {
             Read("5 - 3");
 
-            ExpectToken(formulaLexer.NUMBER, "5");
+            ExpectToken(formulaLexer.INTEGER, "5");
             ExpectToken(formulaLexer.WHITESPACE);
             ExpectToken(formulaLexer.MINUS);
             ExpectToken(formulaLexer.WHITESPACE);
-            ExpectToken(formulaLexer.NUMBER, "3");
+            ExpectToken(formulaLexer.INTEGER, "3");
             ExpectToken(formulaLexer.EOF);
         }
         
@@ -175,11 +258,11 @@ namespace Palantir.Numeric.UnitTests
         {
             Read("56 - 376");
 
-            ExpectToken(formulaLexer.NUMBER, "56");
+            ExpectToken(formulaLexer.INTEGER, "56");
             ExpectToken(formulaLexer.WHITESPACE);
             ExpectToken(formulaLexer.MINUS);
             ExpectToken(formulaLexer.WHITESPACE);
-            ExpectToken(formulaLexer.NUMBER, "376");
+            ExpectToken(formulaLexer.INTEGER, "376");
             ExpectToken(formulaLexer.EOF);
         }
         
@@ -188,9 +271,9 @@ namespace Palantir.Numeric.UnitTests
         {
             Read("56-376");
 
-            ExpectToken(formulaLexer.NUMBER, "56");
+            ExpectToken(formulaLexer.INTEGER, "56");
             ExpectToken(formulaLexer.MINUS);
-            ExpectToken(formulaLexer.NUMBER, "376");
+            ExpectToken(formulaLexer.INTEGER, "376");
             ExpectToken(formulaLexer.EOF);
         }
         
@@ -199,12 +282,12 @@ namespace Palantir.Numeric.UnitTests
         {
             Read("5-3");
 
-            ExpectToken(formulaLexer.NUMBER, "5");
+            ExpectToken(formulaLexer.INTEGER, "5");
             ExpectToken(formulaLexer.MINUS);
-            ExpectToken(formulaLexer.NUMBER, "3");
+            ExpectToken(formulaLexer.INTEGER, "3");
             ExpectToken(formulaLexer.EOF);
         }
-        #endregion1
+        #endregion
         
         private void Read(string text) 
         {

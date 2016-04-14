@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 formula.g 2016-04-13 21:12:56
+// $ANTLR 3.4 formula.g 2016-04-14 05:25:36
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -38,16 +38,20 @@ namespace Palantir.Numeric.Parser
 public partial class formulaParser : Antlr.Runtime.Parser
 {
 	internal static readonly string[] tokenNames = new string[] {
-		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "DIGIT", "DIV", "MINUS", "MULT", "NUMBER", "PLUS", "WHITESPACE"
+		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "DIGIT", "DIV", "EXP", "FLOAT", "HEX_DIGIT", "INTEGER", "MINUS", "MULT", "OCTAL_DIGIT", "PLUS", "WHITESPACE"
 	};
 	public const int EOF=-1;
 	public const int DIGIT=4;
 	public const int DIV=5;
-	public const int MINUS=6;
-	public const int MULT=7;
-	public const int NUMBER=8;
-	public const int PLUS=9;
-	public const int WHITESPACE=10;
+	public const int EXP=6;
+	public const int FLOAT=7;
+	public const int HEX_DIGIT=8;
+	public const int INTEGER=9;
+	public const int MINUS=10;
+	public const int MULT=11;
+	public const int OCTAL_DIGIT=12;
+	public const int PLUS=13;
+	public const int WHITESPACE=14;
 
 	public formulaParser(ITokenStream input)
 		: this(input, new RecognizerSharedState())
@@ -246,7 +250,7 @@ public partial class formulaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(37, 11);
-			PushFollow(Follow._factor_in_term177);
+			PushFollow(Follow._factor_in_term176);
 			factor4=factor();
 			PopFollow();
 
@@ -290,7 +294,7 @@ public partial class formulaParser : Antlr.Runtime.Parser
 					}
 
 					DebugLocation(37, 35);
-					PushFollow(Follow._factor_in_term191);
+					PushFollow(Follow._factor_in_term190);
 					factor6=factor();
 					PopFollow();
 
@@ -342,7 +346,7 @@ public partial class formulaParser : Antlr.Runtime.Parser
 	partial void LeaveRule_factor();
 
 	// $ANTLR start "factor"
-	// formula.g:39:1: factor : NUMBER ;
+	// formula.g:39:1: factor : INTEGER ;
 	[GrammarRule("factor")]
 	private AstParserRuleReturnScope<CommonTree, IToken> factor()
 	{
@@ -354,23 +358,23 @@ public partial class formulaParser : Antlr.Runtime.Parser
 
 		CommonTree root_0 = default(CommonTree);
 
-		IToken NUMBER7 = default(IToken);
+		IToken INTEGER7 = default(IToken);
 
-		CommonTree NUMBER7_tree = default(CommonTree);
+		CommonTree INTEGER7_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "factor");
-		DebugLocation(39, 17);
+		DebugLocation(39, 18);
 		try
 		{
-			// formula.g:39:9: ( NUMBER )
+			// formula.g:39:9: ( INTEGER )
 			DebugEnterAlt(1);
-			// formula.g:39:11: NUMBER
+			// formula.g:39:11: INTEGER
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(39, 11);
-			NUMBER7=(IToken)Match(input,NUMBER,Follow._NUMBER_in_factor205); 
-			NUMBER7_tree = (CommonTree)adaptor.Create(NUMBER7);
-			adaptor.AddChild(root_0, NUMBER7_tree);
+			INTEGER7=(IToken)Match(input,INTEGER,Follow._INTEGER_in_factor204); 
+			INTEGER7_tree = (CommonTree)adaptor.Create(INTEGER7);
+			adaptor.AddChild(root_0, INTEGER7_tree);
 
 			}
 
@@ -393,7 +397,7 @@ public partial class formulaParser : Antlr.Runtime.Parser
 			LeaveRule("factor", 3);
 			LeaveRule_factor();
 		}
-		DebugLocation(39, 17);
+		DebugLocation(39, 18);
 		} finally { DebugExitRule(GrammarFileName, "factor"); }
 		return retval;
 
@@ -405,13 +409,13 @@ public partial class formulaParser : Antlr.Runtime.Parser
 	#region Follow sets
 	private static class Follow
 	{
-		public static readonly BitSet _term_in_expr146 = new BitSet(new ulong[]{0x242UL});
-		public static readonly BitSet _set_in_expr150 = new BitSet(new ulong[]{0x100UL});
-		public static readonly BitSet _term_in_expr161 = new BitSet(new ulong[]{0x242UL});
-		public static readonly BitSet _factor_in_term177 = new BitSet(new ulong[]{0xA2UL});
-		public static readonly BitSet _set_in_term181 = new BitSet(new ulong[]{0x100UL});
-		public static readonly BitSet _factor_in_term191 = new BitSet(new ulong[]{0xA2UL});
-		public static readonly BitSet _NUMBER_in_factor205 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _term_in_expr146 = new BitSet(new ulong[]{0x2402UL});
+		public static readonly BitSet _set_in_expr150 = new BitSet(new ulong[]{0x200UL});
+		public static readonly BitSet _term_in_expr161 = new BitSet(new ulong[]{0x2402UL});
+		public static readonly BitSet _factor_in_term176 = new BitSet(new ulong[]{0x822UL});
+		public static readonly BitSet _set_in_term180 = new BitSet(new ulong[]{0x200UL});
+		public static readonly BitSet _factor_in_term190 = new BitSet(new ulong[]{0x822UL});
+		public static readonly BitSet _INTEGER_in_factor204 = new BitSet(new ulong[]{0x2UL});
 	}
 	#endregion Follow sets
 }

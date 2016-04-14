@@ -33,18 +33,28 @@ using System;
  *------------------------------------------------------------------*/
  
 expr    : term ( ( PLUS | MINUS )  term )* ;
- 
+
 term    : factor ( ( MULT | DIV ) factor )* ;
  
-factor  : NUMBER ;
+factor  : INTEGER ;
 
 
 /*------------------------------------------------------------------
  * LEXER RULES
  *------------------------------------------------------------------*/
  
-NUMBER  : (DIGIT)+ ;
- 
+INTEGER  : (DIGIT)+ ;
+
+FLOAT 
+	:	DIGIT* '.' DIGIT+ EXP?
+	|	DIGIT+ EXP
+	;
+
+fragment DIGIT: '1'..'9' '0'..'9'*;
+fragment OCTAL_DIGIT: '0' '0'..'7'+;
+fragment HEX_DIGIT: '0x' ('0'..'9' | 'a'..'f' | 'A'..'F')+;
+
+EXP	:	('E'|'e') ('+'|'-')? DIGIT+ 
+	;
+	
 WHITESPACE : ( '\t' | ' ' | '\r' | '\n'| '\u000C' )+    { $channel = Hidden; } ;
- 
-fragment DIGIT  : '0'..'9' ;
