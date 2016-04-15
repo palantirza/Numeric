@@ -70,6 +70,25 @@ namespace Palantir.Numeric
 		/// The minor unit for this money, overriding the <see cref="Currency"/>
 		/// setting.
 		/// </param>
+		public Money(decimal amount, Currency currency, double minorUnit)
+			: this(amount, currency, (decimal)minorUnit)
+		{
+		}
+		
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Money"/> struct,
+		/// with a specified minor unit.
+		/// </summary>
+		/// <param name="amount">
+		/// The amount.
+		/// </param>
+		/// <param name="currency">
+		/// The currency.
+		/// </param>
+		/// <param name="minorUnit">
+		/// The minor unit for this money, overriding the <see cref="Currency"/>
+		/// setting.
+		/// </param>
 		public Money(decimal amount, Currency currency, decimal minorUnit)
 		{
 			Contract.Requires(currency != null);
@@ -96,6 +115,11 @@ namespace Palantir.Numeric
 		public decimal Amount => amount;
 
 		/// <summary>
+		/// Gets the money minor unit, or denomination.
+		/// </summary>
+		public decimal MinorUnit => minorUnit;
+
+		/// <summary>
 		/// Gets a value indicating whether the Money instance is Empty or not.
 		/// </summary>
 		public bool IsEmpty => currency == null;
@@ -119,7 +143,7 @@ namespace Palantir.Numeric
 
 			AssertCompatible(lhs, rhs);
 
-			return new Money(lhs.amount + rhs.amount, lhs.currency);
+			return new Money(lhs.amount + rhs.amount, lhs.currency, lhs.minorUnit);
 		}
 
 		/// <summary>
@@ -137,7 +161,7 @@ namespace Palantir.Numeric
 
 			AssertCompatible(lhs, rhs);
 
-			return new Money(lhs.amount - rhs.amount, lhs.currency);
+			return new Money(lhs.amount - rhs.amount, lhs.currency, lhs.minorUnit);
 		}
 
 		/// <summary>
@@ -146,7 +170,7 @@ namespace Palantir.Numeric
 		/// <param name="lhs">The left hand side of the expression.</param>
 		/// <param name="rhs">The right hand side of the expression.</param>
 		/// <returns>The expression result.</returns>
-		public static Money operator /(Money lhs, Money rhs)
+		public static MoneyQuotient operator /(Money lhs, Money rhs)
 		{
 			if (lhs.IsEmpty)
 				return rhs;
@@ -155,7 +179,7 @@ namespace Palantir.Numeric
 
 			AssertCompatible(lhs, rhs);
 
-			return new Money(lhs.amount / rhs.amount, lhs.currency);
+			return new MoneyQuotient(lhs.amount / rhs.amount, lhs.currency, lhs.minorUnit);
 		}
 
 		/// <summary>
@@ -164,7 +188,7 @@ namespace Palantir.Numeric
 		/// <param name="lhs">The left hand side of the expression.</param>
 		/// <param name="rhs">The right hand side of the expression.</param>
 		/// <returns>The expression result.</returns>
-		public static Money operator *(Money lhs, Money rhs)
+		public static MoneyQuotient operator *(Money lhs, Money rhs)
 		{
 			if (lhs.IsEmpty)
 				return rhs;
@@ -173,7 +197,7 @@ namespace Palantir.Numeric
 
 			AssertCompatible(lhs, rhs);
 
-			return new Money(lhs.amount * rhs.amount, lhs.currency);
+			return new MoneyQuotient(lhs.amount * rhs.amount, lhs.currency, lhs.minorUnit);
 		}
 
 		/// <summary>
@@ -240,7 +264,7 @@ namespace Palantir.Numeric
 		{
 			Contract.Requires(sign == 1 || sign == -1);
 
-			return new Money(amount * sign, currency);
+			return new Money(amount * sign, currency, minorUnit);
 		}
 
 		/// <summary>

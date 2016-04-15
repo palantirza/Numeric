@@ -18,6 +18,17 @@ namespace Palantir.Numeric
         /// <param name="code">The currency code.</param>
         /// <param name="symbol">The currency symbol.</param>
         /// <param name="minorUnit">The currency minor unit.</param>
+        public Currency(string code, string symbol, double minorUnit)
+            : this(code, symbol, (decimal)minorUnit) 
+        {
+        }
+        
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Currency" /> class.
+        /// </summary>
+        /// <param name="code">The currency code.</param>
+        /// <param name="symbol">The currency symbol.</param>
+        /// <param name="minorUnit">The currency minor unit.</param>
         public Currency(string code, string symbol, decimal minorUnit)
         {
             Contract.Requires(!string.IsNullOrEmpty(code));

@@ -6,8 +6,8 @@ namespace Palantir.Numeric.UnitTests
 
     public sealed class MoneyTests
 	{
-        private Currency zar = new Currency("ZAR", "R", 2);
-        private Currency usd = new Currency("USD", "$", 2);
+        private Currency zar = new Currency("ZAR", "R", 0.01);
+        private Currency usd = new Currency("USD", "$", 0.01);
         
 		[Fact]
 		public void MoneyWithDifferentCurrencies_ShouldNotBeCompatible()
@@ -19,29 +19,29 @@ namespace Palantir.Numeric.UnitTests
 		}
 
 		[Fact]
-		public void MoneyWithDifferentScales_ShouldNotBeCompatible()
+		public void MoneyWithDifferentMinorUnits_ShouldNotBeCompatible()
 		{
 			var money1 = new Money(10, zar);
-			var money2 = new Money(20, new Currency("ZAR", "R", 3));
+			var money2 = new Money(20, new Currency("ZAR", "R", 0.001));
 
 			money1.IsCompatibleWith(money2).Should().BeFalse();
 			
 			money1 = new Money(10, zar);
-			money2 = new Money(20, zar, 3);
+			money2 = new Money(20, zar, 0.001);
 
 			money1.IsCompatibleWith(money2).Should().BeFalse();
 		}
 
 		[Fact]
-		public void MoneyWithSameScaleAndCurrency_ShouldBeCompatible()
+		public void MoneyWithSameMinorUnitAndCurrency_ShouldBeCompatible()
 		{
 			var money1 = new Money(10, zar);
 			var money2 = new Money(20, zar);
 
 			money1.IsCompatibleWith(money2).Should().BeTrue();
 			
-			money1 = new Money(10, zar, 3);
-			money2 = new Money(20, zar, 3);
+			money1 = new Money(10, zar, 0.001);
+			money2 = new Money(20, zar, 0.001);
 
 			money1.IsCompatibleWith(money2).Should().BeTrue();
 		}
@@ -62,7 +62,7 @@ namespace Palantir.Numeric.UnitTests
 
 			Money result = (money1 + money2);
 			result.Amount.Should().Be(30);
-			result.Currency.Scale.Should().Be(2);
+			result.Currency.MinorUnit.Should().Be(0.01M);
 			result.Currency.Code.Should().Be("ZAR");
 		}
 
@@ -73,7 +73,7 @@ namespace Palantir.Numeric.UnitTests
 
 			Money result = (money1 + Money.Empty);
 			result.Amount.Should().Be(10);
-			result.Currency.Scale.Should().Be(2);
+			result.Currency.MinorUnit.Should().Be(0.01M);
 			result.Currency.Code.Should().Be("ZAR");
 		}
 
@@ -88,10 +88,10 @@ namespace Palantir.Numeric.UnitTests
 		}
 
 		[Fact]
-		public void AddTwoIncompatibleScaleMonies_ShouldThrowException()
+		public void AddTwoIncompatibleMinorUnitMonies_ShouldThrowException()
 		{
 			var money1 = new Money(10, zar);
-			var money2 = new Money(20, new Currency("ZAR", "R", 3));
+			var money2 = new Money(20, new Currency("ZAR", "R", 0.001));
 
 			Action action = () => { Money result = money1 + money2; };
 			action.ShouldThrow<IncompatibleUnitException>();
@@ -105,7 +105,7 @@ namespace Palantir.Numeric.UnitTests
 
 			Money result = (money1 - money2);
 			result.Amount.Should().Be(-10);
-			result.Currency.Scale.Should().Be(2);
+			result.Currency.MinorUnit.Should().Be(0.01M);
 			result.Currency.Code.Should().Be("ZAR");
 		}
 
@@ -120,10 +120,10 @@ namespace Palantir.Numeric.UnitTests
 		}
 
 		[Fact]
-		public void SubtractTwoIncompatibleScaleMonies_ShouldThrowException()
+		public void SubtractTwoIncompatibleMinorUnitMonies_ShouldThrowException()
 		{
 			var money1 = new Money(10, zar);
-			var money2 = new Money(20, new Currency("ZAR", "R", 3));
+			var money2 = new Money(20, new Currency("ZAR", "R", 0.001));
 
 			Action action = () => { Money result = money1 - money2; };
 			action.ShouldThrow<IncompatibleUnitException>();
@@ -137,7 +137,8 @@ namespace Palantir.Numeric.UnitTests
 
 			var result = (money1 / money2);
 			result.Amount.Should().Be(0.5M);
-			result.Currency.Scale.Should().Be(2);
+			result.Currency.MinorUnit.Should().Be(0.01M);
+			result.IsPure.Should().BeTrue();
 			result.Currency.Code.Should().Be("ZAR");
 		}
 
@@ -149,7 +150,8 @@ namespace Palantir.Numeric.UnitTests
 
 			var result = (money1 / money2);
 			result.Amount.Should().Be(2.5789473684210526315789473684M);
-			result.Currency.Scale.Should().Be(2);
+			result.IsPure.Should().BeFalse();
+			result.Currency.MinorUnit.Should().Be(0.01M);
 			result.Currency.Code.Should().Be("ZAR");
 		}
 
@@ -164,10 +166,10 @@ namespace Palantir.Numeric.UnitTests
 		}
 
 		[Fact]
-		public void DivideTwoIncompatibleScaleMonies_ShouldThrowException()
+		public void DivideTwoIncompatibleMinorUnitMonies_ShouldThrowException()
 		{
 			var money1 = new Money(10, zar);
-			var money2 = new Money(20, new Currency("ZAR", "R", 3));
+			var money2 = new Money(20, new Currency("ZAR", "R", 0.001));
 
 			Action action = () => { var result = money1 / money2; };
 			action.ShouldThrow<IncompatibleUnitException>();
@@ -181,7 +183,8 @@ namespace Palantir.Numeric.UnitTests
 
 			var result = (money1 * money2);
 			result.Amount.Should().Be(200);
-			result.Currency.Scale.Should().Be(2);
+			result.Currency.MinorUnit.Should().Be(0.01M);
+			result.IsPure.Should().BeTrue();
 			result.Currency.Code.Should().Be("ZAR");
 		}
 
@@ -196,10 +199,10 @@ namespace Palantir.Numeric.UnitTests
 		}
 
 		[Fact]
-		public void MultiplyTwoIncompatibleScaleMonies_ShouldThrowException()
+		public void MultiplyTwoIncompatibleMinorUnitMonies_ShouldThrowException()
 		{
 			var money1 = new Money(10, zar);
-			var money2 = new Money(20, new Currency("ZAR", "R", 3));
+			var money2 = new Money(20, new Currency("ZAR", "R", 0.001));
 
 			Action action = () => { var result = money1 * money2; };
 			action.ShouldThrow<IncompatibleUnitException>();
