@@ -64,23 +64,33 @@ var weight2 = new Measure(500, g);
 var result = weight1 + weight2; // 100500 g
 ~~~
 
-## Money
+## Money & Currency
 
 ```Money``` is quite similar to a Unit of Measure in many respects, with ```Currency``` taking the place of ```Unit```. However, unlike a unit of measure a ```Currency``` can also have a ```Scale``` which defines the number of digits in the ```Money``` instance.
 
 ### Currency [In Progress]
 
-Currency is the "type" of Money transactions, and similar to Units. Currencies consist of:
+Currency is the "type" of Money transactions, and is similar to Units. Currencies consist of:
 
 * A Code, e.g. "USD"
 * A Symbol, e.g. "$"
-* A Scale, e.g. "2"
+* A Minor Unit, e.g. "0.01"
+
+### Money
+
+```Money``` contains the value of Money transactions, and is similar to Measures. Money consists of:
+
+* An Amount, e.g. "1000"
+* A ```Currency``` type
+* A Minor Unit, e.g. "0.01", which is normally derived from the ```Currency```.
 
 ### Money Calculations
 
 Arithmetic operations can be performed between money that shares a ```Currency```. Unlike Units of Measure, no mechanism for performing conversions is built directly into the library.
 
 This is deliberate, currency conversions change rapidly, and require external data, and thus don't lend themselves well to a library of standard conversions.
+
+Some operations on Money types return a ```MoneyQuotient``` type, because it's not possible for a ```Money``` type to have a value that can't be expressed in it's ```MinorUnit```. The ```MoneyQuotient``` type cannot be operated on like a ```Money``` type.
 
 #### Money Example
 
