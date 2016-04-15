@@ -94,7 +94,7 @@ The Palantir Calculation Library supports complex formulas. These can be parsed 
 
 **Example**
 
-Parse the formula $$x = \frac{x^3}{\pi}$$
+Parse the formula ![x = \frac{x^3}{\pi}](https://github.com/palantirza/Palantir.Numeric/raw/master/_images/simple-eq.png "Simple Equation")
 
 ~~~csharp
 Expression formula = Formula.Parse("x = x^3 \ [Pi]");
