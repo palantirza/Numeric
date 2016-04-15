@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 formula.g 2016-04-14 14:53:55
+// $ANTLR 3.4 formula.g 2016-04-14 15:03:08
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -38,7 +38,7 @@ namespace Palantir.Numeric.Parser
 public partial class formulaParser : Antlr.Runtime.Parser
 {
 	internal static readonly string[] tokenNames = new string[] {
-		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "CURRENCY", "CURR_AFN", "CURR_ALL", "CURR_AWG", "CURR_AZN", "CURR_BAM", "CURR_BGN", "CURR_BOB", "CURR_BRL", "CURR_BWP", "CURR_BYR", "CURR_BZD", "CURR_CHF", "CURR_CRC", "CURR_CUP", "CURR_CZK", "CURR_DKK", "CURR_DOP", "CURR_EUR", "CURR_GBP", "CURR_GHS", "CURR_GTQ", "CURR_HNL", "CURR_HRK", "CURR_HUF", "CURR_IDR", "CURR_ILS", "CURR_IRR", "CURR_JMD", "CURR_JPY", "CURR_KHR", "CURR_KPW", "CURR_LAK", "CURR_MKD", "CURR_MNT", "CURR_MUR", "CURR_MYR", "CURR_MZN", "CURR_NGN", "CURR_NIO", "CURR_PAB", "CURR_PEN", "CURR_PLN", "CURR_PYG", "CURR_RON", "CURR_RSD", "CURR_RUB", "CURR_SOS", "CURR_SYM", "CURR_THB", "CURR_TTD", "CURR_TWD", "CURR_UAH", "CURR_USD", "CURR_UYU", "CURR_VEF", "CURR_VND", "CURR_XBT", "CURR_ZAR", "CURR_ZWD", "DIGIT", "DIV", "EXP", "FLOAT", "HEX_DIGIT", "INTEGER", "MINUS", "MULT", "OCTAL_DIGIT", "PLUS", "SI_AMP", "SI_AMP_METER", "SI_AMP_SQ_METER_1", "SI_AMP_SQ_METER_2", "SI_BECQUEREL", "SI_CANDELA", "SI_CANDELA_SQ_METER_1", "SI_CANDELA_SQ_METER_2", "SI_CELCIUS", "SI_COULOMB", "SI_COULOMB_PER_CU_METER_1", "SI_COULOMB_PER_CU_METER_2", "SI_COULOMB_PER_KG", "SI_COULOMB_PER_SQ_METER_1", "SI_COULOMB_PER_SQ_METER_2", "SI_CU_METER_1", "SI_CU_METER_2", "SI_CU_METER_KG_1", "SI_CU_METER_KG_2", "SI_FARAD", "SI_FARAD_PER_METER", "SI_GRAY", "SI_GRAY_PER_SEC", "SI_HENRY", "SI_HENRY_PER_METER", "SI_HERTZ", "SI_JOULE", "SI_JOULE_PER_CU_METER_1", "SI_JOULE_PER_CU_METER_2", "SI_JOULE_PER_KELVIN", "SI_JOULE_PER_KG", "SI_JOULE_PER_KG_KELVIN", "SI_JOULE_PER_MOLE", "SI_JOULE_PER_MOLE_KELVIN", "SI_KATAL", "SI_KATAL_PER_CU_METER_1", "SI_KATAL_PER_CU_METER_2", "SI_KELVIN", "SI_KG", "SI_KG_CU_METER_1", "SI_KG_CU_METER_2", "SI_LUMEN", "SI_LUX", "SI_METER", "SI_MOLE", "SI_MOL_CU_METER_1", "SI_MOL_CU_METER_2", "SI_MPS", "SI_MPS_SQ_1", "SI_MPS_SQ_2", "SI_NEWTON", "SI_NEWTON_METER", "SI_NEWTON_PER_METER", "SI_OHM_1", "SI_OHM_2", "SI_PASCAL", "SI_PASCAL_SEC", "SI_RADIAN", "SI_RADIAN_PER_SEC", "SI_RADIAN_PER_SEC_SQ_1", "SI_RADIAN_PER_SEC_SQ_2", "SI_REC_METER_1", "SI_REC_METER_2", "SI_SEC", "SI_SIEMENS", "SI_SIEVERT", "SI_SOLID_ANGLE", "SI_SQ_METER_1", "SI_SQ_METER_2", "SI_TESLA", "SI_UNIT", "SI_VOLT", "SI_VOLT_PER_METER", "SI_WATT", "SI_WATT_PER_METER_KELVIN", "SI_WATT_PER_METER_SQ_1", "SI_WATT_PER_METER_SQ_2", "SI_WATT_PER_SQ_METER_STERADIAN_1", "SI_WATT_PER_SQ_METER_STERADIAN_2", "SI_WATT_PER_STERADIAN", "SI_WEBER", "UNIT", "WHITESPACE"
+		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "CURRENCY", "CURR_AFN", "CURR_ALL", "CURR_AWG", "CURR_AZN", "CURR_BAM", "CURR_BGN", "CURR_BOB", "CURR_BRL", "CURR_BWP", "CURR_BYR", "CURR_BZD", "CURR_CHF", "CURR_CRC", "CURR_CUP", "CURR_CZK", "CURR_DKK", "CURR_DOP", "CURR_EUR", "CURR_GBP", "CURR_GHS", "CURR_GTQ", "CURR_HNL", "CURR_HRK", "CURR_HUF", "CURR_IDR", "CURR_ILS", "CURR_IRR", "CURR_JMD", "CURR_JPY", "CURR_KHR", "CURR_KPW", "CURR_LAK", "CURR_MKD", "CURR_MNT", "CURR_MUR", "CURR_MYR", "CURR_MZN", "CURR_NGN", "CURR_NIO", "CURR_PAB", "CURR_PEN", "CURR_PLN", "CURR_PYG", "CURR_RON", "CURR_RSD", "CURR_RUB", "CURR_SOS", "CURR_SYM", "CURR_THB", "CURR_TTD", "CURR_TWD", "CURR_UAH", "CURR_USD", "CURR_UYU", "CURR_VEF", "CURR_VND", "CURR_XBT", "CURR_ZAR", "CURR_ZWD", "DIGIT", "DIV", "EXP", "FLOAT", "HEX_DIGIT", "INTEGER", "MINUS", "MULT", "OCTAL_DIGIT", "PLUS", "POW", "POW_DIGIT", "SI_AMP", "SI_AMP_METER", "SI_AMP_SQ_METER_1", "SI_AMP_SQ_METER_2", "SI_BECQUEREL", "SI_CANDELA", "SI_CANDELA_SQ_METER_1", "SI_CANDELA_SQ_METER_2", "SI_CELCIUS", "SI_COULOMB", "SI_COULOMB_PER_CU_METER_1", "SI_COULOMB_PER_CU_METER_2", "SI_COULOMB_PER_KG", "SI_COULOMB_PER_SQ_METER_1", "SI_COULOMB_PER_SQ_METER_2", "SI_CU_METER_1", "SI_CU_METER_2", "SI_CU_METER_KG_1", "SI_CU_METER_KG_2", "SI_FARAD", "SI_FARAD_PER_METER", "SI_GRAY", "SI_GRAY_PER_SEC", "SI_HENRY", "SI_HENRY_PER_METER", "SI_HERTZ", "SI_JOULE", "SI_JOULE_PER_CU_METER_1", "SI_JOULE_PER_CU_METER_2", "SI_JOULE_PER_KELVIN", "SI_JOULE_PER_KG", "SI_JOULE_PER_KG_KELVIN", "SI_JOULE_PER_MOLE", "SI_JOULE_PER_MOLE_KELVIN", "SI_KATAL", "SI_KATAL_PER_CU_METER_1", "SI_KATAL_PER_CU_METER_2", "SI_KELVIN", "SI_KG", "SI_KG_CU_METER_1", "SI_KG_CU_METER_2", "SI_LUMEN", "SI_LUX", "SI_METER", "SI_MOLE", "SI_MOL_CU_METER_1", "SI_MOL_CU_METER_2", "SI_MPS", "SI_MPS_SQ_1", "SI_MPS_SQ_2", "SI_NEWTON", "SI_NEWTON_METER", "SI_NEWTON_PER_METER", "SI_OHM_1", "SI_OHM_2", "SI_PASCAL", "SI_PASCAL_SEC", "SI_RADIAN", "SI_RADIAN_PER_SEC", "SI_RADIAN_PER_SEC_SQ_1", "SI_RADIAN_PER_SEC_SQ_2", "SI_REC_METER_1", "SI_REC_METER_2", "SI_SEC", "SI_SIEMENS", "SI_SIEVERT", "SI_SOLID_ANGLE", "SI_SQ_METER_1", "SI_SQ_METER_2", "SI_TESLA", "SI_UNIT", "SI_VOLT", "SI_VOLT_PER_METER", "SI_WATT", "SI_WATT_PER_METER_KELVIN", "SI_WATT_PER_METER_SQ_1", "SI_WATT_PER_METER_SQ_2", "SI_WATT_PER_SQ_METER_STERADIAN_1", "SI_WATT_PER_SQ_METER_STERADIAN_2", "SI_WATT_PER_STERADIAN", "SI_WEBER", "UNIT", "WHITESPACE"
 	};
 	public const int EOF=-1;
 	public const int CURRENCY=4;
@@ -111,89 +111,91 @@ public partial class formulaParser : Antlr.Runtime.Parser
 	public const int MULT=71;
 	public const int OCTAL_DIGIT=72;
 	public const int PLUS=73;
-	public const int SI_AMP=74;
-	public const int SI_AMP_METER=75;
-	public const int SI_AMP_SQ_METER_1=76;
-	public const int SI_AMP_SQ_METER_2=77;
-	public const int SI_BECQUEREL=78;
-	public const int SI_CANDELA=79;
-	public const int SI_CANDELA_SQ_METER_1=80;
-	public const int SI_CANDELA_SQ_METER_2=81;
-	public const int SI_CELCIUS=82;
-	public const int SI_COULOMB=83;
-	public const int SI_COULOMB_PER_CU_METER_1=84;
-	public const int SI_COULOMB_PER_CU_METER_2=85;
-	public const int SI_COULOMB_PER_KG=86;
-	public const int SI_COULOMB_PER_SQ_METER_1=87;
-	public const int SI_COULOMB_PER_SQ_METER_2=88;
-	public const int SI_CU_METER_1=89;
-	public const int SI_CU_METER_2=90;
-	public const int SI_CU_METER_KG_1=91;
-	public const int SI_CU_METER_KG_2=92;
-	public const int SI_FARAD=93;
-	public const int SI_FARAD_PER_METER=94;
-	public const int SI_GRAY=95;
-	public const int SI_GRAY_PER_SEC=96;
-	public const int SI_HENRY=97;
-	public const int SI_HENRY_PER_METER=98;
-	public const int SI_HERTZ=99;
-	public const int SI_JOULE=100;
-	public const int SI_JOULE_PER_CU_METER_1=101;
-	public const int SI_JOULE_PER_CU_METER_2=102;
-	public const int SI_JOULE_PER_KELVIN=103;
-	public const int SI_JOULE_PER_KG=104;
-	public const int SI_JOULE_PER_KG_KELVIN=105;
-	public const int SI_JOULE_PER_MOLE=106;
-	public const int SI_JOULE_PER_MOLE_KELVIN=107;
-	public const int SI_KATAL=108;
-	public const int SI_KATAL_PER_CU_METER_1=109;
-	public const int SI_KATAL_PER_CU_METER_2=110;
-	public const int SI_KELVIN=111;
-	public const int SI_KG=112;
-	public const int SI_KG_CU_METER_1=113;
-	public const int SI_KG_CU_METER_2=114;
-	public const int SI_LUMEN=115;
-	public const int SI_LUX=116;
-	public const int SI_METER=117;
-	public const int SI_MOLE=118;
-	public const int SI_MOL_CU_METER_1=119;
-	public const int SI_MOL_CU_METER_2=120;
-	public const int SI_MPS=121;
-	public const int SI_MPS_SQ_1=122;
-	public const int SI_MPS_SQ_2=123;
-	public const int SI_NEWTON=124;
-	public const int SI_NEWTON_METER=125;
-	public const int SI_NEWTON_PER_METER=126;
-	public const int SI_OHM_1=127;
-	public const int SI_OHM_2=128;
-	public const int SI_PASCAL=129;
-	public const int SI_PASCAL_SEC=130;
-	public const int SI_RADIAN=131;
-	public const int SI_RADIAN_PER_SEC=132;
-	public const int SI_RADIAN_PER_SEC_SQ_1=133;
-	public const int SI_RADIAN_PER_SEC_SQ_2=134;
-	public const int SI_REC_METER_1=135;
-	public const int SI_REC_METER_2=136;
-	public const int SI_SEC=137;
-	public const int SI_SIEMENS=138;
-	public const int SI_SIEVERT=139;
-	public const int SI_SOLID_ANGLE=140;
-	public const int SI_SQ_METER_1=141;
-	public const int SI_SQ_METER_2=142;
-	public const int SI_TESLA=143;
-	public const int SI_UNIT=144;
-	public const int SI_VOLT=145;
-	public const int SI_VOLT_PER_METER=146;
-	public const int SI_WATT=147;
-	public const int SI_WATT_PER_METER_KELVIN=148;
-	public const int SI_WATT_PER_METER_SQ_1=149;
-	public const int SI_WATT_PER_METER_SQ_2=150;
-	public const int SI_WATT_PER_SQ_METER_STERADIAN_1=151;
-	public const int SI_WATT_PER_SQ_METER_STERADIAN_2=152;
-	public const int SI_WATT_PER_STERADIAN=153;
-	public const int SI_WEBER=154;
-	public const int UNIT=155;
-	public const int WHITESPACE=156;
+	public const int POW=74;
+	public const int POW_DIGIT=75;
+	public const int SI_AMP=76;
+	public const int SI_AMP_METER=77;
+	public const int SI_AMP_SQ_METER_1=78;
+	public const int SI_AMP_SQ_METER_2=79;
+	public const int SI_BECQUEREL=80;
+	public const int SI_CANDELA=81;
+	public const int SI_CANDELA_SQ_METER_1=82;
+	public const int SI_CANDELA_SQ_METER_2=83;
+	public const int SI_CELCIUS=84;
+	public const int SI_COULOMB=85;
+	public const int SI_COULOMB_PER_CU_METER_1=86;
+	public const int SI_COULOMB_PER_CU_METER_2=87;
+	public const int SI_COULOMB_PER_KG=88;
+	public const int SI_COULOMB_PER_SQ_METER_1=89;
+	public const int SI_COULOMB_PER_SQ_METER_2=90;
+	public const int SI_CU_METER_1=91;
+	public const int SI_CU_METER_2=92;
+	public const int SI_CU_METER_KG_1=93;
+	public const int SI_CU_METER_KG_2=94;
+	public const int SI_FARAD=95;
+	public const int SI_FARAD_PER_METER=96;
+	public const int SI_GRAY=97;
+	public const int SI_GRAY_PER_SEC=98;
+	public const int SI_HENRY=99;
+	public const int SI_HENRY_PER_METER=100;
+	public const int SI_HERTZ=101;
+	public const int SI_JOULE=102;
+	public const int SI_JOULE_PER_CU_METER_1=103;
+	public const int SI_JOULE_PER_CU_METER_2=104;
+	public const int SI_JOULE_PER_KELVIN=105;
+	public const int SI_JOULE_PER_KG=106;
+	public const int SI_JOULE_PER_KG_KELVIN=107;
+	public const int SI_JOULE_PER_MOLE=108;
+	public const int SI_JOULE_PER_MOLE_KELVIN=109;
+	public const int SI_KATAL=110;
+	public const int SI_KATAL_PER_CU_METER_1=111;
+	public const int SI_KATAL_PER_CU_METER_2=112;
+	public const int SI_KELVIN=113;
+	public const int SI_KG=114;
+	public const int SI_KG_CU_METER_1=115;
+	public const int SI_KG_CU_METER_2=116;
+	public const int SI_LUMEN=117;
+	public const int SI_LUX=118;
+	public const int SI_METER=119;
+	public const int SI_MOLE=120;
+	public const int SI_MOL_CU_METER_1=121;
+	public const int SI_MOL_CU_METER_2=122;
+	public const int SI_MPS=123;
+	public const int SI_MPS_SQ_1=124;
+	public const int SI_MPS_SQ_2=125;
+	public const int SI_NEWTON=126;
+	public const int SI_NEWTON_METER=127;
+	public const int SI_NEWTON_PER_METER=128;
+	public const int SI_OHM_1=129;
+	public const int SI_OHM_2=130;
+	public const int SI_PASCAL=131;
+	public const int SI_PASCAL_SEC=132;
+	public const int SI_RADIAN=133;
+	public const int SI_RADIAN_PER_SEC=134;
+	public const int SI_RADIAN_PER_SEC_SQ_1=135;
+	public const int SI_RADIAN_PER_SEC_SQ_2=136;
+	public const int SI_REC_METER_1=137;
+	public const int SI_REC_METER_2=138;
+	public const int SI_SEC=139;
+	public const int SI_SIEMENS=140;
+	public const int SI_SIEVERT=141;
+	public const int SI_SOLID_ANGLE=142;
+	public const int SI_SQ_METER_1=143;
+	public const int SI_SQ_METER_2=144;
+	public const int SI_TESLA=145;
+	public const int SI_UNIT=146;
+	public const int SI_VOLT=147;
+	public const int SI_VOLT_PER_METER=148;
+	public const int SI_WATT=149;
+	public const int SI_WATT_PER_METER_KELVIN=150;
+	public const int SI_WATT_PER_METER_SQ_1=151;
+	public const int SI_WATT_PER_METER_SQ_2=152;
+	public const int SI_WATT_PER_SQ_METER_STERADIAN_1=153;
+	public const int SI_WATT_PER_SQ_METER_STERADIAN_2=154;
+	public const int SI_WATT_PER_STERADIAN=155;
+	public const int SI_WEBER=156;
+	public const int UNIT=157;
+	public const int WHITESPACE=158;
 
 	public formulaParser(ITokenStream input)
 		: this(input, new RecognizerSharedState())
@@ -240,7 +242,7 @@ public partial class formulaParser : Antlr.Runtime.Parser
 	partial void LeaveRule_expr();
 
 	// $ANTLR start "expr"
-	// formula.g:35:1: expr : term ( ( PLUS | MINUS ) term )* ;
+	// formula.g:28:1: expr : term ( ( PLUS | MINUS ) term )* ;
 	[GrammarRule("expr")]
 	private AstParserRuleReturnScope<CommonTree, IToken> expr()
 	{
@@ -258,23 +260,23 @@ public partial class formulaParser : Antlr.Runtime.Parser
 
 		CommonTree set2_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "expr");
-		DebugLocation(35, 43);
+		DebugLocation(28, 43);
 		try
 		{
-			// formula.g:35:9: ( term ( ( PLUS | MINUS ) term )* )
+			// formula.g:28:9: ( term ( ( PLUS | MINUS ) term )* )
 			DebugEnterAlt(1);
-			// formula.g:35:11: term ( ( PLUS | MINUS ) term )*
+			// formula.g:28:11: term ( ( PLUS | MINUS ) term )*
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
-			DebugLocation(35, 11);
-			PushFollow(Follow._term_in_expr146);
+			DebugLocation(28, 11);
+			PushFollow(Follow._term_in_expr85);
 			term1=term();
 			PopFollow();
 
 			adaptor.AddChild(root_0, term1.Tree);
-			DebugLocation(35, 16);
-			// formula.g:35:16: ( ( PLUS | MINUS ) term )*
+			DebugLocation(28, 16);
+			// formula.g:28:16: ( ( PLUS | MINUS ) term )*
 			try { DebugEnterSubRule(1);
 			while (true)
 			{
@@ -293,9 +295,9 @@ public partial class formulaParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// formula.g:35:18: ( PLUS | MINUS ) term
+					// formula.g:28:18: ( PLUS | MINUS ) term
 					{
-					DebugLocation(35, 18);
+					DebugLocation(28, 18);
 
 					set2=(IToken)input.LT(1);
 					if (input.LA(1)==MINUS||input.LA(1)==PLUS)
@@ -311,8 +313,8 @@ public partial class formulaParser : Antlr.Runtime.Parser
 						throw mse;
 					}
 
-					DebugLocation(35, 36);
-					PushFollow(Follow._term_in_expr161);
+					DebugLocation(28, 36);
+					PushFollow(Follow._term_in_expr100);
 					term3=term();
 					PopFollow();
 
@@ -353,7 +355,7 @@ public partial class formulaParser : Antlr.Runtime.Parser
 			LeaveRule("expr", 1);
 			LeaveRule_expr();
 		}
-		DebugLocation(35, 43);
+		DebugLocation(28, 43);
 		} finally { DebugExitRule(GrammarFileName, "expr"); }
 		return retval;
 
@@ -364,7 +366,7 @@ public partial class formulaParser : Antlr.Runtime.Parser
 	partial void LeaveRule_term();
 
 	// $ANTLR start "term"
-	// formula.g:37:1: term : factor ( ( MULT | DIV ) factor )* ;
+	// formula.g:30:1: term : factor ( ( MULT | DIV ) factor )* ;
 	[GrammarRule("term")]
 	private AstParserRuleReturnScope<CommonTree, IToken> term()
 	{
@@ -382,23 +384,23 @@ public partial class formulaParser : Antlr.Runtime.Parser
 
 		CommonTree set5_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "term");
-		DebugLocation(37, 44);
+		DebugLocation(30, 44);
 		try
 		{
-			// formula.g:37:9: ( factor ( ( MULT | DIV ) factor )* )
+			// formula.g:30:9: ( factor ( ( MULT | DIV ) factor )* )
 			DebugEnterAlt(1);
-			// formula.g:37:11: factor ( ( MULT | DIV ) factor )*
+			// formula.g:30:11: factor ( ( MULT | DIV ) factor )*
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
-			DebugLocation(37, 11);
-			PushFollow(Follow._factor_in_term176);
+			DebugLocation(30, 11);
+			PushFollow(Follow._factor_in_term115);
 			factor4=factor();
 			PopFollow();
 
 			adaptor.AddChild(root_0, factor4.Tree);
-			DebugLocation(37, 18);
-			// formula.g:37:18: ( ( MULT | DIV ) factor )*
+			DebugLocation(30, 18);
+			// formula.g:30:18: ( ( MULT | DIV ) factor )*
 			try { DebugEnterSubRule(2);
 			while (true)
 			{
@@ -417,9 +419,9 @@ public partial class formulaParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// formula.g:37:20: ( MULT | DIV ) factor
+					// formula.g:30:20: ( MULT | DIV ) factor
 					{
-					DebugLocation(37, 20);
+					DebugLocation(30, 20);
 
 					set5=(IToken)input.LT(1);
 					if (input.LA(1)==DIV||input.LA(1)==MULT)
@@ -435,8 +437,8 @@ public partial class formulaParser : Antlr.Runtime.Parser
 						throw mse;
 					}
 
-					DebugLocation(37, 35);
-					PushFollow(Follow._factor_in_term190);
+					DebugLocation(30, 35);
+					PushFollow(Follow._factor_in_term129);
 					factor6=factor();
 					PopFollow();
 
@@ -477,7 +479,7 @@ public partial class formulaParser : Antlr.Runtime.Parser
 			LeaveRule("term", 2);
 			LeaveRule_term();
 		}
-		DebugLocation(37, 44);
+		DebugLocation(30, 44);
 		} finally { DebugExitRule(GrammarFileName, "term"); }
 		return retval;
 
@@ -488,7 +490,7 @@ public partial class formulaParser : Antlr.Runtime.Parser
 	partial void LeaveRule_factor();
 
 	// $ANTLR start "factor"
-	// formula.g:39:1: factor : INTEGER ;
+	// formula.g:32:1: factor : INTEGER ;
 	[GrammarRule("factor")]
 	private AstParserRuleReturnScope<CommonTree, IToken> factor()
 	{
@@ -504,17 +506,17 @@ public partial class formulaParser : Antlr.Runtime.Parser
 
 		CommonTree INTEGER7_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "factor");
-		DebugLocation(39, 18);
+		DebugLocation(32, 18);
 		try
 		{
-			// formula.g:39:9: ( INTEGER )
+			// formula.g:32:9: ( INTEGER )
 			DebugEnterAlt(1);
-			// formula.g:39:11: INTEGER
+			// formula.g:32:11: INTEGER
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
-			DebugLocation(39, 11);
-			INTEGER7=(IToken)Match(input,INTEGER,Follow._INTEGER_in_factor204); 
+			DebugLocation(32, 11);
+			INTEGER7=(IToken)Match(input,INTEGER,Follow._INTEGER_in_factor143); 
 			INTEGER7_tree = (CommonTree)adaptor.Create(INTEGER7);
 			adaptor.AddChild(root_0, INTEGER7_tree);
 
@@ -539,7 +541,7 @@ public partial class formulaParser : Antlr.Runtime.Parser
 			LeaveRule("factor", 3);
 			LeaveRule_factor();
 		}
-		DebugLocation(39, 18);
+		DebugLocation(32, 18);
 		} finally { DebugExitRule(GrammarFileName, "factor"); }
 		return retval;
 
@@ -551,13 +553,13 @@ public partial class formulaParser : Antlr.Runtime.Parser
 	#region Follow sets
 	private static class Follow
 	{
-		public static readonly BitSet _term_in_expr146 = new BitSet(new ulong[]{0x2UL,0x240UL});
-		public static readonly BitSet _set_in_expr150 = new BitSet(new ulong[]{0x0UL,0x20UL});
-		public static readonly BitSet _term_in_expr161 = new BitSet(new ulong[]{0x2UL,0x240UL});
-		public static readonly BitSet _factor_in_term176 = new BitSet(new ulong[]{0x2UL,0x82UL});
-		public static readonly BitSet _set_in_term180 = new BitSet(new ulong[]{0x0UL,0x20UL});
-		public static readonly BitSet _factor_in_term190 = new BitSet(new ulong[]{0x2UL,0x82UL});
-		public static readonly BitSet _INTEGER_in_factor204 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _term_in_expr85 = new BitSet(new ulong[]{0x2UL,0x240UL});
+		public static readonly BitSet _set_in_expr89 = new BitSet(new ulong[]{0x0UL,0x20UL});
+		public static readonly BitSet _term_in_expr100 = new BitSet(new ulong[]{0x2UL,0x240UL});
+		public static readonly BitSet _factor_in_term115 = new BitSet(new ulong[]{0x2UL,0x82UL});
+		public static readonly BitSet _set_in_term119 = new BitSet(new ulong[]{0x0UL,0x20UL});
+		public static readonly BitSet _factor_in_term129 = new BitSet(new ulong[]{0x2UL,0x82UL});
+		public static readonly BitSet _INTEGER_in_factor143 = new BitSet(new ulong[]{0x2UL});
 	}
 	#endregion Follow sets
 }

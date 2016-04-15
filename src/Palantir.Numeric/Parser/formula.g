@@ -7,13 +7,6 @@ options
     language=CSharp3;
 }
 
-
-tokens {
-    PLUS    = '+' ;
-    MINUS   = '-' ;
-    MULT    = '*' ;
-    DIV = '/' ;
-}
 @lexer::namespace {Palantir.Numeric.Parser}
 
 @parser::namespace {Palantir.Numeric.Parser}
@@ -38,11 +31,10 @@ term    : factor ( ( MULT | DIV ) factor )* ;
  
 factor  : INTEGER ;
 
-
 /*------------------------------------------------------------------
  * LEXER RULES
  *------------------------------------------------------------------*/
- 
+
 INTEGER  : (DIGIT)+ ;
 
 FLOAT 
@@ -62,6 +54,26 @@ UNIT
 
 EXP	:	('E'|'e') ('+'|'-')? DIGIT+ 
 	;
+
+MULT : ('*'|'.'|'·')
+    ;
+
+DIV : '/'
+    ;
+
+PLUS : '+'
+    ;
+
+MINUS : '-'
+    ;
+
+POW : '^' ('+'|'-')? DIGIT+
+    | POW_DIGIT+
+    | POW_VAR+
+    ;
+
+fragment POW_DIGIT: '¹'..'⁹' '⁰'..'⁹'*;
+fragment POW_VAR: ('ⁱ'|'ⁿ')+;
 
 WHITESPACE : ( '\t' | ' ' | '\r' | '\n'| '\u000C' )+    { $channel = Hidden; } ;
 
