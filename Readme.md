@@ -103,6 +103,15 @@ Expression formula = Formula.Parse("x = x^3 \ [Pi]");
 ## Roadmap
 
 * Force Currency operations that result in remainders, to return a different type
-* Formula parsing
+* Currency rounding
+* Formula parsing, including Currency and Unit of Measure and Stochastic
 * Financial Formulas
+* Stochastic numeric types that contain probability distributions of values.
 * Stochastic calculations
+* Support for Stochasitic UoM and Currency types.
+* Parsing of stochastic values (e.g. "$ 5.3σ0.2")
+* Formulas to be parsed to Linq Expression Trees.
+* Formula renderer which will output MathML representations of the formula.
+* Formula calculator which will progressively calculate the terms, step by step starting at the innermost terms, allowing us to capture the exact calculation steps.
+* Logging of formula calculator steps.
+* Rendering of formula calculator steps, so a MathML output can be given showing the formula, the variables, and each step of the calculation, for users to review calculation steps.
