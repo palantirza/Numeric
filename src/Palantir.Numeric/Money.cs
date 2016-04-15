@@ -22,6 +22,11 @@ namespace Palantir.Numeric
 		/// The amount.
 		/// </summary>
 		private readonly decimal amount;
+		
+		/// <summary>
+		/// The money minor unit.
+		/// </summary>
+		private readonly decimal minorUnit;
 
 		/// <summary>
 		/// The currency information.
@@ -44,9 +49,36 @@ namespace Palantir.Numeric
 		public Money(decimal amount, Currency currency)
 		{
 			Contract.Requires(currency != null);
+			Contract.Requires(amount % currency.MinorUnit == 0);
 
 			this.amount = amount;
 			this.currency = currency;
+			this.minorUnit = currency.MinorUnit;
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Money"/> struct,
+		/// with a specified minor unit.
+		/// </summary>
+		/// <param name="amount">
+		/// The amount.
+		/// </param>
+		/// <param name="currency">
+		/// The currency.
+		/// </param>
+		/// <param name="minorUnit">
+		/// The minor unit for this money, overriding the <see cref="Currency"/>
+		/// setting.
+		/// </param>
+		public Money(decimal amount, Currency currency, decimal minorUnit)
+		{
+			Contract.Requires(currency != null);
+			Contract.Requires(minorUnit > 0);
+			Contract.Requires(amount % minorUnit == 0);
+
+			this.amount = amount;
+			this.currency = currency;
+			this.minorUnit = minorUnit;
 		}
 
 		#endregion
@@ -192,7 +224,7 @@ namespace Palantir.Numeric
 			if (IsEmpty || that.IsEmpty)
 				return false;
 
-			return currency.Code == that.Currency.Code && currency.Scale == that.Currency.Scale;
+			return currency.Code == that.Currency.Code && minorUnit == that.minorUnit;
 		}
 
 		/// <summary>

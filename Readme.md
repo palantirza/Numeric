@@ -49,7 +49,7 @@ var weight = new Measure(110, kg);
 
 Arithmetic operations can be performed between measures that share a ```Unit```. If not, a conversion will be looked for that converts from the one ```Unit``` to the other, and then the calculationwill be performed.
 
-### Unit Example
+### Unit Example Requirement
 
 Create a measure of ```100 kg``` and add a measure of ```500 g```.
 
@@ -105,7 +105,7 @@ Formulas can be parsed from text.
 
 #### Formular Parse Example
 
-Parse the formula 
+Parse the formula
 
 ![x = \frac{x^3}{\pi}](https://github.com/palantirza/Numeric/raw/master/_images/simple_eq.png "Simple Equation")
 

@@ -25,6 +25,11 @@ namespace Palantir.Numeric.UnitTests
 			var money2 = new Money(20, new Currency("ZAR", "R", 3));
 
 			money1.IsCompatibleWith(money2).Should().BeFalse();
+			
+			money1 = new Money(10, zar);
+			money2 = new Money(20, zar, 3);
+
+			money1.IsCompatibleWith(money2).Should().BeFalse();
 		}
 
 		[Fact]
@@ -32,6 +37,11 @@ namespace Palantir.Numeric.UnitTests
 		{
 			var money1 = new Money(10, zar);
 			var money2 = new Money(20, zar);
+
+			money1.IsCompatibleWith(money2).Should().BeTrue();
+			
+			money1 = new Money(10, zar, 3);
+			money2 = new Money(20, zar, 3);
 
 			money1.IsCompatibleWith(money2).Should().BeTrue();
 		}
