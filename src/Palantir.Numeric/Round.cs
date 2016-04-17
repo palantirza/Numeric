@@ -112,6 +112,24 @@ namespace Palantir.Numeric
             return rounded / multiple;
         }
         
+        /// <summary>
+        /// Rounds the value down if is above a minor unit;
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="minorUnit">The minor unit.</param>
+        /// <returns>The rounded value.</returns>
+        public static decimal RoundDown(decimal value, decimal minorUnit)
+        {
+            if (value == 0)
+                return 0;
+
+            var multiple = 1 / minorUnit;
+            value *= multiple;
+            var rounded = Math.Floor(value);
+            
+            return rounded / multiple;
+        }
+        
         private static int GetDecimalDigits(decimal value)
         {
             return BitConverter.GetBytes(decimal.GetBits(value)[3])[2];

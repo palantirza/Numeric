@@ -31,6 +31,25 @@ namespace Palantir.Numeric.UnitTests
             Round.RoundUp(1.001M, 0.05M).Should().Be(1.05M);
             Round.RoundUp(1.051M, 0.05M).Should().Be(1.10M);
         }
+        
+        [Fact]
+        public void RoundDown_With1MinorUnit_ShouldRoundCorrectly()
+        {
+            Round.RoundDown(1.01M, 0.01M).Should().Be(1.01M);
+            Round.RoundDown(1.06M, 0.01M).Should().Be(1.06M);
+            Round.RoundDown(1.014M, 0.01M).Should().Be(1.01M);
+            Round.RoundDown(1.015M, 0.01M).Should().Be(1.01M);
+            Round.RoundDown(1.016M, 0.01M).Should().Be(1.01M);
+        }
+        
+        [Fact]
+        public void RoundDown_With5MinorUnit_ShouldRoundCorrectly()
+        {
+            Round.RoundDown(1.05M, 0.05M).Should().Be(1.05M);
+            Round.RoundDown(1.01M, 0.05M).Should().Be(1.00M);
+            Round.RoundDown(1.001M, 0.05M).Should().Be(1.00M);
+            Round.RoundDown(1.051M, 0.05M).Should().Be(1.05M);
+        }
 
         [Fact]
         public void RoundHalfUp_With1MinorUnit_ShouldRoundCorrectly()
