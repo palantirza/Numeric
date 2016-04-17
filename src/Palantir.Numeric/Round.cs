@@ -30,7 +30,27 @@ namespace Palantir.Numeric
             
             return rounded / multiple;
         }
-                
+
+        /// <summary>
+        /// Rounds the value down if it is halfway to the minor unit or above.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="minorUnit">The minor unit.</param>
+        /// <returns>The rounded value.</returns>
+        public static decimal RoundHalfDown(decimal value, decimal minorUnit)
+        {
+            if (value == 0)
+                return 0;
+
+            var multiple = 1 / minorUnit;
+            value *= multiple;
+            var rounded = Math.Floor(value);
+            if (value > rounded + 0.5M)
+                rounded++;
+            
+            return rounded / multiple;
+        }
+
         /// <summary>
         /// Rounds the value up if is above a minor unit;
         /// </summary>
