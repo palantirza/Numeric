@@ -74,5 +74,29 @@ namespace Palantir.Numeric.UnitTests
             Round.RoundHalfDown(1.075M, 0.05M).Should().Be(1.05M);
             Round.RoundHalfDown(1.076M, 0.05M).Should().Be(1.10M);
         }
+        
+        [Fact]
+        public void RoundHalfEven_With1MinorUnit_ShouldRoundCorrectly()
+        {
+            Round.RoundHalfEven(1.01M, 0.01M).Should().Be(1.01M);
+            Round.RoundHalfEven(1.06M, 0.01M).Should().Be(1.06M);
+            Round.RoundHalfEven(1.014M, 0.01M).Should().Be(1.01M);
+            Round.RoundHalfEven(1.015M, 0.01M).Should().Be(1.02M);
+            Round.RoundHalfEven(1.025M, 0.01M).Should().Be(1.02M);
+            Round.RoundHalfEven(1.016M, 0.01M).Should().Be(1.02M);
+        }
+        
+        [Fact]
+        public void RoundHalfEven_With5MinorUnit_ShouldRoundCorrectly()
+        {
+            Round.RoundHalfEven(1.05M, 0.05M).Should().Be(1.05M);
+            Round.RoundHalfEven(1.01M, 0.05M).Should().Be(1.00M);
+            Round.RoundHalfEven(1.001M, 0.05M).Should().Be(1.00M);
+            Round.RoundHalfEven(1.051M, 0.05M).Should().Be(1.05M);
+            Round.RoundHalfEven(1.074M, 0.05M).Should().Be(1.05M);
+            Round.RoundHalfEven(1.075M, 0.05M).Should().Be(1.10M);
+            Round.RoundHalfEven(1.175M, 0.05M).Should().Be(1.20M);
+            Round.RoundHalfEven(1.076M, 0.05M).Should().Be(1.10M);
+        }
     }
 }
