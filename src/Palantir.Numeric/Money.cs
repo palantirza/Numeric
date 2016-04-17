@@ -165,6 +165,48 @@ namespace Palantir.Numeric
 		}
 
 		/// <summary>
+		/// Divides money by a value.
+		/// </summary>
+		/// <param name="lhs">The left hand side of the expression.</param>
+		/// <param name="rhs">The right hand side of the expression.</param>
+		/// <returns>The expression result.</returns>
+		public static MoneyQuotient operator /(Money lhs, decimal rhs)
+		{
+			if (lhs.IsEmpty)
+				return lhs;
+
+			return new MoneyQuotient(lhs.amount / rhs, lhs.currency, lhs.minorUnit);
+		}
+
+		/// <summary>
+		/// Divides money by a value.
+		/// </summary>
+		/// <param name="lhs">The left hand side of the expression.</param>
+		/// <param name="rhs">The right hand side of the expression.</param>
+		/// <returns>The expression result.</returns>
+		public static MoneyQuotient operator /(Money lhs, double rhs)
+		{
+			if (lhs.IsEmpty)
+				return lhs;
+
+			return new MoneyQuotient(lhs.amount / (decimal)rhs, lhs.currency, lhs.minorUnit);
+		}
+
+		/// <summary>
+		/// Divides money by a value.
+		/// </summary>
+		/// <param name="lhs">The left hand side of the expression.</param>
+		/// <param name="rhs">The right hand side of the expression.</param>
+		/// <returns>The expression result.</returns>
+		public static MoneyQuotient operator /(Money lhs, int rhs)
+		{
+			if (lhs.IsEmpty)
+				return lhs;
+
+			return new MoneyQuotient(lhs.amount / rhs, lhs.currency, lhs.minorUnit);
+		}
+
+		/// <summary>
 		/// Divides two money instances.
 		/// </summary>
 		/// <param name="lhs">The left hand side of the expression.</param>
@@ -180,6 +222,48 @@ namespace Palantir.Numeric
 			AssertCompatible(lhs, rhs);
 
 			return new MoneyQuotient(lhs.amount / rhs.amount, lhs.currency, lhs.minorUnit);
+		}
+
+		/// <summary>
+		/// Multiplies money by a value.
+		/// </summary>
+		/// <param name="lhs">The left hand side of the expression.</param>
+		/// <param name="rhs">The right hand side of the expression.</param>
+		/// <returns>The expression result.</returns>
+		public static MoneyQuotient operator *(Money lhs, decimal rhs)
+		{
+			if (lhs.IsEmpty)
+				return lhs;
+
+			return new MoneyQuotient(lhs.amount * rhs, lhs.currency, lhs.minorUnit);
+		}
+
+		/// <summary>
+		/// Multiplies money by a value.
+		/// </summary>
+		/// <param name="lhs">The left hand side of the expression.</param>
+		/// <param name="rhs">The right hand side of the expression.</param>
+		/// <returns>The expression result.</returns>
+		public static MoneyQuotient operator *(Money lhs, double rhs)
+		{
+			if (lhs.IsEmpty)
+				return lhs;
+
+			return new MoneyQuotient(lhs.amount * (decimal)rhs, lhs.currency, lhs.minorUnit);
+		}
+
+		/// <summary>
+		/// Multiplies money by a value.
+		/// </summary>
+		/// <param name="lhs">The left hand side of the expression.</param>
+		/// <param name="rhs">The right hand side of the expression.</param>
+		/// <returns>The expression result.</returns>
+		public static MoneyQuotient operator *(Money lhs, int rhs)
+		{
+			if (lhs.IsEmpty)
+				return lhs;
+
+			return new MoneyQuotient(lhs.amount * rhs, lhs.currency, lhs.minorUnit);
 		}
 
 		/// <summary>

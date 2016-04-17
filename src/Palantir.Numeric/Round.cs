@@ -15,6 +15,27 @@ namespace Palantir.Numeric
         /// Rounds the value up if it is halfway to the minor unit or above.
         /// </summary>
         /// <param name="value">The value.</param>
+        /// <param name="minorUnit">The minor unit to round to.</param>
+        /// <returns>The rounded currency.</returns>
+        public static Money RoundHalfUp(Money value, decimal minorUnit)
+        {
+            return new Money(RoundHalfUp(value.Amount, minorUnit), value.Currency, minorUnit);
+        }
+        
+        /// <summary>
+        /// Rounds the value up if it is halfway to the minor unit or above.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>The rounded currency.</returns>
+        public static Money RoundHalfUp(MoneyQuotient value)
+        {
+            return new Money(RoundHalfUp(value.Amount, value.MinorUnit), value.Currency, value.MinorUnit);
+        }
+        
+        /// <summary>
+        /// Rounds the value up if it is halfway to the minor unit or above.
+        /// </summary>
+        /// <param name="value">The value.</param>
         /// <param name="minorUnit">The minor unit.</param>
         /// <returns>The rounded value.</returns>
         public static decimal RoundHalfUp(decimal value, decimal minorUnit)
@@ -30,6 +51,28 @@ namespace Palantir.Numeric
             
             return rounded / multiple;
         }
+        
+        /// <summary>
+        /// Rounds the value down if it is halfway to the minor unit or above.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="minorUnit">The minor unit to round to.</param>
+        /// <returns>The rounded currency.</returns>
+        public static Money RoundHalfDown(Money value, decimal minorUnit)
+        {
+            return new Money(RoundHalfDown(value.Amount, minorUnit), value.Currency, minorUnit);
+        }
+        
+        /// <summary>
+        /// Rounds the value down if it is halfway to the minor unit or above.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>The rounded currency.</returns>
+        public static Money RoundHalfDown(MoneyQuotient value)
+        {
+            return new Money(RoundHalfDown(value.Amount, value.MinorUnit), value.Currency, value.MinorUnit);
+        }
+        
 
         /// <summary>
         /// Rounds the value down if it is halfway to the minor unit or above.
@@ -49,6 +92,29 @@ namespace Palantir.Numeric
                 rounded++;
             
             return rounded / multiple;
+        }
+        
+        /// <summary>
+        /// Rounds the value to the nearest even value if it is halfway to the
+        /// minor unit or above.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="minorUnit">The minor unit to round to.</param>
+        /// <returns>The rounded currency.</returns>
+        public static Money RoundHalfEven(Money value, decimal minorUnit)
+        {
+            return new Money(RoundHalfEven(value.Amount, minorUnit), value.Currency, minorUnit);
+        }
+        
+        /// <summary>
+        /// Rounds the value to the nearest even value if it is halfway to the
+        /// minor unit or above.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>The rounded currency.</returns>
+        public static Money RoundHalfEven(MoneyQuotient value)
+        {
+            return new Money(RoundHalfEven(value.Amount, value.MinorUnit), value.Currency, value.MinorUnit);
         }
 
         /// <summary>
@@ -91,6 +157,27 @@ namespace Palantir.Numeric
             
             return rounded / multiple;
         }
+        
+        /// <summary>
+        /// Rounds the value up if is above a minor unit;
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="minorUnit">The minor unit to round to.</param>
+        /// <returns>The rounded currency.</returns>
+        public static Money RoundUp(Money value, decimal minorUnit)
+        {
+            return new Money(RoundUp(value.Amount, minorUnit), value.Currency, minorUnit);
+        }
+        
+        /// <summary>
+        /// Rounds the value up if is above a minor unit;
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>The rounded currency.</returns>
+        public static Money RoundUp(MoneyQuotient value)
+        {
+            return new Money(RoundUp(value.Amount, value.MinorUnit), value.Currency, value.MinorUnit);
+        }
 
         /// <summary>
         /// Rounds the value up if is above a minor unit;
@@ -110,6 +197,27 @@ namespace Palantir.Numeric
                 rounded++;
             
             return rounded / multiple;
+        }
+        
+        /// <summary>
+        /// Rounds the value down if is above a minor unit;
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="minorUnit">The minor unit to round to.</param>
+        /// <returns>The rounded currency.</returns>
+        public static Money RoundDown(Money value, decimal minorUnit)
+        {
+            return new Money(RoundDown(value.Amount, minorUnit), value.Currency, minorUnit);
+        }
+
+        /// <summary>
+        /// Rounds the value down if is above a minor unit;
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>The rounded currency.</returns>
+        public static Money RoundDown(MoneyQuotient value)
+        {
+            return new Money(RoundDown(value.Amount, value.MinorUnit), value.Currency, value.MinorUnit);
         }
         
         /// <summary>

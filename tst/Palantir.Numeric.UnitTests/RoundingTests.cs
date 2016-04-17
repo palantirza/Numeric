@@ -13,6 +13,8 @@ namespace Palantir.Numeric.UnitTests
 		// 10.00, up down and nearest
     public sealed class RoundingTests
 	{
+        private Currency usd = new Currency("USD", "$", 0.01M);
+        
         [Fact]
         public void RoundUp_With1MinorUnit_ShouldRoundCorrectly()
         {
@@ -117,5 +119,29 @@ namespace Palantir.Numeric.UnitTests
             Round.RoundHalfEven(1.175M, 0.05M).Should().Be(1.20M);
             Round.RoundHalfEven(1.076M, 0.05M).Should().Be(1.10M);
         }
+        
+        [Fact]
+        public void RoundQuotient_ShouldRoundCorrectly()
+        {
+            var quotient = new Money(2.05M, usd) / 2;
+            Round.RoundUp(quotient).Amount.Should().Be(1.03M);
+            Round.RoundDown(quotient).Amount.Should().Be(1.02M);
+            Round.RoundHalfUp(quotient).Amount.Should().Be(1.03M);
+            Round.RoundHalfDown(quotient).Amount.Should().Be(1.02M);
+            Round.RoundHalfEven(quotient).Amount.Should().Be(1.02M);
+        }
+        
+        [Fact]
+        public void RoundMoney_ShouldRoundCorrectly()
+        {
+            var value = new Money(1.025M, usd, 0.001M);
+            Round.RoundUp(value, 0.01M).Amount.Should().Be(1.03M);
+            Round.RoundDown(value, 0.01M).Amount.Should().Be(1.02M);
+            Round.RoundHalfUp(value, 0.01M).Amount.Should().Be(1.03M);
+            Round.RoundHalfDown(value, 0.01M).Amount.Should().Be(1.02M);
+            Round.RoundHalfEven(value, 0.01M).Amount.Should().Be(1.02M);
+        }
+        
+     
     }
 }

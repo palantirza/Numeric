@@ -87,6 +87,11 @@ namespace Palantir.Numeric
 		/// Gets the money quotient amount.
 		/// </summary>
 		public decimal Amount => amount;
+
+		/// <summary>
+		/// Gets the money minor unit.
+		/// </summary>
+		public decimal MinorUnit => minorUnit;
         
         /// <summary>
         /// Whether the quotient is "pure", in that it will have no remainder,
