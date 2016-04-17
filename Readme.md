@@ -66,9 +66,9 @@ var result = weight1 + weight2; // 100500 g
 
 ## Money & Currency
 
-```Money``` is quite similar to a Unit of Measure in many respects, with ```Currency``` taking the place of ```Unit```. However, unlike a unit of measure a ```Currency``` can also have a ```Scale``` which defines the number of digits in the ```Money``` instance.
+```Money``` is quite similar to a Unit of Measure in many respects, with ```Currency``` taking the place of ```Unit```. However, unlike a unit of measure a ```Currency``` can also have a ```Minor Unit``` which defines the smallest allowable denomination in the ```Money``` instance.
 
-### Currency [In Progress]
+### Currency
 
 Currency is the "type" of Money transactions, and is similar to Units. Currencies consist of:
 
@@ -90,19 +90,29 @@ Arithmetic operations can be performed between money that shares a ```Currency``
 
 This is deliberate, currency conversions change rapidly, and require external data, and thus don't lend themselves well to a library of standard conversions.
 
-Some operations on Money types return a ```MoneyQuotient``` type, because it's not possible for a ```Money``` type to have a value that can't be expressed in it's ```MinorUnit```. The ```MoneyQuotient``` type cannot be operated on like a ```Money``` type.
+Some operations on Money types return a ```MoneyQuotient``` type, because it's not possible for a ```Money``` type to have a value that can't be expressed in it's ```MinorUnit```. The ```MoneyQuotient``` type cannot be operated on like a ```Money``` type. However, it can be rounded to a ```Money``` by using the ```Round``` functions.
 
-#### Money Example
+#### Addition Example
 
 Add ```$ 100``` to ```$ 150```.
 
 ~~~csharp
-var usd = new Currency("USD", "$", 2);
+var usd = new Currency("USD", "$", 0.01M);
 
 var value1 = new Money(100, usd);
 var value2 = new Money(150, usd);
 
-var result = value1 + value2; // $ 250
+var result = value1 + value2; // $ 250.00
+~~~
+
+#### Division Example
+
+Divide ```$ 100.25``` into 2, and round to nickels.
+
+~~~csharp
+var value = new Money(100.25M, usd) / 2; // 50.125
+
+var result = Round.RoundUp(value, 0.05M); // $ 50.15
 ~~~
 
 ## Formulas [In Progress]
@@ -125,8 +135,6 @@ Expression formula = Formula.Parse("x = x^3 \ [Pi]");
 
 ## Roadmap
 
-* Force Currency operations that result in remainders, to return a different type
-* Currency rounding
 * Formula parsing, including Currency and Unit of Measure and Stochastic
 * Financial Formulas
 * Stochastic numeric types that contain probability distributions of values.
