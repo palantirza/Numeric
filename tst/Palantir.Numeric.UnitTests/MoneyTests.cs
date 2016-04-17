@@ -143,7 +143,7 @@ namespace Palantir.Numeric.UnitTests
 		}
 
 		[Fact]
-		public void DivideTwoCompatibleMonies_ShouldHaveCorrectRemainder()
+		public void DivideTwoCompatibleMonies_ShouldHaveCorrectQuotient()
 		{
 			var money1 = new Money(49, zar);
 			var money2 = new Money(19, zar);
@@ -206,6 +206,13 @@ namespace Palantir.Numeric.UnitTests
 
 			Action action = () => { var result = money1 * money2; };
 			action.ShouldThrow<IncompatibleUnitException>();
+		}
+
+		[Fact]
+		public void RoundDown_WithMinorUnit_ShouldRoundToMinorUnit()
+		{
+			var value = 0.015M;
+			
 		}
 	}
 }
