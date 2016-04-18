@@ -207,12 +207,5 @@ namespace Palantir.Numeric.UnitTests
 			Action action = () => { var result = money1 * money2; };
 			action.ShouldThrow<IncompatibleUnitException>();
 		}
-
-		[Fact]
-		public void RoundDown_WithMinorUnit_ShouldRoundToMinorUnit()
-		{
-			var value = 0.015M;
-			
-		}
 	}
 }
