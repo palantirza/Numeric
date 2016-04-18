@@ -125,6 +125,8 @@ Addition and subtraction against normal numeric types change the mean, in effect
 
 Addition and subtraction against stochastic values affect the mean normally, but the standard deviation is affected as the addition or removal of the appropriate variance.
 
+Multiplication and against stochastic values affect both the mean and the standard deviation.
+
 ## Formulas [In Progress]
 
 The Palantir Calculation Library supports complex formulas. These can be parsed from text, and rendered for display.
