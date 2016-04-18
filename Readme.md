@@ -115,6 +115,16 @@ var value = new Money(100.25M, usd) / 2; // 50.125
 var result = Round.RoundUp(value, 0.05M); // $ 50.15
 ~~~
 
+## Stochastic Values
+
+The library contains the ```Stochastic``` type which contains an arithmetic mean, and a standard deviation. This type is used to represent a random distribution.
+
+These distributions can be added and subtracted from each other. They can be passed into random generators to create the actual values.
+
+Addition and subtraction against normal numeric types change the mean, in effect "pushing" the stochastic range up or down. Multiplication and division against normal numeric types affect the entire scale, moving the stochastic range up and down the same proportion the standard deviation is affected.
+
+Addition and subtraction against stochastic values affect the mean normally, but the standard deviation is affected as the addition or removal of the appropriate variance.
+
 ## Formulas [In Progress]
 
 The Palantir Calculation Library supports complex formulas. These can be parsed from text, and rendered for display.

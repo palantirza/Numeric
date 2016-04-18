@@ -50,6 +50,28 @@ namespace Palantir.Numeric.Statistics
 		}
 
 		/// <summary>
+		/// Adds a value to a stochastic instance.
+		/// </summary>
+		/// <param name="lhs">The left hand side of the expression.</param>
+		/// <param name="rhs">The right hand side of the expression.</param>
+		/// <returns>The expression result.</returns>
+		public static Stochastic operator +(Stochastic lhs, int rhs)
+		{
+			return new Stochastic(lhs.mean + rhs, lhs.sigma);
+		}
+
+		/// <summary>
+		/// Adds a value to a stochastic instance.
+		/// </summary>
+		/// <param name="lhs">The left hand side of the expression.</param>
+		/// <param name="rhs">The right hand side of the expression.</param>
+		/// <returns>The expression result.</returns>
+		public static Stochastic operator +(Stochastic lhs, double rhs)
+		{
+			return new Stochastic(lhs.mean + rhs, lhs.sigma);
+		}
+
+		/// <summary>
 		/// Subtracts two stochastic instances.
 		/// </summary>
 		/// <param name="lhs">The left hand side of the expression.</param>
@@ -59,6 +81,72 @@ namespace Palantir.Numeric.Statistics
 		{
             // SQRT((StdDev s3^2)−(StdDev s1^2))
 			return new Stochastic(lhs.mean - rhs.mean, Math.Sqrt(Math.Pow(lhs.sigma, 2) - Math.Pow(rhs.sigma, 2)));
+		}
+
+		/// <summary>
+		/// Subtracts a value from a stochastic.
+		/// </summary>
+		/// <param name="lhs">The left hand side of the expression.</param>
+		/// <param name="rhs">The right hand side of the expression.</param>
+		/// <returns>The expression result.</returns>
+		public static Stochastic operator -(Stochastic lhs, int rhs)
+		{
+			return new Stochastic(lhs.mean - rhs, lhs.sigma);
+		}
+
+		/// <summary>
+		/// Subtracts a value from a stochastic.
+		/// </summary>
+		/// <param name="lhs">The left hand side of the expression.</param>
+		/// <param name="rhs">The right hand side of the expression.</param>
+		/// <returns>The expression result.</returns>
+		public static Stochastic operator -(Stochastic lhs, double rhs)
+		{
+			return new Stochastic(lhs.mean - rhs, lhs.sigma);
+		}
+
+		/// <summary>
+		/// Multiplies a value to a stochastic.
+		/// </summary>
+		/// <param name="lhs">The left hand side of the expression.</param>
+		/// <param name="rhs">The right hand side of the expression.</param>
+		/// <returns>The expression result.</returns>
+		public static Stochastic operator *(Stochastic lhs, int rhs)
+		{
+			return new Stochastic(lhs.mean * rhs, lhs.sigma * rhs);
+		}
+
+		/// <summary>
+		/// Multiplies a value to a stochastic.
+		/// </summary>
+		/// <param name="lhs">The left hand side of the expression.</param>
+		/// <param name="rhs">The right hand side of the expression.</param>
+		/// <returns>The expression result.</returns>
+		public static Stochastic operator *(Stochastic lhs, double rhs)
+		{
+			return new Stochastic(lhs.mean * rhs, lhs.sigma * rhs);
+		}
+        
+		/// <summary>
+		/// Divides a stochastic by a value.
+		/// </summary>
+		/// <param name="lhs">The left hand side of the expression.</param>
+		/// <param name="rhs">The right hand side of the expression.</param>
+		/// <returns>The expression result.</returns>
+		public static Stochastic operator /(Stochastic lhs, int rhs)
+		{
+			return new Stochastic(lhs.mean / rhs, lhs.sigma / rhs);
+		}
+
+		/// <summary>
+		/// Divides a stochastic by a value.
+		/// </summary>
+		/// <param name="lhs">The left hand side of the expression.</param>
+		/// <param name="rhs">The right hand side of the expression.</param>
+		/// <returns>The expression result.</returns>
+		public static Stochastic operator /(Stochastic lhs, double rhs)
+		{
+			return new Stochastic(lhs.mean / rhs, lhs.sigma / rhs);
 		}
         #endregion
         
