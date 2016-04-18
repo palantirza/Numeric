@@ -133,7 +133,15 @@ The Palantir Calculation Library supports complex formulas. These can be parsed 
 
 ### Formula Parsing
 
-Formulas can be parsed from text.
+Formulas can be parsed from text. The following conventions are supported:
+
+* Currency symbol before a number, or three digit code after it, e.g. ```$ 50```, or ```50 USD```.
+* Units after a number, e.g. ```50 kg```.
+* Stochastics can be identified by a σ, or ± symbol, e.g. ```50 σ 2``` or ```50 ± 2```
+* A stochastic Money is identified by the stochastic symbol, and the currency, e.g. ```$ 50 ± 2```.
+* Similarly with a stochastic Measure, e.g. ```50 kg σ 2```.
+* Known mathematical symbols can be indicated with a text representation, e.g. ```[PI]```, or the symbol, e.g. ```π```.
+* Sums can be represented by ```Σn=1→4```, or ```SUM(n, 1, 4)```
 
 #### Formular Parse Example
 
@@ -144,6 +152,17 @@ Parse the formula
 ~~~csharp
 Expression formula = Formula.Parse("x = x^3 \ [Pi]");
 ~~~
+
+#### Black-Scholes pricing formula for call options
+
+~~~
+C = SN(d₁)-N(d₂)Ke^(-rt)
+d₁ = ln(S/K)+(r+s²/2)t/s·√t
+d₂ = d₁-s·√t
+~~~
+
+![Black-Scholes pricing formula for call options](http://i.investopedia.com/blackscholes.png)
+*From Investopedia*
 
 ## Roadmap
 
