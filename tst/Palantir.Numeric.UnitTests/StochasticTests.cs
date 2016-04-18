@@ -20,6 +20,20 @@ namespace Palantir.Numeric.UnitTests
         }
         
         [Fact]
+        public void StochasticAddExample_ShouldSumMeansAndVarianceStdDev()
+        {
+            // From http://www.rit.edu/~w-uphysi/uncertainties/Uncertaintiespart2.html#addsub
+            var w = new Stochastic(4.52, 0.02);
+            var x = new Stochastic(2, 0.2);
+            var y = new Stochastic(3, 0.6);
+            
+            var z = x + y - w;
+            
+            Math.Round(z.Mean, 1).Should().Be(0.5);
+            Math.Round(z.StandardDeviation, 1).Should().Be(0.6);
+        }
+        
+        [Fact]
         public void StochasticAddInt_ShouldSumMeans()
         {
             var s1 = new Stochastic(2, 0.82);
@@ -71,6 +85,44 @@ namespace Palantir.Numeric.UnitTests
             
             Math.Round(s2.Mean, 1).Should().Be(0.9);
             s2.StandardDeviation.Should().Be(0.82);
+        }
+        
+        [Fact]
+        public void StochasticMultiply_ShouldMultiplyMeansAndAddStdDev()
+        {
+            // From http://www.rit.edu/~w-uphysi/uncertainties/Uncertaintiespart2.html#muldiv
+            var w = new Stochastic(4.52, 0.02);
+            var x = new Stochastic(2.0, 0.2);
+            
+            var z = w * x;
+            
+            z.Mean.Should().Be(9.04);
+            Math.Round(z.StandardDeviation, 3).Should().Be(0.944);
+        }
+        
+        [Fact]
+        public void StochasticMultiplyEx_ShouldMultiplyMeansAndAddStdDev()
+        {
+            // From http://www.rit.edu/~w-uphysi/uncertainties/Uncertaintiespart2.html#muldiv
+            var x = new Stochastic(3.0, 0.2);
+            
+            var c = 2 * Math.PI * x;
+            
+            Math.Round(c.Mean, 1).Should().Be(18.8);
+            Math.Round(c.StandardDeviation, 1).Should().Be(1.3);
+        }
+        
+        [Fact]
+        public void StochasticDivide_ShouldMultiplyMeansAndAddStdDev()
+        {
+            // From http://www.rit.edu/~w-uphysi/uncertainties/Uncertaintiespart2.html#muldiv
+            var x = new Stochastic(2, 0.2);
+            var y = new Stochastic(3, 0.6);
+            
+            var z = x / y;
+            
+            Math.Round(z.Mean, 3).Should().Be(0.667);
+            Math.Round(z.StandardDeviation, 1).Should().Be(0.2);
         }
         
         [Fact]

@@ -106,6 +106,22 @@ namespace Palantir.Numeric.Statistics
 		}
 
 		/// <summary>
+		/// Multiplies two stochastics.
+		/// </summary>
+		/// <param name="lhs">The left hand side of the expression.</param>
+		/// <param name="rhs">The right hand side of the expression.</param>
+		/// <returns>The expression result.</returns>
+		public static Stochastic operator *(Stochastic lhs, Stochastic rhs)
+		{
+            var mean = lhs.mean * rhs.mean;
+            
+            var left = lhs.sigma / lhs.mean;
+            var right = rhs.sigma / rhs.mean;
+            
+            return new Stochastic(mean, (left + right) * mean);
+		}
+
+		/// <summary>
 		/// Multiplies a value to a stochastic.
 		/// </summary>
 		/// <param name="lhs">The left hand side of the expression.</param>
@@ -127,6 +143,44 @@ namespace Palantir.Numeric.Statistics
 			return new Stochastic(lhs.mean * rhs, lhs.sigma * rhs);
 		}
         
+		/// <summary>
+		/// Multiplies a value to a stochastic.
+		/// </summary>
+		/// <param name="lhs">The left hand side of the expression.</param>
+		/// <param name="rhs">The right hand side of the expression.</param>
+		/// <returns>The expression result.</returns>
+		public static Stochastic operator *(int lhs, Stochastic rhs)
+		{
+			return new Stochastic(lhs * rhs.mean, lhs * rhs.sigma);
+		}
+
+		/// <summary>
+		/// Multiplies a value to a stochastic.
+		/// </summary>
+		/// <param name="lhs">The left hand side of the expression.</param>
+		/// <param name="rhs">The right hand side of the expression.</param>
+		/// <returns>The expression result.</returns>
+		public static Stochastic operator *(double lhs, Stochastic rhs)
+		{
+			return new Stochastic(lhs * rhs.mean, lhs * rhs.sigma);
+		}
+        
+		/// <summary>
+		/// Divides two stochastics.
+		/// </summary>
+		/// <param name="lhs">The left hand side of the expression.</param>
+		/// <param name="rhs">The right hand side of the expression.</param>
+		/// <returns>The expression result.</returns>
+		public static Stochastic operator /(Stochastic lhs, Stochastic rhs)
+		{
+            var mean = lhs.mean / rhs.mean;
+            
+            var left = lhs.sigma / lhs.mean;
+            var right = rhs.sigma / rhs.mean;
+            
+            return new Stochastic(mean, (left + right) * mean);
+		}
+
 		/// <summary>
 		/// Divides a stochastic by a value.
 		/// </summary>
