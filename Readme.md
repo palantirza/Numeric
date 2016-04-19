@@ -1,6 +1,8 @@
-# Calculation Engine
+# Numeric Library
 
-The Palantir Calculation Library consists of a set of useful types for performing various types of complex, primarily financial, calculations.
+[![Build status](https://ci.appveyor.com/api/projects/status/8htd22iv2jlxoqrr?svg=true)](https://ci.appveyor.com/project/shederman/numeric)
+
+The Palantir Numeric Library consists of a set of useful types for performing various types of complex, primarily financial, calculations.
 
 ## Units of Measure
 
