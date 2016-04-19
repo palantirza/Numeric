@@ -127,6 +127,32 @@ Addition and subtraction against stochastic values affect the mean normally, but
 
 Multiplication and against stochastic values affect both the mean and the standard deviation.
 
+#### Stochastic Example Addition
+~~~csharp
+var s1 = new Stochastic(2, 0.82);
+var s2 = new Stochastic(3.8, 2.5);
+
+var s3 = s1 + s2; // 2±0.82 + 3.8±2.5 == 5.8±2.631
+~~~
+
+#### Stochastic Example Multiplication
+~~~csharp
+var w = new Stochastic(4.52, 0.02);
+var x = new Stochastic(2, 0.2);
+
+var z = w * x; // 4.52±0.02 * 2±0.2 ~= 9.04±0.944
+~~~
+
+#### Stochastic Example Unit Multiplication
+~~~csharp
+// Calculate circumference of circle
+var x = new StochasticUnit(3.0, 0.2, cm);
+
+var C = 2 * Math.PI * x; // 2π𝑥 == 18.8±1.3cm
+~~~
+
+
+
 ## Formulas [In Progress]
 
 The Palantir Calculation Library supports complex formulas. These can be parsed from text, and rendered for display.
