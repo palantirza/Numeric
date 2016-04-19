@@ -6,7 +6,7 @@ before_build:
 build_script:
 - cmd: dnu build src\Palantir.Numeric tst\Palantir.Numeric.UnitTests
 test_script:
-    - cmd: C:\Users\appveyor\.dnx\packages\OpenCover\4.6.519\tools\OpenCover.Console.exe -target:C:\Users\appveyor\.dnx\runtimes\dnx-clr-win-x86.1.0.0-rc1-update2\bin\dnx.exe -targetargs:"tst\Palantir.Numeric.UnitTests test" -output:coverage.xml
+    - cmd: C:\Users\appveyor\.dnx\packages\OpenCover\4.6.519\tools\OpenCover.Console.exe -target:C:\Users\appveyor\.dnx\runtimes\dnx-clr-win-x86.1.0.0-rc1-update2\bin\dnx.exe -targetargs:"-p tst\Palantir.Numeric.UnitTests test" -output:coverage.xml
     #- cmd: dnx -p tst\Palantir.Numeric.UnitTests test
 environment:
     COVERALLS_REPO_TOKEN:
