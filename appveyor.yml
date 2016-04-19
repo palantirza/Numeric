@@ -1,0 +1,10 @@
+version: 1.0.{build}
+cache: C:\Users\appveyor\.dnx\packages
+before_build:
+- cmd: dnu restore
+build_script:
+- cmd: dnu build src\Palantir.Numeric tst\Palantir.Numeric.UnitTests
+test_script:
+- cmd: dnx -p tst\Palantir.Numeric.UnitTests test
+build:
+  verbosity: normal
