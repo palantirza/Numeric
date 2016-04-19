@@ -1,6 +1,7 @@
 version: 1.0.{build}
 cache: C:\Users\appveyor\.dnx\packages
 before_build:
+- cmd: dnvm upgrade
 - cmd: dnu restore
 build_script:
 - cmd: dnu build src\Palantir.Numeric tst\Palantir.Numeric.UnitTests
