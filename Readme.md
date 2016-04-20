@@ -153,7 +153,27 @@ var x = new StochasticUnit(3.0, 0.2, cm);
 var C = 2 * Math.PI * x; // 2π𝑥 == 18.8±1.3cm
 ~~~
 
+### StochasticMoney
 
+There is a ```StochasticMoney``` type that allows you to operate on ranges of money. Like ```Money``` it will only operate on ```StochasticMoney``` or ```Money``` that is compatible (i.e. has the same ```Currency``` and ```MinorUnit```).
+
+The value for a ```StochasticMoney``` is a distribution, just like ```Stochastic```.
+
+#### StochasticMoney Cashflows Example
+~~~csharp
+var y1 = new Money(20000, usd);
+var y2 = new StochasticMoney(21000, 1000, usd);
+var y3 = new StochasticMoney(22500, 1500, usd);
+var y4 = new StochasticMoney(24500, 2000, usd);
+
+var earnings = y1 + y2 + y2 + y4; // $ 88,000±2692.58
+~~~
+
+### StochasticMeasure
+
+There is a ```StochasticMeasure``` type that allows you to operate on ranges of money. Like ```Measure``` it will only operate on ```StochasticMeasure ``` or ```Measure``` that is compatible (i.e. has the same ```Unit```).
+
+The value for a ```StochasticMeasure``` is a distribution, just like ```Stochastic```.
 
 ## Formulas [In Progress]
 
@@ -196,9 +216,7 @@ d₂ = d₁-s·√t
 
 * Formula parsing, including Currency and Unit of Measure and Stochastic
 * Financial Formulas
-* Stochastic numeric types that contain probability distributions of values.
-* Stochastic calculations
-* Support for Stochasitic UoM and Currency types.
+* StochasticDate for variances on dates
 * Parsing of stochastic values (e.g. "$ 5.3σ0.2")
 * Formulas to be parsed to Linq Expression Trees.
 * Formula renderer which will output MathML representations of the formula.
