@@ -34,6 +34,11 @@ namespace Palantir.Numeric
         public decimal Value => value;
         
         /// <summary>
+        /// Whether the Measure is Empty;
+        /// </summary>
+        public bool IsEmpty => unit == null;
+        
+        /// <summary>
         /// Converts a measure to another type.
         /// </summary>
         /// <param name="unit">The unit to convert to.</param>
